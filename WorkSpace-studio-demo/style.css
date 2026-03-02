@@ -1,0 +1,1328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-warm: #fcfaf7;       /* Un alb murdar, cald, ca pânza de in */
+    --accent-warm: #c5a37d;   /* Bronz/Auriu stins pentru elemente premium */
+    --text-main: #2d2a26;     /* Gri antracit foarte închis, mai cald decât negrul */
+    --text-muted: #8d857d;    /* Gri taupe pentru etichete */
+    --white: #ffffff;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* MODIFICARE: Folosim overflow-x hidden pentru a tăia orice depășire laterală */
+    overflow-x: hidden; 
+    background-color: #000;
+    scroll-behavior: smooth;
+}
+
+/* Corecție pentru secțiunile care folosesc 100vw */
+.hero, .mission-minimal, .ntgrate-services, .pivot-projects, .design-exploration, .partners-section {
+    width: 100%; /* Înlocuiește 100vw cu 100% peste tot unde apare */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ascundem scrollbar-ul pentru un aspect curat, dar păstrăm funcționalitatea */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    background-color: #ffffff;
+}
+
+/* Aplicăm snap DOAR pe Hero, Mission și Services */
+#hero, 
+#mission, 
+#services {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Restul secțiunilor (Projects, Exploration, Partners) vor avea scroll liber */
+#projects, 
+#exploration, 
+#partners {
+    scroll-snap-align: none;
+}
+
+/* Ascundem punctele pentru secțiunile unde nu avem Snap (opțional, dar recomandat) */
+.progress-dot[data-target="projects"],
+.progress-dot[data-target="exploration"],
+.progress-dot[data-target="partners"] {
+    display: none;
+}
+
+/* Când fundalul este negru (mix-blend-mode se ocupă de contrast) */
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer; /* FOARTE IMPORTANT */
+    opacity: 0.5;
+}
+
+.progress-dot.active {
+    transform: scale(2);
+    opacity: 1;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 2000;
+    mix-blend-mode: difference;
+    color: white;
+    transition: all 0.4s ease;
+    /* ADĂUGĂ ACESTEA DOUĂ */
+    isolation: isolate;
+    backface-visibility: hidden;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--accent-warm);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    /* Eliminăm shadow-ul care cauzează bug-ul de rendering */
+    text-shadow: none !important; 
+    transition: color 0.3s ease;
+}
+
+/* CONTAINER LOGO NOU */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Simbolul grafic Workspace */
+.logo-symbol {
+    height: 35px; /* Ajustează înălțimea în funcție de imaginea ta */
+    width: auto;
+}
+
+/* Stil text WORKSPACE STUDIO */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   INTERESTING LOGO HOVER EFFECT - MAIN PAGE
+   ========================================================================== */
+
+/* 1. Icon Animation (Rotație și scalare) */
+.logo-link .logo-symbol {
+    height: 35px;
+    width: auto;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo-link:hover .logo-symbol {
+    transform: rotate(-12deg) scale(1.15); /* Rotația și scalarea cerută */
+}
+
+/* 2. Brand Name Underline (Linia care se extinde) */
+.brand-name {
+    position: relative;
+    display: inline-block;
+}
+
+.brand-name::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    /* MODIFICARE: Folosim alb fix, mix-blend-mode se va ocupa de restul */
+    background-color: #ffffff; 
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo-link:hover .brand-name::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.brand-sub {
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    margin-top: 2px;
+    transition: all 0.4s ease;
+}
+
+.logo-link:hover .brand-sub {
+    letter-spacing: 7px;
+    transform: translateX(4px);
+    /* Am eliminat opacity: 0.7 care îl făcea invizibil */
+}
+
+/* 4. Dealer Badge Animation (Subtil) */
+.dealer-badge {
+    transition: all 0.4s ease;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-link:hover .dealer-badge {
+    padding-left: 30px;
+    border-left-color: var(--accent-warm);
+}
+
+.brand-sub {
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    margin-top: 2px;
+}
+
+.certified-logo {
+    height: 35px;
+    width: auto;
+    filter: brightness(1);
+    display: block;
+}
+
+.dealer-badge {
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%; /* Schimbat de la 100vw */
+    overflow: hidden; /* Aceasta este esențială aici */
+    background-color: #000;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    /* Centrare absolută a conținutului */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1); /* Trecere mai cursivă */
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Overlay-ul să acopere tot, sub text */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Mai opac pentru contrast mai bun */
+    z-index: 3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    width: 90%; /* Previne întinderea textului pe tot ecranul pe ecrane mari */
+    max-width: 800px;
+    margin: 0 auto; /* Centrare orizontală */
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    /* Ken Burns lent */
+    transform: scale(1.15);
+    transition: transform 8s ease-out;
+}
+
+.slide.active img {
+    transform: scale(1);
+}
+
+/* Stil indicatori (Dots) */
+/* Stil indicatori (Dots) - REPARAT */
+.slider-dots {
+    position: absolute; /* Fixează dots peste restul elementelor */
+    bottom: 40px;      /* Distanța de marginea de jos */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;      /* Cel mai mare nivel, să fie peste poze și overlay */
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.dot {
+    width: 30px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.dot.active {
+    background: #fff;
+    width: 45px; /* Efect vizual de slide activ */
+}
+
+
+
+/* MISSION MINIMAL SECTION */
+.mission-minimal {
+    padding: 150px 0;
+    background-color: #ffffff !important;
+    text-align: center;
+    position: relative; /* Esențial */
+    z-index: 10;        /* O ridicăm deasupra celorlalte */
+    overflow: hidden;   /* Taie orice depășire */
+    min-height: 100vh;  /* Ne asigurăm că ocupă tot ecranul */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mission-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mission-label {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-warm);
+    display: block;
+    margin-bottom: 30px;
+}
+
+.mission-text {
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #888; /* Textul de bază este un gri discret */
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.mission-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dark-accent {
+    color: var(--accent-warm); /* Doar partea importantă este neagră */
+    font-weight: 600;
+}
+
+.mission-line {
+    width: 60px;
+    height: 1px;
+    background: var(--accent-warm);
+    margin: 50px auto 0;
+    transform: scaleX(0);
+    transition: transform 1.5s ease;
+}
+
+.mission-line.visible {
+    transform: scaleX(1);
+}
+
+/* DESIGN EXPLORATION - EDITORIAL STYLE */
+.design-exploration {
+    padding: 160px 5%;
+    background-color: #ffffff;
+    width: 100%;
+    overflow: hidden; /* Adăugat pentru a tăia marginile grid-ului asimetric */
+}
+
+.exploration-header {
+    max-width: 700px;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+
+.exploration-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category {
+    color: var(--accent-warm);
+}
+
+.category-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--accent-warm);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.exploration-header .category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.exploration-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-main);
+}
+
+.exploration-header h2 em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.exploration-header p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+
+.grid-item:hover .item-overlay {
+    opacity: 1;
+}
+
+
+.item-overlay h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .masonry-grid {
+        grid-auto-rows: 200px;
+    }
+}
+
+.projects-featured {
+    padding: 100px 5%;
+    background: #fff;
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 150px;
+}
+
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 2;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    filter: grayscale(20%);
+    transition: filter 0.5s ease;
+}
+
+.project-image:hover img {
+    filter: grayscale(0%);
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.project-info h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.view-project {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    transition: opacity 0.3s;
+}
+
+/* Sectiune Parteneri */
+.partners {
+    padding: 80px 5%;
+    text-align: center;
+    background: #fdfdfd;
+    border-top: 1px solid #eee;
+}
+
+.partners h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    color: #555;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    opacity: 0.7;
+}
+
+.partners-grid img {
+    height: 40px;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+}
+
+.partners-grid img:hover {
+    filter: grayscale(0%);
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-row, .project-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Dimensiuni speciale pentru mozaic */
+.tall { grid-row: span 2; }
+.wide { grid-column: span 2; }
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+
+.partners-section {
+    padding: 120px 0;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(197, 163, 125, 0.1);
+}
+
+.container {
+    max-width: 1400px; /* Limitează lățimea pe ecrane foarte mari */
+    margin: 0 auto;    /* Centrează conținutul */
+    padding: 0 5%;     /* Creează margini de siguranță stânga-dreapta */
+}
+
+.section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #999;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+
+.partners-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Se așează pe rânduri noi pe mobil */
+    gap: 80px; /* Spațiu generos între logouri */
+}
+
+
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Păstrează culoarea definită în logo-text */
+    display: block;
+    cursor: pointer;
+}
+
+/* Previne orice schimbare de culoare la hover pe textul brandului prin intermediul link-ului */
+.logo-link:hover .brand-name, 
+/* Opțional: Un feedback vizual discret la hover pe tot logoul */
+.logo-link:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* Ajustare logo-container pentru a se integra în link */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Stil de bază pentru logouri - inițial gri/șters */
+.logo-card img {
+    width: 100%;
+    max-height: 45px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.2); 
+    opacity: 0.5;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Hover General: Toate devin Negru intens */
+.logo-card:hover img {
+    filter: grayscale(100%) brightness(0); 
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* FIX: Herman Miller - Use Filter instead of Fill */
+.hm-logo:hover img {
+    /* Transforms the image into #FF4000 */
+    filter: brightness(0) saturate(100%) invert(35%) sepia(97%) saturate(5833%) hue-rotate(11deg) brightness(101%) contrast(106%) !important;
+}
+
+/* FIX: Knoll - Use Filter instead of Fill */
+.knoll-logo:hover img {
+    /* Transforms the image into #E43B23 */
+    filter: brightness(0) saturate(100%) invert(31%) sepia(87%) saturate(4320%) hue-rotate(349deg) brightness(91%) contrast(97%) !important;
+}
+
+/* Stil pentru link-ul care conține logoul */
+.logo-card {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 150px;
+    cursor: pointer;
+}
+
+/* Ajustare pentru ecrane mici */
+@media (max-width: 768px) {
+    .partners-wrapper {
+        gap: 40px;
+    }
+    .logo-card {
+        flex: 0 1 100px;
+    }
+}
+
+/* ==========================================================================
+   PIVOT PROJECTS - RESPONSIVE & COMPLETE STYLE
+   ========================================================================== */
+
+.pivot-projects {
+    padding: 80px 5%;
+    background: #fff;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.split-row {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    margin-bottom: 80px; 
+    gap: 40px; 
+}
+
+.split-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-image {
+    flex: 1.2;
+    height: 70vh; 
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 30px 60px rgba(45, 42, 38, 0.05);
+    /* Păstrăm tranziția pentru hover */
+    transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.5s ease;
+}
+
+/* IMPORTANT: Păstrăm stilul imaginii */
+.split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* IMPORTANT: Păstrăm efectul de hover */
+.split-row:hover .split-image {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(197, 163, 125, 0.15);
+}
+
+.split-text {
+    flex: 0.8;
+    padding: 0 5%; 
+}
+
+.split-text h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem); 
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.split-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* IMPORTANT: Păstrăm stilul link-ului (butonului) */
+.pivot-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent-warm);
+    padding-bottom: 8px;
+    transition: all 0.3s;
+}
+
+.pivot-link:hover {
+    color: var(--accent-warm);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (REZOLVA MOBILUL)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .split-row, .split-row.reverse {
+        min-height: auto;
+        gap: 30px;
+    }
+    .split-text {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .pivot-projects {
+        padding: 60px 20px;
+    }
+
+    .split-row, .split-row.reverse {
+        flex-direction: column; 
+        align-items: flex-start;
+        min-height: auto;
+        margin-bottom: 100px; 
+    }
+
+    .split-image {
+        width: 100%;
+        height: 50vh; 
+        flex: none;
+    }
+
+    .split-text {
+        width: 100%;
+        flex: none;
+        padding-top: 30px; 
+    }
+
+    .split-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .split-text p {
+        max-width: 100%; 
+    }
+    
+    .view-all-container {
+        padding-top: 0;
+    }
+}
+
+/* Full Width Break Section */
+.full-width-feature {
+    position: relative;
+    height: 90vh;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-width-feature img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Ajustăm containerul general de servicii pentru a acomoda noul titlu */
+.ntgrate-services {
+    min-height: 100vh; /* Ne asigurăm că secțiunea ocupă tot ecranul pentru snap */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0; /* Spațiu generos sus/jos */
+}
+
+.ntgrate-container {
+    display: flex;
+    /* Limit the width so it doesn't touch the screen edges */
+    width: 90%; 
+    max-width: 1400px; 
+    height: 60vh;
+    gap: 15px;
+    /* This centers the container if there is extra space */
+    margin: 0 auto; 
+}
+
+.nt-card {
+    position: relative;
+    flex: 1; /* Toate benzile sunt egale la început */
+    overflow: hidden;
+    transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+/* Efectul de lățire la hover (opțional, pentru dinamism) */
+.nt-card:hover {
+    flex: 1.5;
+}
+
+.nt-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 1.2s ease, filter 0.5s ease;
+}
+
+.nt-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.nt-content {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.nt-content h3 {
+    color: #fff;
+    font-family: 'Times New Roman', serif; /* Stilul Serif din ntgrate */
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Responsive: se transformă în grid pe mobil */
+@media (max-width: 768px) {
+    .ntgrate-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .nt-card {
+        height: 300px;
+    }
+}
+
+/* Container buton - Centrare și spațiere */
+.view-all-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 20px 0; /* Am redus de la 100px la 20px jos */
+    background: #fff;
+}
+
+/* Stilul butonului minimalist */
+.btn-discover-more {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: all 0.4s ease;
+}
+
+.btn-text {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+/* Linia de sub text - element vizual premium */
+.btn-line {
+    width: 40px;
+    height: 1px;
+    background: var(--accent-warm);
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Efect de interactivitate (Hover) */
+.btn-discover-more:hover .btn-line {
+    width: 100px; /* Linia se lungește elegant la hover */
+}
+
+.btn-discover-more:hover {
+    opacity: 0.7;
+    transform: translateY(-2px); /* Mică ridicare */
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.overlay-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.btn-minimal {
+    padding: 15px 40px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-minimal:hover {
+    background: white;
+    color: black;
+}
+
+.services-header {
+    text-align: center;
+    /* Reducem și marginea de jos puțin pentru a păstra coeziunea cu benzile */
+    margin-bottom: 40px; 
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Activare animație prin reveal-ul pe care îl ai deja în JS */
+.services-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.services-header h2 {
+    /* Am redus de la clamp(2.5rem, 5vw, 4rem) la o variantă mai compactă */
+    font-size: clamp(2rem, 3.5vw, 2.8rem); 
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-top: 10px;
+    letter-spacing: -1px; /* Adăugat pentru un look mai "premium" la dimensiuni mici */
+}
+
+/* Layout Pagina Servicii Nouă */
+.services-page-layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Spațiu pentru navbar */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+.services-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-text-content {
+    padding: 10% 12%;
+    background-color: var(--bg-warm);
+}
+
+.services-list-detail {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.services-list-detail li {
+    font-size: 1.3rem;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(197, 163, 125, 0.2);
+    display: flex;
+    align-items: center;
+    color: var(--text-main);
+    transition: transform 0.3s ease;
+}
+
+.services-list-detail li:hover {
+    transform: translateX(10px);
+    color: var(--accent-warm);
+}
+
+.services-list-detail li .num {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--accent-warm);
+    margin-right: 25px;
+    border: 1px solid var(--accent-warm);
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+
+/* Stil special pentru Navbar pe paginile de servicii */
+.services-nav {
+    mix-blend-mode: normal !important; /* Dezactivăm efectul de transparență */
+    background-color: rgba(252, 250, 247, 0.95); /* Culoarea --bg-warm cu puțină transparență */
+    border-bottom: 1px solid rgba(197, 163, 125, 0.2);
+    color: var(--text-main) !important;
+}
+
+/* Forțăm link-urile și textul logo-ului să fie închise la culoare */
+.services-nav .nav-links a, 
+.services-nav .brand-name, 
+.services-nav .brand-sub {
+    color: var(--text-main) !important;
+}
+
+/* Ne asigurăm că logo-ul MillerKnoll este vizibil (dacă e alb, îi dăm un filter) */
+.services-nav .certified-logo {
+    filter: brightness(0) !important; /* Îl face negru/antracit pentru a se vedea pe bej */
+    opacity: 0.8;
+}
+
+/* Ajustăm main-ul să nu intre sub navbar-ul fix */
+.services-page-layout {
+    padding-top: 80px; /* Înălțimea navbar-ului tău */
+}
+
+/* Ajustare Mobil */
+@media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-image { height: 40vh; }
+}
+
+/* ==========================================================================
+   DESIGN EXPLORATION - REVEAL GRID SYSTEM
+   ========================================================================== */
+
+.design-exploration {
+    padding: 60px 5% 160px 5%; /* Am redus de la 160px la 60px în partea de sus */
+    background-color: #ffffff;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+}
+
+.exploration-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header-ul secțiunii */
+.exploration-header {
+    max-width: 700px;
+    margin-bottom: 100px;
+    position: relative; /* Asigură alinierea corectă */
+    z-index: 10;      /* Îl ridică deasupra fundalului */
+}
+
+.exploration-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--accent-warm);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.exploration-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.exploration-header h2 em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.exploration-header p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* Grid-ul Modern Reveal */
+.modern-reveal-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+.reveal-item {
+    position: relative;
+    overflow: hidden;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.reveal-item, .exploration-header {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Starea activată de JavaScript */
+.reveal-item.visible, .exploration-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.reveal-item:nth-child(1) { transition-delay: 0.1s; }
+.reveal-item:nth-child(2) { transition-delay: 0.3s; }
+.reveal-item:nth-child(3) { transition-delay: 0.5s; }
+.reveal-item:nth-child(4) { transition-delay: 0.2s; }
+
+/* Animație pentru Textul din Header */
+.exploration-header h2, 
+.exploration-header p,
+.exploration-header .category-tag {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.exploration-header.visible h2,
+.exploration-header.visible p,
+.exploration-header.visible .category-tag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exploration-header.visible p { transition-delay: 0.2s; }
+.exploration-header.visible h2 { transition-delay: 0.1s; }
+
+
+.reveal-item.tall { grid-column: 1 / 8; height: 700px; }
+.reveal-item:nth-child(2) { grid-column: 9 / 13; height: 380px; margin-top: 80px; }
+.reveal-item:nth-child(3) { grid-column: 8 / 13; height: 420px; margin-top: -40px; }
+.reveal-item.wide { grid-column: 1 / 13; height: 500px; margin-top: 40px; }
+
+.reveal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.reveal-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Capțiunile tip Glassmorphism */
+.glass-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    max-width: 280px;
+    pointer-events: none; /* Nu blochează hover-ul pe imagine */
+}
+
+.reveal-item:hover .glass-caption {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-main);
+    transform: translateY(-10px);
+}
+
+.glass-caption h3 { font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; }
+.glass-caption span { font-size: 0.8rem; opacity: 0.8; }
+
+/* Responsivitate pentru ecrane de tabletă și mobil */
+@media (max-width: 1024px) {
+    .modern-reveal-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .reveal-item.tall, 
+    .reveal-item:nth-child(2), 
+    .reveal-item:nth-child(3), 
+    .reveal-item.wide {
+        width: 100%;
+        height: 450px !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .logo-container {
+        gap: 8px;
+    }
+    .brand-name {
+        font-size: 1rem;
+    }
+    .dealer-badge {
+        display: none; /* Ascundem badge-ul MillerKnoll pe ecrane FOARTE mici pentru a face loc */
+    }
+}

@@ -1,0 +1,85 @@
+.tk-new-layout {
+    width: 65% !important;
+    max-width: 1000px;
+}
+
+.tk-intro-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.tk-text-block p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Reutilizarea grilei de articole */
+.tk-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.tk-card {
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    filter: grayscale(40%) brightness(0.8);
+}
+
+.tk-card h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-warm); 
+    margin-bottom: 10px;
+}
+
+.tk-card p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
+
+/* Hover Effects */
+.tk-card:hover .card-img-wrapper img {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1);
+}
+
+.tk-card:hover h3 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(197, 163, 125, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .tk-articles-grid { grid-template-columns: 1fr 1fr; }
+    .tk-intro-grid { grid-template-columns: 1fr; }
+    .tk-new-layout { width: 90% !important; padding-right: 5%; }
+}
+
+@media (max-height: 800px) {
+    .card-img-wrapper { height: 100px; }
+}

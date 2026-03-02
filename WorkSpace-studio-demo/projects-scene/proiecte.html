@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiecte | Workspace Studio</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="proiecte.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+    <body class="bg-[#fcfaf7] text-[#1a1a1a]">
+
+        <nav class="navbar">
+            <a href="../index.html" class="logo-link">
+                <div class="logo-container">
+                    <img src="../logos/workspace-logo.svg" alt="Workspace Logo" class="logo-symbol">
+                    <div class="logo-text">
+                        <span class="brand-name">WORKSPACE</span>
+                        <span class="brand-sub">STUDIO</span>
+                    </div>
+                    <div class="dealer-badge">
+                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer" class="certified-logo">
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="proiecte.html" class="hover:text-[#c5a37d] transition">Projects</a></li>
+                <li><a href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a></li>
+            </ul>
+        </nav>
+
+        <div id="projects-root"></div>
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
+        <script type="text/babel" src="ProjectsScene.jsx"></script>
+    </body>
+</html>

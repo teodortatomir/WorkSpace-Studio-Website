@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UiPath | Workspace Studio</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="uipath.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+    <body class="project-detail-body snap-container">
+        <nav class="navbar services-nav">
+            <a href="../../index.html" class="logo-link">
+                <div class="logo-container">
+                    <img src="../../logos/workspace-logo.svg" alt="Workspace Logo" class="logo-symbol">
+                    <div class="logo-text">
+                        <span class="brand-name">WORKSPACE</span>
+                        <span class="brand-sub">STUDIO</span>
+                    </div>
+                    <div class="dealer-badge">
+                        <img src="../../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer" class="certified-logo">
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects-scene/proiecte.html">Projects</a></li>
+                <li><a href="https://shop.workspaces.ro/en/catalog" target="_blank">Shop</a></li>
+            </ul>
+        </nav>
+
+        <div class="snap-section">
+            <section class="hero-snap">
+                <div class="p-slider">
+                    <div class="p-slide active"><img src="UiPath0.jpg"></div>
+                    <div class="p-slide"><img src="UiPath1.jpg"></div>
+                    <div class="p-slide"><img src="UiPath2.jpg"></div>
+                </div>
+                
+                <div class="hero-gradient-overlay"></div>
+                
+                <div class="refined-title-block reveal">
+                    <h1 class="project-title">UiPath</h1>
+                    <p class="hero-subtitle">Global Headquarters • Bucharest</p>
+                </div>
+
+                <div class="slider-controls-minimal">
+                    <button class="s-btn prev">PREV</button>
+                    <div class="s-divider"></div>
+                    <button class="s-btn next">NEXT</button>
+                </div>
+            </section>
+        </div>
+
+        <div class="snap-section">
+            <section class="info-section">
+                <div class="info-content-grid interesting-layout">
+                    <div class="specs-column reveal">
+                        <div class="specs-visual-anchor"></div> <div class="spec-group"><label>Location</label><span>Bucharest</span></div>
+                        <div class="spec-group"><label>Architecture</label><span>Workspace Studio</span></div>
+                        <div class="spec-group"><label>Surface</label><span>1000 SQM</span></div>
+                        <div class="spec-group"><label>Timeline</label><span>August 2023</span></div>
+                    </div>
+
+                    <div class="manifesto-column reveal">
+                        <div class="title-wrapper">
+                            <span class="editorial-label">Collaboration / UiPath</span>
+                            <h2>Perfect balance between <br><span class="accent-text italic-style">form and function.</span></h2>
+                        </div>
+                        <div class="manifesto-body">
+                            <p class="lead-text">Workspace Studio had the privilege of collaborating with UiPath to create an innovative and inspired working environment that authentically reflects the spirit and values of the company.</p>
+                            <p>Through close collaboration with the UiPath team, we developed a concept that combines futuristic and technological elements with warm and organic accents.</p>
+                        </div>
+                        <div class="signature-line"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="snap-section gallery-snap-section">
+            <section class="gallery-section">
+                <div class="bento-grid">
+                    <div class="bento-item tall reveal"><img src="UiPath3.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath4.jpg"></div>
+                    <div class="bento-item wide reveal"><img src="UiPath5.jpg"></div>
+                    <div class="bento-item wide reveal"><img src="UiPath6.jpg"></div>
+                    <div class="bento-item tall reveal"><img src="UiPath7.jpg"></div>
+                    <div class="bento-item tall reveal"><img src="UiPath8.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath9.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath10.jpg"></div>
+                    <div class="bento-item wide reveal"><img src="UiPath11.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath12.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath13.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath14.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath15.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath16.jpg"></div>
+                    <div class="bento-item tall reveal"><img src="UiPath17.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath18.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath19.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath21.jpg"></div>
+                    <div class="bento-item wide reveal"><img src="UiPath20.jpg"></div>
+                    <div class="bento-item reveal"><img src="UiPath22.jpg"></div>
+                </div>
+                
+                <footer class="gallery-footer reveal">
+                <a href="../../projects-scene/proiecte.html" class="btn-discover-more">
+                    <span class="btn-text">EXPLORE ALL PROJECTS</span>
+                    <span class="btn-line"></span>
+                </a>
+            </footer>
+            </section>
+        </div>
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+
+        <script>
+            const slides = document.querySelectorAll('.p-slide');
+            let current = 0;
+            const showSlide = (i) => {
+                slides.forEach(s => s.classList.remove('active'));
+                slides[i].classList.add('active');
+            };
+            document.querySelector('.next').onclick = () => { current = (current + 1) % slides.length; showSlide(current); };
+            document.querySelector('.prev').onclick = () => { current = (current - 1 + slides.length) % slides.length; showSlide(current); };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.bento-item img').forEach(image => {
+                image.addEventListener('click', () => {
+                    lightbox.classList.add('active');
+                    lightboxImg.src = image.src;
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target !== lightboxImg) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        </script>
+    </body>
+</html>
