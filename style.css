@@ -1696,55 +1696,63 @@ body {
     display: block;
 }
 
-/* RESPONSIVE NAVBAR PENTRU TELEFON */
 @media (max-width: 768px) {
-    /* 1. Micșorăm înălțimea navbar-ului pe mobil */
-    .navbar {
-        height: 70px !important;
+    /* 1. Resetăm înălțimea */
+    .navbar { height: 70px !important; }
+    .visible-nav { height: 65px !important; }
+
+    /* 2. Resetează containerul să nu aibă spațiu interior inutil */
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 0 4% !important;
+    }
+
+    /* 3. Forțăm coloanele să stea la margini și eliminăm centrul */
+    .nav-center { display: none !important; }
+    
+    .nav-left, .nav-right { 
+        flex: 1 !important; 
+        display: flex !important; 
+        width: auto !important;
+    }
+
+    /* 4. ALINIERE LOGO-URI (STÂNGA PUR) */
+    .nav-left { 
+        justify-content: flex-start !important; 
     }
     
-    .visible-nav {
-        height: 65px !important;
+    .logo-wrapper { 
+        gap: 12px !important; /* Spațiu mic între logo-uri */
+        margin: 0 !important; /* Elimină orice auto-margin */
     }
 
-    /* 2. Ascundem categoriile din mijloc (nu încap pe ecran mic) */
-    .nav-center {
-        display: none !important;
-    }
-
-    /* 3. Ajustăm spațierea containerului */
-    .nav-container {
-        padding: 0 5%;
-    }
-
-    /* 4. Micșorăm logourile și spațiul dintre ele */
     .workspace-logo {
         height: 35px !important;
-        padding-right: 10px !important;
+        padding-right: 0 !important; /* Eliminăm padding-ul care împingea linia */
     }
 
     .nav-logo-separator {
         height: 20px !important;
-        margin: 0 10px !important;
+        margin: 0 12px !important; /* Spațiu egal stânga-dreapta față de linie */
     }
 
-    .miller-dealer-logo {
-        height: 22px !important;
-    }
+    .miller-dealer-logo { height: 22px !important; }
 
-    /* 5. Micșorăm butoanele din dreapta */
-    .nav-right {
-        gap: 10px !important;
+    /* 5. ALINIERE BUTOANE (DREAPTA PUR) */
+    .nav-right { 
+        justify-content: flex-end !important; 
+        gap: 15px !important; 
     }
 
     .nav-btn {
         font-size: 10px !important;
-        padding: 5px 8px !important;
         letter-spacing: 1px !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
     }
-    
-    /* 6. Asigurăm alinierea extremă Stânga-Dreapta */
-    .nav-left, .nav-right {
-        flex: 1;
-    }
+
+    /* 6. Fix pentru spațiul alb de sus */
+    .page-wrapper, body { padding-top: 0 !important; }
 }
