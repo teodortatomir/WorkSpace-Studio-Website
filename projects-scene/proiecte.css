@@ -1,154 +1,654 @@
-.projects-container {
-    max-width: 1600px;
+:root {
+
+    --primary: #838185;
+    --accent: #5d6d7e;
+    --text-dark: #1a1c20;
+    --text-light: #7b8a97;
+    --bg-hero: #8b5a2b;
+    --white: #ffffff;
+    --bg-form: #8b5a2b;
+    --bg-warm-nav: #eeedf4;
+
+    --color-ergonomics: #e30613;
+    --color-sustainability: #009640;
+    --color-turnkey: #004d43;
+    --color-design: #66007a;
+}
+
+body::-webkit-scrollbar { display: none; }
+body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--white); overflow-x: hidden; font-family: 'Inter', sans-serif; color: var(--text-dark); margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ==========================================
+   NAVBAR (WARM CREAM STYLE - REPARAT)
+   ========================================== */
+
+/* ==========================================
+   NAVBAR DINAMIC (CENTERED -> LEFT ON SCROLL)
+   ========================================== */
+/* ==========================================
+   NAVBAR PREMIUM EDITORIAL
+   ========================================== */
+
+.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100px;
+    background: var(--bg-warm-nav);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+/* Starea la Scroll: Mai mic, transparent și blurat */
+.navbar.scrolled {
+    height: 70px;
+    background: rgba(240, 244, 237, 0.7) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 4%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Logo-ul forțat pe centru */
+    align-items: center;
+    position: relative;
+}
+
+/* Grupurile de branduri lipite de logo */
+.nav-group {
+    display: flex;
+    gap: 40px; 
+    transition: all 0.5s ease;
+    align-items: center;
+    flex: 1; /* Forțează grupurile să ocupe spațiu egal pentru centrare perfectă */
+}
+
+/* 2. Eliminăm marginile care stricau simetria față de logo */
+.nav-group.left-side { 
+    justify-content: flex-end; 
+    margin-right: 40px; /* Acum este egal cu gap-ul dintre cuvinte */
+}
+
+.nav-group.right-side { 
+    justify-content: flex-start; 
+    margin-left: 40px; /* Acum este egal cu gap-ul dintre cuvinte */
+}
+
+/* Logo-ul care devine ancoră la scroll */
+.nav-center-logo {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+}
+
+.workspace-logo {
+    height: 85px; /* Puțin mai mare pentru a echilibra textul îngroșat */
+    width: auto;
+    mix-blend-mode: multiply;
+    transition: all 0.6s ease;
+    display: block;
+}
+
+/* LOGICA DE SCROLL */
+.navbar.scrolled .nav-group {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+}
+
+.navbar.scrolled .nav-center-logo {
+    /* Mută logo-ul în locul unde ar sta în mod normal în stânga */
+    transform: translateX(calc(-50vw + 120px)); 
+}
+
+.navbar.scrolled .workspace-logo {
+    height: 60px;
+}
+
+/* Link-urile din dreapta */
+.nav-links {
+    position: absolute;
+    right: 4%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    z-index: 20;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover { opacity: 0.6; }
+
+/* Stil text branduri și pregătire pentru efectul de hover */
+.brand-name-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;         /* Mărit de la 13px */
+    font-weight: 800;        /* Extra-Bold pentru impact vizual */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;   /* Spațiere mai generoasă între litere */
+    white-space: nowrap;
+    position: relative;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.brand-name-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px; /* Linie mai vizibilă */
+    background-color: currentColor;
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.brand-name-text:hover::after {
+    width: 100%; /* Se extinde pe toată lățimea la hover */
+}
+
+.brand-name-text:hover {
+    opacity: 0.8; /* Scade ușor opacitatea pentru un feedback vizual extra */
+}
+
+/* Culorile tale premium */
+.ergonomics-txt { color: var(--color-ergonomics); }
+.design-txt { color: var(--color-design); }
+.sustainability-txt { color: var(--color-sustainability); }
+.turnkey-txt { color: var(--color-turnkey); }
+
+/* Responsive Mobil */
+@media (max-width: 1200px) {
+    .nav-group { display: none; }
+    .nav-container { display: flex; justify-content: space-between; }
+    .nav-center-logo { transform: none !important; }
+    .navbar.scrolled .nav-center-logo { transform: none !important; }
+}
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .nav-brands { display: none; } /* Ascundem pe tabletă/mobil pentru a nu aglomera */
+}
+
+/* AJUSTARE PENTRU CONȚINUT (Să nu intre sub navbar) */
+.page-wrapper {
+    padding-top: 85px;
+}
+
+.projects-container { 
+    max-width: 95vw;
+    margin: 0 auto; 
+    padding: 60px 5%; 
+    width: 90%; 
+    scroll-margin-top: 100px; /* Exact height of your navbar */
+}
+
+/* --- HERO SECTION --- */
+.hero-abstract { 
+    height: 92vh; 
+    padding: 0 8%; 
+    display: flex; 
+    align-items: center; 
+    /* Pure Rhino Style: Darker overlay for better text readability */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                url('../projects-pictures/skytower-hero.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+.hero-container { display: grid; grid-template-columns: 1.2fr 1fr; width: 100%; align-items: center; gap: 50px; }
+.hero-tag { text-transform: uppercase; letter-spacing: 5px; font-size: 11px; color: var(--primary); font-weight: 800; display: block; }
+.hero-title-main { 
+    font-size: clamp(3.5rem, 8vw, 6.5rem); 
+    line-height: 0.9; 
+    letter-spacing: -2px; 
+    margin: 20px 0 30px 0; 
+    font-weight: 800;
+    color: #ffffff; /* Solid White */
+    text-transform: none;
+}
+
+.hero-title-main span.font-serif{
+    display: block; /* Moves 'Workspaces' to its own line for a cleaner grid */
+    color: #bea791; /* Solid Brand Blue */
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -1px;
+}
+.font-serif {
+    display: block;
+    color: #bea791;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -1px;
+}
+
+.hero-desc { 
+    font-size: 18px; 
+    color: rgba(255, 255, 255, 0.75); 
+    max-width: 450px; 
+    line-height: 1.6; 
+    margin-bottom: 50px;
+    font-weight: 300;
+    border-left: 2px solid #bea791; /* Subtle architectural accent */
+    padding-left: 20px;
+}
+/* ARCHITECTURAL LIQUID BUTTON */
+.hero-discover-btn { 
+    background: transparent; 
+    color: white; 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    padding: 18px 45px; 
+    font-size: 12px; 
+    text-transform: uppercase; 
+    letter-spacing: 4px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 20px; 
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.hero-discover-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: -1;
+}
+
+.hero-discover-btn:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+.hero-discover-btn:hover::before {
+    left: 0;
+}
+
+.hero-discover-btn svg {
+    transition: transform 0.5s ease;
+}
+
+.hero-discover-btn:hover svg {
+    transform: translateY(5px);
+}
+
+.hero-gallery-abstract { position: relative; height: 500px; }
+.abs-img-main { width: 85%; height: 100%; position: relative; z-index: 2; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.1); border: 12px solid white; }
+.abs-img-1 { position: absolute; top: -15%; right: -10%; width: 50%; height: 60%; z-index: 1; opacity: 0.6; box-shadow: 0 40px 80px rgba(0,0,0,0.1);border: 12px solid white;}
+.abs-img-2 { position: absolute; bottom: -15%; left: -10%; width: 40%; height: 50%; z-index: 3; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 8px solid white; }
+.hero-gallery-abstract img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- TOOLBAR & GRID --- */
+.toolbar-visual { display: flex; justify-content: space-between; align-items: flex-end; padding: 60px 0 20px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 80px; flex-wrap: wrap;}
+.filter-bar-editorial { display: flex; gap: 40px; flex-wrap: wrap; }
+.filter-link { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); background: none; border: none; padding: 0 0 12px 0; position: relative; cursor: pointer; }
+.filter-link.active { color: var(--primary); font-weight: 800; border-bottom: 3px solid var(--primary); }
+.search-glass { 
+    display: flex; 
+    align-items: center; 
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.search-input-visual { border: none; outline: none; margin-left: 12px; font-size: 13px; background: transparent; }
+.search-container-visual {
+    flex-grow: 1; /* Search bar fills space on mobile */
+    max-width: 400px;
+    min-width: 280px;
+}
+
+.dynamic-grid-editorial { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px 40px; 
+    width: 100%; 
+}
+.project-card-editorial { position: relative; text-align: center; }
+/* Containerul devine pătrat și mai mic */
+.img-container-editorial { 
+    position: relative; 
+    aspect-ratio: 1 / 1; 
+    overflow: hidden; 
+    background: #fdfcfb; 
+    margin: 0 auto 25px; 
+    border-radius: 4px; 
+    width: 100%; /* Ocupă 90% din coloană pentru a lăsa spațiu între carduri */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+.img-editorial { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Revizuit la cover pentru a umple pătratul frumos */
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.project-card-editorial:hover .img-editorial { transform: scale(1.1); }
+.discover-badge-editorial { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110px; height: 110px; background: #bea791; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.6s; z-index: 20; color: white; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
+.project-card-editorial:hover .discover-badge-editorial { opacity: 1; }
+.cat-tag-editorial { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; color: var(--primary); font-weight: 800; display: block; margin-bottom: 10px; }
+.title-editorial {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--text-dark) !important; /* Forțăm gri închis profesional */
+    text-decoration: none !important;  /* Eliminăm sublinierile de link */
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+.hover-line-zen { width: 30px; height: 1.5px; background: var(--primary); margin: 25px auto 0; transition: width 0.7s; opacity: 0.3; }
+.project-card-editorial:hover .hover-line-zen { width: 80px; opacity: 1; }
+
+.project-card-editorial a {
+    text-decoration: none !important;
+}
+
+.project-card-editorial:hover .title-editorial {
+    color: var(--primary) !important;
+}
+
+/* --- VIEW MORE --- */
+.view-more-container { display: flex; justify-content: center; padding: 80px 0 100px; }
+.view-more-btn { background: none; border: none; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; cursor: pointer; position: relative; padding: 15px 0; font-weight: 700; }
+.btn-line { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; background: var(--primary); transition: width 0.4s; }
+.view-more-btn:hover .btn-line { width: 100%; color:#bea791}
+
+main.projects-container {
+    background: white;
+    position: relative;
+    z-index: 5;
+}
+
+/* --- CASE STUDY PARALLAX --- */
+.case-study-parallax { position: relative; height: 85vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.parallax-bg-wrapper { position: absolute; top: -20%; left: 0; width: 100%; height: 140%; z-index: 1; }
+.parallax-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
+.parallax-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 850px; padding: 0 5%; }
+.parallax-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; margin-bottom: 30px; }
+.parallax-desc { font-size: 20px; font-style: italic; font-family: 'Playfair Display', serif; margin-bottom: 45px; }
+.case-study-link { display: inline-flex; align-items: center; gap: 15px; color: white; text-decoration: none; font-size: 13px; text-transform: uppercase; border: 1px solid white; padding: 15px 35px; }
+
+/* --- CONTACT SECTION --- */
+.contact-section-editorial { 
+    padding: 120px 8%; 
+    /* Fundal întunecat Rhino-style */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('../projects-pictures/mindspaces.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 100px; align-items: center; }
+.contact-image-wrapper { height: 670px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.12); }
+.contact-img { width: 100%; height: 100%; object-fit: cover; }
+.contact-label { text-transform: uppercase; letter-spacing: 5px; font-size: 11px; color: var(--primary); font-weight: 800; display: block; margin-bottom: 20px; }
+.contact-title { 
+    font-size: 3.8rem; 
+    line-height: 1; 
+    font-weight: 300; 
+    margin-bottom: 25px; 
+    color: white !important;
+}
+.contact-desc { 
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: rgba(255, 255, 255, 0.7) !important; 
+    margin-bottom: 45px; 
+}
+.minimal-form .form-group { margin-bottom: 35px; }
+/* Reparare input-uri pe fundal închis */
+.minimal-form input, .minimal-form textarea { 
+    width: 100%; 
+    padding: 15px 0; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+    color: white !important;
+    outline: none; 
+    transition: 0.4s; 
+}
+.minimal-form input:focus { border-bottom-color: var(--primary); }
+.form-submit-btn { background: var(--text-dark); color: white; border: none; padding: 22px 50px; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 20px; transition: 0.4s; }
+.form-submit-btn:hover { background: #bea791; transform: translateX(12px); }
+
+.minimal-form input::placeholder, .minimal-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.partners-section {
+    padding: 120px 0;
+    background-color: var(--white);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.container {
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 5%;
 }
 
-.editorial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 80px 40px; 
-}
-
-
-@media (min-width: 900px) {
-    .project-card:nth-child(3n-1) { 
-        margin-top: 60px;
-    }
-}
-
-.project-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-}
-
-
-@media (min-width: 900px) {
-    .project-card:nth-child(even) {
-        margin-top: 120px;
-    }
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #e9e5e0;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.project-card:hover img {
-    transform: scale(1.08);
-}
-
-.project-info-box {
-    margin-top: 25px;
-    padding: 0 10px;
-}
-
-.cat-label {
+.section-label {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #c5a37d;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.title-display {
-    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
-    font-weight: 400;
-    color: #2d2a26;
-    line-height: 1.3;
-}
-
-.project-card:hover .title-display {
-    color: #c5a37d;
-}
-
-.hover-line {
-    width: 40px;
-    height: 1px;
-    background: #c5a37d;
-    margin-top: 20px;
-    transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.project-card:hover .hover-line {
-    width: 100px;
-}
-
-@media (max-width: 900px) {
-    .editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    .image-container {
-        aspect-ratio: 3 / 2;
-    }
-}
-
-.image-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(26, 23, 20, 0.6);
+.partners-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    backdrop-filter: blur(4px);
-    z-index: 2;
+    flex-wrap: wrap;
+    gap: 80px;
 }
 
-.view-text {
-    color: #c5a37d;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    font-weight: 600;
-    border: none;
-    padding: 0;
-    transform: translateY(25px);
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+.logo-card img {
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.4);
+    opacity: 0.5;
+    transition: all 0.4s ease;
 }
 
-
-.project-card:hover .image-overlay {
+.logo-card:hover img {
+    filter: grayscale(0%) brightness(0.2);
     opacity: 1;
+    transform: scale(1.05);
 }
 
-.project-card:hover .view-text {
-    transform: translateY(0);
+/* Stil special pentru branduri colorate la hover */
+.hm-logo:hover img { filter: brightness(0) saturate(100%) invert(35%) sepia(97%) saturate(5833%) hue-rotate(11deg) brightness(101%) contrast(106%) !important; }
+.knoll-logo:hover img { filter: brightness(0) saturate(100%) invert(31%) sepia(87%) saturate(4320%) hue-rotate(349deg) brightness(91%) contrast(97%) !important; }
+
+.main-footer { padding: 60px 0; text-align: center; background: #000; color: #fff; font-size: 11px; letter-spacing: 3px; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+    .contact-image-wrapper { height: 450px; }
 }
-
-
-.image-container img {
-    z-index: 1;
-}
-
-@media (max-width: 1100px) {
-    .editorial-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .project-card:nth-child(3n-1) { margin-top: 0; }
-    .project-card:nth-child(even) { margin-top: 60px; }
+@media (max-width: 768px) {
+    .navbar { height: 80px; }
+    .workspace-logo { height: 35px; }
+    .page-wrapper { padding-top: 80px; }
 }
 
 @media (max-width: 768px) {
-    .editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+    .dynamic-grid-editorial {
+        grid-template-columns: 1fr; /* Trece în 1 coloană pe mobil */
+        gap: 40px 0;
     }
-    .project-card:nth-child(even) { margin-top: 0; }
+    .projects-container {
+        width: 92%; /* Puțin mai lat pe mobil pentru a folosi ecranul mic eficient */
+    }
+    .img-container-editorial {
+        width: 100%; /* Pe mobil lăsăm imaginile mai mari */
+    }
+
+}
+
+/* --- TESTIMONIAL SLIDER SECTION --- */
+.testimonial-slider-section {
+    position: relative;
+    padding: 100px 0;
+    width: 100%;
+    background-color: #f7f7f7; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.testimonial-fixed-height-wrapper {
+    position: relative;
+    /* Calculăm o înălțime minimă suficientă pentru cel mai lung text */
+    min-height: 320px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-content {
+    /* Poziționare absolută în interiorul wrapper-ului fix pentru a preveni jumping-ul layout-ului */
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.testimonial-slider-section .parallax-bg-wrapper,
+.testimonial-slider-section .overlay-dark {
+    display: none;
+}
+
+.overlay-dark {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(26, 28, 32, 0.85); /* Overlay închis pentru lizibilitate */
+    z-index: 2;
+}
+
+.testimonial-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px; /* Puțin mai lat pentru citire ușoară */
+    width: 90%;
+    text-align: center;
+}
+
+.testimonial-brand {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.testimonial-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.2vw, 26px); /* Micșorat puțin pentru a preveni jumping-ul */
+    line-height: 1.6;
+    color: var(--text-dark); 
+    margin: 0 auto 30px;
+    max-width: 850px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-slider-section {
+        height: auto;
+        padding: 100px 0;
+    }
+    .hero-abstract {
+        height: auto;
+        padding: 140px 8% 80px; /* Space for the fixed navbar */
+    }
+}
+
+@media (max-width: 1024px) {
+    /* On tablet/small laptops, we simplify the hero gallery */
+    .hero-container {
+        grid-template-columns: 1fr; 
+        text-align: center;
+        justify-items: center;
+    }
+    
+    .hero-desc { 
+        margin: 0 auto 40px; 
+        border-left: none; 
+        border-top: 2px solid #bea791; 
+        padding: 20px 0 0 0; 
+    }
+    
+    .hero-gallery-abstract {
+        display: none !important; /* Removes the section and its space */
+    }
+    
+    /* Hide the overlapping smaller images to keep it clean */
+    .abs-img-1, .abs-img-2 { display: none; }
+    .abs-img-main { width: 100%; height: 100%; left: 0; }
+}
+
+@media (max-width: 768px) {
+    .navbar { height: 70px; }
+    .workspace-logo { height: 45px; }
+    
+    .hero-title-main { 
+        font-size: 3.2rem; 
+        letter-spacing: -1px;
+    }
+
+    /* Toolbar stacks vertically on phone */
+    .toolbar-visual {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .filter-bar-editorial {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .search-container-visual {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Testimonial height adjustment */
+    .testimonial-fixed-height-wrapper {
+        min-height: 400px;
+    }
 }

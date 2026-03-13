@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proiecte | Workspace Studio</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
     <link rel="stylesheet" href="proiecte.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
 </head>
-    <body class="bg-[#fcfaf7] text-[#1a1a1a]">
+<body>
 
-        <nav class="navbar">
+    <nav class="navbar main-nav">
+    <div class="nav-container">
+        <div class="nav-group left-side">
+            <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+            <span class="brand-name-text design-txt">Design</span>
+        </div>
+
+        <div class="nav-center-logo">
             <a href="../index.html" class="logo-link">
-                <div class="logo-container">
-                    <img src="../logos/workspace-logo.svg" alt="Workspace Logo" class="logo-symbol">
-                    <div class="logo-text">
-                        <span class="brand-name">WORKSPACE</span>
-                        <span class="brand-sub">STUDIO</span>
-                    </div>
-                    <div class="dealer-badge">
-                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer" class="certified-logo">
-                    </div>
-                </div>
+                <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
             </a>
-            <ul class="nav-links">
-                <li><a href="proiecte.html" class="hover:text-[#c5a37d] transition">Projects</a></li>
-                <li><a href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a></li>
-            </ul>
-        </nav>
+        </div>
 
-        <div id="projects-root"></div>
+        <div class="nav-group right-side">
+            <span class="brand-name-text sustainability-txt">Sustainability</span>
+            <span class="brand-name-text turnkey-txt">Turn Key</span>
+        </div>
 
-        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
-        <script type="text/babel" src="ProjectsScene.jsx"></script>
-    </body>
+        
+    </div>
+</nav>
+
+    <div id="projects-root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
+    <script type="text/babel" src="ProjectsScene.jsx"></script>
+    <script>
+        const navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
 </html>

@@ -105,14 +105,44 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
+/* Containerul principal */
 .nav-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 4%;
     display: flex;
-    justify-content: space-between; /* Împinge grupurile în lateral */
     align-items: center;
+    justify-content: space-between;
+}
+
+.nav-col {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+}
+
+/* Aliniere coloană stânga (Logo) */
+.nav-left {
+    justify-content: flex-start;
+}
+
+/* Aliniere coloană mijloc (Categorii) */
+.nav-center {
+    justify-content: center;
+    gap: 30px; /* Spațiu între cele 4 texte */
+}
+
+/* Aliniere coloană dreapta (Butoane) */
+.nav-right {
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav-navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 /* Forțăm culorile închise când navbar devine vizibil */
@@ -177,6 +207,40 @@ body {
     color: var(--accent-warm);
 }
 
+.nav-group-brands, .nav-navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-group-brands {
+    margin-left: auto; /* Împinge tot grupul spre dreapta */
+    margin-right: 40px; /* Separă grupul de branduri de Projects/Shop */
+}
+
+.ergonomics-txt { color: #e30613 !important; }    /* Roșu */
+.design-txt { color: #66007a !important; }        /* Violet */
+.sustainability-txt { color: #009640 !important; } /* Verde */
+.turnkey-txt { color: #004d43 !important; }       /* Verde închis */
+
+.nav-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    border-color: var(--accent-warm);
+    color: var(--accent-warm);
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -204,10 +268,22 @@ body {
     opacity: 0.8;
 }
 
+.workspace-logo, 
+.miller-dealer-logo {
+    margin: 0 !important;
+    display: block;
+}
+
 .workspace-logo {
-    height: 60px;
+    height: 60px; /* Redus puțin pentru a nu domina linia */
     width: auto;
-    transition: transform 0.4s ease;
+    padding-right: 15px;
+}
+
+.miller-dealer-logo {
+    height: 32px; /* MillerKnoll este de obicei mai scund vizual decât Workspace */
+    width: auto;
+    filter: brightness(0); /* Forțăm negru pentru navbar */
 }
 
 /* LOGO CENTRAT */
@@ -217,14 +293,15 @@ body {
 
 .brand-name-text {
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    position: relative;
-    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative; /* Necesar pentru linia de dedesubt */
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
-
 .nav-item:hover .nav-index {
     opacity: 1;
 }
@@ -246,15 +323,32 @@ body {
 .brand-name-text::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0;
     left: 0;
-    width: 0;
+    width: 0; /* Pleacă de la 0 */
     height: 2px;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+    background-color: currentColor; /* Ia automat culoarea textului (roșu, verde etc.) */
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.nav-item:hover .brand-name-text::after {
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    /* Valoarea de mai jos controlează distanța egală (Stânga - Linie - Dreapta) */
+    gap: 25px; 
+}
+
+.nav-logo-separator {
+    width: 1px !important; /* Forțăm lățimea minimă pentru precizie */
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.15); /* Negru foarte discret (stil premium) */
+}
+
+.brand-name-text:hover::after {
+    width: 100%;
+}
+
+.nav-item:hover {
     width: 100%;
 }
 
@@ -1600,4 +1694,57 @@ body {
     height: 80px;
     background: linear-gradient(to bottom, #c5a37d, transparent);
     display: block;
+}
+
+/* RESPONSIVE NAVBAR PENTRU TELEFON */
+@media (max-width: 768px) {
+    /* 1. Micșorăm înălțimea navbar-ului pe mobil */
+    .navbar {
+        height: 70px !important;
+    }
+    
+    .visible-nav {
+        height: 65px !important;
+    }
+
+    /* 2. Ascundem categoriile din mijloc (nu încap pe ecran mic) */
+    .nav-center {
+        display: none !important;
+    }
+
+    /* 3. Ajustăm spațierea containerului */
+    .nav-container {
+        padding: 0 5%;
+    }
+
+    /* 4. Micșorăm logourile și spațiul dintre ele */
+    .workspace-logo {
+        height: 35px !important;
+        padding-right: 10px !important;
+    }
+
+    .nav-logo-separator {
+        height: 20px !important;
+        margin: 0 10px !important;
+    }
+
+    .miller-dealer-logo {
+        height: 22px !important;
+    }
+
+    /* 5. Micșorăm butoanele din dreapta */
+    .nav-right {
+        gap: 10px !important;
+    }
+
+    .nav-btn {
+        font-size: 10px !important;
+        padding: 5px 8px !important;
+        letter-spacing: 1px !important;
+    }
+    
+    /* 6. Asigurăm alinierea extremă Stânga-Dreapta */
+    .nav-left, .nav-right {
+        flex: 1;
+    }
 }
