@@ -8,47 +8,75 @@
     <link rel="stylesheet" href="proiecte.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+    <body>
 
-    <nav class="navbar main-nav">
-    <div class="nav-container">
-        <div class="nav-group left-side">
-            <span class="brand-name-text ergonomics-txt">Ergonomics</span>
-            <span class="brand-name-text design-txt">Design</span>
-        </div>
+        <nav class="navbar main-nav hidden-nav">
+            <div class="nav-container">
+                <div class="nav-col nav-left">
+                    <div class="logo-wrapper">
+                        <a href="../index.html" class="logo-link">
+                            <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                        </a>
+                        <div class="nav-logo-separator"></div>
+                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                    </div>
+                </div>
 
-        <div class="nav-center-logo">
-            <a href="../index.html" class="logo-link">
-                <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
-            </a>
-        </div>
+                <div class="nav-col nav-center">
+                    <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+                    <span class="brand-name-text design-txt">Design</span>
+                    <span class="brand-name-text sustainability-txt">Sustainability</span>
+                    <span class="brand-name-text turnkey-txt">Turn Key</span>
+                </div>
 
-        <div class="nav-group right-side">
-            <span class="brand-name-text sustainability-txt">Sustainability</span>
-            <span class="brand-name-text turnkey-txt">Turn Key</span>
-        </div>
+                <div class="nav-col nav-right">
+                    <a href="proiecte.html" class="nav-btn">Projects</a>
+                    <a href="https://shop.workspaces.ro/en/catalog" target="_blank" class="nav-btn">Shop</a>
+                </div>
+            </div>
+        </nav>
 
-        
-    </div>
-</nav>
+        <div id="projects-root"></div>
 
-    <div id="projects-root"></div>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
+        <script type="text/babel" src="ProjectsScene.jsx"></script>
+        <script>
+            const nav = document.querySelector(".navbar");
 
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
-    <script type="text/babel" src="ProjectsScene.jsx"></script>
-    <script>
-        const navbar = document.querySelector(".navbar");
+            const handleNavScroll = () => {
+                // Căutăm Hero-ul de fiecare dată în caz că React l-a randat mai târziu
+                const heroSection = document.querySelector(".hero-abstract");
+                
+                if (!heroSection) {
+                    // Dacă încă nu a apărut Hero-ul, dar am scrollat puțin, îl arătăm oricum
+                    if (window.scrollY > 300) nav.classList.add("visible-nav");
+                    return;
+                }
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        });
-    </script>
-</body>
+                const heroHeight = heroSection.offsetHeight;
+                
+                if (window.scrollY >= heroHeight - 100) {
+                    nav.classList.add("visible-nav");
+                    nav.classList.remove("hidden-nav");
+                } else {
+                    nav.classList.remove("visible-nav");
+                    nav.classList.add("hidden-nav");
+                }
+            };
+
+            window.addEventListener("scroll", handleNavScroll);
+            
+            // Verificăm la intervale mici la început (fix pentru React)
+            const retryInterval = setInterval(() => {
+                handleNavScroll();
+                if (document.querySelector(".hero-abstract")) clearInterval(retryInterval);
+            }, 100);
+
+            // Oprirea intervalului după 3 secunde oricum
+            setTimeout(() => clearInterval(retryInterval), 3000);
+        </script>
+    </body>
 </html>

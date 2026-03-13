@@ -33,11 +33,30 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     position: fixed;
     top: 0; left: 0;
     width: 100%;
-    height: 100px;
-    background: var(--bg-warm-nav);
-    z-index: 9999;
+    height: 80px;
     display: flex;
     align-items: center;
+    z-index: 9999;
+    background-color: rgba(252, 250, 247, 0.98);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    
+    /* Starea de start: ascuns complet */
+    transform: translateY(-100%);
+    opacity: 0 !important; 
+    pointer-events: none;
+}
+
+
+.hidden-nav {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar.hidden-nav {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Starea la Scroll: Mai mic, transparent și blurat */
@@ -48,35 +67,44 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     -webkit-backdrop-filter: blur(15px);
 }
 
+.navbar.visible-nav {
+    transform: translateY(0);
+    opacity: 1 !important; /* FORȚĂM OPACITATEA 1 */
+    pointer-events: all;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
 .nav-container {
     width: 100%;
     max-width: 1800px;
     margin: 0 auto;
     padding: 0 4%;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Logo-ul forțat pe centru */
-    align-items: center;
-    position: relative;
-}
-
-/* Grupurile de branduri lipite de logo */
-.nav-group {
     display: flex;
-    gap: 40px; 
-    transition: all 0.5s ease;
+    justify-content: space-between;
     align-items: center;
-    flex: 1; /* Forțează grupurile să ocupe spațiu egal pentru centrare perfectă */
 }
 
-/* 2. Eliminăm marginile care stricau simetria față de logo */
-.nav-group.left-side { 
-    justify-content: flex-end; 
-    margin-right: 40px; /* Acum este egal cu gap-ul dintre cuvinte */
-}
+.nav-col { flex: 1; display: flex; align-items: center; }
+.nav-left { justify-content: flex-start; }
+.nav-center { justify-content: center; gap: 30px; }
+.nav-right { justify-content: flex-end; gap: 25px; }
 
-.nav-group.right-side { 
-    justify-content: flex-start; 
-    margin-left: 40px; /* Acum este egal cu gap-ul dintre cuvinte */
+.logo-wrapper { display: flex; align-items: center; }
+.workspace-logo { 
+    height: 50px !important; /* Mărime unificată */
+    width: auto; 
+    padding-right: 25px; 
+}
+.miller-dealer-logo { 
+    height: 30px !important; /* Mărime unificată */
+    width: auto; 
+    filter: brightness(0); 
+}
+.nav-logo-separator {
+    width: 1px !important;
+    height: 25px !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    margin: 0 25px !important;
 }
 
 /* Logo-ul care devine ancoră la scroll */
@@ -105,9 +133,6 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     transform: translateX(calc(-50vw + 120px)); 
 }
 
-.navbar.scrolled .workspace-logo {
-    height: 60px;
-}
 
 /* Link-urile din dreapta */
 .nav-links {
@@ -133,33 +158,25 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 .nav-links a:hover { opacity: 0.6; }
 
 /* Stil text branduri și pregătire pentru efectul de hover */
+/* BRAND TEXTS (CENTER) */
 .brand-name-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;         /* Mărit de la 13px */
-    font-weight: 800;        /* Extra-Bold pentru impact vizual */
+    font-size: 12px;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1.5px;   /* Spațiere mai generoasă între litere */
-    white-space: nowrap;
+    letter-spacing: 1px;
     position: relative;
-    padding: 8px 0;
+    padding-bottom: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
-
 .brand-name-text::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px; /* Linie mai vizibilă */
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
     background-color: currentColor;
     transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
-.brand-name-text:hover::after {
-    width: 100%; /* Se extinde pe toată lățimea la hover */
-}
+.brand-name-text:hover::after { width: 100%; }
 
 .brand-name-text:hover {
     opacity: 0.8; /* Scade ușor opacitatea pentru un feedback vizual extra */
@@ -170,6 +187,18 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 .design-txt { color: var(--color-design); }
 .sustainability-txt { color: var(--color-sustainability); }
 .turnkey-txt { color: var(--color-turnkey); }
+
+/* NAVIGATION BUTTONS (RIGHT) */
+.nav-btn {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-btn:hover { color: #c5a37d; }
 
 /* Responsive Mobil */
 @media (max-width: 1200px) {
@@ -185,7 +214,7 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 
 /* AJUSTARE PENTRU CONȚINUT (Să nu intre sub navbar) */
 .page-wrapper {
-    padding-top: 85px;
+    padding-top: 0px;
 }
 
 .projects-container { 
@@ -198,7 +227,7 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 
 /* --- HERO SECTION --- */
 .hero-abstract { 
-    height: 92vh; 
+    height: 100vh !important; /* Forțăm 100% din înălțimea ecranului */
     padding: 0 8%; 
     display: flex; 
     align-items: center; 
@@ -499,6 +528,15 @@ main.projects-container {
     .navbar { height: 80px; }
     .workspace-logo { height: 35px; }
     .page-wrapper { padding-top: 80px; }
+    .page-wrapper, body {
+        padding-top: 0 !important;
+    }
+
+    /* 2. Asigură-te că Hero-ul începe de la marginea de sus (Y=0) */
+    .snap-section:first-of-type, .hero-abstract {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -528,21 +566,18 @@ main.projects-container {
 }
 
 .testimonial-fixed-height-wrapper {
+    width: 100%;
+    /* Ajustează min-height dacă ai testimoniale foarte lungi */
+    min-height: 300px; 
     position: relative;
-    /* Calculăm o înălțime minimă suficientă pentru cel mai lung text */
-    min-height: 320px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .testimonial-content {
-    /* Poziționare absolută în interiorul wrapper-ului fix pentru a preveni jumping-ul layout-ului */
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* Forțăm centrarea textului indiferent de lungime */
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .testimonial-slider-section .parallax-bg-wrapper,
@@ -650,5 +685,52 @@ main.projects-container {
     /* Testimonial height adjustment */
     .testimonial-fixed-height-wrapper {
         min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Înălțime mai mică pentru ecrane mici */
+    .navbar {
+        height: 70px !important;
+    }
+    
+    .navbar.visible-nav {
+        height: 65px !important;
+    }
+
+    /* 2. ASCUNDEM CATEGORIILE (Ergonomics, Design etc.) */
+    .nav-center {
+        display: none !important;
+    }
+
+    /* 3. Ajustăm coloanele rămase pentru a ocupa tot spațiul */
+    .nav-left, .nav-right {
+        flex: 1;
+    }
+
+    /* 4. Micșorăm logo-urile și separatorul pentru a încăpea pe un rând */
+    .workspace-logo {
+        height: 35px !important;
+        padding-right: 12px !important;
+    }
+
+    .nav-logo-separator {
+        height: 20px !important;
+        margin: 0 12px !important;
+    }
+
+    .miller-dealer-logo {
+        height: 22px !important;
+    }
+
+    /* 5. Ajustăm butoanele Projects/Shop */
+    .nav-right {
+        gap: 10px !important;
+    }
+
+    .nav-btn {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+        padding: 5px !important;
     }
 }

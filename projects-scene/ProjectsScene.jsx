@@ -124,10 +124,10 @@ function ProjectsScene() {
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveTab((prev) => (prev + 1) % testimonials.length);
-        }, 8000); 
+        }, 8000);
 
-        return () => clearInterval(timer); // Curățăm timer-ul la demontarea componentei
-    }, []);
+        return () => clearInterval(timer);
+    }, [testimonials.length]);
 
     // EFECT PARALAX FIXED WINDOW (RHINO STYLE)
     const { scrollYProgress } = useScroll({
@@ -266,15 +266,17 @@ function ProjectsScene() {
 
             <section className="testimonial-slider-section">
                 <div className="testimonial-container">
-                    <div className="testimonial-fixed-height-wrapper"> {/* Container nou pentru înălțime fixă */}
+                    {/* Container cu înălțime minimă pentru a preveni jumping-ul layout-ului */}
+                    <div className="testimonial-fixed-height-wrapper" style={{ position: 'relative', width: '100%', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <AnimatePresence mode="wait">
                             <motion.div 
                                 key={activeTab}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.8, ease: "easeInOut" }}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                                 className="testimonial-content"
+                                style={{ position: 'absolute', width: '100%' }}
                             >
                                 <span className="testimonial-brand">{testimonials[activeTab].brand}</span>
                                 <p className="testimonial-quote">"{testimonials[activeTab].text}"</p>
