@@ -91,7 +91,7 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 
 .logo-wrapper { display: flex; align-items: center; }
 .workspace-logo { 
-    height: 50px !important; /* Mărime unificată */
+    height: 60px !important; /* Mărime unificată */
     width: auto; 
     padding-right: 25px; 
 }

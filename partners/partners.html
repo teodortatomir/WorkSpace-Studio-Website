@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Workspace Studio</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="partners.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="partners-light-theme">
+
+    <nav class="navbar main-nav visible-nav">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            
+            <div class="nav-col nav-center">
+                <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+                <span class="brand-name-text design-txt">Design</span>
+                <span class="brand-name-text sustainability-txt">Sustainability</span>
+                <span class="brand-name-text turnkey-txt">Turn Key</span>
+            </div>
+
+            <div class="nav-col nav-right">
+                <a href="../projects-scene/proiecte.html" class="nav-btn">Projects</a>
+                <a href="https://shop.workspaces.ro/en/catalog" target="_blank" class="nav-btn">Shop</a>
+                <a href="partners.html" class="nav-btn active">Partners</a>
+                <a href="../contact/contact.html" class="nav-btn">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="partners-page">
+        <header class="partners-hero">
+            <div class="container">
+                <span class="category-tag">Strategic Curation</span>
+                <h1 class="hero-title">Elevating <em>Work</em> through Design</h1>
+                <p class="hero-desc">We represent a curated selection of over 100 global manufacturers, led by our partnership with MillerKnoll.</p>
+            </div>
+        </header>
+
+        <section class="main-partners-grid">
+            <div class="container">
+                <h2 class="section-label">Strategic Partners</h2>
+                <div class="logo-grid">
+                    <div class="partner-card reveal">
+                        <div class="logo-box">
+                            <img src="../logos/hermanmiller-white-logo.png" alt="Herman Miller" class="dark-logo">
+                        </div>
+                        <div class="partner-info">
+                            <p>Pioneering design and ergonomic leadership.</p>
+                        </div>
+                    </div>
+                    <div class="partner-card reveal">
+                        <div class="logo-box">
+                            <img src="../logos/knoll-white-logo.png" alt="Knoll" class="dark-logo">
+                        </div>
+                        <div class="partner-info">
+                            <p>Modern classics and architectural integrity.</p>
+                        </div>
+                    </div>
+                    <div class="partner-card reveal">
+                        <div class="logo-box">
+                            <img src="../logos/framery-logo.png" alt="Framery" class="dark-logo">
+                        </div>
+                        <div class="partner-info">
+                            <p>World leader in office phone booths and pods.</p>
+                        </div>
+                    </div>
+                    <div class="partner-card reveal">
+                        <div class="logo-box">
+                            <img src="../logos/hay-logo.png" alt="Hay" class="dark-logo">
+                        </div>
+                        <div class="partner-info">
+                            <p>Contemporary Danish design for modern work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-list-section">
+            <div class="container">
+                <h2 class="section-label">Full Brand Portfolio</h2>
+                <div class="links-alphabetical">
+                    <div class="link-column">
+                        <a href="#" class="partner-link">Abstracta</a>
+                        <a href="#" class="partner-link">Andreu World</a>
+                        <a href="#" class="partner-link">Arper</a>
+                        <a href="#" class="partner-link">Bene</a>
+                        <a href="#" class="partner-link">BuzziSpace</a>
+                        <a href="#" class="partner-link">Cappellini</a>
+                    </div>
+                    <div class="link-column">
+                        <a href="#" class="partner-link">Maars Living Walls</a>
+                        <a href="#" class="partner-link">Muuto</a>
+                        <a href="#" class="partner-link">NaughtOne</a>
+                        <a href="#" class="partner-link">Orangebox</a>
+                        <a href="#" class="partner-link">Vitra</a>
+                        <a href="#" class="partner-link">Zoco Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="partners-footer">
+        <p>&copy; 2026 WORKSPACE STUDIO. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

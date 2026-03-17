@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Workspace Studio</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar main-nav visible-nav">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+
+            <div class="nav-col nav-center">
+                <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+                <span class="brand-name-text design-txt">Design</span>
+                <span class="brand-name-text sustainability-txt">Sustainability</span>
+                <span class="brand-name-text turnkey-txt">Turn Key</span>
+            </div>
+
+            <div class="nav-col nav-right">
+                <a href="../projects-scene/proiecte.html" class="nav-btn">Projects</a>
+                <a href="https://shop.workspaces.ro/en/catalog" target="_blank" class="nav-btn">Shop</a>
+                <a href="#" class="nav-btn">Partners</a> <a href="contact.html" class="nav-btn">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-scene">
+        <div class="contact-grid">
+            <section class="contact-form-container">
+                <header class="contact-header">
+                    <span class="category-tag">Let's Connect</span>
+                    <h1 class="contact-title">Start your <em>workspace</em> transition</h1>
+                    <p class="contact-subtitle">Whether you're looking for a workplace audit or a full turn-key solution, our specialists are ready to assist.</p>
+                </header>
+
+                <form class="workspace-form" id="contactForm" action="https://formspree.io/f/mwvrnypv" method="POST" novalidate>
+                    <div id="formStatus" class="form-status"></div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Company</label>
+                            <input type="text" name="company" placeholder="Your Company" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="email@company.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" placeholder="Tell us about your objectives..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span>Send Message</span>
+                        <div class="btn-line"></div>
+                    </button>
+                </form>
+            </section>
+
+            <aside class="contact-info-container">
+                <div class="info-block">
+                    <span class="info-label">Visit our Showroom</span>
+                    <h3>Sky Tower Bucharest</h3>
+                    <p>Calea Floreasca 246C, Floor 18<br>Bucharest, Romania</p>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">Talk to us</span>
+                    <p>office@workspaces.ro<br>Phone: +40-31-4371252 | Fax: +40-31-4371253</p>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.464670255551!2d26.103923476652684!3d44.46452290025983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f7d6396f4991%3A0x6338421448834925!2sSky%20Tower!5e0!3m2!1sro!2sro!4v1710500000000!5m2!1sro!2sro" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(1) invert(0.92) contrast(1.2) brightness(0.9);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="contact-footer">
+        <p>© 2026 WORKSPACE STUDIO. PREMIUM WORKPLACE SOLUTIONS.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const statusDiv = document.getElementById('formStatus');
+            const submitBtn = document.getElementById('submitBtn');
+            const form = e.target;
+            
+            const nameInput = form.querySelector('input[name="name"]');
+            const companyInput = form.querySelector('input[name="company"]');
+            const emailInput = form.querySelector('input[name="email"]');
+            const messageInput = form.querySelector('textarea[name="message"]');
+
+            // Reset status
+            statusDiv.style.display = 'none';
+            statusDiv.offsetHeight; 
+            statusDiv.className = 'form-status';
+
+            let errorMessage = "";
+
+            if (!nameInput.value.trim()) {
+                errorMessage = "Please enter your full name.";
+                nameInput.focus();
+            } 
+            else if (!companyInput.value.trim()) {
+                errorMessage = "Please enter your company name.";
+                companyInput.focus();
+            }
+            else if (!emailInput.value.trim()) {
+                errorMessage = "An email address is required.";
+                emailInput.focus();
+            } 
+            else if (!emailInput.checkValidity()) {
+                errorMessage = "Please enter a valid email format.";
+                emailInput.focus();
+            }
+            else if (!messageInput.value.trim()) {
+                errorMessage = "Please enter your message.";
+                messageInput.focus();
+            }
+
+            if (errorMessage) {
+                statusDiv.innerText = errorMessage;
+                statusDiv.classList.add('error');
+                statusDiv.style.display = 'block';
+            } else {
+                // MODIFICARE: Trimitere Reală prin AJAX (Fetch)
+                const data = new FormData(form);
+                
+                // Feedback vizual: Schimbăm textul butonului în timp ce trimite
+                const originalBtnText = submitBtn.querySelector('span').innerText;
+                submitBtn.querySelector('span').innerText = "Sending...";
+                submitBtn.style.opacity = "0.7";
+                submitBtn.disabled = true;
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    submitBtn.querySelector('span').innerText = originalBtnText;
+                    submitBtn.style.opacity = "1";
+                    submitBtn.disabled = false;
+
+                    if (response.ok) {
+                        statusDiv.innerText = 'Thank you! Your message has been sent directly to our team.';
+                        statusDiv.classList.add('success');
+                        statusDiv.style.display = 'block';
+                        form.reset();
+                    } else {
+                        statusDiv.innerText = 'Oops! There was a problem. Please try again.';
+                        statusDiv.classList.add('error');
+                        statusDiv.style.display = 'block';
+                    }
+                }).catch(error => {
+                    submitBtn.querySelector('span').innerText = originalBtnText;
+                    submitBtn.style.opacity = "1";
+                    submitBtn.disabled = false;
+                    
+                    statusDiv.innerText = 'Network error. Please check your connection.';
+                    statusDiv.classList.add('error');
+                    statusDiv.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

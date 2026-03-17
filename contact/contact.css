@@ -1,0 +1,274 @@
+/* ==========================================================================
+   INDEPENDENT CONTACT SCENE (All-in-One CSS)
+   ========================================================================== */
+
+:root {
+    --bg-warm: #fcfaf7;
+    --accent-warm: #c5a37d;
+    --text-main: #2d2a26;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-warm);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR REPLICATION --- */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: 80px;
+    background-color: rgba(252, 250, 247, 0.98);
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    opacity: 1 !important; /* Forțăm vizibilitatea */
+    transform: translateY(0) !important; /* Forțăm poziția corectă */
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-col { flex: 1; display: flex; align-items: center; }
+.nav-left { justify-content: flex-start; }
+.nav-center { justify-content: center; gap: 30px; }
+.nav-right { justify-content: flex-end; gap: 1px; }
+
+/* Logouri */
+.logo-wrapper { display: flex; align-items: center; gap: 15px; }
+.workspace-logo { height: 60px; width: auto; }
+.miller-dealer-logo { height: 28px; width: auto; filter: brightness(0); }
+.nav-logo-separator { 
+    width: 1px; 
+    height: 22px; 
+    background-color: rgba(0,0,0,0.15); 
+    margin: 0 5px; 
+}
+
+/* Stil Categorii Centru */
+.brand-name-text {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+}
+
+.brand-name-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.ergonomics-txt { color: #e30613 !important; }
+.design-txt { color: #66007a !important; }
+.sustainability-txt { color: #009640 !important; }
+.turnkey-txt { color: #004d43 !important; }
+
+.brand-name-text:hover::after { width: 100%; }
+
+.nav-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 8px 15px; /* Spațiu pentru a face border-ul vizibil */
+    border: 1px solid transparent; /* Border inițial invizibil */
+    transition: all 0.3s ease; /* Animație fluidă pentru culoare și border */
+}
+
+.nav-btn:hover {
+    border-color: var(--accent-warm); /* Apare border-ul bronz */
+    color: var(--accent-warm) !important; /* Textul devine bronz */
+    opacity: 1; /* Resetăm opacitatea dacă era setată anterior */
+}
+
+/* --- MAIN CONTENT --- */
+.contact-scene {
+    padding: 120px 0 60px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    gap: 80px;
+}
+
+.category-tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-warm);
+    font-weight: 600;
+}
+
+.contact-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin: 20px 0;
+    color: var(--text-main);
+}
+
+.contact-title em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-warm); }
+
+.contact-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+/* --- FORM STYLING --- */
+.workspace-form { display: flex; flex-direction: column; gap: 25px; }
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.input-group { display: flex; flex-direction: column; gap: 8px; }
+.input-group label { font-size: 10px; text-transform: uppercase; font-weight: 800; color: var(--accent-warm); letter-spacing: 2px; }
+.input-group input, .input-group textarea {
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background: none; border: none; cursor: pointer; text-align: left; padding: 20px 0;
+}
+.submit-btn span { font-weight: 800; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; color: var(--text-main); }
+.btn-line { width: 40px; height: 2px; background: var(--accent-warm); margin-top: 8px; transition: 0.4s; }
+.submit-btn:hover .btn-line { width: 100px; }
+
+.form-status {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 0.9rem;
+    display: none; 
+    border-left: 3px solid;
+    animation: slideIn 0.3s ease-out; /* Makes it "appear" actively */
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-status.error {
+    color: #d93025;
+    border-color: #d93025;
+    background: rgba(217, 48, 37, 0.05);
+}
+
+.form-status.success {
+    color: #188038;
+    border-color: #188038;
+    background: rgba(24, 128, 56, 0.05);
+}
+
+/* --- MAP & INFO --- */
+.contact-info-container {
+    background: var(--text-main);
+    color: white;
+    padding: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info-label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-warm);
+    margin-bottom: 15px;
+}
+
+.info-block h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
+.info-block p { font-weight: 300; line-height: 1.6; opacity: 0.8; }
+
+.map-wrapper { 
+    height: 320px; 
+    border-radius: 2px; 
+    overflow: hidden;
+    position: relative;
+    /* Adaugă o bordură subtilă pentru a defini zona pe fundalul Coal */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.map-overlay-link {
+    position: absolute;
+    bottom: 15px; left: 15px;
+    background: var(--accent-warm);
+    color: white;
+    padding: 10px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 10;
+    font-weight: 800;
+    border-radius: 2px;
+}
+
+/* --- FOOTER --- */
+.contact-footer { padding: 80px 0 40px; text-align: center; font-size: 10px; letter-spacing: 2px; opacity: 0.5; }
+
+/* ==========================================================================
+   MOBILE OPTIMIZATION (FORȚĂM ALINIEREA LA MARGINI CA ÎN PROJECTS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar { height: 70px !important; }
+    .nav-container { justify-content: space-between !important; padding: 0 5% !important; }
+    .nav-col.nav-left, .nav-col.nav-right { flex: 1 !important; display: flex; }
+    .nav-left { justify-content: flex-start !important; }
+    .nav-right { justify-content: flex-end !important; }
+    .logo-wrapper { gap: 12px !important; }
+    .workspace-logo { height: 32px !important; }
+    .nav-logo-separator { height: 18px !important; margin: 0 10px !important; }
+    .miller-dealer-logo { height: 20px !important; }
+
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-info-container { padding: 30px; }
+    .input-row { grid-template-columns: 1fr; }
+    .contact-scene { padding-top: 100px; }
+}
+
+@media (max-width: 1024px) {
+    .nav-center { display: none !important; } /* Ascundem categoriile pe tableta/mobil */
+    .nav-left, .nav-right { flex: 1; }
+}

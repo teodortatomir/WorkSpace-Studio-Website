@@ -112,31 +112,19 @@ body {
     margin: 0 auto;
     padding: 0 4%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-.nav-col {
-    flex: 1; 
-    display: flex;
     align-items: center;
 }
 
-/* Aliniere coloană stânga (Logo) */
-.nav-left {
-    justify-content: flex-start;
-}
 
-/* Aliniere coloană mijloc (Categorii) */
-.nav-center {
-    justify-content: center;
-    gap: 30px; /* Spațiu între cele 4 texte */
-}
+.nav-col { flex: 1; display: flex; align-items: center; }
+.nav-left { justify-content: flex-start; }
+.nav-center { justify-content: center; gap: 30px; }
 
-/* Aliniere coloană dreapta (Butoane) */
-.nav-right {
-    justify-content: flex-end;
-    gap: 20px;
+/* GAP de 1px între butoane așa cum ai cerut */
+.nav-right { 
+    justify-content: flex-end; 
+    gap: 1px !important; 
 }
 
 .nav-navigation-links {
@@ -225,21 +213,25 @@ body {
 
 .nav-btn {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-dark);
+    color: var(--text-main);
     text-decoration: none;
     padding: 8px 15px;
-    border: 1px solid transparent;
+    border: 1px solid transparent; /* Pregătim border-ul pentru hover */
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
-    border-color: var(--accent-warm);
-    color: var(--accent-warm);
+    border-color: var(--accent-warm); /* Apare chenarul bronz */
+    color: var(--accent-warm) !important; /* Textul devine bronz */
+    opacity: 1;
 }
+
+
 
 .nav-links a {
     color: white;
@@ -268,11 +260,7 @@ body {
     opacity: 0.8;
 }
 
-.workspace-logo, 
-.miller-dealer-logo {
-    margin: 0 !important;
-    display: block;
-}
+.miller-dealer-logo { height: 28px; width: auto; filter: brightness(0); transition: all 0.4s ease; }
 
 .workspace-logo {
     height: 60px; /* Redus puțin pentru a nu domina linia */
@@ -331,17 +319,13 @@ body {
     transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    /* Valoarea de mai jos controlează distanța egală (Stânga - Linie - Dreapta) */
-    gap: 25px; 
-}
+.logo-wrapper { display: flex; align-items: center; gap: 15px; }
 
-.nav-logo-separator {
-    width: 1px !important; /* Forțăm lățimea minimă pentru precizie */
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.15); /* Negru foarte discret (stil premium) */
+.nav-logo-separator { 
+    width: 1px; 
+    height: 22px; 
+    background-color: rgba(0,0,0,0.15); 
+    margin: 0 5px; 
 }
 
 .brand-name-text:hover::after {
