@@ -23,7 +23,7 @@ html, body {
 }
 
 /* Corecție pentru secțiunile care folosesc 100vw */
-.hero, .mission-minimal, .ntgrate-services, .pivot-projects, .design-exploration, .partners-section {
+.hero, .mission-minimal, .ntgrate-services, .pivot-projects, .design-exploration, .partners-section, .why-us-section {
     width: 100%; /* Înlocuiește 100vw cu 100% peste tot unde apare */
     max-width: 100%;
     overflow-x: hidden;
@@ -96,6 +96,7 @@ body {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
+    transition: all 0.5s ease;
 }
 
 /* Stil când devine vizibil după Hero (Scroll) */
@@ -949,12 +950,17 @@ body {
    ========================================================================== */
 
 .pivot-projects {
-    padding: 80px 5%;
+    padding: 120px 5% 80px 5%; /* Am mărit padding-ul de sus de la 80px la 120px */
     background: #fff;
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
+    
+    /* ACEASTA ESTE CHEIA: */
+    scroll-margin-top: 80px; /* Îi spune browserului să oprească snap-ul cu 80px mai sus, lăsând loc navbar-ului */
 }
+
+
 
 .split-row {
     display: flex;
@@ -1739,4 +1745,362 @@ body {
 
     /* 6. Fix pentru spațiul alb de sus */
     .page-wrapper, body { padding-top: 0 !important; }
+}
+
+
+.nav-right {
+    justify-content: flex-end;
+    gap: 1px !important; /* Gap de 1px cerut */
+}
+
+/* Stil butoane navbar pentru consistență cu Contact */
+.nav-btn {
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    border-color: var(--accent-warm);
+    color: var(--accent-warm) !important;
+}
+
+/* Reparație spațiu alb Section 4 */
+#contact-cta {
+    min-height: 60vh !important;
+}
+
+/* --- HAMBURGER BUTTON --- */
+.menu-toggle {
+    background: none; border: none; cursor: pointer;
+    display: flex; flex-direction: column; gap: 6px; padding: 10px;
+}
+.hamburger-line {
+    width: 30px; height: 2px; background-color: var(--text-main);
+    transition: 0.3s;
+}
+
+/* --- MENU OVERLAY CORECPȚIE --- */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 10000;
+    
+    /* Îl mutăm pe tot în stânga la început */
+    transform: translateX(-100%); 
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    
+    display: flex !important; /* Forțăm flex pentru a vedea ambele coloane */
+    visibility: hidden;
+}
+
+.menu-overlay.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* Containerul care împarte ecranul */
+.menu-split-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* PARTEA STÂNGĂ (IMAGINEA) */
+.menu-left-images {
+    flex: 1.2;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-img-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* All hidden by default */
+    transition: opacity 0.4s ease-in-out; /* Smooth fade */
+    will-change: opacity; /* Optimizes rendering */
+}
+
+.menu-img-item.active {
+    opacity: 0.8; /* Show active one */
+}
+
+.menu-left-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    inset: 0;
+}
+
+.menu-left-images img.active {
+    opacity: 0.8;
+}
+
+/* PARTEA DREAPTĂ (ALBĂ CU TEXT) */
+.menu-right-content {
+    flex: 0.8; /* Ocupă aprox 40% */
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 5%;
+    position: relative;
+    height: 100%;
+    
+    /* Efectul de intrare pentru text */
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease 0.4s; /* Apare după ce glisarea este aproape gata */
+}
+
+.menu-overlay.active .menu-right-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- REGLAJE TEXT (Foster Style) --- */
+.menu-label-top {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.menu-right-links {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-nav-item {
+    margin: 8px 0; /* Mai compact decât înainte */
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.03); /* Linie foarte discretă */
+    padding-bottom: 5px;
+}
+
+.menu-nav-item a {
+    font-size: clamp(1.2rem, 2.5vw, 2.2rem); /* Ușor mai mic pentru a preveni scroll-ul în meniu */
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 300;
+    transition: all 0.3s ease;
+    letter-spacing: -0.5px;
+}
+
+.menu-nav-item:hover a {
+    transform: translateX(15px);
+    color: var(--accent-warm);
+}
+
+/* Footer-ul din meniu */
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.menu-close {
+    position: absolute;
+    top: 30px; /* Distanța de sus */
+    right: 30px; /* Distanța de marginea din dreapta a ecranului */
+    width: 50px;
+    height: 50px;
+    background-color: #000; /* Fundal negru */
+    color: #fff; /* X-ul alb */
+    border: none;
+    border-radius: 50%; /* Îl face cerc */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10002; /* Peste tot conținutul overlay-ului */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0; /* Pleacă de la invizibil pentru animație */
+}
+
+.menu-close:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-warm); /* Devine bronz la hover (opțional) */
+}
+
+/* Apare când meniul este activ */
+.menu-overlay.active .menu-close {
+    opacity: 1;
+}
+
+.menu-socials { display: flex; gap: 15px; }
+.menu-socials a { font-size: 10px; text-decoration: none; color: #666; text-transform: uppercase; }
+
+.menu-secondary-logo img {
+    height: 30px; /* Dimensiune vizibilă dar elegantă */
+    width: auto;
+    filter: brightness(0); /* Forțăm negru dacă SVG-ul este colorat */
+}
+
+.why-us-section {
+    position: relative;
+    padding: 110px 5vw;
+    background:
+        radial-gradient(circle at top left, rgba(197, 163, 125, 0.18), transparent 34%),
+        linear-gradient(180deg, #f7f3ee 0%, #ffffff 58%, #fcfaf7 100%);
+}
+
+.why-us-shell {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(320px, 1.05fr) minmax(420px, 1.2fr);
+    gap: 42px;
+    align-items: start;
+}
+
+.why-us-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.why-us-intro h2 {
+    margin-top: 16px;
+    font-size: clamp(2.4rem, 4.2vw, 4.4rem);
+    line-height: 1.05;
+    font-weight: 400;
+    color: var(--text-main);
+}
+
+.why-us-intro p {
+    margin-top: 22px;
+    max-width: 560px;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: rgba(45, 42, 38, 0.76);
+}
+
+.why-us-metrics {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.metric-card {
+    padding: 24px 22px;
+    border: 1px solid rgba(45, 42, 38, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 22px 44px rgba(42, 35, 28, 0.08);
+}
+
+.metric-value {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif;
+    font-size: 2.3rem;
+    color: var(--accent-warm);
+    line-height: 1;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: rgba(45, 42, 38, 0.75);
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.why-card {
+    position: relative;
+    min-height: 260px;
+    padding: 28px;
+    border: 1px solid rgba(45, 42, 38, 0.08);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(248,243,236,0.88) 100%);
+    box-shadow: 0 24px 60px rgba(42, 35, 28, 0.09);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.why-card:nth-child(2),
+.why-card:nth-child(4) {
+    margin-top: 36px;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 163, 125, 0.4);
+    box-shadow: 0 32px 70px rgba(42, 35, 28, 0.13);
+}
+
+.why-card-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+    background: rgba(197, 163, 125, 0.14);
+    color: var(--accent-warm);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.why-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.why-card p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: rgba(45, 42, 38, 0.74);
+}
+
+@media (max-width: 768px) {
+    .why-us-section {
+        padding: 84px 22px;
+    }
+
+    .why-us-shell {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .why-us-intro {
+        position: static;
+    }
+
+    .why-us-metrics,
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-card:nth-child(2),
+    .why-card:nth-child(4) {
+        margin-top: 0;
+    }
 }

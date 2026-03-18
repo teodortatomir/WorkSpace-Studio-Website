@@ -9,235 +9,244 @@
 </head>
 <body>
     <nav class="navbar main-nav hidden-nav">
-        <div class="nav-container">
-            <div class="nav-col nav-left">
-                <div class="logo-wrapper">
-                    <a href="index.html" class="logo-link">
-                        <img src="logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
-                    </a>
-                    <div class="nav-logo-separator"></div>
-                    <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
-                </div>
-            </div>
-
-            <div class="nav-col nav-center">
-                <span class="brand-name-text ergonomics-txt">Ergonomics</span>
-                <span class="brand-name-text design-txt">Design</span>
-                <span class="brand-name-text sustainability-txt">Sustainability</span>
-                <span class="brand-name-text turnkey-txt">Turn Key</span>
-            </div>
-
-            <div class="nav-col nav-right">
-                <a href="projects-scene/proiecte.html" class="nav-btn">Projects</a>
-                <a href="https://shop.workspaces.ro/en/catalog" target="_blank" class="nav-btn">Shop</a>
-                <a href="#" class="nav-btn">Partners</a>
-                <a href="contact/contact.html" class="nav-btn">Contact</a>
+    <div class="nav-container">
+        <div class="nav-col nav-left">
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo-link">
+                    <img src="logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                </a>
+                <div class="nav-logo-separator"></div>
+                <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
             </div>
         </div>
-    </nav>
+
+        <div class="nav-col nav-center">
+            <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+            <span class="brand-name-text design-txt">Design</span>
+            <span class="brand-name-text sustainability-txt">Sustainability</span>
+            <span class="brand-name-text turnkey-txt">Turn Key</span>
+        </div>
+
+        <div class="nav-col nav-right">
+            <button class="menu-toggle" id="menuOpen">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div style="display: none; visibility: hidden; width: 0; height: 0; overflow: hidden;">
+    <img src="felipe-furtado-2zDXqgTzEFE-unsplash.jpg">
+    <img src="scott-graham-5fNmWej4tAA-unsplash.jpg">
+    <img src="projects-pictures/leading-game-company.jpg">
+    <img src="projects-pictures/skytower-hero.jpg">
+    <img src="rohan-makhecha-jw3GOzxiSkw-unsplash.jpg">
+    <img src="projects-pictures/coca-cola.jpg">
+    <img src="julian-hochgesang-psGV5KhidlY-unsplash.jpg">
+</div>
+
+<div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose">&times;</button>
     
-        <header class="hero" id="hero">
-            <div class="scroll-indicator-wrapper">
-                <span class="scroll-text">Scroll to explore</span>
-                <div class="scroll-line-center"></div>
-            </div>
-
-            <div class="hero-video-container">
-                <video id="heroVideo" autoplay muted loop playsinline class="hero-bg-video">
-                    <source src="videos/video-workspace.mp4" type="video/mp4">
-                </video>
-                <div class="hero-overlay-dark"></div>
-            </div>
-
-            <div class="hero-content-minimal" id="heroTextContainer">
-                <span class="hero-subtitle" id="dynamicSubtitle">Design & Build Excellence</span>
-                <h1 class="hero-title" id="dynamicTitle">Tailored <em>Workspaces</em></h1>
-                <p class="hero-desc" id="dynamicDesc">Office interiors fully customized to fit the needs of your workforce and organizational objectives.</p>
-                
-                <div id="heroBadges" class="hero-badges-container">
-                    <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="hero-badge-item">
-                </div>
-            </div>
-        </header>
-
-        <section class="mission-minimal" id="mission">
-            <div class="container">
-                <div class="mission-wrapper">
-                    <span class="mission-label">WHAT WE DO</span>
-                    <h2 class="mission-text animate-on-scroll">
-                        We <span class="dark-accent">Design and Build</span> your office interior fully customized 
-                        to fit the needs of your workforce and the objectives of your organization.
-                    </h2>
-                    <div class="mission-line"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="ntgrate-services" id="services">
-            <div class="services-header reveal">
-                <span class="category-tag">What we offer</span>
-                <h2>Our <span class="font-serif italic text-[#c5a37d]">Services</span></h2>
-            </div>
+    <div class="menu-split-container">
+        <div class="menu-left-images">
+            <img src="felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects">
+            <img src="scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services">
+            <img src="projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners">
+            <img src="projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about">
+            <img src="rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights">
+            <img src="projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop">
+            <img src="julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact">
+        </div>
+        <div class="menu-right-content">
+            <span class="menu-label-top">Menu</span>
             
-            <div class="ntgrate-container">
-                <div class="nt-card">
-                    <a href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block; height: 100%; width: 100%;">
-                        <img src="https://images.unsplash.com/photo-1505409859467-3a796fd5798e?q=80&w=2000" alt="Office Furniture">
-                        <div class="nt-content">
-                            <h3>Office Furniture</h3>
-                        </div>
-                    </a>
-                </div>
+            <nav class="menu-right-links">
+                <div class="menu-nav-item" data-target="img-projects"><a href="projects-scene/proiecte.html">Projects</a></div>
+                <div class="menu-nav-item" data-target="img-services"><a href="#services">Services</a></div>
+                <div class="menu-nav-item" data-target="img-partners"><a href="partners/partners.html">Brands & Partners</a></div>
+                <div class="menu-nav-item" data-target="img-about"><a href="#">About</a></div>
+                <div class="menu-nav-item" data-target="img-insights"><a href="#">Insights</a></div>
+                <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="contact/contact.html">Contact / Start a Project</a></div>
+            </nav>
 
-                <div class="nt-card">
-                    <a href="our-services/design-services.html" style="text-decoration: none; display: block; height: 100%; width: 100%;">
-                        <img src="our-services/design_and_build.jpg" alt="Design Services">
-                        <div class="nt-content">
-                            <h3>Design & Build</h3>
-                        </div>
-                    </a>
+            <div class="menu-footer">
+                <div class="menu-socials">
+                    <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
+                    <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
                 </div>
-
-                <div class="nt-card">
-                    <a href="our-services/turn-key.html" style="text-decoration: none; display: block; height: 100%; width: 100%;">
-                        <img src="our-services/turn-key-solutions.jpg" alt="Turn-key">
-                        <div class="nt-content">
-                            <h3>Turn-key Solutions</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="nt-card">
-                    <a href="our-services/workspace-consultancy.html" style="text-decoration: none; display: block; height: 100%; width: 100%;">
-                        <img src="our-services/workspace_consultancy_cropped.jpg" alt="Consultancy">
-                        <div class="nt-content">
-                            <h3>Workspace Consultancy</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="nt-card">
-                    <a href="our-services/ergonomics-specialists.html" style="text-decoration: none; display: block; height: 100%; width: 100%;">
-                        <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80&w=800" alt="Ergonomics">
-                        <div class="nt-content">
-                            <h3>Ergonomics Specialists</h3>
-                        </div>
-                    </a>
+                <div class="menu-secondary-logo">
+                    <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</div>
 
-        <section class="pivot-projects" id="projects">
-            <div class="split-row">
-                <div class="split-image">
-                    <img src="images/uipath-header.jpg" alt="UiPath Office Design">
-                </div>
-                <div class="split-text">
-                    <span class="category">Technology / AI</span>
-                    <h2>UiPath Global Office</h2>
-                    <p>Efficiency and technology integrated into a minimalist design, reflecting the values of the first Romanian unicorn.</p>
-                    <a href="projects/UiPath/uipath.html" class="pivot-link">VIEW THE PROJECT</a>
-                </div>
+    <header class="hero" id="hero">
+        <div class="hero-video-container">
+            <video id="heroVideo" autoplay muted loop playsinline class="hero-bg-video">
+                <source src="videos/video-workspace.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay-dark"></div>
+        </div>
+        <div class="hero-content-minimal" id="heroTextContainer">
+            <span class="hero-subtitle" id="dynamicSubtitle">Design & Build Excellence</span>
+            <h1 class="hero-title" id="dynamicTitle">Tailored <em>Workspaces</em></h1>
+            <p class="hero-desc" id="dynamicDesc">Office interiors fully customized to fit the needs of your workforce and organizational objectives.</p>
+            
+            <div id="heroBadges" class="hero-badges-container">
+                <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="hero-badge-item">
             </div>
+        </div>
+    </header>
 
-            <div class="split-row reverse">
-                <div class="split-image">
-                    <img src="images/adobe-header.jpg" alt="Adobe Romania Office">
-                </div>
-                <div class="split-text">
-                    <span class="category">Software / Creativity</span>
-                    <h2>Adobe Headquarters</h2>
-                    <p>A vibrant and dynamic environment, created to stimulate innovation and creativity for the Adobe Romania team.</p>
-                    <a href="#" class="pivot-link">VIEW THE PROJECT</a>
-                </div>
+    <section class="pivot-projects" id="projects">
+        <div class="services-header reveal">
+            <span class="category-tag">Portfolio</span>
+            <h2>Featured <span class="font-serif italic text-[#c5a37d]">Projects</span></h2>
+        </div>
+        
+        <div class="split-row">
+            <div class="split-image"><img src="images/uipath-header.jpg" alt="UiPath"></div>
+            <div class="split-text">
+                <span class="category">Technology / AI</span>
+                <h2>UiPath Global Office</h2>
+                <p>Efficiency and technology integrated into a minimalist design, reflecting the values of the first Romanian unicorn.</p>
+                <a href="projects/UiPath/uipath.html" class="pivot-link">VIEW PROJECT</a>
             </div>
+        </div>
 
-            <div class="split-row">
-                <div class="split-image">
-                    <img src="images/omvpetrom-header.jpg" alt="OMV Petrom City">
-                </div>
-                <div class="split-text">
-                    <span class="category">Energy / Corporate Campus</span>
-                    <h2>OMV Petrom</h2>
-                    <p>Petrom City — a sustainable and ergonomic approach to the workspace for the largest energy group in Southeast Europe.</p>
-                    <a href="#" class="pivot-link">VIEW THE PROJECT</a>
-                </div>
+        <div class="split-row reverse">
+            <div class="split-image"><img src="images/adobe-header.jpg" alt="Adobe"></div>
+            <div class="split-text">
+                <span class="category">Software / Creativity</span>
+                <h2>Adobe Headquarters</h2>
+                <p>A vibrant and dynamic environment, created to stimulate innovation and creativity for the Adobe Romania team.</p>
+                <a href="#" class="pivot-link">VIEW PROJECT</a>
             </div>
+        </div>
 
-            <div class="view-all-container">
-                <a href="projects-scene/proiecte.html" class="btn-discover-more">
-                    <span class="btn-text">VIEW ALL PROJECTS</span>
-                    <span class="btn-line"></span>
+        <div class="split-row">
+            <div class="split-image"><img src="images/omvpetrom-header.jpg" alt="OMV Petrom"></div>
+            <div class="split-text">
+                <span class="category">Energy / Corporate Campus</span>
+                <h2>OMV Petrom City</h2>
+                <p>Petrom City — a sustainable and ergonomic approach to the workspace for the largest energy group in Southeast Europe.</p>
+                <a href="#" class="pivot-link">VIEW PROJECT</a>
+            </div>
+        </div>
+
+        <div class="view-all-container" id="projects-end-anchor"> <a href="projects-scene/proiecte.html" class="btn-discover-more">
+        <span class="btn-text">VIEW ALL PROJECTS</span>
+        <span class="btn-line"></span>
+    </a>
+</div>
+    </section>
+
+    <section class="ntgrate-services" id="services">
+        <div class="services-header reveal">
+            <span class="category-tag">Expertise</span>
+            <h2>What We <span class="font-serif italic text-[#c5a37d]">Do</span></h2>
+        </div>
+        <div class="ntgrate-container">
+            <div class="nt-card">
+                <a href="https://shop.workspaces.ro/en/catalog" target="_blank">
+                    <img src="https://images.unsplash.com/photo-1505409859467-3a796fd5798e?q=80&w=2000" alt="Furniture">
+                    <div class="nt-content"><h3>Furniture</h3></div>
                 </a>
             </div>
-        </section>
+            <div class="nt-card">
+                <a href="our-services/design-services.html">
+                    <img src="our-services/design_and_build.jpg" alt="Design">
+                    <div class="nt-content"><h3>Design & Build</h3></div>
+                </a>
+            </div>
+            <div class="nt-card">
+                <a href="our-services/architectural-solutions.html">
+                    <img src="footer/sustainable-features.jpg" alt="Architectural">
+                    <div class="nt-content"><h3>Architectural Solutions</h3></div>
+                </a>
+            </div>
+            <div class="nt-card">
+                <a href="our-services/workspace-consultancy.html">
+                    <img src="our-services/workspace_consultancy_cropped.jpg" alt="Consultancy">
+                    <div class="nt-content"><h3>Consultancy</h3></div>
+                </a>
+            </div>
+            <div class="nt-card">
+                <a href="our-services/ergonomics-specialists.html">
+                    <img src="footer/precision-ergonomics.jpg" alt="Ergonomics">
+                    <div class="nt-content"><h3>Ergonomics</h3></div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section class="design-exploration" id="exploration">
-            <div class="exploration-container">
-                <header class="exploration-header reveal">
-                    <span class="category-tag">Curated Details</span>
-                    <h2>The Art of <em>Spatial</em> Balance</h2>
-                    <p>We blend ergonomic precision with aesthetic soul to create environments where people don't just work—they thrive.</p>
-                </header>
-                
-                <div class="modern-reveal-grid">
-                    <div class="reveal-item tall" data-speed="0.05">
-                        <img src="footer/precision-ergonomics.jpg" alt="Ergonomie">
-                        <div class="glass-caption">
-                            <h3>Precision Ergonomics</h3>
-                            <span>MillerKnoll Seating Systems</span>
-                        </div>
+    <section class="why-us-section" id="why-us">
+        <div class="why-us-shell">
+            <div class="why-us-intro reveal">
+                <span class="category-tag">Why Us</span>
+                <h2>Strong points that turn a <span class="font-serif italic text-[#c5a37d]">nice office</span> into a high-performing workspace.</h2>
+                <p>We connect strategy, ergonomics, premium brands, and execution in one coherent process so the final result feels refined, functional, and ready to scale.</p>
+
+                <div class="why-us-metrics">
+                    <div class="metric-card reveal">
+                        <span class="metric-value">2008</span>
+                        <span class="metric-label">Delivering workspace projects with long-term partner focus.</span>
                     </div>
-
-                    <div class="reveal-item" data-speed="-0.02">
-                        <img src="footer/collaborative-spaces.jpg" alt="Lounge">
-                        <div class="glass-caption">
-                            <h3>Collaborative Soul</h3>
-                            <span>Social Spaces</span>
-                        </div>
-                    </div>
-
-                    <div class="reveal-item" data-speed="0.03">
-                        <img src="footer/focus-zones.jpg" alt="Conferință">
-                        <div class="glass-caption">
-                            <h3>Focus Zones</h3>
-                            <span>Acoustic Privacy</span>
-                        </div>
-                    </div>
-
-                    <div class="reveal-item wide" data-speed="0.01">
-                        <img src="footer/sustainable-features.jpg" alt="Sustenabil">
-                        <div class="glass-caption">
-                            <h3>Sustainable Futures</h3>
-                            <span>Eco-Certified Materials</span>
-                        </div>
+                    <div class="metric-card reveal">
+                        <span class="metric-value">100+</span>
+                        <span class="metric-label">Global manufacturers, finishes, and workplace solutions curated for fit.</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="partners-section" id="partners">
-            <div class="container">
-                <h2 class="section-label">Established Partners & Brands</h2>
-                <div class="partners-wrapper">
-                    <a href="https://www.hermanmiller.com/" target="_blank" class="logo-card hm-logo">
-                        <img src="logos/hermanmiller-white-logo.png" alt="Herman Miller">
+            <div class="why-us-grid">
+                <article class="why-card reveal">
+                    <span class="why-card-index">01</span>
+                    <h3>Human-Centered Planning</h3>
+                    <p>Every concept starts from how people focus, collaborate, move, and recover energy across the workday.</p>
+                </article>
+                <article class="why-card reveal">
+                    <span class="why-card-index">02</span>
+                    <h3>Premium Brand Access</h3>
+                    <p>We assemble the right mix of furniture, acoustics, architectural systems, and detail pieces from global leaders.</p>
+                </article>
+                <article class="why-card reveal">
+                    <span class="why-card-index">03</span>
+                    <h3>End-to-End Delivery</h3>
+                    <p>Design, specification, procurement, coordination, and implementation are aligned under one clear vision.</p>
+                </article>
+                <article class="why-card reveal">
+                    <span class="why-card-index">04</span>
+                    <h3>Tailored, Not Generic</h3>
+                    <p>We shape each workspace around company culture, team dynamics, and future growth, not around a template.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-minimal" id="contact-cta" style="background-color: var(--bg-warm) !important;">
+        <div class="container">
+            <div class="mission-wrapper">
+                <span class="mission-label">READY TO START?</span>
+                <h2 class="mission-text visible">
+                    Let's create your <span class="dark-accent">future workspace</span> together.
+                </h2>
+                <div class="view-all-container" style="padding-top: 40px;">
+                    <a href="contact/contact.html" class="btn-discover-more">
+                        <span class="btn-text">GET IN TOUCH</span>
+                        <span class="btn-line"></span>
                     </a>
-                    <a href="https://www.knoll.com/" target="_blank" class="logo-card knoll-logo">
-                        <img src="logos/knoll-white-logo.png" alt="Knoll">
-                    </a>
-                    <a href="https://www.hay.dk/" target="_blank" class="logo-card"><img src="logos/hay-logo.png" alt="Hay"></a>
-                    <a href="https://www.naughtone.com/" target="_blank" class="logo-card"><img src="logos/naughtonewhite-logo.png" alt="NaughtOne"></a>
-                    <a href="https://www.frameryacoustics.com/" target="_blank" class="logo-card"><img src="logos/framery-logo.png" alt="Framery"></a>
-                    <a href="https://buzzi.space/" target="_blank" class="logo-card"><img src="logos/buzzispace-logo.png" alt="buzzispace"></a>
-                    <a href="https://www.impactacoustic.com/" target="_blank" class="logo-card"><img src="logos/impactacousticlogo-logo.png" alt="Impactacoustic"></a>
-                    <a href="https://www.kartell.com/" target="_blank" class="logo-card"><img src="logos/kartell-logo.png" alt="Kartell"></a>
-                    <a href="https://www.maarslivingwalls.com/" target="_blank" class="logo-card"><img src="logos/maarslivingwalls-logo.png" alt="Maarslivingwalls"></a>
-                    <a href="https://www.mohawkgroup.eu/en" target="_blank" class="logo-card"><img src="logos/mohawk-logo.png" alt="Mohawk"></a>
-                    <a href="https://www.muuto.com/" target="_blank" class="logo-card"><img src="logos/muuto-logo.png" alt="Muuto"></a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <footer style="padding: 60px 0; text-align: center; background: #000; color: #fff; font-size: 12px; letter-spacing: 2px;">
             <p>&copy; 2026 WORKSPACE STUDIO. ALL RIGHTS RESERVED.</p>
@@ -246,210 +255,232 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                // --- 1. SINCRONIZARE TEXT CU MOMENTELE DIN VIDEO ---
-                const video = document.getElementById('heroVideo');
-                const container = document.getElementById('heroTextContainer');
-                const subtitle = document.getElementById('dynamicSubtitle');
-                const title = document.getElementById('dynamicTitle');
-                const desc = document.getElementById('dynamicDesc');
+             const video = document.getElementById('heroVideo');
+                    const container = document.getElementById('heroTextContainer');
+                    const subtitle = document.getElementById('dynamicSubtitle');
+                    const title = document.getElementById('dynamicTitle');
+                    const desc = document.getElementById('dynamicDesc');
+                    const badgesContainer = document.getElementById('heroBadges');
+                    const nav = document.querySelector('.navbar');
+                    const heroSection = document.getElementById('hero');
 
+                // 1. TEXT MILESTONES (Sincronizare cu momentele din video)
                 const textMilestones = [
-                    { 
-                        time: 0, 
-                        subtitle: "Design & Build Excellence", 
-                        title: "Tailored <em>Workspaces</em>", 
-                        desc: "Office interiors fully customized to fit the needs of your workforce and organizational objectives." 
-                    },
-                    { 
-                        time: 10.64, 
-                        subtitle: "The Human Element", 
-                        title: "People, Not <em>Furniture</em>", 
-                        desc: "The most important thing in a room is the people; we focus on physical, cognitive, and social ergonomics." 
-                    },
-                    { 
-                        time: 18.57, 
-                        subtitle: "Unmatched Variety", 
-                        title: "100+ Global <em>Manufacturers</em>", 
-                        desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products." 
-                    },
-                    { 
-                        time: 29.9, 
-                        subtitle: "Acoustic Privacy", 
-                        title: "Optimized <em>Focus Zones</em>", 
-                        desc: "Curated environments designed to eliminate distractions and enhance deep concentration." 
-                    },
-                    { 
-                        time: 39.3, 
-                        subtitle: "MillerKnoll Certified Dealer", 
-                        title: "Global <em>Innovation</em>", 
-                        desc: "Bringing museum-quality designs and strategic services from the global leader in office furniture." 
-                    },
-                    { 
-                        time: 47.2, 
-                        subtitle: "Research-Driven Design", 
-                        title: "Human-Centered <em>Solutions</em>", 
-                        desc: "Every design starts with research and ends with new solutions tailored to solve real problems." 
-                    },
-                    { 
-                        time: 56.5, 
-                        subtitle: "A Legacy of Quality", 
-                        title: "MillerKnoll <em>Partner</em>", 
-                        desc: "Certified Dealer delivering global excellence since 2008.",
-                        showBadges: true 
-                    }
-                ];
-                let lastIndex = -1;
 
-                if (video) {
-                    video.addEventListener('timeupdate', () => {
-                        const currentTime = video.currentTime;
-                        
-                        // Găsim indexul milestone-ului actual
-                        const currentIndex = textMilestones.reduce((acc, milestone, idx) => {
-                            return (currentTime >= milestone.time) ? idx : acc;
-                        }, 0);
+                                {
 
-                        const badgesContainer = document.getElementById('heroBadges');
+                                    time: 0,
 
-                        if (currentIndex !== lastIndex) {
-                            lastIndex = currentIndex;
-                            
-                            container.style.opacity = '0';
-                            container.style.transform = 'translate(-50%, -48%)';
+                                    subtitle: "Design & Build Excellence",
 
-                            setTimeout(() => {
-                                const currentData = textMilestones[currentIndex];
-                                
-                                subtitle.innerText = currentData.subtitle;
-                                title.innerHTML = currentData.title;
-                                desc.innerText = currentData.desc;
+                                    title: "Tailored <em>Workspaces</em>",
 
-                                // Logica pentru logouri
-                                if (currentData.showBadges) {
-                                    badgesContainer.classList.add('visible');
-                                    badgesContainer.style.display = 'flex';
-                                } else {
-                                    badgesContainer.classList.remove('visible');
-                                    badgesContainer.style.display = 'none';
+                                    desc: "Office interiors fully customized to fit the needs of your workforce and organizational objectives."
+
+                                },
+
+                                {
+
+                                    time: 10.64,
+
+                                    subtitle: "The Human Element",
+
+                                    title: "People, Not <em>Furniture</em>",
+
+                                    desc: "The most important thing in a room is the people; we focus on physical, cognitive, and social ergonomics."
+
+                                },
+
+                                {
+
+                                    time: 18.57,
+
+                                    subtitle: "Unmatched Variety",
+
+                                    title: "100+ Global <em>Manufacturers</em>",
+
+                                    desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products."
+
+                                },
+
+                                {
+
+                                    time: 29.9,
+
+                                    subtitle: "Acoustic Privacy",
+
+                                    title: "Optimized <em>Focus Zones</em>",
+
+                                    desc: "Curated environments designed to eliminate distractions and enhance deep concentration."
+
+                                },
+
+                                {
+
+                                    time: 39.3,
+
+                                    subtitle: "MillerKnoll Certified Dealer",
+
+                                    title: "Global <em>Innovation</em>",
+
+                                    desc: "Bringing museum-quality designs and strategic services from the global leader in office furniture."
+
+                                },
+
+                                {
+
+                                    time: 47.2,
+
+                                    subtitle: "Research-Driven Design",
+
+                                    title: "Human-Centered <em>Solutions</em>",
+
+                                    desc: "Every design starts with research and ends with new solutions tailored to solve real problems."
+
+                                },
+
+                                {
+
+                                    time: 56.5,
+
+                                    subtitle: "A Legacy of Quality",
+
+                                    title: "MillerKnoll <em>Partner</em>",
+
+                                    desc: "Certified Dealer delivering global excellence since 2008.",
+
+                                    showBadges: true
+
                                 }
 
-                                container.style.opacity = '1';
-                                container.style.transform = 'translate(-50%, -50%)';
-                            }, 600);
-                        }
-                    });
-                }
-
-                // --- 2. REVEAL OBSERVER (PENTRU ANIMATIILE DE SCROLL) ---
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            const line = entry.target.parentElement.querySelector('.mission-line');
-                            if (line) line.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.15 });
-
-                document.querySelectorAll('.reveal, .reveal-item, .mission-text, .exploration-header, .split-row').forEach(el => {
-                    revealObserver.observe(el);
-                });
-
-                // --- 3. SCROLL SNAP LOGIC (HERO -> MISSION -> SERVICES) ---
-                const snapSections = document.querySelectorAll('#hero, #mission, #services');
-                let isAnimating = false;
-                let currentSectionIdx = 0;
-
-                const updateCurrentIdx = () => {
-                    const scrollPos = window.pageYOffset;
-                    snapSections.forEach((section, idx) => {
-                        if (Math.abs(scrollPos - section.offsetTop) < 10) {
-                            currentSectionIdx = idx;
-                        }
-                    });
-                };
-                updateCurrentIdx();
-
-                const scrollToIdx = (idx) => {
-                    if (idx < 0 || idx >= snapSections.length || isAnimating) return;
-                    
-                    isAnimating = true;
-                    currentSectionIdx = idx;
-                    
-                    window.scrollTo({
-                        top: snapSections[idx].offsetTop,
-                        behavior: 'smooth'
-                    });
-
-                    setTimeout(() => { isAnimating = false; }, 1000);
-                };
-
-                window.addEventListener('wheel', (e) => {
-                    const servicesSection = document.getElementById('services');
-                    if (!servicesSection) return;
-                    
-                    const scrollThreshold = servicesSection.offsetTop;
-
-                    if (window.pageYOffset <= scrollThreshold + 10) {
-                        if (currentSectionIdx === snapSections.length - 1 && e.deltaY > 0) {
-                            return; 
-                        }
-
-                        e.preventDefault();
-                        if (!isAnimating) {
-                            if (e.deltaY > 0) scrollToIdx(currentSectionIdx + 1);
-                            else scrollToIdx(currentSectionIdx - 1);
-                        }
-                    }
-                }, { passive: false });
-
-                // --- 4. PARALAX EFFECT PENTRU IMAGINI ---
-                window.addEventListener('scroll', () => {
-                    if (window.innerWidth > 900) {
-                        const scrolled = window.pageYOffset;
-                        document.querySelectorAll('.reveal-item img').forEach(img => {
-                            const speed = img.parentElement.getAttribute('data-speed') || 0.05;
-                            img.style.transform = `translateY(${scrolled * speed}px) scale(1.1)`;
+                            ];
+                
+                let lastIndex = -1;
+                    if (video) {
+                        video.addEventListener('timeupdate', () => {
+                            const currentTime = video.currentTime;
+                            const currentIndex = textMilestones.reduce((acc, milestone, idx) => (currentTime >= milestone.time ? idx : acc), 0);
+                            if (currentIndex !== lastIndex) {
+                                lastIndex = currentIndex;
+                                container.style.opacity = '0';
+                                setTimeout(() => {
+                                    const data = textMilestones[currentIndex];
+                                    subtitle.innerText = data.subtitle;
+                                    title.innerHTML = data.title;
+                                    desc.innerText = data.desc;
+                                    if (data.showBadges) {
+                                        badgesContainer.classList.add('visible');
+                                        badgesContainer.style.display = 'flex';
+                                    } else {
+                                        badgesContainer.classList.remove('visible');
+                                        badgesContainer.style.display = 'none';
+                                    }
+                                    container.style.opacity = '1';
+                                }, 600);
+                            }
                         });
                     }
-                });
 
-                // --- 5. PAGE TRANSITION OVERLAY ---
-                const overlay = document.querySelector('.page-transition-overlay');
-                if (overlay) {
-                    setTimeout(() => overlay.classList.add('finished'), 100);
-                    
-                    document.querySelectorAll('a[href$=".html"]').forEach(link => {
-                        link.addEventListener('click', (e) => {
-                            if (link.hostname !== window.location.hostname || link.target === '_blank') return;
+                    // 2. NAVBAR SCROLL LOGIC
+                    window.addEventListener('scroll', () => {
+                        if (window.scrollY >= 100) {
+                            nav.classList.remove('hidden-nav');
+                            nav.classList.add('visible-nav');
+                        } else {
+                            nav.classList.remove('visible-nav');
+                            nav.classList.add('hidden-nav');
+                        }
+                    });
+
+                    // 3. HYBRID SCROLL LOGIC (Snap + Normal)
+                    let isAnimating = false;
+
+                    window.addEventListener('wheel', (e) => {
+                        const currentScroll = window.pageYOffset;
+                        const heroTop = 0;
+                        const projectsTop = document.getElementById('projects').offsetTop;
+                        const servicesTop = document.getElementById('services').offsetTop;
+                        const contactTop = document.getElementById('contact-cta').offsetTop;
+
+                        // SNAP 1: De la Hero la Projects
+                        if (currentScroll < projectsTop - 50 && e.deltaY > 0) {
                             e.preventDefault();
-                            overlay.style.transition = 'none';
-                            overlay.style.transform = 'translateY(100%)';
-                            overlay.style.visibility = 'visible';
-                            void overlay.offsetWidth;
-                            overlay.style.transition = 'transform 0.6s cubic-bezier(0.77, 0, 0.175, 1)';
-                            overlay.style.transform = 'translateY(0)';
-                            overlay.classList.remove('finished');
-                            setTimeout(() => { window.location.href = link.href; }, 600);
-                        });
-                    });
-                }
+                            performSnap(projectsTop);
+                        } 
+                        // SNAP înapoi la Hero
+                        else if (currentScroll <= projectsTop + 50 && e.deltaY < 0) {
+                            e.preventDefault();
+                            performSnap(heroTop);
+                        }
+                        // SNAP: De la sfârșitul listei de proiecte la Expertise
+                        else if (currentScroll > projectsTop + 50 && currentScroll < servicesTop - 50 && e.deltaY > 0) {
+                            // Detectăm dacă suntem aproape de butonul "View all projects"
+                            const projectsEnd = document.getElementById('projects-end-anchor').offsetTop - window.innerHeight + 100;
+                            if (currentScroll > projectsEnd) {
+                                e.preventDefault();
+                                performSnap(servicesTop);
+                            }
+                        }
+                        // SNAP înapoi la Projects de la Services
+                        else if (currentScroll >= servicesTop - 10 && currentScroll <= servicesTop + 50 && e.deltaY < 0) {
+                            e.preventDefault();
+                            performSnap(projectsTop);
+                        }
+                        // După Services, lăsăm scroll-ul normal pentru Contact și Footer (nu facem preventDefault)
+                    }, { passive: false });
 
-                const nav = document.querySelector('.navbar');
-                const heroSection = document.getElementById('hero');
-
-                window.addEventListener('scroll', () => {
-                    const heroHeight = heroSection.offsetHeight;
-                    
-                    if (window.scrollY >= heroHeight - 100) {
-                        nav.classList.remove('hidden-nav');
-                        nav.classList.add('visible-nav');
-                    } else {
-                        nav.classList.remove('visible-nav');
-                        nav.classList.add('hidden-nav');
+                    function performSnap(target) {
+                        if (isAnimating) return;
+                        isAnimating = true;
+                        window.scrollTo({ top: target, behavior: 'smooth' });
+                        setTimeout(() => { isAnimating = false; }, 1000);
                     }
+
+                    const revealObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) entry.target.classList.add('visible');
+                        });
+                    }, { threshold: 0.15 });
+                    document.querySelectorAll('.reveal, .split-row, .nt-card').forEach(el => revealObserver.observe(el));
                 });
-            });
+
+                // --- LOGICA MENIU OVERLAY (STRICT PERFORMANCE) ---
+const menuOpen = document.getElementById('menuOpen');
+const menuClose = document.getElementById('menuClose');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuItems = document.querySelectorAll('.menu-nav-item');
+const allImages = document.querySelectorAll('.menu-img-item');
+
+// Preload trigger: Create objects for all images to force cache
+document.querySelectorAll('.menu-img-item').forEach(img => {
+    const loader = new Image();
+    loader.src = img.src;
+});
+
+menuOpen.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+menuClose.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const targetId = item.getAttribute('data-target');
+        
+        // Hide all images instantly
+        allImages.forEach(img => img.classList.remove('active'));
+        
+        // Show the target image
+        const targetImg = document.getElementById(targetId);
+        if (targetImg) {
+            targetImg.classList.add('active');
+        }
+    });
+});
         </script>
     </body>
 </html>

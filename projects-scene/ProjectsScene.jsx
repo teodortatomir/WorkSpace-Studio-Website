@@ -320,25 +320,7 @@ function ProjectsScene() {
                 </div>
             </section>
 
-            {/* PARTNERS SECTION */}
-            <section className="partners-section" id="partners">
-                <div className="container">
-                    <h2 className="section-label">Established Partners & Brands</h2>
-                    <div className="partners-wrapper">
-                        <a href="https://www.hermanmiller.com/" target="_blank" className="logo-card hm-logo"><img src="../logos/hermanmiller-white-logo.png" alt="Herman Miller" /></a>
-                        <a href="https://www.knoll.com/" target="_blank" className="logo-card knoll-logo"><img src="../logos/knoll-white-logo.png" alt="Knoll" /></a>
-                        <a href="https://www.hay.dk/" target="_blank" className="logo-card"><img src="../logos/hay-logo.png" alt="Hay" /></a>
-                        <a href="https://www.naughtone.com/" target="_blank" className="logo-card"><img src="../logos/naughtonewhite-logo.png" alt="NaughtOne" /></a>
-                        <a href="https://www.frameryacoustics.com/" target="_blank" className="logo-card"><img src="../logos/framery-logo.png" alt="Framery" /></a>
-                        <a href="https://buzzi.space/" target="_blank" className="logo-card"><img src="../logos/buzzispace-logo.png" alt="buzzispace" /></a>
-                        <a href="https://www.impactacoustic.com/" target="_blank" className="logo-card"><img src="../logos/impactacousticlogo-logo.png" alt="Impactacoustic" /></a>
-                        <a href="https://www.kartell.com/" target="_blank" className="logo-card"><img src="../logos/kartell-logo.png" alt="Kartell" /></a>
-                        <a href="https://www.maarslivingwalls.com/" target="_blank" className="logo-card"><img src="../logos/maarslivingwalls-logo.png" alt="Maarslivingwalls" /></a>
-                        <a href="https://www.mohawkgroup.eu/en" target="_blank" className="logo-card"><img src="../logos/mohawk-logo.png" alt="Mohawk" /></a>
-                        <a href="https://www.muuto.com/" target="_blank" className="logo-card"><img src="../logos/muuto-logo.png" alt="Muuto" /></a>
-                    </div>
-                </div>
-            </section>
+            
 
             {/* FOOTER */}
             <footer className="main-footer">
