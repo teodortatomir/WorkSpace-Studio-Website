@@ -564,6 +564,102 @@ body::-webkit-scrollbar {
     letter-spacing: -1px;
 }
 
+.split-row,
+.split-row.reverse {
+    display: none;
+}
+
+.projects-equal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-equal-card {
+    overflow: hidden;
+    border: 1px solid rgba(45, 42, 38, 0.08);
+    background: linear-gradient(180deg, #ffffff 0%, #f8f4ef 100%);
+    box-shadow: 0 22px 52px rgba(42, 35, 28, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.project-equal-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 163, 125, 0.35);
+    box-shadow: 0 30px 60px rgba(42, 35, 28, 0.13);
+}
+
+.project-equal-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.project-equal-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-equal-content {
+    padding: 26px 24px 28px;
+}
+
+.project-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--accent-warm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.project-equal-content h3 {
+    margin-bottom: 14px;
+    color: var(--text-main);
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+.project-equal-content p {
+    margin-bottom: 20px;
+    color: rgba(45, 42, 38, 0.74);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.projects-cta-wrap {
+    padding-top: 28px;
+    padding-bottom: 4px;
+    background: transparent;
+}
+
+.btn-projects-cta {
+    min-width: 236px;
+    padding: 16px 22px 14px;
+    border: 1px solid rgba(197, 163, 125, 0.26);
+    background: rgba(255, 253, 249, 0.8);
+    box-shadow: 0 10px 26px rgba(42, 35, 28, 0.06);
+}
+
+.btn-projects-cta .btn-text {
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.btn-projects-cta .btn-line {
+    width: 54px;
+    height: 1px;
+}
+
+.btn-projects-cta:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(42, 35, 28, 0.09);
+}
+
 .split-row {
     display: flex;
     align-items: center;
@@ -641,68 +737,218 @@ body::-webkit-scrollbar {
     color: var(--accent-warm);
 }
 
+.pivot-projects > .split-row,
+.pivot-projects > .split-row.reverse {
+    display: none !important;
+}
+
 /* ==========================================================================
    Index: What We Do
    ========================================================================== */
 
 .ntgrate-services {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 100px 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fdfbf8 58%, #faf6f0 100%);
 }
 
-.ntgrate-container {
-    display: flex;
-    width: 90%;
-    max-width: 1400px;
-    height: 60vh;
-    gap: 15px;
+.ntgrate-services::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 5% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 13% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 21% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 29% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 37% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 45% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 53% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 61% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 69% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 77% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 85% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 93% 95%, #f7f3ee 0 34px, transparent 35px),
+
+        radial-gradient(circle at 9% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 17% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 25% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 33% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 41% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 49% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 57% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 65% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 73% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 81% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle at 89% 87%, #f7f3ee 0 28px, transparent 29px),
+
+        radial-gradient(circle at 12% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 20% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 28% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 36% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 44% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 52% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 60% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 68% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 76% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle at 84% 79%, #ffffff 0 22px, transparent 23px),
+
+        radial-gradient(circle at 15% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 23% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 31% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 39% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 47% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 55% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 63% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 71% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle at 79% 71%, #ffffff 0 17px, transparent 18px),
+
+        radial-gradient(circle at 18% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 26% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 34% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 42% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 50% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 58% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 66% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle at 74% 63%, #fcfaf7 0 13px, transparent 14px),
+
+        radial-gradient(circle at 22% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle at 30% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle at 38% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle at 46% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle at 54% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle at 62% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle at 70% 56%, #fcfaf7 0 10px, transparent 11px),
+
+        radial-gradient(circle at 28% 49%, #fcfaf7 0 7px, transparent 8px),
+        radial-gradient(circle at 36% 49%, #fcfaf7 0 7px, transparent 8px),
+        radial-gradient(circle at 44% 49%, #fcfaf7 0 7px, transparent 8px),
+        radial-gradient(circle at 52% 49%, #fcfaf7 0 7px, transparent 8px),
+        radial-gradient(circle at 60% 49%, #fcfaf7 0 7px, transparent 8px),
+        radial-gradient(circle at 68% 49%, #fcfaf7 0 7px, transparent 8px),
+
+        radial-gradient(circle at 34% 43%, #fcfaf7 0 5px, transparent 6px),
+        radial-gradient(circle at 42% 43%, #fcfaf7 0 5px, transparent 6px),
+        radial-gradient(circle at 50% 43%, #fcfaf7 0 5px, transparent 6px),
+        radial-gradient(circle at 58% 43%, #fcfaf7 0 5px, transparent 6px),
+        radial-gradient(circle at 66% 43%, #fcfaf7 0 5px, transparent 6px);
+}
+
+.ntgrate-services > * {
+    position: relative;
+    z-index: 1;
+}
+
+.services-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 108px;
+    gap: 18px;
+    width: min(1400px, 92%);
     margin: 0 auto;
 }
 
-.nt-card {
+.service-gallery-card {
     position: relative;
-    flex: 1;
+    display: block;
     overflow: hidden;
-    cursor: pointer;
-    transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.9s ease, transform 0.9s ease;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid rgba(45, 42, 38, 0.08);
+    box-shadow: 0 18px 42px rgba(42, 35, 28, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.nt-card:hover {
-    flex: 1.5;
+.service-gallery-card:nth-child(1) {
+    grid-column: 1 / 7;
+    grid-row: span 3;
 }
 
-.nt-card img {
+.service-gallery-card:nth-child(2) {
+    grid-column: 7 / 13;
+    grid-row: span 3;
+}
+
+.service-gallery-card:nth-child(3) {
+    grid-column: 1 / 5;
+    grid-row: span 2;
+}
+
+.service-gallery-card:nth-child(4) {
+    grid-column: 5 / 9;
+    grid-row: span 2;
+}
+
+.service-gallery-card:nth-child(5) {
+    grid-column: 9 / 13;
+    grid-row: span 2;
+}
+
+.service-gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 163, 125, 0.36);
+    box-shadow: 0 28px 54px rgba(42, 35, 28, 0.14);
+}
+
+.service-gallery-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.9);
-    transition: transform 1.2s ease, filter 0.5s ease;
+    transition: transform 1.1s ease;
 }
 
-.nt-card:hover img {
-    transform: scale(1.1);
-    filter: brightness(1);
+.service-gallery-card:hover img {
+    transform: scale(1.05);
 }
 
-.nt-content {
+.service-gallery-overlay {
     position: absolute;
-    left: 0;
-    bottom: 40px;
-    z-index: 2;
-    width: 100%;
-    text-align: center;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    background:
+        linear-gradient(180deg, rgba(18, 16, 14, 0.02) 0%, rgba(18, 16, 14, 0.74) 100%);
 }
 
-.nt-content h3 {
-    color: #fff;
-    font-family: "Times New Roman", serif;
-    font-size: 1.5rem;
+.service-gallery-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.service-gallery-overlay h3 {
+    position: relative;
+    color: #ffffff;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 400;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.08;
+}
+
+.service-gallery-overlay p {
+    position: relative;
+    margin-top: 8px;
+    max-width: 260px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.contact-cta-actions {
+    padding-top: 58px;
+    background: transparent;
 }
 
 /* ==========================================================================
@@ -887,14 +1133,9 @@ footer {
    ========================================================================== */
 
 @media (max-width: 1024px) {
-    .split-row,
-    .split-row.reverse {
-        min-height: auto;
-        gap: 30px;
-    }
-
-    .split-text {
-        padding: 0;
+    .projects-equal-grid,
+    .services-gallery-grid {
+        grid-template-columns: 1fr;
     }
 
     .why-us-shell {
@@ -991,45 +1232,34 @@ footer {
         padding: 60px 20px;
     }
 
-    .split-row,
-    .split-row.reverse {
-        flex-direction: column;
-        align-items: flex-start;
-        min-height: auto;
-        margin-bottom: 100px;
+    .projects-equal-grid,
+    .services-gallery-grid {
+        gap: 20px;
     }
 
-    .split-image {
-        width: 100%;
-        height: 50vh;
-        flex: none;
+    .project-equal-card img {
+        height: 260px;
     }
 
-    .split-text {
-        width: 100%;
-        flex: none;
-        padding-top: 30px;
+    .services-gallery-grid {
+        width: calc(100% - 40px);
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
     }
 
-    .split-text h2 {
-        font-size: 2.2rem;
-    }
-
-    .split-text p {
-        max-width: 100%;
+    .service-gallery-card,
+    .service-gallery-card:nth-child(1),
+    .service-gallery-card:nth-child(2),
+    .service-gallery-card:nth-child(3),
+    .service-gallery-card:nth-child(4),
+    .service-gallery-card:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 260px;
     }
 
     .ntgrate-services {
         padding: 84px 0;
-    }
-
-    .ntgrate-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .nt-card {
-        height: 300px;
     }
 
     .why-us-section {

@@ -1,9 +1,9 @@
-/* STUDIO INDUSTRIAL THEME */
 body.partners-light-theme {
-    background-color: #252525;
-    background-image: radial-gradient(circle at center, #2a2a2a 0%, #1a1a1a 100%);
+    background:
+        radial-gradient(circle at top, rgba(197, 163, 125, 0.12), transparent 28%),
+        linear-gradient(180deg, #1e1a17 0%, #141210 100%);
     color: #ffffff;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .partners-page {
@@ -16,7 +16,6 @@ body.partners-light-theme {
     padding: 0 5%;
 }
 
-/* NAVBAR - Sincronizat cu Index */
 .navbar {
     background: rgba(252, 250, 247, 0.98) !important;
     backdrop-filter: blur(15px);
@@ -24,32 +23,21 @@ body.partners-light-theme {
 }
 
 .nav-center {
-    flex: 2; /* Creștem de la 1 la 2 pentru a acorda mai mult spațiu */
+    flex: 2;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 25px; /* Spațiu egal între elemente */
-    white-space: nowrap; /* CRITICAL: Împiedică ruperea textului pe două rânduri */
-    display: flex;
-    align-items: center;
+    gap: 25px;
+    white-space: nowrap;
 }
 
-.nav-container {
-    width: 100%;
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 0 4%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Culori categorii din Navbar */
 .brand-name-text {
+    display: inline-block;
+    white-space: nowrap;
     font-size: 12px;
     font-weight: 800;
-    text-transform: uppercase;
     letter-spacing: 1px;
-    white-space: nowrap; /* Încă o dată aici pentru siguranță */
-    display: inline-block;
+    text-transform: uppercase;
 }
 
 .ergonomics-txt { color: #e30613; }
@@ -57,98 +45,78 @@ body.partners-light-theme {
 .sustainability-txt { color: #009640; }
 .turnkey-txt { color: #004d43; }
 
-/* Navbar links right */
-.nav-btn {
-    color: #1a1c20 !important;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-}
-
-.nav-btn.active {
-    color: #c5a37d !important;
-}
-
-/* Hero Section */
 .partners-hero {
-    padding: 140px 0 100px;
+    padding: 140px 0 84px;
     text-align: center;
 }
 
 .partners-hero .category-tag {
+    display: block;
+    margin-bottom: 20px;
     color: #c5a37d;
     font-size: 11px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 20px;
 }
 
 .partners-hero .hero-title {
+    margin-bottom: 24px;
+    color: #ffffff;
     font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 800;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 30px;
+    line-height: 0.95;
     letter-spacing: -2px;
 }
 
 .partners-hero .hero-title em {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
     color: #c5a37d;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
     font-weight: 400;
 }
 
 .partners-hero .hero-desc {
-    max-width: 700px;
+    max-width: 760px;
     margin: 0 auto;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 1.15rem;
+    line-height: 1.7;
 }
 
-/* Section Labels */
+.main-partners-grid {
+    padding-bottom: 88px;
+}
+
 .section-label {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #c5a37d;
-    margin-bottom: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 56px;
+    color: #c5a37d;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-.section-label::before, .section-label::after {
+.section-label::before,
+.section-label::after {
     content: "";
-    height: 1px;
     width: 60px;
-    background: rgba(197, 163, 125, 0.3);
+    height: 1px;
     margin: 0 20px;
+    background: rgba(197, 163, 125, 0.28);
 }
 
-/* Card Grid */
-.logo-grid {
+.strategic-partners-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 120px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .partner-card {
-    background: #1e1e1e;
-    padding: 80px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
     opacity: 0;
     transform: translateY(40px);
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.7s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .partner-card.visible {
@@ -156,85 +124,189 @@ body.partners-light-theme {
     transform: translateY(0);
 }
 
-.partner-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(197, 163, 125, 0.4);
-    background: #222222;
+.partner-card-large {
+    min-height: 320px;
+    padding: 42px 38px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%),
+        radial-gradient(circle at top left, rgba(197, 163, 125, 0.12), transparent 40%);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
+}
+
+.partner-card-large:hover {
+    border-color: rgba(197, 163, 125, 0.3);
+    box-shadow: 0 36px 72px rgba(0, 0, 0, 0.24);
 }
 
 .logo-box {
-    height: 100px;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    min-height: 96px;
+    margin-bottom: 28px;
 }
 
 .logo-box img.dark-logo {
-    max-height: 65px;
-    max-width: 240px;
+    max-width: 260px;
+    max-height: 78px;
     filter: brightness(0) invert(1);
-    opacity: 0.9;
-    transition: all 0.5s ease;
-}
-
-.partner-card:hover .logo-box img.dark-logo {
-    opacity: 1;
-    transform: scale(1.08);
+    opacity: 0.96;
 }
 
 .partner-info p {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 300;
-    margin: 0;
+    max-width: 420px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.98rem;
+    line-height: 1.7;
 }
 
-/* Hide redundant H3 names in cards */
-.partner-info h3 {
-    display: none;
-}
-
-/* Links List Section */
 .partners-list-section {
-    padding: 100px 0;
-    background: rgba(0, 0, 0, 0.2);
+    padding: 92px 0 110px;
 }
 
-.links-alphabetical {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+.brands-panel {
+    padding: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
 }
 
-.partner-link {
-    display: block;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    padding: 25px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    font-weight: 300;
-    transition: all 0.4s ease;
+.brands-panel-top {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 34px;
 }
 
-.partner-link:hover {
+.brands-title {
+    margin-top: 14px;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -1px;
+}
+
+.brands-title em {
     color: #c5a37d;
-    padding-left: 20px;
-    border-bottom-color: rgba(197, 163, 125, 0.5);
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 400;
 }
 
-.partners-footer {
-    padding: 80px 0;
-    text-align: center;
-    background: #111;
-    color: rgba(255, 255, 255, 0.3);
+.brand-search-wrap {
+    min-width: 320px;
+}
+
+.search-label {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.48);
     font-size: 10px;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
+.brand-search-input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.34);
+}
+
+.brand-search-input:focus {
+    border-color: rgba(197, 163, 125, 0.45);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 3px rgba(197, 163, 125, 0.08);
+}
+
+.brands-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.brand-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 58px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.96rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.brand-chip:hover {
+    transform: translateY(-3px);
+    border-color: rgba(197, 163, 125, 0.34);
+    background: rgba(197, 163, 125, 0.08);
+    color: #ffffff;
+}
+
+.brands-empty {
+    margin-top: 26px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+}
+
+.partners-footer {
+    padding: 80px 0;
+    background: #111;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+    .brands-panel-top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .brand-search-wrap {
+        min-width: 0;
+    }
+
+    .brands-chip-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 900px) {
-    .logo-grid, .links-alphabetical { grid-template-columns: 1fr; }
-    .nav-center { display: none; }
+    .strategic-partners-grid,
+    .brands-chip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-center {
+        display: none;
+    }
+
+    .partners-hero {
+        padding: 124px 0 72px;
+    }
+
+    .brands-panel {
+        padding: 24px;
+    }
 }

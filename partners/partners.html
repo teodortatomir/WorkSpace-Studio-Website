@@ -101,63 +101,76 @@
         <section class="main-partners-grid">
             <div class="container">
                 <h2 class="section-label">Strategic Partners</h2>
-                <div class="logo-grid">
-                    <div class="partner-card reveal">
+                <div class="strategic-partners-grid">
+                    <article class="partner-card partner-card-large reveal">
                         <div class="logo-box">
                             <img src="../logos/hermanmiller-white-logo.png" alt="Herman Miller" class="dark-logo">
                         </div>
                         <div class="partner-info">
                             <p>Pioneering design and ergonomic leadership.</p>
                         </div>
-                    </div>
-                    <div class="partner-card reveal">
+                    </article>
+                    <article class="partner-card partner-card-large reveal">
                         <div class="logo-box">
                             <img src="../logos/knoll-white-logo.png" alt="Knoll" class="dark-logo">
                         </div>
                         <div class="partner-info">
                             <p>Modern classics and architectural integrity.</p>
                         </div>
-                    </div>
-                    <div class="partner-card reveal">
+                    </article>
+                    <article class="partner-card partner-card-large reveal">
                         <div class="logo-box">
                             <img src="../logos/framery-logo.png" alt="Framery" class="dark-logo">
                         </div>
                         <div class="partner-info">
                             <p>World leader in office phone booths and pods.</p>
                         </div>
-                    </div>
-                    <div class="partner-card reveal">
+                    </article>
+                    <article class="partner-card partner-card-large reveal">
                         <div class="logo-box">
                             <img src="../logos/hay-logo.png" alt="Hay" class="dark-logo">
                         </div>
                         <div class="partner-info">
                             <p>Contemporary Danish design for modern work.</p>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section class="partners-list-section">
             <div class="container">
-                <h2 class="section-label">Full Brand Portfolio</h2>
-                <div class="links-alphabetical">
-                    <div class="link-column">
-                        <a href="#" class="partner-link">Abstracta</a>
-                        <a href="#" class="partner-link">Andreu World</a>
-                        <a href="#" class="partner-link">Arper</a>
-                        <a href="#" class="partner-link">Bene</a>
-                        <a href="#" class="partner-link">BuzziSpace</a>
-                        <a href="#" class="partner-link">Cappellini</a>
+                <div class="brands-panel">
+                    <div class="brands-panel-top">
+                        <div>
+                            <span class="category-tag">Full Portfolio</span>
+                            <h2 class="brands-title">Browse the wider <em>brand ecosystem</em></h2>
+                        </div>
+                        <label class="brand-search-wrap" for="brandSearch">
+                            <span class="search-label">Search brands</span>
+                            <input id="brandSearch" class="brand-search-input" type="search" placeholder="Type a brand name...">
+                        </label>
                     </div>
-                    <div class="link-column">
-                        <a href="#" class="partner-link">Maars Living Walls</a>
-                        <a href="#" class="partner-link">Muuto</a>
-                        <a href="#" class="partner-link">NaughtOne</a>
-                        <a href="#" class="partner-link">Orangebox</a>
-                        <a href="#" class="partner-link">Vitra</a>
-                        <a href="#" class="partner-link">Zoco Home</a>
+
+                    <div class="brands-chip-grid" id="brandGrid">
+                        <a href="#" class="brand-chip" data-name="Abstracta">Abstracta</a>
+                        <a href="#" class="brand-chip" data-name="Andreu World">Andreu World</a>
+                        <a href="#" class="brand-chip" data-name="Arper">Arper</a>
+                        <a href="#" class="brand-chip" data-name="Bene">Bene</a>
+                        <a href="#" class="brand-chip" data-name="BuzziSpace">BuzziSpace</a>
+                        <a href="#" class="brand-chip" data-name="Cappellini">Cappellini</a>
+                        <a href="#" class="brand-chip" data-name="Impact Acoustic">Impact Acoustic</a>
+                        <a href="#" class="brand-chip" data-name="Kartell">Kartell</a>
+                        <a href="#" class="brand-chip" data-name="Maars Living Walls">Maars Living Walls</a>
+                        <a href="#" class="brand-chip" data-name="Mohawk">Mohawk</a>
+                        <a href="#" class="brand-chip" data-name="Muuto">Muuto</a>
+                        <a href="#" class="brand-chip" data-name="NaughtOne">NaughtOne</a>
+                        <a href="#" class="brand-chip" data-name="Orangebox">Orangebox</a>
+                        <a href="#" class="brand-chip" data-name="Vitra">Vitra</a>
+                        <a href="#" class="brand-chip" data-name="Zoco Home">Zoco Home</a>
                     </div>
+
+                    <p class="brands-empty" id="brandsEmpty" hidden>No brands match your search.</p>
                 </div>
             </div>
         </section>
@@ -172,6 +185,7 @@
         const menuClose = document.getElementById('menuClose');
         const menuOverlay = document.getElementById('menuOverlay');
         const menuItems = document.querySelectorAll('.menu-nav-item');
+        const menuLinks = document.querySelectorAll('.menu-nav-item a');
         const allImages = document.querySelectorAll('.menu-img-item');
 
         document.querySelectorAll('.menu-img-item').forEach(img => {
@@ -189,12 +203,23 @@
             document.body.style.overflow = '';
         });
 
+        function closeMenuOverlay() {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         menuItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 const targetId = item.getAttribute('data-target');
                 allImages.forEach(img => img.classList.remove('active'));
                 const targetImg = document.getElementById(targetId);
                 if (targetImg) targetImg.classList.add('active');
+            });
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenuOverlay();
             });
         });
 
@@ -207,6 +232,28 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const brandSearch = document.getElementById('brandSearch');
+        const brandItems = Array.from(document.querySelectorAll('.brand-chip'));
+        const brandsEmpty = document.getElementById('brandsEmpty');
+
+        function filterBrands() {
+            const query = brandSearch.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            brandItems.forEach(item => {
+                const name = (item.dataset.name || item.textContent || '').toLowerCase();
+                const matches = query === '' || name.includes(query);
+                item.style.display = matches ? 'inline-flex' : 'none';
+                if (matches) visibleCount += 1;
+            });
+
+            brandsEmpty.hidden = visibleCount !== 0;
+        }
+
+        brandSearch.addEventListener('input', filterBrands);
+        brandSearch.addEventListener('search', filterBrands);
+        filterBrands();
     </script>
 </body>
 </html>

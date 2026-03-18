@@ -240,6 +240,13 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 }
 
 .hero-container { display: grid; grid-template-columns: 1.2fr 1fr; width: 100%; align-items: center; gap: 50px; }
+.hero-text-side {
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
 .hero-tag { text-transform: uppercase; letter-spacing: 5px; font-size: 11px; color: var(--primary); font-weight: 800; display: block; }
 .hero-title-main { 
     font-size: clamp(3.5rem, 8vw, 6.5rem); 
@@ -273,7 +280,9 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     line-height: 1.6; 
     margin-bottom: 50px;
     font-weight: 300;
-    border-left: 2px solid #bea791; /* Subtle architectural accent */
+    margin-left: 0;
+    text-align: left;
+    border-left: 2px solid #bea791;
     padding-left: 20px;
 }
 /* ARCHITECTURAL LIQUID BUTTON */
