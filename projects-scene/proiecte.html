@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proiecte | Workspace Studio</title>
     
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="proiecte.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -30,11 +31,64 @@
                 </div>
 
                 <div class="nav-col nav-right">
-                    <a href="proiecte.html" class="nav-btn">Projects</a>
-                    <a href="https://shop.workspaces.ro/en/catalog" target="_blank" class="nav-btn">Shop</a>
+                    <button class="menu-toggle" id="menuOpen">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                 </div>
             </div>
         </nav>
+
+        <div style="display: none; visibility: hidden; width: 0; height: 0; overflow: hidden;">
+            <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg">
+            <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg">
+            <img src="../projects-pictures/leading-game-company.jpg">
+            <img src="../projects-pictures/skytower-hero.jpg">
+            <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg">
+            <img src="../projects-pictures/coca-cola.jpg">
+            <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg">
+        </div>
+
+        <div class="menu-overlay" id="menuOverlay">
+            <button class="menu-close" id="menuClose">&times;</button>
+            
+            <div class="menu-split-container">
+                <div class="menu-left-images">
+                    <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects">
+                    <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services">
+                    <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners">
+                    <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about">
+                    <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights">
+                    <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop">
+                    <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact">
+                </div>
+                <div class="menu-right-content">
+                    <span class="menu-label-top">Menu</span>
+                    
+                    <nav class="menu-right-links">
+                        <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                        <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                        <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands & Partners</a></div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="../index.html">About</a></div>
+                        <div class="menu-nav-item" data-target="img-insights"><a href="../index.html">Insights</a></div>
+                        <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                    </nav>
+
+                    <div class="menu-footer">
+                        <div class="menu-socials">
+                            <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
+                            <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
+                            <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="menu-secondary-logo">
+                            <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="projects-root"></div>
 
@@ -44,7 +98,36 @@
         <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
         <script type="text/babel" src="ProjectsScene.jsx"></script>
         <script>
+            const menuOpen = document.getElementById('menuOpen');
+            const menuClose = document.getElementById('menuClose');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuItems = document.querySelectorAll('.menu-nav-item');
+            const allImages = document.querySelectorAll('.menu-img-item');
             const nav = document.querySelector(".navbar");
+
+            document.querySelectorAll('.menu-img-item').forEach(img => {
+                const loader = new Image();
+                loader.src = img.src;
+            });
+
+            menuOpen.addEventListener('click', () => {
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            menuClose.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const targetId = item.getAttribute('data-target');
+                    allImages.forEach(img => img.classList.remove('active'));
+                    const targetImg = document.getElementById(targetId);
+                    if (targetImg) targetImg.classList.add('active');
+                });
+            });
 
             const handleNavScroll = () => {
                 // Căutăm Hero-ul de fiecare dată în caz că React l-a randat mai târziu
