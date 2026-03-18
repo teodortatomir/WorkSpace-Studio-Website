@@ -289,8 +289,32 @@
         </div>
     </section>
 
-        <footer style="padding: 60px 0; text-align: center; background: #000; color: #fff; font-size: 12px; letter-spacing: 2px;">
-            <p>&copy; 2026 WORKSPACE STUDIO. ALL RIGHTS RESERVED.</p>
+        <footer class="site-footer">
+            <div class="site-footer-inner">
+                <div class="site-footer-top">
+                    <div class="site-footer-logos">
+                        <img src="logos/millerknol-certified-dealer-logo.svg" alt="Miller Knoll Certified Dealer" class="site-footer-miller">
+                    </div>
+                    <nav class="site-footer-nav" aria-label="Footer navigation">
+                        <a class="site-footer-link" href="projects-scene/proiecte.html">Projects</a>
+                        <a class="site-footer-link" href="#services">Services</a>
+                        <a class="site-footer-link" href="partners/partners.html">Brands &amp; Partners</a>
+                        <a class="site-footer-link" href="index.html">About</a>
+                        <a class="site-footer-link" href="index.html">Insights</a>
+                        <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                        <a class="site-footer-link" href="contact/contact.html">Contact / Start a Project</a>
+                    </nav>
+                    <a class="site-footer-link site-footer-action" href="#hero">Back to Top</a>
+                </div>
+                <div class="site-footer-bottom">
+                    <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                    <div class="site-footer-socials">
+                        <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
         </footer>
 
 
@@ -437,6 +461,7 @@
                     let isAnimating = false;
 
                     window.addEventListener('wheel', (e) => {
+                        if (window.__workspaceHomeSnapV2) return;
                         const currentScroll = window.pageYOffset;
                         const heroTop = 0;
                         const projectsTop = document.getElementById('projects').offsetTop;
@@ -472,6 +497,7 @@
 
                     // Fix pentru tranzitia Projects -> What We Do: un singur scroll
                     window.addEventListener('wheel', (e) => {
+                        if (window.__workspaceHomeSnapV2) return;
                         if (isAnimating || e.deltaY <= 0) return;
 
                         const currentScroll = window.pageYOffset;
@@ -490,6 +516,58 @@
                         window.scrollTo({ top: target, behavior: 'smooth' });
                         setTimeout(() => { isAnimating = false; }, 1000);
                     }
+
+                    window.__workspaceHomeSnapV2 = true;
+
+                    window.addEventListener('wheel', (e) => {
+                        if (isAnimating) {
+                            e.preventDefault();
+                            return;
+                        }
+
+                        const currentScroll = window.pageYOffset;
+                        const heroTop = 0;
+                        const projectsTop = document.getElementById('projects').offsetTop;
+                        const servicesTop = document.getElementById('services').offsetTop;
+                        const projectsEndAnchor = document.getElementById('projects-end-anchor');
+                        const isMobileViewport = window.innerWidth <= 768;
+                        const projectsEndTrigger = Math.max(
+                            projectsTop + 120,
+                            projectsEndAnchor.offsetTop - window.innerHeight + (isMobileViewport ? 120 : 180)
+                        );
+                        const snapTolerance = 80;
+
+                        if (e.deltaY > 0 && currentScroll < projectsTop - snapTolerance) {
+                            e.preventDefault();
+                            performSnap(projectsTop);
+                            return;
+                        }
+
+                        if (
+                            e.deltaY > 0 &&
+                            currentScroll >= projectsEndTrigger &&
+                            currentScroll < servicesTop - snapTolerance
+                        ) {
+                            e.preventDefault();
+                            performSnap(servicesTop);
+                            return;
+                        }
+
+                        if (
+                            e.deltaY < 0 &&
+                            currentScroll > projectsTop + snapTolerance &&
+                            currentScroll <= servicesTop + snapTolerance
+                        ) {
+                            e.preventDefault();
+                            performSnap(projectsTop);
+                            return;
+                        }
+
+                        if (e.deltaY < 0 && currentScroll <= projectsTop + snapTolerance) {
+                            e.preventDefault();
+                            performSnap(heroTop);
+                        }
+                    }, { passive: false });
 
                     const revealObserver = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {

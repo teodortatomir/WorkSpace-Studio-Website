@@ -462,17 +462,20 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     background: #000;
+    overflow: hidden;
 }
 
 .hero-video-container {
     position: absolute;
     inset: 0;
+    overflow: hidden;
 }
 
 .hero-bg-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .hero-overlay-dark {
@@ -761,85 +764,37 @@ body::-webkit-scrollbar {
 .ntgrate-services::before {
     content: "";
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 560px;
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(circle at 5% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 13% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 21% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 29% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 37% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 45% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 53% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 61% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 69% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 77% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 85% 95%, #f7f3ee 0 34px, transparent 35px),
-        radial-gradient(circle at 93% 95%, #f7f3ee 0 34px, transparent 35px),
+        radial-gradient(circle at 36px 36px, #f7f3ee 0 36px, transparent 37.5px) 0 calc(100% + 28px) / 72px 72px repeat-x,
+        radial-gradient(circle at 36px 36px, #f7f3ee 0 36px, transparent 37.5px) 36px calc(100% - 8px) / 72px 72px repeat-x,
 
-        radial-gradient(circle at 9% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 17% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 25% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 33% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 41% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 49% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 57% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 65% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 73% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 81% 87%, #f7f3ee 0 28px, transparent 29px),
-        radial-gradient(circle at 89% 87%, #f7f3ee 0 28px, transparent 29px),
+        radial-gradient(circle, #f7f3ee 0 28px, transparent 29.5px) 0 calc(100% - 78px) / 58px 58px repeat-x,
+        radial-gradient(circle, #f7f3ee 0 28px, transparent 29.5px) 29px calc(100% - 107px) / 58px 58px repeat-x,
 
-        radial-gradient(circle at 12% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 20% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 28% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 36% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 44% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 52% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 60% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 68% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 76% 79%, #ffffff 0 22px, transparent 23px),
-        radial-gradient(circle at 84% 79%, #ffffff 0 22px, transparent 23px),
+        radial-gradient(circle, #f7f3ee 0 21px, transparent 22.4px) 10px calc(100% - 154px) / 74px 68px repeat-x,
+        radial-gradient(circle, #f7f3ee 0 21px, transparent 22.4px) 47px calc(100% - 188px) / 74px 68px repeat-x,
 
-        radial-gradient(circle at 15% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 23% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 31% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 39% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 47% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 55% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 63% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 71% 71%, #ffffff 0 17px, transparent 18px),
-        radial-gradient(circle at 79% 71%, #ffffff 0 17px, transparent 18px),
+        radial-gradient(circle, #f7f3ee 0 16px, transparent 17.4px) 20px calc(100% - 238px) / 96px 82px repeat-x,
+        radial-gradient(circle, #f7f3ee 0 16px, transparent 17.4px) 68px calc(100% - 279px) / 96px 82px repeat-x,
 
-        radial-gradient(circle at 18% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 26% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 34% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 42% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 50% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 58% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 66% 63%, #fcfaf7 0 13px, transparent 14px),
-        radial-gradient(circle at 74% 63%, #fcfaf7 0 13px, transparent 14px),
+        radial-gradient(circle, rgba(247, 243, 238, 0.96) 0 11px, transparent 12.4px) 34px calc(100% - 328px) / 126px 102px repeat-x,
+        radial-gradient(circle, rgba(247, 243, 238, 0.9) 0 11px, transparent 12.4px) 97px calc(100% - 379px) / 126px 102px repeat-x,
 
-        radial-gradient(circle at 22% 56%, #fcfaf7 0 10px, transparent 11px),
-        radial-gradient(circle at 30% 56%, #fcfaf7 0 10px, transparent 11px),
-        radial-gradient(circle at 38% 56%, #fcfaf7 0 10px, transparent 11px),
-        radial-gradient(circle at 46% 56%, #fcfaf7 0 10px, transparent 11px),
-        radial-gradient(circle at 54% 56%, #fcfaf7 0 10px, transparent 11px),
-        radial-gradient(circle at 62% 56%, #fcfaf7 0 10px, transparent 11px),
-        radial-gradient(circle at 70% 56%, #fcfaf7 0 10px, transparent 11px),
+        radial-gradient(circle, rgba(247, 243, 238, 0.84) 0 8px, transparent 9.2px) 56px calc(100% - 432px) / 174px 132px repeat-x,
+        radial-gradient(circle, rgba(247, 243, 238, 0.74) 0 8px, transparent 9.2px) 143px calc(100% - 498px) / 174px 132px repeat-x,
 
-        radial-gradient(circle at 28% 49%, #fcfaf7 0 7px, transparent 8px),
-        radial-gradient(circle at 36% 49%, #fcfaf7 0 7px, transparent 8px),
-        radial-gradient(circle at 44% 49%, #fcfaf7 0 7px, transparent 8px),
-        radial-gradient(circle at 52% 49%, #fcfaf7 0 7px, transparent 8px),
-        radial-gradient(circle at 60% 49%, #fcfaf7 0 7px, transparent 8px),
-        radial-gradient(circle at 68% 49%, #fcfaf7 0 7px, transparent 8px),
+        radial-gradient(circle, rgba(247, 243, 238, 0.66) 0 5.5px, transparent 6.7px) 84px calc(100% - 520px) / 228px 164px repeat-x,
+        radial-gradient(circle, rgba(247, 243, 238, 0.54) 0 5.5px, transparent 6.7px) 198px calc(100% - 602px) / 228px 164px repeat-x,
 
-        radial-gradient(circle at 34% 43%, #fcfaf7 0 5px, transparent 6px),
-        radial-gradient(circle at 42% 43%, #fcfaf7 0 5px, transparent 6px),
-        radial-gradient(circle at 50% 43%, #fcfaf7 0 5px, transparent 6px),
-        radial-gradient(circle at 58% 43%, #fcfaf7 0 5px, transparent 6px),
-        radial-gradient(circle at 66% 43%, #fcfaf7 0 5px, transparent 6px);
+        linear-gradient(180deg, rgba(247, 243, 238, 0) 0%, rgba(247, 243, 238, 0.12) 34%, rgba(247, 243, 238, 0.4) 62%, #f7f3ee 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.18) 12%, rgba(0, 0, 0, 0.5) 34%, rgba(0, 0, 0, 0.82) 62%, #000 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.18) 12%, rgba(0, 0, 0, 0.5) 34%, rgba(0, 0, 0, 0.82) 62%, #000 100%);
 }
 
 .ntgrate-services > * {
@@ -1128,6 +1083,118 @@ footer {
     color: #fff;
 }
 
+.site-footer {
+    padding: 44px 24px 36px;
+    background: #000;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-footer-inner {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.site-footer-top {
+    display: grid;
+    grid-template-columns: 170px 1fr auto;
+    align-items: center;
+    gap: 18px;
+}
+
+.site-footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-self: start;
+    align-self: start;
+    min-width: 170px;
+}
+
+.site-footer-logos img {
+    display: block;
+    max-height: 46px;
+    width: auto;
+}
+
+.site-footer-logos .site-footer-miller {
+    display: block;
+    width: 150px;
+    max-width: 100%;
+    max-height: 34px;
+    height: auto;
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+.site-footer-nav,
+.site-footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+.site-footer-nav {
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.site-footer a:hover {
+    opacity: 0.68;
+}
+
+.site-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    flex-wrap: wrap;
+}
+
+.site-footer-copy {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer-link {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.site-footer-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    justify-self: end;
+}
+
+.site-footer-action:hover {
+    border-color: #fff;
+    opacity: 1;
+}
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
@@ -1148,6 +1215,23 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        min-height: 100dvh;
+    }
+
+    .hero-video-container {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-bg-video {
+        width: 100vw;
+        height: 100dvh;
+        min-width: 100vw;
+        min-height: 100dvh;
+    }
+
     .navbar {
         height: 70px !important;
     }
@@ -1200,19 +1284,135 @@ footer {
         display: none;
     }
 
+    .menu-overlay {
+        height: 100dvh;
+        overflow-y: auto;
+    }
+
+    .menu-split-container {
+        min-height: 100dvh;
+    }
+
     .menu-right-content {
         flex: 1;
-        padding: 88px 24px 32px;
+        min-height: 100dvh;
+        padding: 84px 20px 24px;
+        justify-content: space-between;
+        overflow-y: auto;
+    }
+
+    .menu-label-top {
+        margin-bottom: 20px;
+    }
+
+    .menu-right-links {
+        flex-grow: 0;
+        justify-content: flex-start;
+        gap: 4px;
+    }
+
+    .menu-nav-item {
+        margin: 0;
+        padding: 10px 0;
     }
 
     .menu-nav-item a {
-        font-size: clamp(1.3rem, 7vw, 2rem);
+        font-size: clamp(1.1rem, 6vw, 1.6rem);
+        line-height: 1.2;
     }
 
     .menu-footer {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 14px;
+        margin-top: 24px;
+        padding-top: 16px;
+        width: 100%;
+    }
+
+    .menu-socials {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+    }
+
+    .menu-secondary-logo img {
+        height: 24px;
+    }
+
+    .menu-close {
+        top: 16px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .site-footer {
+        padding: 24px 16px 22px;
+    }
+
+    .site-footer-inner {
+        width: 100%;
+        gap: 18px;
+    }
+
+    .site-footer-top,
+    .site-footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .site-footer-logos {
+        min-width: 0;
+        width: 100%;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+
+    .site-footer-nav,
+    .site-footer-socials {
+        width: 100%;
+        gap: 10px 14px;
+    }
+
+    .site-footer-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .site-footer-link {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .site-footer-miller {
+        width: 118px !important;
+        max-height: 28px !important;
+    }
+
+    .site-footer-action {
+        justify-self: auto;
+        min-height: 30px;
+        padding: 0 8px;
+        font-size: 9px;
+        margin-top: 2px;
+    }
+
+    .site-footer-copy {
+        font-size: 9px;
+        letter-spacing: 1.4px;
+    }
+
+    .site-footer-bottom {
+        padding-top: 14px;
+    }
+
+    .site-footer-socials {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, max-content));
+        justify-content: flex-start;
     }
 
     .hero-content-minimal {

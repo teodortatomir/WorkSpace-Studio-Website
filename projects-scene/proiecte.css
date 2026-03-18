@@ -526,7 +526,7 @@ main.projects-container {
 .hm-logo:hover img { filter: brightness(0) saturate(100%) invert(35%) sepia(97%) saturate(5833%) hue-rotate(11deg) brightness(101%) contrast(106%) !important; }
 .knoll-logo:hover img { filter: brightness(0) saturate(100%) invert(31%) sepia(87%) saturate(4320%) hue-rotate(349deg) brightness(91%) contrast(97%) !important; }
 
-.main-footer { padding: 60px 0; text-align: center; background: #000; color: #fff; font-size: 11px; letter-spacing: 3px; }
+.main-footer { padding: 32px 24px; text-align: left; background: #000; color: #fff; font-size: inherit; letter-spacing: normal; }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {

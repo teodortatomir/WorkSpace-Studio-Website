@@ -323,8 +323,32 @@ function ProjectsScene() {
             
 
             {/* FOOTER */}
-            <footer className="main-footer">
-                <p>&copy; 2026 WORKSPACE STUDIO. ALL RIGHTS RESERVED.</p>
+            <footer className="site-footer main-footer">
+                <div className="site-footer-inner">
+                    <div className="site-footer-top">
+                        <div className="site-footer-logos">
+                            <img src="../logos/millerknol-certified-dealer-logo.svg" alt="Miller Knoll Certified Dealer" className="site-footer-miller" />
+                        </div>
+                        <nav className="site-footer-nav" aria-label="Footer navigation">
+                            <a className="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                            <a className="site-footer-link" href="../index.html#services">Services</a>
+                            <a className="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a className="site-footer-link" href="../index.html">About</a>
+                            <a className="site-footer-link" href="../index.html">Insights</a>
+                            <a className="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                            <a className="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                        </nav>
+                        <a className="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+                    </div>
+                    <div className="site-footer-bottom">
+                        <p className="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                        <div className="site-footer-socials">
+                            <a className="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a className="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            <a className="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
     );
