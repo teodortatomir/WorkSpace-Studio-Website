@@ -4,6 +4,7 @@ const menuOverlay = document.getElementById('menuOverlay');
 const menuItems = document.querySelectorAll('.menu-nav-item');
 const menuLinks = document.querySelectorAll('.menu-nav-item a');
 const allImages = document.querySelectorAll('.menu-img-item');
+const allVisuals = document.querySelectorAll('.menu-visual-item');
 
 document.querySelectorAll('.menu-img-item').forEach(img => {
     const loader = new Image();
@@ -28,9 +29,8 @@ function closeMenuOverlay() {
 menuItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
         const targetId = item.getAttribute('data-target');
-        allImages.forEach(img => img.classList.remove('active'));
-        const targetImg = document.getElementById(targetId);
-        if (targetImg) targetImg.classList.add('active');
+        allVisuals.forEach(visual => visual.classList.remove('active'));
+        document.querySelectorAll(`[data-visual-target="${targetId}"]`).forEach(visual => visual.classList.add('active'));
     });
 });
 

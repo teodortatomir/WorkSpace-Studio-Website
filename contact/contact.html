@@ -60,13 +60,20 @@
         
         <div class="menu-split-container">
             <div class="menu-left-images">
-                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects">
-                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services">
-                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners">
-                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about">
-                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights">
-                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop">
-                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
             </div>
             <div class="menu-right-content">
                 <span class="menu-label-top">Menu</span>
@@ -86,9 +93,6 @@
                         <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
                         <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
                         <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="menu-secondary-logo">
-                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
                     </div>
                 </div>
             </div>
@@ -216,6 +220,7 @@
         const menuItems = document.querySelectorAll('.menu-nav-item');
         const menuLinks = document.querySelectorAll('.menu-nav-item a');
         const allImages = document.querySelectorAll('.menu-img-item');
+        const allVisuals = document.querySelectorAll('.menu-visual-item');
 
         document.querySelectorAll('.menu-img-item').forEach(img => {
             const loader = new Image();
@@ -240,9 +245,8 @@
         menuItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 const targetId = item.getAttribute('data-target');
-                allImages.forEach(img => img.classList.remove('active'));
-                const targetImg = document.getElementById(targetId);
-                if (targetImg) targetImg.classList.add('active');
+                allVisuals.forEach(visual => visual.classList.remove('active'));
+                document.querySelectorAll(`[data-visual-target="${targetId}"]`).forEach(visual => visual.classList.add('active'));
             });
         });
 
