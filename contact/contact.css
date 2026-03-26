@@ -118,6 +118,7 @@ body {
     width: 90%;
     margin: 0 auto;
     gap: 80px;
+    align-items: start;
 }
 
 .category-tag {
@@ -158,6 +159,61 @@ body {
     outline: none;
     font-size: 16px;
     font-family: inherit;
+}
+
+.service-selection-group {
+    gap: 14px;
+}
+
+.service-options {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: start;
+}
+
+.service-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.service-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.service-option span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--text-main);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.service-option:hover span {
+    transform: translateY(-1px);
+    border-color: rgba(197, 163, 125, 0.42);
+}
+
+.service-option input:checked + span {
+    border-color: var(--accent-warm);
+    background: rgba(197, 163, 125, 0.14);
+    color: var(--text-main);
+}
+
+.service-option input:focus-visible + span {
+    outline: 2px solid rgba(197, 163, 125, 0.28);
+    outline-offset: 2px;
 }
 
 .submit-btn {
@@ -202,6 +258,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    min-height: 640px;
 }
 
 .info-label {
@@ -264,6 +321,7 @@ body {
 
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .contact-info-container { padding: 30px; }
+    .service-options { flex-wrap: wrap; }
     .input-row { grid-template-columns: 1fr; }
     .contact-scene { padding-top: 100px; }
 }

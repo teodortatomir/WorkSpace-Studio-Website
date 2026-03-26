@@ -94,6 +94,17 @@ const projectsData = [
     { id: 91, title: "Impact Hub Cluj", cat: "Tech Community Center", type: "Exclusive", img: "../projects-pictures/impact_hub_cluj-napoca.jpg", link: "#" }
 ];
 
+const customProjectsData = (window.WorkspaceCMS?.getEntriesByType("project") || []).map((entry, index) => ({
+    id: `cms-${index}-${entry.slug}`,
+    title: entry.title,
+    cat: entry.category || "Custom Project",
+    type: entry.projectType || "Corporate",
+    img: entry.coverImage || "../projects-pictures/skytower-hero.jpg",
+    link: entry.sourceLink || `../cms/entry.html?type=project&slug=${encodeURIComponent(entry.slug)}`
+}));
+
+const allProjectsData = [...customProjectsData, ...projectsData];
+
 function ProjectsScene() {
     const [filter, setFilter] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
@@ -155,7 +166,7 @@ function ProjectsScene() {
     };
 
     const filteredProjects = useMemo(() => {
-        const filtered = projectsData.filter(p => {
+        const filtered = allProjectsData.filter(p => {
             const matchesFilter = filter === "All" || p.type === filter;
             const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
             return matchesFilter && matchesSearch;
@@ -163,7 +174,7 @@ function ProjectsScene() {
         return filtered.slice(0, visibleCount);
     }, [filter, searchQuery, visibleCount]);
 
-    const getCount = (cat) => cat === "All" ? projectsData.length : projectsData.filter(p => p.type === cat).length;
+    const getCount = (cat) => cat === "All" ? allProjectsData.length : allProjectsData.filter(p => p.type === cat).length;
     const categories = ["All", "Corporate", "Tech", "Exclusive", "Beauty"];
 
     return (
@@ -326,15 +337,12 @@ function ProjectsScene() {
             <footer className="site-footer main-footer">
                 <div className="site-footer-inner">
                     <div className="site-footer-top">
-                        <div className="site-footer-logos">
-                            <img src="../logos/millerknol-certified-dealer-logo.svg" alt="Miller Knoll Certified Dealer" className="site-footer-miller" />
-                        </div>
                         <nav className="site-footer-nav" aria-label="Footer navigation">
                             <a className="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
                             <a className="site-footer-link" href="../index.html#services">Services</a>
                             <a className="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
-                            <a className="site-footer-link" href="../index.html">About</a>
-                            <a className="site-footer-link" href="../index.html">Insights</a>
+                            <a className="site-footer-link" href="../about/about.html">About</a>
+                            <a className="site-footer-link" href="../insights/insights.html">Insights</a>
                             <a className="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
                             <a className="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
                         </nav>

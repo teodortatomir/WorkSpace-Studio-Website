@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsroom | Workspace Studio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="insights.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="insights-page newsroom-page">
+    <nav class="navbar main-nav visible-nav">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            <div class="nav-col nav-center">
+                <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+                <span class="brand-name-text design-txt">Design</span>
+                <span class="brand-name-text sustainability-txt">Sustainability</span>
+                <span class="brand-name-text turnkey-txt">Turn Key</span>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="menu-toggle" id="menuOpen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects" alt="">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services" alt="">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners" alt="">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about" alt="">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights" alt="">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop" alt="">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact" alt="">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links">
+                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
+                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    <div class="menu-secondary-logo">
+                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="insights-main">
+        <section class="newsroom-hero">
+            <div class="newsroom-hero-copy reveal reveal-left">
+                <span class="section-kicker">Newsroom</span>
+                <h1>Press coverage, interviews, and market <em>signals</em> around Workspace Studio.</h1>
+                <div class="hub-hero-actions newsroom-hero-actions">
+                    <a href="insights.html#publications" class="insights-button insights-button-secondary insights-button-newsroom">Explore Publications</a>
+                    <a href="newsroom.html" class="insights-button">Open Newsroom</a>
+                </div>
+            </div>
+            <div class="newsroom-hero-media reveal reveal-right">
+                <figure class="newsroom-hero-image newsroom-hero-image-main">
+                    <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio newsroom">
+                </figure>
+                <figure class="newsroom-hero-image newsroom-hero-image-top">
+                    <img src="../projects-pictures/workspace-studio.jpg" alt="Workspace Studio interior">
+                </figure>
+                <figure class="newsroom-hero-image newsroom-hero-image-bottom">
+                    <img src="../projects-pictures/leading-tech-company.jpg" alt="Workspace Studio meeting room">
+                </figure>
+            </div>
+            <div class="news-ticker-wrap news-ticker-static reveal reveal-up">
+                <div class="news-ticker-label">Latest News</div>
+                <div class="news-ticker">
+                    <div class="news-ticker-track">
+                        <a href="https://nineoclock.ro/2024/06/04/workspace-studio-2024-is-the-year-of-budget-centred-design/" target="_blank" rel="noopener noreferrer">Budget-centred design becomes a key office trend in 2024</a>
+                        <span></span>
+                        <a href="https://www.news.ro/economic/workspace-studio-investitiile-in-ergonomie-si-design-au-crescut-cu-circa-20-pentru-o-reamenjare-completa-a-spatiului-de-birouri-costurile-variaza-intre-600-si-1-000-de-euro-per-metru-patrat-1922401004122024061221616846" target="_blank" rel="noopener noreferrer">Ergonomics and design investments increased by around 20 percent</a>
+                        <span></span>
+                        <a href="https://www.forbes.ro/workspace-studio-investitii-de-35-milioane-de-euro-in-propriul-depozit-logistic-394406" target="_blank" rel="noopener noreferrer">Workspace Studio invests 3.5 million euro in its own logistics warehouse</a>
+                        <span></span>
+                        <a href="https://www.romania-insider.com/horatiu-didea-workspace-studio-employees-today-seek-more-just-workspace-era-beige-and-greige-office" target="_blank" rel="noopener noreferrer">Employees want more than a workspace in the post-beige office era</a>
+                        <span></span>
+                        <a href="https://angajatorulmeu.ro/workspace-studio-tendinte-office-in-2024-reamenajari-si-design-cu-impact/" target="_blank" rel="noopener noreferrer">Office trends in 2024 bring redesigns with stronger design impact</a>
+                        <span></span>
+                        <a href="https://www.newmoney.ro/tendinte-in-piata-de-amenajari-interioare-pentru-birouri-cum-au-evoluat-costurile/" target="_blank" rel="noopener noreferrer">Office fit-out costs continue to evolve across the market</a>
+                        <span></span>
+                        <a href="https://www.revistabiz.ro/workspace-studio-investitiile-in-ergonomie-si-design-au-crescut-cu-circa-20-in-2024/" target="_blank" rel="noopener noreferrer">Revista Biz tracks the rise in ergonomics and design spending</a>
+                        <span></span>
+                        <a href="https://business-review.eu/property/offices/workspace-studio-investments-in-ergonomics-and-design-have-increased-by-approximately-20-261727" target="_blank" rel="noopener noreferrer">Business Review follows the 20 percent rise in design investment</a>
+                        <span></span>
+                        <a href="https://www.businessmagazin.ro/analize/resurse-umane/noul-cuvant-din-agenda-liderilor-de-business-uman-22338358" target="_blank" rel="noopener noreferrer">Human is the new keyword in business leadership agendas</a>
+                        <span></span>
+                        <a href="https://www.forbes.ro/horatiu-didea-managing-partner-workspace-studio-la-reinventarea-romaniei-cam-70-din-cifra-noastra-de-afaceri-vine-de-la-clienti-care-au-facut-reamenajari-nu-au-fost-proiecte-noi-luate-de-392076" target="_blank" rel="noopener noreferrer">About 70 percent of revenue now comes from redesign projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-search-row reveal reveal-up">
+            <label class="insights-search" aria-label="Search newsroom">
+                <input type="search" id="newsSearch" placeholder="Search news">
+            </label>
+        </section>
+
+        <section class="news-grid" id="newsGrid">
+            <a class="news-grid-card reveal reveal-up" href="https://nineoclock.ro/2024/06/04/workspace-studio-2024-is-the-year-of-budget-centred-design/" target="_blank" rel="noopener noreferrer" data-search="nine oclock budget centred design 2024 workspace studio">
+                <img src="../projects-pictures/skytower-hero.jpg" alt="Budget-centred design feature">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Nine O'Clock</span>
+                    <h3>2024 is defined by budget-centred design, not lower design ambition.</h3>
+                    <p>A strategic point of view on how companies balance cost discipline with better workspace decisions.</p>
+                    <span class="news-source-link">Read on Nine O'Clock</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.news.ro/economic/workspace-studio-investitiile-in-ergonomie-si-design-au-crescut-cu-circa-20-pentru-o-reamenjare-completa-a-spatiului-de-birouri-costurile-variaza-intre-600-si-1-000-de-euro-per-metru-patrat-1922401004122024061221616846" target="_blank" rel="noopener noreferrer" data-search="news.ro ergonomics design budgets 20 percent office redesign">
+                <img src="../projects-pictures/leading-tech-company.jpg" alt="News.ro office redesign feature">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">News.ro</span>
+                    <h3>Ergonomics and design budgets increased by around 20 percent.</h3>
+                    <p>A market read on redesign costs, office quality, and what companies are prioritizing now.</p>
+                    <span class="news-source-link">Read on News.ro</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.forbes.ro/workspace-studio-investitii-de-35-milioane-de-euro-in-propriul-depozit-logistic-394406" target="_blank" rel="noopener noreferrer" data-search="forbes logistics investment warehouse 3.5 million euro">
+                <img src="../projects-pictures/leading-game-company.jpg" alt="Logistics investment news">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Forbes</span>
+                    <h3>Workspace Studio expands operationally through a major logistics investment.</h3>
+                    <p>A growth story that moves beyond design and into the infrastructure behind delivery quality.</p>
+                    <span class="news-source-link">Read on Forbes</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://angajatorulmeu.ro/horatiu-didea-workspace-studio-investitia-in-amenajarea-unui-birou-modern-este-vazuta-acum-ca-o-investitie-in-angajati/" target="_blank" rel="noopener noreferrer" data-search="angajatorulmeu horatiu didea office investment employees modern office">
+                <img src="../projects-pictures/workspace-studio.jpg" alt="Workspace Studio interview for AngajatorulMeu">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">AngajatorulMeu</span>
+                    <h3>Horatiu Didea says a modern office is now seen as an investment in employees.</h3>
+                    <p>Interview on how office spending is increasingly tied to wellbeing and retention.</p>
+                    <span class="news-source-link">Read on AngajatorulMeu</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.newmoney.ro/tendinte-in-piata-de-amenajari-interioare-pentru-birouri-cum-au-evoluat-costurile/" target="_blank" rel="noopener noreferrer" data-search="new money office fit-out costs market trends">
+                <img src="../projects-pictures/uipath.jpg" alt="New Money office market trends">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">New Money</span>
+                    <h3>Office interior fit-out costs continue to evolve as companies rethink workplace quality.</h3>
+                    <p>A market look at pricing, redesign pressure, and the new realities of office investment.</p>
+                    <span class="news-source-link">Read on New Money</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.revistabiz.ro/workspace-studio-investitiile-in-ergonomie-si-design-au-crescut-cu-circa-20-in-2024/" target="_blank" rel="noopener noreferrer" data-search="revista biz ergonomics design investments 20 percent 2024">
+                <img src="../projects-pictures/leading-game-company-p2.jpg" alt="Revista Biz news">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Revista Biz</span>
+                    <h3>Ergonomics and design investments are up by approximately 20 percent in 2024.</h3>
+                    <p>A business-facing read on how office quality remains a priority even in tighter budget cycles.</p>
+                    <span class="news-source-link">Read on Revista Biz</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://business-review.eu/property/offices/workspace-studio-investments-in-ergonomics-and-design-have-increased-by-approximately-20-261727" target="_blank" rel="noopener noreferrer" data-search="business review ergonomics design investment office redesign">
+                <img src="../projects-pictures/leading-tech-company.jpg" alt="Business Review office news">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Business Review</span>
+                    <h3>Business Review tracks the 20 percent rise in ergonomics and design investment.</h3>
+                    <p>An English-language business press take on office redesign spending and market direction.</p>
+                    <span class="news-source-link">Read on Business Review</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.forbes.ro/horatiu-didea-managing-partner-workspace-studio-la-reinventarea-romaniei-cam-70-din-cifra-noastra-de-afaceri-vine-de-la-clienti-care-au-facut-reamenajari-nu-au-fost-proiecte-noi-luate-de-392076" target="_blank" rel="noopener noreferrer" data-search="forbes horatiu didea redesign projects revenue">
+                <img src="../projects-pictures/omvpetrom.jpg" alt="Forbes interview">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Forbes</span>
+                    <h3>About 70 percent of revenue now comes from redesign projects, not new office builds.</h3>
+                    <p>A leadership interview focused on reconfiguration, market shifts, and business resilience.</p>
+                    <span class="news-source-link">Read on Forbes</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.businessmagazin.ro/analize/resurse-umane/noul-cuvant-din-agenda-liderilor-de-business-uman-22338358" target="_blank" rel="noopener noreferrer" data-search="business magazin human business agenda leadership office">
+                <img src="../projects-pictures/mindspaces.jpg" alt="Business Magazin human-centered office agenda">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Business Magazin</span>
+                    <h3>A new word in the business agenda: human.</h3>
+                    <p>A broader leadership conversation around people-first work environments and office expectations.</p>
+                    <span class="news-source-link">Read on Business Magazin</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.zf.ro/zf-15-minute-cu-un-antreprenor/zf-15-minute-antreprenor-horatiu-didea-workspace-studio-ne-asteptam-22306493" target="_blank" rel="noopener noreferrer" data-search="zf horatiu didea entrepreneur office market expectations">
+                <img src="../projects-pictures/skytower.jpg" alt="ZF entrepreneur interview">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">ZF</span>
+                    <h3>Horatiu Didea on what Workspace Studio expects from the office market next.</h3>
+                    <p>A short entrepreneur-format interview about current market pressure and growth expectations.</p>
+                    <span class="news-source-link">Read on ZF</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://angajatorulmeu.ro/workspace-studio-tendinte-office-in-2024-reamenajari-si-design-cu-impact/" target="_blank" rel="noopener noreferrer" data-search="angajatorulmeu office trends 2024 redesign impact">
+                <img src="../projects-pictures/skytower-hero.jpg" alt="Office trends 2024">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">AngajatorulMeu</span>
+                    <h3>Office trends in 2024 point to redesigns and stronger design impact.</h3>
+                    <p>A concise look at how companies are upgrading offices to support hybrid work and employer image.</p>
+                    <span class="news-source-link">Read on AngajatorulMeu</span>
+                </div>
+            </a>
+            <a class="news-grid-card reveal reveal-up" href="https://www.romania-insider.com/horatiu-didea-workspace-studio-employees-today-seek-more-just-workspace-era-beige-and-greige-office" target="_blank" rel="noopener noreferrer" data-search="romania insider employees seek more than workspace beige greige office">
+                <img src="../projects-pictures/skytower-hero.jpg" alt="Romania Insider interview">
+                <div class="news-grid-copy">
+                    <span class="publication-tag">Romania Insider</span>
+                    <h3>Employees today seek more than just a workspace in the post-beige office era.</h3>
+                    <p>An English-language interview about expectations, culture, and the visual future of the office.</p>
+                    <span class="news-source-link">Read on Romania Insider</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer insights-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="insights.html">Back to Insights</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../cms/cms.js"></script>
+    <script src="insights.js"></script>
+</body>
+</html>

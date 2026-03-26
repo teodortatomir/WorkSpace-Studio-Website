@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Workspace Studio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="insights.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="insights-page insights-hub-page">
+    <nav class="navbar main-nav visible-nav">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+
+            <div class="nav-col nav-center">
+                <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+                <span class="brand-name-text design-txt">Design</span>
+                <span class="brand-name-text sustainability-txt">Sustainability</span>
+                <span class="brand-name-text turnkey-txt">Turn Key</span>
+            </div>
+
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div style="display:none; visibility:hidden; width:0; height:0; overflow:hidden;">
+        <img src="../projects-pictures/skytower-hero.jpg" alt="">
+        <img src="../projects-pictures/workspace-studio.jpg" alt="">
+        <img src="../projects-pictures/leading-tech-company.jpg" alt="">
+        <img src="../projects-pictures/mindspaces.jpg" alt="">
+        <img src="../projects-pictures/omvpetrom.jpg" alt="">
+        <img src="../projects-pictures/tiriac-collection.jpg" alt="">
+        <img src="../projects-pictures/uipath.jpg" alt="">
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects" alt="">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services" alt="">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners" alt="">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about" alt="">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights" alt="">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop" alt="">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact" alt="">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links">
+                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
+                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    <div class="menu-secondary-logo">
+                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="insights-main">
+        <section class="insights-hub-hero">
+            <div class="hub-hero-copy reveal reveal-left">
+                <span class="section-kicker">Insights</span>
+                <h1>Design stories and a sharper <em>newsroom</em> for the modern office.</h1>
+                <div class="hub-hero-actions">
+                    <a href="#publications" class="insights-button">Explore Publications</a>
+                    <a href="newsroom.html" class="insights-button insights-button-secondary insights-button-newsroom">Open Newsroom</a>
+                </div>
+            </div>
+            <div class="hub-hero-media reveal reveal-right">
+                <figure class="hub-hero-image hub-hero-image-main">
+                    <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio insights">
+                </figure>
+                <figure class="hub-hero-image hub-hero-image-top">
+                    <img src="../projects-pictures/workspace-studio.jpg" alt="Workspace Studio showroom">
+                </figure>
+                <figure class="hub-hero-image hub-hero-image-bottom">
+                    <img src="../projects-pictures/leading-tech-company.jpg" alt="Workspace Studio editorial feature">
+                </figure>
+            </div>
+        </section>
+
+        <section class="news-ticker-wrap reveal reveal-up">
+            <div class="news-ticker-label">Latest News</div>
+            <div class="news-ticker">
+                <div class="news-ticker-track">
+                    <a href="newsroom.html">Nine O'Clock: 2024 is the year of budget-centred design</a>
+                    <span></span>
+                    <a href="newsroom.html">News.ro: ergonomics and design budgets rose by around 20 percent</a>
+                    <span></span>
+                    <a href="newsroom.html">Forbes: EUR 3.5 million logistics investment</a>
+                    <span></span>
+                    <a href="newsroom.html">Romania Insider: employees want more than a workspace</a>
+                    <span></span>
+                    <a href="newsroom.html">AngajatorulMeu: office trends in 2024</a>
+                    <span></span>
+                    <a href="newsroom.html">Revista Biz: ergonomics and design investments rose in 2024</a>
+                    <span></span>
+                    <a href="newsroom.html">Business Review: investment in design up approximately 20 percent</a>
+                    <span></span>
+                    <a href="newsroom.html">Business Magazin: the new business keyword is human</a>
+                    <span></span>
+                    <a href="newsroom.html">ZF: market expectations for the office segment</a>
+                    <span></span>
+                    <a href="newsroom.html">New Money: office fit-out costs continue to evolve</a>
+                    <span></span>
+                    <a href="newsroom.html">Nine O'Clock: 2024 is the year of budget-centred design</a>
+                    <span></span>
+                    <a href="newsroom.html">News.ro: ergonomics and design budgets rose by around 20 percent</a>
+                    <span></span>
+                    <a href="newsroom.html">Forbes: EUR 3.5 million logistics investment</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="publications-section" id="publications">
+            <div class="section-head section-head-stack reveal reveal-left">
+                <div>
+                <span class="section-kicker">Publications</span>
+                <h2>Long-form reads on iconic design, ergonomics, and workplace culture.</h2>
+                </div>
+                <label class="insights-search" aria-label="Search publications">
+                    <input type="search" id="publicationsSearch" placeholder="Search publications">
+                </label>
+            </div>
+
+            <div class="publications-grid" id="publicationsGrid">
+                <a class="publication-card reveal reveal-left" href="articles/aeron-chair-moma.html" data-search="aeron herman miller moma iconic chair ergonomics design">
+                    <img src="../publications/scaun-hm/_herman_miller_aeron-office-chairs-2195348-gallery1.jpg" alt="Herman Miller Aeron chair">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Ergonomics</span>
+                        <h3>Herman Miller Aeron: The iconic chair in the MoMA design collection.</h3>
+                        <p>The office chair that came to define bold ideas, ergonomic intelligence, and late-tech ambition.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/saarinen-table.html" data-search="saarinen table elegance minimalism eero saarinen modernist">
+                    <img src="../publications/saarinen/saarinen_table_millerknoll.jpg" alt="Saarinen table">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Minimalism</span>
+                        <h3>Saarinen Table: elegance through minimalism.</h3>
+                        <p>A modernist classic that replaced visual clutter with one central sculptural gesture.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/generation-by-knoll.html" data-search="generation by knoll chair love letter back ergonomics mobility">
+                    <img src="../publications/generation-byknoll/generation_frameless-flex-seat.jpeg" alt="Generation by Knoll chair">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Flexibility</span>
+                        <h3>Generation by Knoll: a love letter to your back.</h3>
+                        <p>A chair created for movement, informal teamwork, and more than one correct posture.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/why-choose-a-leather-sofa.html" data-search="leather sofa edelman leather materials design">
+                    <img src="../publications/leather-sofa/edelman_virginia_airstream_2.jpeg" alt="Leather sofa">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Materials</span>
+                        <h3>Why choose a leather sofa?</h3>
+                        <p>Three reasons leather still matters, plus the brand that turned the material into an art form.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/what-is-iconic-design.html" data-search="iconic design classic timeless objects culture">
+                    <img src="../publications/iconic-design/_millerknoll_saarinen_table.jpg" alt="Iconic design">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Design Culture</span>
+                        <h3>What is iconic design and why do we value it so much?</h3>
+                        <p>A short guide to timelessness, recognition, and the pieces that shape cultural memory.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/three-chairs-three-ideas.html" data-search="three chairs ideas womb pedestal saarinen">
+                    <img src="../publications/three-chairs-three-ideas/saarinen_executive_chair.jpg" alt="Three chairs, three ideas">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Icons</span>
+                        <h3>3 chairs, 3 ideas, 3 pieces that changed object design.</h3>
+                        <p>Eero Saarinen through the Womb chair, the Pedestal collection, and the Saarinen chair.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/wassily-chair.html" data-search="wassily chair bauhaus bicycle handlebar marcel breuer">
+                    <img src="../publications/wassily-chair/wassily_1.jpg" alt="Wassily chair">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Bauhaus</span>
+                        <h3>The Wassily chair: inspired by a bicycle handlebar.</h3>
+                        <p>The tubular steel breakthrough that shocked Europe and became a modern design icon.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/florence-knoll-good-design.html" data-search="florence knoll good design good business office culture open space">
+                    <img src="../publications/florence-knoll/florence_knoll_tablou.jpg" alt="Florence Knoll">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Office Culture</span>
+                        <h3>Florence Knoll at 101: good design is good business.</h3>
+                        <p>The woman who helped redefine the modern office and the open-plan workplace.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/never-again-9-to-5.html" data-search="9 to 5 never again hybrid work office trends redesign">
+                    <img src="../publications/9-to-5/kraftanlagen-romania-ipip_8.jpg" alt="Never again 9 to 5">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Workplace Trends</span>
+                        <h3>From 9 to 5? Never again.</h3>
+                        <p>How hybrid work changed office planning, budgets, density, and the role of statement design.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/what-is-a-sustainable-office.html" data-search="sustainable office furniture eco friendly workplace">
+                    <img src="../publications/sustainable-table/aeron_envb_final_l.jpg" alt="Sustainable office">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Sustainability</span>
+                        <h3>What does a sustainable office really mean?</h3>
+                        <p>Beyond eco-friendly labels: durable thinking, lower impact, and long-term business value.</p>
+                    </div>
+                </a>
+
+                <a class="publication-card reveal reveal-up" href="articles/barcelona-chair-classic.html" data-search="barcelona chair mies van der rohe classic films iconic">
+                    <img src="../publications/barcelona-chair/bercelona_1.jpg" alt="Barcelona chair">
+                    <div class="publication-card-copy">
+                        <span class="publication-tag">Classics</span>
+                        <h3>The Barcelona chair: a classic with a film career.</h3>
+                        <p>Still elegant, still copied, still recognisable almost a century after it first appeared.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer insights-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../cms/cms.js"></script>
+    <script src="insights.js"></script>
+</body>
+</html>

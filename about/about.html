@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Workspace Studio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+    <nav class="navbar main-nav visible-nav">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+
+            <div class="nav-col nav-center">
+                <span class="brand-name-text ergonomics-txt">Ergonomics</span>
+                <span class="brand-name-text design-txt">Design</span>
+                <span class="brand-name-text sustainability-txt">Sustainability</span>
+                <span class="brand-name-text turnkey-txt">Turn Key</span>
+            </div>
+
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div style="display:none; visibility:hidden; width:0; height:0; overflow:hidden;">
+        <img src="../projects-pictures/skytower-hero.jpg" alt="">
+        <img src="../projects-pictures/workspace-studio.jpg" alt="">
+        <img src="../projects-pictures/uipath.jpg" alt="">
+        <img src="../projects-pictures/mindspaces.jpg" alt="">
+        <img src="../projects-pictures/loreal-romania.jpg" alt="">
+        <img src="../projects-pictures/omvpetrom.jpg" alt="">
+        <img src="../projects-pictures/tiriac-collection.jpg" alt="">
+        <img src="../projects-pictures/skytower.jpg" alt="">
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects" alt="">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services" alt="">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners" alt="">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about" alt="">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights" alt="">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop" alt="">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact" alt="">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links">
+                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
+                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    <div class="menu-secondary-logo">
+                        <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="about-main">
+        <section class="about-hero">
+            <div class="about-hero-copy reveal reveal-left">
+                <span class="category-tag">About Workspace Studio</span>
+                <h1>Spaces shaped with <em>clarity, culture,</em> and long-term performance.</h1>
+                <p>Workspace Studio creates workplaces that feel refined, human, and deeply aligned with how teams actually work, meet, focus, and grow.</p>
+            </div>
+            <div class="about-hero-gallery">
+                <div class="about-accent about-accent-hero reveal reveal-up"></div>
+                <figure class="hero-image hero-image-large reveal reveal-right">
+                    <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio interior project">
+                </figure>
+                <figure class="hero-image reveal reveal-up">
+                    <img src="../projects-pictures/workspace-studio.jpg" alt="Workspace Studio showroom">
+                </figure>
+                <figure class="hero-image reveal reveal-right">
+                    <img src="../projects-pictures/uipath.jpg" alt="Workspace Studio project detail">
+                </figure>
+            </div>
+        </section>
+
+        <section class="about-intro">
+            <div class="about-intro-grid">
+                <div class="about-intro-text reveal reveal-left">
+                    <span class="section-kicker">Who We Are</span>
+                    <h2>Design &amp; build thinking with a premium workplace lens.</h2>
+                    <p>Founded in 2008, Workspace Studio has developed a practice built around workplace strategy, design, furniture specification, turnkey fit-out coordination, and ergonomics. The studio pairs concept quality with practical delivery so the end result feels elevated, coherent, and ready for everyday use.</p>
+                    <p>Our work brings together office interiors, architectural systems, furniture, and brand-led detail into a single experience, with a curated network of global manufacturers and a strong implementation mindset.</p>
+                </div>
+                <div class="about-stats reveal reveal-right">
+                    <div class="about-stat-card">
+                        <span class="about-stat-value">2008</span>
+                        <span class="about-stat-label">Long-term design &amp; build practice in Bucharest.</span>
+                    </div>
+                    <div class="about-stat-card">
+                        <span class="about-stat-value">100+</span>
+                        <span class="about-stat-label">International brands, manufacturers, and workplace partners.</span>
+                    </div>
+                    <div class="about-stat-card">
+                        <span class="about-stat-value">MillerKnoll</span>
+                        <span class="about-stat-label">Certified dealer and strategic premium furniture partner.</span>
+                    </div>
+                    <div class="about-stat-card">
+                        <span class="about-stat-value">Sky Tower</span>
+                        <span class="about-stat-label">Showroom and client meeting point in Bucharest.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-story-band">
+            <div class="about-story-copy reveal reveal-left">
+                <span class="section-kicker">Studio Approach</span>
+                <h2>Spatial clarity, tactile materials, and a process that keeps quality intact through every project stage.</h2>
+                <p>We shape environments that feel calm and elevated, but are also highly practical. That means balancing architecture, furniture, ergonomics, circulation, and visual identity into one coherent workplace story.</p>
+            </div>
+            <div class="about-story-visuals">
+                <div class="about-accent about-accent-story reveal reveal-up"></div>
+                <figure class="about-story-image about-story-image-main reveal reveal-right">
+                    <img src="../projects-pictures/omvpetrom.jpg" alt="Workspace Studio design detail">
+                </figure>
+                <figure class="about-story-image about-story-image-offset reveal reveal-up">
+                    <img src="../projects-pictures/loreal-romania.jpg" alt="Workspace Studio collaborative setting">
+                </figure>
+            </div>
+        </section>
+
+        <section class="about-editorial-grid">
+            <figure class="editorial-card editorial-card-tall reveal reveal-left">
+                <img src="../projects-pictures/mindspaces.jpg" alt="Collaborative workplace">
+            </figure>
+            <figure class="editorial-card reveal reveal-up">
+                <img src="../projects-pictures/loreal-romania.jpg" alt="Creative workspace">
+            </figure>
+            <figure class="editorial-card reveal reveal-right">
+                <img src="../projects-pictures/omvpetrom.jpg" alt="Corporate office project">
+            </figure>
+            <figure class="editorial-card editorial-card-wide reveal reveal-up">
+                <img src="../projects-pictures/tiriac-collection.jpg" alt="Premium interior environment">
+            </figure>
+        </section>
+
+        <section class="about-capabilities">
+            <div class="about-section-head reveal reveal-left">
+                <span class="section-kicker">What We Do</span>
+                <h2>From workplace vision to delivered environment.</h2>
+            </div>
+            <div class="about-capabilities-grid">
+                <article class="about-capability reveal reveal-up">
+                    <h3>Workplace Strategy</h3>
+                    <p>Translating business goals, team dynamics, and spatial needs into a clear project direction.</p>
+                </article>
+                <article class="about-capability reveal reveal-up">
+                    <h3>Design &amp; Build</h3>
+                    <p>Concept creation, technical coordination, and visual coherence from start to finish.</p>
+                </article>
+                <article class="about-capability reveal reveal-up">
+                    <h3>Furniture &amp; Systems</h3>
+                    <p>Curated workplace products from global premium brands, specified for fit and performance.</p>
+                </article>
+                <article class="about-capability reveal reveal-up">
+                    <h3>Ergonomics</h3>
+                    <p>Solutions that support comfort, movement, concentration, and long-term wellbeing.</p>
+                </article>
+                <article class="about-capability reveal reveal-up">
+                    <h3>Turnkey Delivery</h3>
+                    <p>Execution support that keeps design quality intact through procurement and implementation.</p>
+                </article>
+                <article class="about-capability reveal reveal-up">
+                    <h3>Showroom Guidance</h3>
+                    <p>A physical place to test products, materials, and workspace ideas before final decisions.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-showroom">
+            <div class="about-showroom-media reveal reveal-left">
+                <div class="about-accent about-accent-showroom reveal reveal-up"></div>
+                <img src="../projects-pictures/workspace-studio.jpg" alt="Workspace Studio showroom">
+            </div>
+            <div class="about-showroom-copy reveal reveal-right">
+                <span class="section-kicker">Showroom</span>
+                <h2>Meet us at Sky Tower, Bucharest.</h2>
+                <p>The studio's showroom is designed as a working reference point for clients who want to explore furniture, finishes, ergonomic solutions, and workplace atmospheres in a more tactile way.</p>
+                <p>It is also where conversations move from moodboards into practical decisions: how a team sits, collaborates, focuses, and feels across the entire day.</p>
+                <div class="about-showroom-meta">
+                    <span>Sky Tower, 18th Floor</span>
+                    <span>Calea Floreasca 246C, Bucharest</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-closing">
+            <div class="about-closing-grid">
+                <figure class="about-closing-image reveal reveal-left">
+                    <img src="../projects-pictures/skytower.jpg" alt="Workspace Studio project skyline">
+                </figure>
+                <div class="about-closing-copy reveal reveal-right">
+                    <span class="section-kicker">Why Clients Choose Us</span>
+                    <h2>Because the final space has to work beautifully, not just look good in a presentation.</h2>
+                    <p>Workspace Studio blends aesthetic sensitivity, premium product knowledge, technical coordination, and human-centered planning into one process. The result is an environment that feels composed, useful, and genuinely aligned with the people inside it.</p>
+                    <a href="../contact/contact.html" class="about-cta-link">Start a Project</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer about-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="about.js"></script>
+</body>
+</html>

@@ -8,6 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="hero-navbar" id="heroNav" aria-label="Hero navigation">
+        <div class="hero-navbar-inner">
+            <a href="index.html" class="hero-logo-link" aria-label="Workspace Studio home">
+                <img src="logos/WorkspaceW.svg" alt="Workspace Studio W" class="hero-logo-mark">
+            </a>
+
+            <div class="hero-nav-actions">
+                <div class="hero-search-shell" id="heroSearchShell">
+                    <button class="hero-icon-button" id="heroSearchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="heroSearchForm">
+                        <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
+                            <path d="M20 20L16.65 16.65" stroke-width="1.8" stroke-linecap="round"></path>
+                        </svg>
+                    </button>
+                    <form class="hero-search-form" id="heroSearchForm" role="search">
+                        <input type="search" id="heroSearchInput" class="hero-search-input" placeholder="Search pages" aria-label="Search pages">
+                    </form>
+                </div>
+
+                <button class="hero-icon-button hero-menu-button" id="heroMenuOpen" type="button" aria-label="Open menu">
+                    <span class="hero-menu-line"></span>
+                    <span class="hero-menu-line"></span>
+                    <span class="hero-menu-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <nav class="navbar main-nav hidden-nav">
     <div class="nav-container">
         <div class="nav-col nav-left">
@@ -28,6 +56,12 @@
         </div>
 
         <div class="nav-col nav-right">
+            <button class="nav-search-button" type="button" aria-label="Search">
+                <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
             <button class="menu-toggle" id="menuOpen">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -67,8 +101,8 @@
                 <div class="menu-nav-item" data-target="img-projects"><a href="projects-scene/proiecte.html">Projects</a></div>
                 <div class="menu-nav-item" data-target="img-services"><a href="#services">Services</a></div>
                 <div class="menu-nav-item" data-target="img-partners"><a href="partners/partners.html">Brands & Partners</a></div>
-                <div class="menu-nav-item" data-target="img-about"><a href="#">About</a></div>
-                <div class="menu-nav-item" data-target="img-insights"><a href="#">Insights</a></div>
+                <div class="menu-nav-item" data-target="img-about"><a href="about/about.html">About</a></div>
+                <div class="menu-nav-item" data-target="img-insights"><a href="insights/insights.html">Insights</a></div>
                 <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
                 <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="contact/contact.html">Contact / Start a Project</a></div>
             </nav>
@@ -103,12 +137,16 @@
                 <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="hero-badge-item">
             </div>
         </div>
+        <button class="hero-scroll-button" id="heroScrollButton" type="button" aria-label="Scroll to projects">
+            <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 10L12 15L17 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
     </header>
 
     <section class="pivot-projects" id="projects">
         <div class="services-header reveal">
             <span class="category-tag">Portfolio</span>
-            <h2>Featured <span class="font-serif italic text-[#c5a37d]">Projects</span></h2>
         </div>
 
         <div class="projects-equal-grid reveal">
@@ -171,6 +209,236 @@
                 <p>Petrom City — a sustainable and ergonomic approach to the workspace for the largest energy group in Southeast Europe.</p>
                 <a href="#" class="pivot-link">VIEW PROJECT</a>
             </div>
+        </div>
+
+        <div class="projects-slider reveal" data-projects-slider>
+            <button class="projects-slider-arrow projects-slider-arrow-prev" type="button" aria-label="Previous projects" data-projects-prev>
+                <span>&larr;</span>
+            </button>
+            <div class="projects-slider-viewport">
+                <div class="projects-slider-track" data-projects-track>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/uipath.jpg" alt="UiPath">
+                        <div class="project-slider-overlay">
+                            <h3>UiPath</h3>
+                            <a href="projects/UiPath/uipath.html" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/adobe.jpg" alt="Adobe">
+                        <div class="project-slider-overlay">
+                            <h3>Adobe</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/omvpetrom.jpg" alt="OMV Petrom">
+                        <div class="project-slider-overlay">
+                            <h3>OMV Petrom</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/honeywell.jpg" alt="Honeywell">
+                        <div class="project-slider-overlay">
+                            <h3>Honeywell</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/ams.jpg" alt="AMS Accelerate IT">
+                        <div class="project-slider-overlay">
+                            <h3>AMS Accelerate IT</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/kraftanlagen.jpg" alt="Kraftanlagen &amp; IPIP">
+                        <div class="project-slider-overlay">
+                            <h3>Kraftanlagen &amp; IPIP</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/laguna.jpg" alt="Laguna Technology">
+                        <div class="project-slider-overlay">
+                            <h3>Laguna Technology</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/unilever.jpg" alt="Unilever">
+                        <div class="project-slider-overlay">
+                            <h3>Unilever</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/vectra.jpg" alt="Vectra International">
+                        <div class="project-slider-overlay">
+                            <h3>Vectra International</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/coca-cola.jpg" alt="Coca Cola Romania">
+                        <div class="project-slider-overlay">
+                            <h3>Coca Cola Romania</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/skytower.jpg" alt="Skytower">
+                        <div class="project-slider-overlay">
+                            <h3>Skytower</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/mindspaces.jpg" alt="Mindspace">
+                        <div class="project-slider-overlay">
+                            <h3>Mindspace</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/loreal-romania.jpg" alt="L'Oreal Romania">
+                        <div class="project-slider-overlay">
+                            <h3>L'Oreal Romania</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/edenred.jpg" alt="Edenred Digital Center">
+                        <div class="project-slider-overlay">
+                            <h3>Edenred Digital Center</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/tiriac-collection.jpg" alt="Tiriac Collection">
+                        <div class="project-slider-overlay">
+                            <h3>Tiriac Collection</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/bbraun.jpg" alt="BBraun">
+                        <div class="project-slider-overlay">
+                            <h3>BBraun</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/datacore.jpg" alt="DataCore">
+                        <div class="project-slider-overlay">
+                            <h3>DataCore</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/intero.jpg" alt="InteRo Property Development">
+                        <div class="project-slider-overlay">
+                            <h3>InteRo Property Development</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/legrand.jpg" alt="Legrand">
+                        <div class="project-slider-overlay">
+                            <h3>Legrand</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/bimbo.jpg" alt="Grupo Bimbo">
+                        <div class="project-slider-overlay">
+                            <h3>Grupo Bimbo</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/diversinst.jpg" alt="Diversinst">
+                        <div class="project-slider-overlay">
+                            <h3>Diversinst</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/tmf-group.jpg" alt="TMF Group">
+                        <div class="project-slider-overlay">
+                            <h3>TMF Group</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/profi.jpg" alt="Profi">
+                        <div class="project-slider-overlay">
+                            <h3>Profi</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/alfasigma.jpg" alt="Alfasigma Romania">
+                        <div class="project-slider-overlay">
+                            <h3>Alfasigma Romania</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/swixx.jpg" alt="Swixx BioPharma">
+                        <div class="project-slider-overlay">
+                            <h3>Swixx BioPharma</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/dealer-gaming.jpg" alt="Live Dealer Gaming">
+                        <div class="project-slider-overlay">
+                            <h3>Live Dealer Gaming</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/technology-company.jpg" alt="Technology Company">
+                        <div class="project-slider-overlay">
+                            <h3>Technology Company</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/naos.jpg" alt="Naos Skin Care Romania">
+                        <div class="project-slider-overlay">
+                            <h3>Naos Skin Care Romania</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/rirbro.jpg" alt="RIRBRO Estate Management">
+                        <div class="project-slider-overlay">
+                            <h3>RIRBRO Estate Management</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/hbo.jpg" alt="HBO Romania">
+                        <div class="project-slider-overlay">
+                            <h3>HBO Romania</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-slider-card">
+                        <img src="projects-pictures/uber.jpg" alt="UBER Romania">
+                        <div class="project-slider-overlay">
+                            <h3>UBER Romania</h3>
+                            <a href="#" class="pivot-link">View Project</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <button class="projects-slider-arrow projects-slider-arrow-next" type="button" aria-label="Next projects" data-projects-next>
+                <span>&rarr;</span>
+            </button>
         </div>
 
         <div class="view-all-container projects-cta-wrap" id="projects-end-anchor"> <a href="projects-scene/proiecte.html" class="btn-discover-more btn-projects-cta">
@@ -292,15 +560,12 @@
         <footer class="site-footer">
             <div class="site-footer-inner">
                 <div class="site-footer-top">
-                    <div class="site-footer-logos">
-                        <img src="logos/millerknol-certified-dealer-logo.svg" alt="Miller Knoll Certified Dealer" class="site-footer-miller">
-                    </div>
                     <nav class="site-footer-nav" aria-label="Footer navigation">
                         <a class="site-footer-link" href="projects-scene/proiecte.html">Projects</a>
                         <a class="site-footer-link" href="#services">Services</a>
                         <a class="site-footer-link" href="partners/partners.html">Brands &amp; Partners</a>
-                        <a class="site-footer-link" href="index.html">About</a>
-                        <a class="site-footer-link" href="index.html">Insights</a>
+                        <a class="site-footer-link" href="about/about.html">About</a>
+                        <a class="site-footer-link" href="insights/insights.html">Insights</a>
                         <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
                         <a class="site-footer-link" href="contact/contact.html">Contact / Start a Project</a>
                     </nav>
@@ -318,197 +583,243 @@
         </footer>
 
 
+        <script src="cms/cms.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-             const video = document.getElementById('heroVideo');
-                    const container = document.getElementById('heroTextContainer');
-                    const subtitle = document.getElementById('dynamicSubtitle');
-                    const title = document.getElementById('dynamicTitle');
-                    const desc = document.getElementById('dynamicDesc');
-                    const badgesContainer = document.getElementById('heroBadges');
-                    const nav = document.querySelector('.navbar');
-                    const heroSection = document.getElementById('hero');
+                    if (window.WorkspaceCMS) {
+                        const customProjects = window.WorkspaceCMS.getEntriesByType('project');
+                        const sliderTrack = document.querySelector('[data-projects-track]');
 
-                // 1. TEXT MILESTONES (Sincronizare cu momentele din video)
-                const textMilestones = [
-
-                                {
-
-                                    time: 0,
-
-                                    subtitle: "Design & Build Excellence",
-
-                                    title: "Tailored <em>Workspaces</em>",
-
-                                    desc: "Office interiors fully customized to fit the needs of your workforce and organizational objectives."
-
-                                },
-
-                                {
-
-                                    time: 10.64,
-
-                                    subtitle: "The Human Element",
-
-                                    title: "People, Not <em>Furniture</em>",
-
-                                    desc: "The most important thing in a room is the people; we focus on physical, cognitive, and social ergonomics."
-
-                                },
-
-                                {
-
-                                    time: 18.57,
-
-                                    subtitle: "Unmatched Variety",
-
-                                    title: "100+ Global <em>Manufacturers</em>",
-
-                                    desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products."
-
-                                },
-
-                                {
-
-                                    time: 29.9,
-
-                                    subtitle: "Acoustic Privacy",
-
-                                    title: "Optimized <em>Focus Zones</em>",
-
-                                    desc: "Curated environments designed to eliminate distractions and enhance deep concentration."
-
-                                },
-
-                                {
-
-                                    time: 39.3,
-
-                                    subtitle: "MillerKnoll Certified Dealer",
-
-                                    title: "Global <em>Innovation</em>",
-
-                                    desc: "Bringing museum-quality designs and strategic services from the global leader in office furniture."
-
-                                },
-
-                                {
-
-                                    time: 47.2,
-
-                                    subtitle: "Research-Driven Design",
-
-                                    title: "Human-Centered <em>Solutions</em>",
-
-                                    desc: "Every design starts with research and ends with new solutions tailored to solve real problems."
-
-                                },
-
-                                {
-
-                                    time: 56.5,
-
-                                    subtitle: "A Legacy of Quality",
-
-                                    title: "MillerKnoll <em>Partner</em>",
-
-                                    desc: "Certified Dealer delivering global excellence since 2008.",
-
-                                    showBadges: true
-
-                                }
-
-                            ];
-                
-                let lastIndex = -1;
-                    if (video) {
-                        video.addEventListener('timeupdate', () => {
-                            const currentTime = video.currentTime;
-                            const currentIndex = textMilestones.reduce((acc, milestone, idx) => (currentTime >= milestone.time ? idx : acc), 0);
-                            if (currentIndex !== lastIndex) {
-                                lastIndex = currentIndex;
-                                container.style.opacity = '0';
-                                setTimeout(() => {
-                                    const data = textMilestones[currentIndex];
-                                    subtitle.innerText = data.subtitle;
-                                    title.innerHTML = data.title;
-                                    desc.innerText = data.desc;
-                                    if (data.showBadges) {
-                                        badgesContainer.classList.add('visible');
-                                        badgesContainer.style.display = 'flex';
-                                    } else {
-                                        badgesContainer.classList.remove('visible');
-                                        badgesContainer.style.display = 'none';
-                                    }
-                                    container.style.opacity = '1';
-                                }, 600);
-                            }
-                        });
+                        if (sliderTrack && customProjects.length) {
+                            customProjects.forEach(project => {
+                                const card = document.createElement('article');
+                                card.className = 'project-slider-card';
+                                card.innerHTML = `
+                                    <img src="${project.coverImage || 'projects-pictures/skytower-hero.jpg'}" alt="${project.title}">
+                                    <div class="project-slider-overlay">
+                                        <h3>${project.title}</h3>
+                                        <a href="${project.sourceLink || `cms/entry.html?type=project&slug=${encodeURIComponent(project.slug)}`}" class="pivot-link">View Project</a>
+                                    </div>
+                                `;
+                                sliderTrack.appendChild(card);
+                            });
+                        }
                     }
 
-                    // 2. NAVBAR SCROLL LOGIC
-                    window.addEventListener('scroll', () => {
-                        if (window.scrollY >= 100) {
-                            nav.classList.remove('hidden-nav');
-                            nav.classList.add('visible-nav');
-                        } else {
-                            nav.classList.remove('visible-nav');
-                            nav.classList.add('hidden-nav');
-                        }
-                    });
+                    const video = document.getElementById('heroVideo');
+                            const container = document.getElementById('heroTextContainer');
+                            const subtitle = document.getElementById('dynamicSubtitle');
+                            const title = document.getElementById('dynamicTitle');
+                            const desc = document.getElementById('dynamicDesc');
+                            const badgesContainer = document.getElementById('heroBadges');
+                            const nav = document.querySelector('.navbar');
+                            const heroNav = document.getElementById('heroNav');
+                            const heroSearchShell = document.getElementById('heroSearchShell');
+                            const heroSearchToggle = document.getElementById('heroSearchToggle');
+                            const heroSearchForm = document.getElementById('heroSearchForm');
+                            const heroSearchInput = document.getElementById('heroSearchInput');
+                            const heroScrollButton = document.getElementById('heroScrollButton');
+                            const heroSection = document.getElementById('hero');
 
-                    // 3. HYBRID SCROLL LOGIC (Snap + Normal)
-                    let isAnimating = false;
+                        const closeHeroSearch = () => {
+                            heroSearchShell?.classList.remove('is-open');
+                            heroSearchToggle?.setAttribute('aria-expanded', 'false');
+                            if (heroSearchInput) heroSearchInput.value = '';
+                        };
 
-                    window.addEventListener('wheel', (e) => {
-                        if (window.__workspaceHomeSnapV2) return;
-                        const currentScroll = window.pageYOffset;
-                        const heroTop = 0;
-                        const projectsTop = document.getElementById('projects').offsetTop;
-                        const servicesTop = document.getElementById('services').offsetTop;
-                        const contactTop = document.getElementById('contact-cta').offsetTop;
+                        const openHeroSearch = () => {
+                            heroSearchShell?.classList.add('is-open');
+                            heroSearchToggle?.setAttribute('aria-expanded', 'true');
+                            window.setTimeout(() => heroSearchInput?.focus(), 120);
+                        };
 
-                        // SNAP 1: De la Hero la Projects
-                        if (currentScroll < projectsTop - 50 && e.deltaY > 0) {
-                            e.preventDefault();
-                            performSnap(projectsTop);
-                        } 
-                        // SNAP înapoi la Hero
-                        else if (currentScroll <= projectsTop + 50 && e.deltaY < 0) {
-                            e.preventDefault();
-                            performSnap(heroTop);
-                        }
-                        // SNAP: De la sfârșitul listei de proiecte la Expertise
-                        else if (currentScroll > projectsTop + 50 && currentScroll < servicesTop - 50 && e.deltaY > 0) {
-                            // Detectăm dacă suntem aproape de butonul "View all projects"
-                            const projectsEnd = document.getElementById('projects-end-anchor').offsetTop - window.innerHeight + 100;
-                            if (currentScroll > projectsEnd) {
-                                e.preventDefault();
-                                performSnap(servicesTop);
+                        const syncNavStates = () => {
+                            if (window.scrollY >= 100) {
+                                nav.classList.remove('hidden-nav');
+                                nav.classList.add('visible-nav');
+                                heroNav?.classList.add('is-hidden');
+                                closeHeroSearch();
+                            } else {
+                                nav.classList.remove('visible-nav');
+                                nav.classList.add('hidden-nav');
+                                heroNav?.classList.remove('is-hidden');
                             }
-                        }
-                        // SNAP înapoi la Projects de la Services
-                        else if (currentScroll >= servicesTop - 10 && currentScroll <= servicesTop + 50 && e.deltaY < 0) {
-                            e.preventDefault();
-                            performSnap(projectsTop);
-                        }
-                        // După Services, lăsăm scroll-ul normal pentru Contact și Footer (nu facem preventDefault)
-                    }, { passive: false });
+                        };
 
-                    // Fix pentru tranzitia Projects -> What We Do: un singur scroll
-                    window.addEventListener('wheel', (e) => {
-                        if (window.__workspaceHomeSnapV2) return;
-                        if (isAnimating || e.deltaY <= 0) return;
+                        // 1. TEXT MILESTONES (Sincronizare cu momentele din video)
+                        const textMilestones = [
+                                        {
+                                            time: 0,
+                                            subtitle: "Design & Build Excellence",
+                                            title: "Tailored <em>Workspaces</em>",
+                                            desc: "Office interiors fully customized to fit the needs of your workforce and organizational objectives."
+                                        },
+                                        {
+                                            time: 10.64,
+                                            subtitle: "The Human Element",
+                                            title: "People, Not <em>Furniture</em>",
+                                            desc: "The most important thing in a room is the people; we focus on physical, cognitive, and social ergonomics."
 
-                        const currentScroll = window.pageYOffset;
-                        const projectsTop = document.getElementById('projects').offsetTop;
-                        const servicesTop = document.getElementById('services').offsetTop;
+                                        },
+                                        {
+                                            time: 18.57,
+                                            subtitle: "Unmatched Variety",
+                                            title: "100+ Global <em>Manufacturers</em>",
+                                            desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products."
 
-                        if (currentScroll >= projectsTop - 20 && currentScroll < servicesTop - 50) {
-                            e.preventDefault();
-                            performSnap(servicesTop);
-                        }
-                    }, { passive: false });
+                                        },
+                                        {
+                                            time: 29.9,
+                                            subtitle: "Acoustic Privacy",
+                                            title: "Optimized <em>Focus Zones</em>",
+                                            desc: "Curated environments designed to eliminate distractions and enhance deep concentration."
+
+                                        },
+                                        {
+                                            time: 39.3,
+                                            subtitle: "MillerKnoll Certified Dealer",
+                                            title: "Global <em>Innovation</em>",
+                                            desc: "Bringing museum-quality designs and strategic services from the global leader in office furniture."
+                                        },
+                                        {
+                                            time: 47.2,
+                                            subtitle: "Research-Driven Design",
+                                            title: "Human-Centered <em>Solutions</em>",
+                                            desc: "Every design starts with research and ends with new solutions tailored to solve real problems."
+                                        },
+                                        {
+                                            time: 56.5,
+                                            subtitle: "A Legacy of Quality",
+                                            title: "MillerKnoll <em>Partner</em>",
+                                            desc: "Certified Dealer delivering global excellence since 2008.",
+                                            showBadges: true
+                                        }
+                                    ];
+                        let lastIndex = -1;
+                            if (video) {
+                                video.addEventListener('timeupdate', () => {
+                                    const currentTime = video.currentTime;
+                                    const currentIndex = textMilestones.reduce((acc, milestone, idx) => (currentTime >= milestone.time ? idx : acc), 0);
+                                    if (currentIndex !== lastIndex) {
+                                        lastIndex = currentIndex;
+                                        container.style.opacity = '0';
+                                        setTimeout(() => {
+                                            const data = textMilestones[currentIndex];
+                                            subtitle.innerText = data.subtitle;
+                                            title.innerHTML = data.title;
+                                            desc.innerText = data.desc;
+                                            if (data.showBadges) {
+                                                badgesContainer.classList.add('visible');
+                                                badgesContainer.style.display = 'flex';
+                                            } else {
+                                                badgesContainer.classList.remove('visible');
+                                                badgesContainer.style.display = 'none';
+                                            }
+                                            container.style.opacity = '1';
+                                        }, 600);
+                                    }
+                                });
+                            }
+
+                            // 2. NAVBAR SCROLL LOGIC
+                            window.addEventListener('scroll', syncNavStates);
+                            syncNavStates();
+
+                            heroSearchToggle?.addEventListener('click', () => {
+                                if (heroSearchShell?.classList.contains('is-open')) {
+                                    closeHeroSearch();
+                                } else {
+                                    openHeroSearch();
+                                }
+                            });
+
+                            heroSearchForm?.addEventListener('submit', (event) => {
+                                event.preventDefault();
+                                const query = (heroSearchInput?.value || '').trim().toLowerCase();
+
+                                if (!query) {
+                                    closeHeroSearch();
+                                    return;
+                                }
+
+                                const searchRoutes = [
+                                    { match: ['project', 'projects', 'portfolio', 'work'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
+                                    { match: ['service', 'services', 'expertise'], action: () => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
+                                    { match: ['about', 'studio'], action: () => { window.location.href = 'about/about.html'; } },
+                                    { match: ['insight', 'insights', 'articles', 'news'], action: () => { window.location.href = 'insights/insights.html'; } },
+                                    { match: ['partner', 'partners', 'brands'], action: () => { window.location.href = 'partners/partners.html'; } },
+                                    { match: ['contact', 'brief'], action: () => { window.location.href = 'contact/contact.html'; } },
+                                    { match: ['shop'], action: () => { window.location.href = 'https://shop.workspaces.ro/en/catalog'; } }
+                                ];
+
+                                const target = searchRoutes.find(route => route.match.some(keyword => query.includes(keyword)));
+                                (target?.action || searchRoutes[0].action)();
+                                closeHeroSearch();
+                            });
+
+                            document.addEventListener('keydown', (event) => {
+                                if (event.key === 'Escape') {
+                                    closeHeroSearch();
+                                }
+                            });
+
+                            heroScrollButton?.addEventListener('click', () => {
+                                const projectsTop = document.getElementById('projects')?.offsetTop ?? 0;
+                                performSnap(projectsTop);
+                            });
+
+                            // 3. HYBRID SCROLL LOGIC (Snap + Normal)
+                            let isAnimating = false;
+
+                            window.addEventListener('wheel', (e) => {
+                                if (window.__workspaceHomeSnapV2) return;
+                                const currentScroll = window.pageYOffset;
+                                const heroTop = 0;
+                                const projectsTop = document.getElementById('projects').offsetTop;
+                                const servicesTop = document.getElementById('services').offsetTop;
+                                const contactTop = document.getElementById('contact-cta').offsetTop;
+
+                                // SNAP 1: De la Hero la Projects
+                                if (currentScroll < projectsTop - 50 && e.deltaY > 0) {
+                                    e.preventDefault();
+                                    performSnap(projectsTop);
+                                } 
+                                // SNAP înapoi la Hero
+                                else if (currentScroll <= projectsTop + 50 && e.deltaY < 0) {
+                                    e.preventDefault();
+                                    performSnap(heroTop);
+                                }
+                                // SNAP: De la sfârșitul listei de proiecte la Expertise
+                                else if (currentScroll > projectsTop + 50 && currentScroll < servicesTop - 50 && e.deltaY > 0) {
+                                    // Detectăm dacă suntem aproape de butonul "View all projects"
+                                    const projectsEnd = document.getElementById('projects-end-anchor').offsetTop - window.innerHeight + 100;
+                                    if (currentScroll > projectsEnd) {
+                                        e.preventDefault();
+                                        performSnap(servicesTop);
+                                    }
+                                }
+                                // SNAP înapoi la Projects de la Services
+                                else if (currentScroll >= servicesTop - 10 && currentScroll <= servicesTop + 50 && e.deltaY < 0) {
+                                    e.preventDefault();
+                                    performSnap(projectsTop);
+                                }
+                                // După Services, lăsăm scroll-ul normal pentru Contact și Footer (nu facem preventDefault)
+                            }, { passive: false });
+
+                            // Fix pentru tranzitia Projects -> What We Do: un singur scroll
+                            window.addEventListener('wheel', (e) => {
+                                if (window.__workspaceHomeSnapV2) return;
+                                if (isAnimating || e.deltaY <= 0) return;
+
+                                const currentScroll = window.pageYOffset;
+                                const projectsTop = document.getElementById('projects').offsetTop;
+                                const servicesTop = document.getElementById('services').offsetTop;
+
+                                if (currentScroll >= projectsTop - 20 && currentScroll < servicesTop - 50) {
+                                    e.preventDefault();
+                                    performSnap(servicesTop);
+                                }
+                            }, { passive: false });
 
                     function performSnap(target) {
                         if (isAnimating) return;
@@ -517,129 +828,218 @@
                         setTimeout(() => { isAnimating = false; }, 1000);
                     }
 
+                    const projectsSlider = document.querySelector('[data-projects-slider]');
+
+                    if (projectsSlider) {
+                        const track = projectsSlider.querySelector('[data-projects-track]');
+                        const prevBtn = projectsSlider.querySelector('[data-projects-prev]');
+                        const nextBtn = projectsSlider.querySelector('[data-projects-next]');
+                        const originalCards = Array.from(track.children).map(card => card.cloneNode(true));
+                        let isSlidingProjects = false;
+                        let projectsDirection = 0;
+                        let sliderIndex = originalCards.length;
+
+                        const getMainVisibleCards = () => {
+                            if (window.innerWidth <= 768) return 1;
+                            if (window.innerWidth <= 1024) return 2;
+                            return 3;
+                        };
+
+                        const rebuildProjectsSlider = () => {
+                            track.innerHTML = '';
+                            const cardsForLoop = [
+                                ...originalCards.map(card => card.cloneNode(true)),
+                                ...originalCards.map(card => card.cloneNode(true)),
+                                ...originalCards.map(card => card.cloneNode(true))
+                            ];
+
+                            cardsForLoop.forEach(card => track.appendChild(card));
+                            sliderIndex = originalCards.length;
+                            requestAnimationFrame(() => updateProjectsSlider(false));
+                        };
+
+                        const paintProjectsState = () => {
+                            const cards = Array.from(track.children);
+                            const mainVisible = getMainVisibleCards();
+                            const focusStart = sliderIndex;
+                            const focusEnd = focusStart + mainVisible - 1;
+
+                            cards.forEach((card, index) => {
+                                card.classList.remove('is-focus', 'is-peek');
+
+                                if (index >= focusStart && index <= focusEnd) {
+                                    card.classList.add('is-focus');
+                                } else if (index === focusStart - 1 || index === focusEnd + 1) {
+                                    card.classList.add('is-peek');
+                                }
+                            });
+                        };
+
+                        const updateProjectsSlider = (animate = true) => {
+                            const firstCard = track.children[0];
+                            if (!firstCard) return;
+
+                            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                            const cardWidth = firstCard.getBoundingClientRect().width;
+                            const peek = parseFloat(getComputedStyle(projectsSlider).getPropertyValue('--projects-peek')) || 0;
+                            const baseOffset = (sliderIndex * (cardWidth + gap)) - peek;
+
+                            track.style.transition = animate ? 'transform 0.45s ease' : 'none';
+                            track.style.transform = `translateX(-${baseOffset}px)`;
+                            paintProjectsState();
+                        };
+
+                        const slideProjects = (direction) => {
+                            if (isSlidingProjects) return;
+                            isSlidingProjects = true;
+                            projectsDirection = direction;
+                            sliderIndex += direction;
+                            updateProjectsSlider(true);
+                        };
+
+                        prevBtn.addEventListener('click', () => slideProjects(-1));
+                        nextBtn.addEventListener('click', () => slideProjects(1));
+
+                        track.addEventListener('transitionend', () => {
+                            if (track.style.transition === 'none') return;
+
+                            if (sliderIndex < originalCards.length) {
+                                sliderIndex += originalCards.length;
+                                updateProjectsSlider(false);
+                            } else if (sliderIndex >= originalCards.length * 2) {
+                                sliderIndex -= originalCards.length;
+                                updateProjectsSlider(false);
+                            }
+
+                            projectsDirection = 0;
+                            isSlidingProjects = false;
+                        });
+
+                        window.addEventListener('resize', rebuildProjectsSlider);
+                        rebuildProjectsSlider();
+                    }
+
                     window.__workspaceHomeSnapV2 = true;
 
-                    window.addEventListener('wheel', (e) => {
-                        if (isAnimating) {
-                            e.preventDefault();
-                            return;
-                        }
+                            window.addEventListener('wheel', (e) => {
+                                if (isAnimating) {
+                                    e.preventDefault();
+                                    return;
+                                }
 
-                        const currentScroll = window.pageYOffset;
-                        const heroTop = 0;
-                        const projectsTop = document.getElementById('projects').offsetTop;
-                        const servicesTop = document.getElementById('services').offsetTop;
-                        const projectsEndAnchor = document.getElementById('projects-end-anchor');
-                        const isMobileViewport = window.innerWidth <= 768;
-                        const projectsEndTrigger = Math.max(
-                            projectsTop + 120,
-                            projectsEndAnchor.offsetTop - window.innerHeight + (isMobileViewport ? 120 : 180)
-                        );
-                        const snapTolerance = 80;
+                                const currentScroll = window.pageYOffset;
+                                const heroTop = 0;
+                                const projectsTop = document.getElementById('projects').offsetTop;
+                                const servicesTop = document.getElementById('services').offsetTop;
+                                const snapTolerance = 80;
 
-                        if (e.deltaY > 0 && currentScroll < projectsTop - snapTolerance) {
-                            e.preventDefault();
-                            performSnap(projectsTop);
-                            return;
-                        }
+                                if (e.deltaY > 0 && currentScroll < projectsTop - snapTolerance) {
+                                    e.preventDefault();
+                                    performSnap(projectsTop);
+                                    return;
+                                }
 
-                        if (
-                            e.deltaY > 0 &&
-                            currentScroll >= projectsEndTrigger &&
-                            currentScroll < servicesTop - snapTolerance
-                        ) {
-                            e.preventDefault();
-                            performSnap(servicesTop);
-                            return;
-                        }
+                                if (
+                                    e.deltaY > 0 &&
+                                    currentScroll >= projectsTop - snapTolerance &&
+                                    currentScroll < servicesTop - snapTolerance
+                                ) {
+                                    e.preventDefault();
+                                    performSnap(servicesTop);
+                                    return;
+                                }
 
-                        if (
-                            e.deltaY < 0 &&
-                            currentScroll > projectsTop + snapTolerance &&
-                            currentScroll <= servicesTop + snapTolerance
-                        ) {
-                            e.preventDefault();
-                            performSnap(projectsTop);
-                            return;
-                        }
+                                if (
+                                    e.deltaY < 0 &&
+                                    currentScroll > projectsTop + snapTolerance &&
+                                    currentScroll <= servicesTop + snapTolerance
+                                ) {
+                                    e.preventDefault();
+                                    performSnap(projectsTop);
+                                    return;
+                                }
 
-                        if (e.deltaY < 0 && currentScroll <= projectsTop + snapTolerance) {
-                            e.preventDefault();
-                            performSnap(heroTop);
-                        }
-                    }, { passive: false });
+                                if (e.deltaY < 0 && currentScroll <= projectsTop + snapTolerance) {
+                                    e.preventDefault();
+                                    performSnap(heroTop);
+                                }
+                            }, { passive: false });
 
-                    const revealObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) entry.target.classList.add('visible');
+                            const revealObserver = new IntersectionObserver((entries) => {
+                                entries.forEach(entry => {
+                                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                                });
+                            }, { threshold: 0.15 });
+                            document.querySelectorAll('.reveal, .split-row, .nt-card').forEach(el => revealObserver.observe(el));
                         });
-                    }, { threshold: 0.15 });
-                    document.querySelectorAll('.reveal, .split-row, .nt-card').forEach(el => revealObserver.observe(el));
-                });
 
-                // --- LOGICA MENIU OVERLAY (STRICT PERFORMANCE) ---
-const menuOpen = document.getElementById('menuOpen');
-const menuClose = document.getElementById('menuClose');
-const menuOverlay = document.getElementById('menuOverlay');
-const menuItems = document.querySelectorAll('.menu-nav-item');
-const menuLinks = document.querySelectorAll('.menu-nav-item a');
-const allImages = document.querySelectorAll('.menu-img-item');
+                        // --- LOGICA MENIU OVERLAY (STRICT PERFORMANCE) ---
+        const heroMenuOpen = document.getElementById('heroMenuOpen');
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuItems = document.querySelectorAll('.menu-nav-item');
+        const menuLinks = document.querySelectorAll('.menu-nav-item a');
+        const allImages = document.querySelectorAll('.menu-img-item');
 
-// Preload trigger: Create objects for all images to force cache
-document.querySelectorAll('.menu-img-item').forEach(img => {
-    const loader = new Image();
-    loader.src = img.src;
-});
-
-menuOpen.addEventListener('click', () => {
-    menuOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
-
-menuClose.addEventListener('click', () => {
-    menuOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-});
-
-function closeMenuOverlay() {
-    menuOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-menuItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        const targetId = item.getAttribute('data-target');
-        
-        // Hide all images instantly
-        allImages.forEach(img => img.classList.remove('active'));
-        
-        // Show the target image
-        const targetImg = document.getElementById(targetId);
-        if (targetImg) {
-            targetImg.classList.add('active');
-        }
-    });
-});
-
-menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-
-        if (href === '#services') {
-            e.preventDefault();
-            closeMenuOverlay();
-            const servicesSection = document.getElementById('services');
-            if (servicesSection) {
-                setTimeout(() => {
-                    servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 250);
-            }
-            return;
+        function openMenuOverlay() {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        closeMenuOverlay();
-    });
-});
+        // Preload trigger: Create objects for all images to force cache
+        document.querySelectorAll('.menu-img-item').forEach(img => {
+            const loader = new Image();
+            loader.src = img.src;
+        });
+
+        menuOpen.addEventListener('click', openMenuOverlay);
+        heroMenuOpen?.addEventListener('click', openMenuOverlay);
+
+        menuClose.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        function closeMenuOverlay() {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const targetId = item.getAttribute('data-target');
+                
+                // Hide all images instantly
+                allImages.forEach(img => img.classList.remove('active'));
+                
+                // Show the target image
+                const targetImg = document.getElementById(targetId);
+                if (targetImg) {
+                    targetImg.classList.add('active');
+                }
+            });
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+
+                if (href === '#services') {
+                    e.preventDefault();
+                    closeMenuOverlay();
+                    const servicesSection = document.getElementById('services');
+                    if (servicesSection) {
+                        setTimeout(() => {
+                            servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 250);
+                    }
+                    return;
+                }
+
+                closeMenuOverlay();
+            });
+        });
         </script>
     </body>
 </html>

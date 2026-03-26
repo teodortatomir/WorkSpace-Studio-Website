@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Studio Admin</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="cms-admin-page">
+    <main class="admin-shell">
+        <section class="admin-login" id="loginPanel">
+            <span class="admin-kicker">Hidden Admin</span>
+            <h1>Workspace Studio <em>content desk</em></h1>
+            <p>Use this private page to add projects, publications, and newsroom items in the same visual format as the site.</p>
+            <form id="loginForm" class="admin-login-form">
+                <label>Password</label>
+                <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+                <button type="submit" class="admin-btn admin-btn-primary">Enter Admin</button>
+                <p class="admin-note" id="loginStatus"></p>
+            </form>
+        </section>
+
+        <section class="admin-panel hidden" id="adminPanel">
+            <div class="admin-topbar">
+                <div>
+                    <span class="admin-kicker">Content Manager</span>
+                    <h2>Projects, publications, and news</h2>
+                </div>
+                <div class="admin-topbar-actions">
+                    <button type="button" class="admin-btn" id="exportBtn">Export JSON</button>
+                    <label class="admin-btn admin-btn-file">
+                        Import JSON
+                        <input type="file" id="importInput" accept="application/json">
+                    </label>
+                    <button type="button" class="admin-btn admin-btn-primary" id="logoutBtn">Log Out</button>
+                </div>
+            </div>
+
+            <div class="admin-layout">
+                <section class="admin-editor">
+                    <form id="entryForm" class="admin-form">
+                        <input type="hidden" id="entryId">
+                        <div class="admin-grid">
+                            <div class="admin-field">
+                                <label>Type</label>
+                                <select id="entryType" required>
+                                    <option value="project">Project</option>
+                                    <option value="publication">Publication</option>
+                                    <option value="news">News</option>
+                                </select>
+                            </div>
+                            <div class="admin-field">
+                                <label>Category</label>
+                                <input type="text" id="entryCategory" placeholder="Ergonomics / Press / Corporate">
+                            </div>
+                            <div class="admin-field">
+                                <label>Project Type</label>
+                                <select id="entryProjectType">
+                                    <option value="Corporate">Corporate</option>
+                                    <option value="Tech">Tech</option>
+                                    <option value="Exclusive">Exclusive</option>
+                                    <option value="Beauty">Beauty</option>
+                                </select>
+                            </div>
+                            <div class="admin-field">
+                                <label>Slug</label>
+                                <input type="text" id="entrySlug" placeholder="auto-generated-if-empty">
+                            </div>
+                        </div>
+
+                        <div class="admin-field">
+                            <label>Title</label>
+                            <input type="text" id="entryTitle" placeholder="Entry title" required>
+                        </div>
+
+                        <div class="admin-field">
+                            <label>Short Description</label>
+                            <textarea id="entrySummary" rows="3" placeholder="Short summary shown on cards"></textarea>
+                        </div>
+
+                        <div class="admin-field">
+                            <label>Full Text</label>
+                            <textarea id="entryBody" rows="8" placeholder="Full story / project description"></textarea>
+                        </div>
+
+                        <div class="admin-grid">
+                            <div class="admin-field">
+                                <label>Cover Image</label>
+                                <input type="text" id="entryCoverImage" placeholder="../projects-pictures/example.jpg or https://...">
+                            </div>
+                            <div class="admin-field">
+                                <label>External Source / Link</label>
+                                <input type="text" id="entrySourceLink" placeholder="For news: source URL. For projects: custom project link if needed.">
+                            </div>
+                        </div>
+
+                        <div class="admin-field">
+                            <label>Gallery Images</label>
+                            <textarea id="entryGallery" rows="4" placeholder="One image URL/path per line"></textarea>
+                        </div>
+
+                        <div class="admin-form-actions">
+                            <button type="submit" class="admin-btn admin-btn-primary">Save Entry</button>
+                            <button type="button" class="admin-btn" id="resetBtn">Reset Form</button>
+                        </div>
+                        <p class="admin-note" id="formStatus"></p>
+                    </form>
+                </section>
+
+                <aside class="admin-list">
+                    <div class="admin-list-head">
+                        <h3>Saved Entries</h3>
+                        <input type="search" id="adminSearch" placeholder="Search saved items">
+                    </div>
+                    <div id="entriesList" class="entries-list"></div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <script src="../cms/cms.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
