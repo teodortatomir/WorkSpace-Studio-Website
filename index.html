@@ -836,12 +836,17 @@
 
                     if (projectsSlider) {
                         const track = projectsSlider.querySelector('[data-projects-track]');
+                        const viewport = projectsSlider.querySelector('.projects-slider-viewport');
                         const prevBtn = projectsSlider.querySelector('[data-projects-prev]');
                         const nextBtn = projectsSlider.querySelector('[data-projects-next]');
                         const originalCards = Array.from(track.children).map(card => card.cloneNode(true));
                         let isSlidingProjects = false;
                         let projectsDirection = 0;
                         let sliderIndex = originalCards.length;
+                        let pointerStartX = 0;
+                        let pointerStartY = 0;
+                        let isPointerDragging = false;
+                        let isHorizontalGesture = false;
 
                         const getMainVisibleCards = () => {
                             if (window.innerWidth <= 768) return 1;
@@ -903,6 +908,79 @@
 
                         prevBtn.addEventListener('click', () => slideProjects(-1));
                         nextBtn.addEventListener('click', () => slideProjects(1));
+
+                        const onPointerStart = (clientX, clientY) => {
+                            pointerStartX = clientX;
+                            pointerStartY = clientY;
+                            isPointerDragging = true;
+                            isHorizontalGesture = false;
+                        };
+
+                        const onPointerMove = (clientX, clientY) => {
+                            if (!isPointerDragging) return false;
+
+                            const deltaX = clientX - pointerStartX;
+                            const deltaY = clientY - pointerStartY;
+
+                            if (!isHorizontalGesture) {
+                                if (Math.abs(deltaX) < 10 && Math.abs(deltaY) < 10) return false;
+                                isHorizontalGesture = Math.abs(deltaX) > Math.abs(deltaY);
+                            }
+
+                            return isHorizontalGesture;
+                        };
+
+                        const onPointerEnd = (clientX) => {
+                            if (!isPointerDragging) return;
+
+                            const deltaX = clientX - pointerStartX;
+                            const swipeThreshold = 45;
+
+                            if (Math.abs(deltaX) >= swipeThreshold) {
+                                slideProjects(deltaX < 0 ? 1 : -1);
+                            }
+
+                            isPointerDragging = false;
+                            isHorizontalGesture = false;
+                        };
+
+                        viewport.addEventListener('touchstart', (event) => {
+                            const touch = event.touches[0];
+                            if (!touch) return;
+                            onPointerStart(touch.clientX, touch.clientY);
+                        }, { passive: true });
+
+                        viewport.addEventListener('touchmove', (event) => {
+                            const touch = event.touches[0];
+                            if (!touch) return;
+                            if (onPointerMove(touch.clientX, touch.clientY)) {
+                                event.preventDefault();
+                            }
+                        }, { passive: false });
+
+                        viewport.addEventListener('touchend', (event) => {
+                            const touch = event.changedTouches[0];
+                            onPointerEnd(touch ? touch.clientX : pointerStartX);
+                        });
+
+                        viewport.addEventListener('mousedown', (event) => {
+                            onPointerStart(event.clientX, event.clientY);
+                        });
+
+                        window.addEventListener('mousemove', (event) => {
+                            if (!isPointerDragging) return;
+                            onPointerMove(event.clientX, event.clientY);
+                        });
+
+                        window.addEventListener('mouseup', (event) => {
+                            onPointerEnd(event.clientX);
+                        });
+
+                        viewport.addEventListener('mouseleave', () => {
+                            if (!isPointerDragging) return;
+                            isPointerDragging = false;
+                            isHorizontalGesture = false;
+                        });
 
                         track.addEventListener('transitionend', () => {
                             if (track.style.transition === 'none') return;

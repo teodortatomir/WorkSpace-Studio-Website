@@ -815,6 +815,8 @@ body::-webkit-scrollbar {
 .projects-slider-viewport {
     overflow: hidden;
     width: 100%;
+    touch-action: pan-y;
+    cursor: grab;
 }
 
 .projects-slider-track {
