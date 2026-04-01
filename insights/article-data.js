@@ -4,7 +4,7 @@ window.INSIGHTS_ARTICLES = {
         title: "Herman Miller Aeron: The iconic chair in the MoMA design collection",
         intro: "One of the most recognisable office chairs ever made, Aeron became a symbol of late-90s ambition, digital culture, and a new way of thinking about comfort at work.",
         readingTime: "5 min",
-        heroImage: "../../publications/scaun-hm/herman_miller_aeron-office-chairs-2195348-gallery1.jpg",
+        heroImage: "../../publications/scaun-hm/aeron.jpg",
         heroAlt: "Herman Miller Aeron chair",
         sidebar: [
             "Why Aeron became iconic",
@@ -140,7 +140,7 @@ window.INSIGHTS_ARTICLES = {
         title: "What is iconic design and why do we value it so much?",
         intro: "Iconic design is easy to recognise, difficult to forget, and almost impossible to separate from the culture that made it visible.",
         readingTime: "4 min",
-        heroImage: "../../publications/iconic-design/millerknoll_saarinen_table.jpg",
+        heroImage: "../../publications/iconic-design/iconic-design.jpg",
         heroAlt: "Iconic design concept",
         sidebar: [
             "What makes a design iconic",

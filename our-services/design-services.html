@@ -3,56 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Services | Workspace Studio</title>
+    <title>Design | Workspace Studio</title>
+    <meta name="description" content="Design by Workspace Studio: bold workplace concepts shaped through spatial intelligence, architecture, interiors, and brand-driven atmosphere.">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="secondary.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-services.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: var(--bg-warm);">
-    <nav class="hero-navbar" aria-label="Page navigation">
-        <div class="hero-navbar-inner">
-            <a href="../index.html" class="hero-logo-link" aria-label="Workspace Studio home">
-                <img src="../logos/WorkspaceW.svg" alt="Workspace Studio W" class="hero-logo-mark">
-            </a>
-            <div class="hero-nav-actions">
-                <div class="hero-search-shell" id="heroSearchShell">
-                    <button class="hero-icon-button" id="heroSearchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="heroSearchForm">
-                        <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
-                            <path d="M20 20L16.65 16.65" stroke-width="1.8" stroke-linecap="round"></path>
-                        </svg>
-                    </button>
-                    <form class="hero-search-form" id="heroSearchForm" role="search">
-                        <input type="search" id="heroSearchInput" class="hero-search-input" placeholder="Search pages" aria-label="Search pages">
-                    </form>
+<body class="design-page">
+    <nav class="navbar main-nav visible-nav design-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
                 </div>
-                <button class="hero-icon-button hero-menu-button" id="menuOpen" type="button" aria-label="Open menu">
-                    <span class="hero-menu-line"></span>
-                    <span class="hero-menu-line"></span>
-                    <span class="hero-menu-line"></span>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="design-services.html" class="brand-name-text design-txt is-active">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
         </div>
     </nav>
 
     <div class="menu-overlay" id="menuOverlay">
-        <button class="menu-close" id="menuClose">&times;</button>
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
         <div class="menu-split-container">
             <div class="menu-left-images">
-                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
-                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
-                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
-                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
-                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
-                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
-                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
             </div>
             <div class="menu-right-content">
                 <span class="menu-label-top">Menu</span>
@@ -67,115 +75,233 @@
                 </nav>
                 <div class="menu-footer">
                     <div class="menu-socials">
-                        <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
-                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
-                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <main class="services-page-layout">
-        <div class="services-image-bg">
-            <img src="design_and_build.jpg" alt="Background">
-            <div class="overlay-gradient"></div>
-        </div>
+    <main class="design-main">
+        <section class="design-hero" id="designHero">
+            <div class="design-line design-line-top"></div>
+            <div class="design-line design-line-left"></div>
+            <div class="design-line design-line-right"></div>
+            <div class="design-line design-line-bottom"></div>
 
-        <div class="services-content-overlay">
-            <h1 class="modal-title">Design Services</h1>
-            <p class="modal-description">
-                No matter if you need just a space planning or a one stop design and build service, we put people at the centre of even the tiniest design choice. <strong>Human centred design</strong> is a core element of our approach and we will always go the extra mile to reach it.
-            </p>
+            <div class="design-shell design-hero-stage">
+                <div class="design-hero-grid">
+                    <div class="design-hero-panel reveal reveal-left">
+                        <span class="design-kicker">Workspace Studio Design</span>
+                        <span class="design-hero-intro">Architecture, interior, branding, and technical precision shaped into one clear spatial language.</span>
+                        <h1>Design should feel authored from the first glance.</h1>
+                        <p>We shape offices through rhythm, light, contrast, identity, and detailing so the result carries presence, clarity, and a point of view.</p>
+                        <div class="design-hero-actions">
+                            <a href="#designSystem" class="design-btn design-btn-primary">Enter the design system</a>
+                            <a href="../contact/contact.html" class="design-btn design-btn-secondary">Start a project</a>
+                        </div>
+                    </div>
 
-            <ul class="services-list-detail">
-                <li><span class="num"></span> Space planning</li>
-                <li><span class="num"></span> Architectural design</li>
-                <li><span class="num"></span> MEP design</li>
-                <li><span class="num"></span> Interior design</li>
-                <li><span class="num"></span> Corporate branding</li>
-                <li><span class="num"></span> Authorizations</li>
-            </ul>
-        </div>
+                    <figure class="design-hero-visual reveal reveal-right">
+                        <img src="../projects-pictures/leading-game-company-p2.jpg" alt="Workspace Studio designed interior">
+                        <figcaption class="design-hero-visual-note">Attention to design should be visible before a single word is read.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="design-hero-strip reveal reveal-up">
+                    <article class="design-hero-strip-item">
+                        <span class="design-hero-strip-label">Movement</span>
+                        <strong>Planning gives the workplace flow and calm.</strong>
+                    </article>
+                    <article class="design-hero-strip-item">
+                        <span class="design-hero-strip-label">Atmosphere</span>
+                        <strong>Material and light define the emotional register.</strong>
+                    </article>
+                    <article class="design-hero-strip-item">
+                        <span class="design-hero-strip-label">Identity</span>
+                        <strong>Brand language should feel built into the space.</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-system" id="designSystem">
+            <div class="design-shell">
+                <div class="design-system-head reveal reveal-left">
+                    <span class="design-kicker design-kicker-dark">Interactive Design System</span>
+                    <h2>Hover across the pillars and watch the design language recompose itself.</h2>
+                </div>
+
+                <div class="design-system-stage reveal reveal-up" id="designSystemStage" data-mode="planning">
+                    <aside class="design-system-nav">
+                        <button class="design-mode is-active" type="button" data-mode="planning">Planning</button>
+                        <button class="design-mode" type="button" data-mode="architecture">Architecture</button>
+                        <button class="design-mode" type="button" data-mode="interior">Interior</button>
+                        <button class="design-mode" type="button" data-mode="branding">Branding</button>
+                        <button class="design-mode" type="button" data-mode="technical">Technical</button>
+                    </aside>
+
+                    <div class="design-system-canvas">
+                        <div class="design-canvas-lines">
+                            <span class="canvas-line canvas-line-h"></span>
+                            <span class="canvas-line canvas-line-v"></span>
+                            <span class="canvas-line canvas-line-d"></span>
+                        </div>
+                        <figure class="design-canvas-image">
+                            <img id="designCanvasImage" src="../projects-pictures/skytower-hero.jpg" alt="Space planning and circulation">
+                        </figure>
+                        <div class="design-canvas-copy">
+                            <span class="design-canvas-label" id="designCanvasLabel">Planning</span>
+                            <h3 id="designCanvasTitle">The layout becomes the invisible discipline behind everything that follows.</h3>
+                            <p id="designCanvasText">We begin with flow, zoning, adjacency, and how teams actually move through the office over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-hover-field">
+            <div class="design-shell">
+                <div class="design-hover-grid">
+                    <article class="design-hover-card reveal reveal-left">
+                        <span class="design-hover-index">01</span>
+                        <h3>Spatial Rhythm</h3>
+                        <p>Open, closed, compressed, expanded. Good workplaces are composed, not simply filled.</p>
+                    </article>
+                    <article class="design-hover-card reveal reveal-up">
+                        <span class="design-hover-index">02</span>
+                        <h3>Material Contrast</h3>
+                        <p>We use contrast carefully so premium texture and restraint can exist in the same room.</p>
+                    </article>
+                    <article class="design-hover-card reveal reveal-up">
+                        <span class="design-hover-index">03</span>
+                        <h3>Identity In Space</h3>
+                        <p>Branding is strongest when it becomes part of the architecture and atmosphere.</p>
+                    </article>
+                    <article class="design-hover-card reveal reveal-right">
+                        <span class="design-hover-index">04</span>
+                        <h3>Detail Logic</h3>
+                        <p>The final impression is often decided by what happens in the smallest junctions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="design-spectrum">
+            <div class="design-shell">
+                <div class="design-spectrum-head reveal reveal-left">
+                    <span class="design-kicker design-kicker-dark">What Design Changes</span>
+                    <h2>Design reshapes how a workplace reads, moves, and performs.</h2>
+                </div>
+                <div class="design-change-deck">
+                    <article class="design-change-panel reveal reveal-up">
+                        <div class="design-change-meta">
+                            <span class="design-change-number">01</span>
+                            <span class="design-change-tag">Movement</span>
+                        </div>
+                        <div class="design-change-core">
+                            <h3>It clarifies movement.</h3>
+                            <p>Good planning removes hesitation and makes circulation, meeting, focus, and support spaces feel naturally legible.</p>
+                        </div>
+                        <figure class="design-change-visual">
+                            <img src="../projects-pictures/mindspaces.jpg" alt="Collaborative workspace design">
+                        </figure>
+                    </article>
+
+                    <article class="design-change-panel reveal reveal-up">
+                        <div class="design-change-meta">
+                            <span class="design-change-number">02</span>
+                            <span class="design-change-tag">Atmosphere</span>
+                        </div>
+                        <div class="design-change-core">
+                            <h3>It gives the office atmosphere.</h3>
+                            <p>Materiality, lighting, and contrast create the emotional register of the workplace long before anyone talks about branding.</p>
+                        </div>
+                        <figure class="design-change-visual">
+                            <img src="../projects-pictures/naos.jpg" alt="Refined materials and finishes">
+                        </figure>
+                    </article>
+
+                    <article class="design-change-panel reveal reveal-up">
+                        <div class="design-change-meta">
+                            <span class="design-change-number">03</span>
+                            <span class="design-change-tag">Performance</span>
+                        </div>
+                        <div class="design-change-core">
+                            <h3>It protects performance.</h3>
+                            <p>When concept and technical detailing stay aligned, the final workplace keeps its elegance while functioning better every day.</p>
+                        </div>
+                        <figure class="design-change-visual">
+                            <img src="../projects-pictures/leading-it.jpg" alt="Focused office area">
+                        </figure>
+                    </article>
+
+                    <article class="design-change-panel reveal reveal-up">
+                        <div class="design-change-meta">
+                            <span class="design-change-number">04</span>
+                            <span class="design-change-tag">Identity</span>
+                        </div>
+                        <div class="design-change-core">
+                            <h3>It makes identity spatial.</h3>
+                            <p>The strongest brand presence in an office feels embedded in the architecture and tone of the space, not added on top.</p>
+                        </div>
+                        <figure class="design-change-visual">
+                            <img src="../projects-pictures/nestle.jpg" alt="Brand-conscious office">
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-cta">
+            <div class="design-shell">
+                <div class="design-cta-frame reveal reveal-up">
+                    <div class="design-cta-copy">
+                        <span class="design-kicker">Next Step</span>
+                        <h2>If the office matters, the design language should matter too.</h2>
+                        <p>We can help build a workplace that feels authored, memorable, and sharply aligned with the way your team works and your brand wants to be seen.</p>
+                        <div class="design-hero-actions">
+                            <a href="../contact/contact.html" class="design-btn design-btn-primary">Talk to Workspace Studio</a>
+                            <a href="../projects-scene/proiecte.html" class="design-btn design-btn-secondary">View projects</a>
+                        </div>
+                    </div>
+                    <figure class="design-cta-visual">
+                        <img src="../projects-pictures/skytower.jpg" alt="Workspace Studio design project">
+                    </figure>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script>
-        const menuOpen = document.getElementById('menuOpen');
-        const menuClose = document.getElementById('menuClose');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuItems = document.querySelectorAll('.menu-nav-item');
-        const menuLinks = document.querySelectorAll('.menu-nav-item a');
-        const allVisuals = document.querySelectorAll('.menu-visual-item');
-        const heroSearchShell = document.getElementById('heroSearchShell');
-        const heroSearchToggle = document.getElementById('heroSearchToggle');
-        const heroSearchForm = document.getElementById('heroSearchForm');
-        const heroSearchInput = document.getElementById('heroSearchInput');
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        document.querySelectorAll('.menu-img-item').forEach(img => {
-            const loader = new Image();
-            loader.src = img.src;
-        });
-
-        const closeHeroSearch = () => {
-            heroSearchShell?.classList.remove('is-open');
-            heroSearchToggle?.setAttribute('aria-expanded', 'false');
-            if (heroSearchInput) heroSearchInput.value = '';
-        };
-
-        const openHeroSearch = () => {
-            heroSearchShell?.classList.add('is-open');
-            heroSearchToggle?.setAttribute('aria-expanded', 'true');
-            window.setTimeout(() => heroSearchInput?.focus(), 120);
-        };
-
-        heroSearchToggle?.addEventListener('click', () => {
-            if (heroSearchShell?.classList.contains('is-open')) closeHeroSearch();
-            else openHeroSearch();
-        });
-
-        heroSearchForm?.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const query = (heroSearchInput?.value || '').trim().toLowerCase();
-            if (!query) return closeHeroSearch();
-
-            const searchRoutes = [
-                { match: ['project', 'projects', 'portfolio', 'work'], href: '../projects-scene/proiecte.html' },
-                { match: ['service', 'services', 'expertise'], href: '../index.html#services' },
-                { match: ['about', 'studio'], href: '../about/about.html' },
-                { match: ['insight', 'insights', 'articles', 'news'], href: '../insights/insights.html' },
-                { match: ['partner', 'partners', 'brands'], href: '../partners/partners.html' },
-                { match: ['contact', 'brief'], href: '../contact/contact.html' },
-                { match: ['shop'], href: 'https://shop.workspaces.ro/en/catalog' }
-            ];
-
-            const target = searchRoutes.find(route => route.match.some(keyword => query.includes(keyword))) || searchRoutes[0];
-            window.location.href = target.href;
-        });
-
-        menuOpen?.addEventListener('click', () => {
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        menuClose?.addEventListener('click', () => {
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        menuItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                const targetId = item.getAttribute('data-target');
-                allVisuals.forEach(visual => visual.classList.remove('active'));
-                document.querySelectorAll(`[data-visual-target="${targetId}"]`).forEach(visual => visual.classList.add('active'));
-            });
-        });
-
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <script src="design-services.js"></script>
 </body>
 </html>

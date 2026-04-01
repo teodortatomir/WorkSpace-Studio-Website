@@ -1,0 +1,253 @@
+:root {
+    --arch-bg: #f3ede5;
+    --arch-surface: #fcf8f2;
+    --arch-surface-strong: #f7f1e8;
+    --arch-ink: #1e1a17;
+    --arch-muted: rgba(30, 26, 23, 0.7);
+    --arch-line: rgba(30, 26, 23, 0.09);
+    --arch-accent: #9b6a43;
+    --arch-shadow: 0 18px 42px rgba(46, 33, 24, 0.08);
+}
+
+body.arch-page {
+    background: linear-gradient(180deg, #f5efe7 0%, #f1eae1 100%);
+    color: var(--arch-ink);
+}
+
+.arch-page .navbar {
+    background: rgba(247, 242, 235, 0.86);
+    backdrop-filter: blur(16px);
+}
+
+.arch-main {
+    padding: 104px 0 56px;
+}
+
+.arch-shell {
+    width: min(100% - 48px, 1240px);
+    margin: 0 auto;
+}
+
+.arch-kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid var(--arch-line);
+    background: rgba(255, 255, 255, 0.56);
+    color: rgba(30, 26, 23, 0.64);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.arch-kicker-dark {
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.arch-hero h1,
+.arch-section-head h2,
+.arch-focus-copy h2,
+.arch-cta-copy h2,
+.arch-system-card h3 {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.96;
+}
+
+.arch-hero p,
+.arch-section-head p,
+.arch-system-card p,
+.arch-focus-copy p,
+.arch-cta-copy p,
+.arch-focus-list li {
+    margin: 0;
+    color: var(--arch-muted);
+    line-height: 1.72;
+}
+
+.arch-hero,
+.arch-systems,
+.arch-focus,
+.arch-cta {
+    padding: 0 0 32px;
+}
+
+.arch-hero-layout,
+.arch-focus-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+    gap: 24px;
+    align-items: center;
+}
+
+.arch-hero-copy,
+.arch-system-card,
+.arch-focus-copy,
+.arch-cta-panel {
+    border: 1px solid var(--arch-line);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: var(--arch-shadow);
+}
+
+.arch-hero-copy {
+    padding: 30px;
+}
+
+.arch-hero-copy h1 {
+    margin-top: 16px;
+    max-width: 12ch;
+    font-size: clamp(2.7rem, 5vw, 4.8rem);
+}
+
+.arch-hero-copy p {
+    margin-top: 16px;
+    max-width: 44ch;
+}
+
+.arch-hero-image,
+.arch-focus-image {
+    margin: 0;
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: var(--arch-shadow);
+}
+
+.arch-hero-image img,
+.arch-focus-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arch-section-head {
+    max-width: 720px;
+    margin-bottom: 18px;
+}
+
+.arch-section-head h2,
+.arch-focus-copy h2,
+.arch-cta-copy h2 {
+    margin-top: 14px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.arch-systems-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.arch-system-card {
+    min-height: 190px;
+    padding: 22px 20px 24px;
+}
+
+.arch-system-card h3 {
+    font-size: 1.6rem;
+}
+
+.arch-system-card p {
+    margin-top: 12px;
+}
+
+.arch-focus-copy {
+    padding: 28px;
+}
+
+.arch-focus-copy p {
+    margin-top: 14px;
+    max-width: 46ch;
+}
+
+.arch-focus-list {
+    margin: 18px 0 0;
+    padding-left: 18px;
+}
+
+.arch-focus-list li + li {
+    margin-top: 8px;
+}
+
+.arch-cta-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 28px;
+}
+
+.arch-cta-copy {
+    max-width: 720px;
+}
+
+.arch-cta-copy p {
+    margin-top: 14px;
+}
+
+.arch-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(30, 26, 23, 0.16);
+    background: #1e1a17;
+    color: #f8f3ec;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .arch-hero-layout,
+    .arch-focus-layout,
+    .arch-systems-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .arch-hero-layout,
+    .arch-focus-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-cta-panel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 720px) {
+    .arch-main {
+        padding: 96px 0 40px;
+    }
+
+    .arch-shell {
+        width: min(100% - 24px, 1240px);
+    }
+
+    .arch-systems-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-hero-copy,
+    .arch-focus-copy,
+    .arch-cta-panel {
+        padding: 22px 20px;
+        border-radius: 24px;
+    }
+
+    .arch-hero-image,
+    .arch-focus-image {
+        min-height: 240px;
+        border-radius: 24px;
+    }
+}

@@ -1,0 +1,905 @@
+body.ergo-article-page {
+    background:
+        radial-gradient(circle at top left, rgba(216, 31, 38, 0.09), transparent 26%),
+        linear-gradient(180deg, #faf5ef 0%, #f5efe8 100%);
+    color: #211a17;
+    overflow-x: hidden;
+}
+
+.article-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2600;
+    width: 100%;
+    height: 3px;
+    background: rgba(33, 26, 23, 0.05);
+}
+
+.article-progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #d81f26, #ef7057);
+    transition: width 0.1s linear;
+}
+
+.ergo-article-main {
+    padding-top: 98px;
+}
+
+.ergo-article-shell {
+    width: min(1380px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.ergo-article-hero {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.76fr) minmax(420px, 1.24fr);
+    gap: 26px;
+    align-items: stretch;
+    padding: 48px 0 26px;
+}
+
+.ergo-article-copy,
+.ergo-article-media,
+.ergo-article-quickfacts,
+.ergo-article-sidebar,
+.ergo-article-section,
+.ergo-article-gallery figure,
+.ergo-next-card {
+    border: 1px solid rgba(33, 26, 23, 0.08);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 24px 52px rgba(42, 35, 28, 0.08);
+}
+
+.ergo-article-copy {
+    padding: 30px;
+}
+
+.ergo-article-kicker,
+.ergo-article-meta span,
+.ergo-keypoint-label,
+.ergo-quickfact-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(33, 26, 23, 0.06);
+    color: rgba(33, 26, 23, 0.75);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.ergo-article-copy h1 {
+    margin-top: 16px;
+    font-size: clamp(2.8rem, 5vw, 5.3rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.ergo-article-intro {
+    margin-top: 18px;
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: rgba(33, 26, 23, 0.72);
+}
+
+.ergo-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.ergo-keypoints {
+    margin-top: 26px;
+    display: grid;
+    gap: 12px;
+}
+
+.ergo-keypoints ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.ergo-keypoints li {
+    position: relative;
+    padding-left: 18px;
+    color: rgba(33, 26, 23, 0.74);
+    line-height: 1.6;
+}
+
+.ergo-keypoints li::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 10px;
+    height: 1px;
+    background: #d81f26;
+}
+
+.ergo-article-media {
+    overflow: hidden;
+    min-height: 620px;
+}
+
+.ergo-article-media img,
+.ergo-article-gallery img,
+.ergo-next-card img,
+.ergo-lightbox-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ergo-article-grid {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.34fr) minmax(0, 0.66fr);
+    gap: 26px;
+    align-items: start;
+    padding-bottom: 48px;
+}
+
+.ergo-article-sidebar {
+    position: sticky;
+    top: 118px;
+    padding: 24px;
+    display: grid;
+    gap: 20px;
+}
+
+.ergo-sidebar-nav {
+    display: grid;
+    gap: 10px;
+}
+
+.ergo-sidebar-link {
+    color: rgba(33, 26, 23, 0.62);
+    text-decoration: none;
+    line-height: 1.45;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.ergo-sidebar-link.is-active {
+    color: #d81f26;
+    transform: translateX(4px);
+}
+
+.ergo-article-quickfacts {
+    padding: 18px;
+    display: grid;
+    gap: 12px;
+}
+
+.ergo-quickfact {
+    display: grid;
+    gap: 6px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(33, 26, 23, 0.08);
+}
+
+.ergo-quickfact:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.ergo-quickfact-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.ergo-quickfact-copy {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(33, 26, 23, 0.68);
+}
+
+.ergo-article-content {
+    display: grid;
+    gap: 18px;
+}
+
+.ergo-article-section {
+    padding: 28px 28px 30px;
+}
+
+.ergo-article-section h2 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+}
+
+.ergo-article-section p {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.86;
+    color: rgba(33, 26, 23, 0.74);
+}
+
+.ergo-article-section > :first-child + p,
+.ergo-article-section > :first-child + .ergo-article-quote,
+.ergo-article-section > :first-child + .ergo-article-note,
+.ergo-article-section > :first-child + .ergo-article-list-block {
+    margin-top: 16px;
+}
+
+.ergo-article-quote,
+.ergo-article-note,
+.ergo-article-list-block {
+    margin-top: 18px;
+    border-radius: 24px;
+    background: rgba(244, 238, 230, 0.92);
+    border: 1px solid rgba(33, 26, 23, 0.08);
+}
+
+.ergo-article-quote {
+    padding: 22px 24px;
+}
+
+.ergo-article-quote p {
+    margin-top: 0;
+    font-size: 1.08rem;
+    line-height: 1.78;
+    color: #211a17;
+}
+
+.ergo-article-quote cite {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.78rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #d81f26;
+}
+
+.ergo-article-note {
+    padding: 20px 22px;
+}
+
+.ergo-article-note-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: rgba(216, 31, 38, 0.1);
+    color: #d81f26;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.ergo-article-note p {
+    margin-top: 0;
+}
+
+.ergo-article-list-block {
+    padding: 20px 22px 22px;
+}
+
+.ergo-article-list-block h3 {
+    font-size: 1.08rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.ergo-article-list-block ul,
+.ergo-article-list-block ol {
+    margin-top: 14px;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+    color: rgba(33, 26, 23, 0.78);
+}
+
+.ergo-article-list-block li {
+    line-height: 1.72;
+}
+
+.ergo-inline-figure,
+.ergo-inline-image-row {
+    margin-top: 20px;
+}
+
+.ergo-inline-figure {
+    overflow: hidden;
+    border: 1px solid rgba(33, 26, 23, 0.08);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.94);
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ergo-inline-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.ergo-inline-figure figcaption {
+    padding: 14px 18px 18px;
+    font-size: 0.9rem;
+    line-height: 1.62;
+    color: rgba(33, 26, 23, 0.66);
+}
+
+.ergo-inline-image-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+}
+
+.ergo-inline-image-row .ergo-inline-figure {
+    max-width: none;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 260px auto;
+}
+
+.ergo-inline-image-row .ergo-inline-figure img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    margin: 0 auto;
+    padding: 14px;
+}
+
+.ergo-inline-image-row .ergo-inline-figure figcaption {
+    min-height: 88px;
+}
+
+body[data-article="supporting-the-spine"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="supporting-the-spine"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="supporting-the-spine"] .ergo-inline-image-row {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body[data-article="sit-stand-move-repeat"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="sit-stand-move-repeat"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="evolution-of-anthropometrics"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="evolution-of-anthropometrics"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="biomechanics-of-movement"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="biomechanics-of-movement"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="pressure-distribution"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="pressure-distribution"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="pressure-distribution"] .ergo-inline-image-row {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body[data-article="thermal-comfort"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="thermal-comfort"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="thermal-comfort"] .ergo-inline-image-row {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body[data-article="task-lighting"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="task-lighting"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="eyes-always-win"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="eyes-always-win"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="embody-heart-rate"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="embody-heart-rate"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="maintaining-concordance"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="maintaining-concordance"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="kinematics-of-sitting"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="kinematics-of-sitting"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="anthropometrics-of-fit"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="anthropometrics-of-fit"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="pelvic-stabilization"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="pelvic-stabilization"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="pelvic-stabilization"] .ergo-inline-image-row {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body[data-article="healthy-movement-alignment"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="healthy-movement-alignment"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+body[data-article="oxygen-flow"] .ergo-inline-figure {
+    max-width: 780px;
+}
+
+body[data-article="oxygen-flow"] .ergo-inline-figure img {
+    padding: 18px;
+}
+
+.ergo-article-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    padding-bottom: 54px;
+}
+
+.ergo-article-credits {
+    padding-bottom: 54px;
+}
+
+.ergo-article-credits-head {
+    margin-bottom: 20px;
+}
+
+.ergo-article-credits-head h2 {
+    margin-top: 14px;
+    font-size: clamp(2rem, 3vw, 3.3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.ergo-credits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ergo-credit-card {
+    border: 1px solid rgba(33, 26, 23, 0.08);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 24px 52px rgba(42, 35, 28, 0.08);
+    padding: 24px;
+}
+
+.ergo-credit-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.ergo-credit-role {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #d81f26;
+    font-weight: 700;
+}
+
+.ergo-credit-card p:last-child {
+    margin-top: 12px;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: rgba(33, 26, 23, 0.72);
+}
+
+.ergo-article-gallery figure {
+    overflow: hidden;
+    min-height: 330px;
+    cursor: zoom-in;
+}
+
+.ergo-article-gallery figcaption {
+    padding: 16px 18px 18px;
+    font-size: 0.9rem;
+    line-height: 1.58;
+    color: rgba(33, 26, 23, 0.64);
+}
+
+.ergo-next {
+    padding-bottom: 80px;
+}
+
+.ergo-next h2 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 3vw, 3.3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.ergo-next-card {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.7fr) minmax(320px, 1.3fr);
+    overflow: hidden;
+    color: #211a17;
+    text-decoration: none;
+}
+
+.ergo-next-copy {
+    padding: 28px;
+}
+
+.ergo-next-copy h3 {
+    margin-top: 14px;
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+.ergo-next-copy p {
+    margin-top: 14px;
+    color: rgba(33, 26, 23, 0.72);
+    line-height: 1.76;
+}
+
+.ergo-next-link {
+    display: inline-flex;
+    margin-top: 16px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(216, 31, 38, 0.5);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.ergo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3200;
+    display: none;
+    place-items: center;
+    padding: 30px;
+    background: rgba(12, 10, 9, 0.84);
+}
+
+.ergo-lightbox.is-open {
+    display: grid;
+}
+
+.ergo-lightbox-inner {
+    position: relative;
+    width: min(1100px, 100%);
+    max-height: 88vh;
+}
+
+.ergo-lightbox-image {
+    max-height: 82vh;
+    border-radius: 26px;
+}
+
+.ergo-lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+body[data-article="sit-stand-move-repeat"] .ergo-article-grid {
+    grid-template-columns: 1fr;
+}
+
+body[data-article="living-well"] .ergo-article-grid,
+body[data-article="all-together-now"] .ergo-article-grid,
+body[data-article="evolution-of-anthropometrics"] .ergo-article-grid,
+body[data-article="biomechanics-of-movement"] .ergo-article-grid,
+body[data-article="pressure-distribution"] .ergo-article-grid,
+body[data-article="thermal-comfort"] .ergo-article-grid,
+body[data-article="task-lighting"] .ergo-article-grid,
+body[data-article="eyes-always-win"] .ergo-article-grid,
+body[data-article="embody-heart-rate"] .ergo-article-grid,
+body[data-article="multiple-monitors"] .ergo-article-grid,
+body[data-article="maintaining-concordance"] .ergo-article-grid,
+body[data-article="kinematics-of-sitting"] .ergo-article-grid,
+body[data-article="anthropometrics-of-fit"] .ergo-article-grid,
+body[data-article="pelvic-stabilization"] .ergo-article-grid,
+body[data-article="healthy-movement-alignment"] .ergo-article-grid,
+body[data-article="oxygen-flow"] .ergo-article-grid,
+body[data-article="supporting-the-spine"] .ergo-article-grid,
+body[data-article="sit-stand-move-repeat"] .ergo-article-grid {
+    grid-template-columns: 1fr;
+}
+
+body[data-article="living-well"] .ergo-article-sidebar,
+body[data-article="all-together-now"] .ergo-article-sidebar,
+body[data-article="evolution-of-anthropometrics"] .ergo-article-sidebar,
+body[data-article="biomechanics-of-movement"] .ergo-article-sidebar,
+body[data-article="pressure-distribution"] .ergo-article-sidebar,
+body[data-article="thermal-comfort"] .ergo-article-sidebar,
+body[data-article="task-lighting"] .ergo-article-sidebar,
+body[data-article="eyes-always-win"] .ergo-article-sidebar,
+body[data-article="embody-heart-rate"] .ergo-article-sidebar,
+body[data-article="multiple-monitors"] .ergo-article-sidebar,
+body[data-article="maintaining-concordance"] .ergo-article-sidebar,
+body[data-article="kinematics-of-sitting"] .ergo-article-sidebar,
+body[data-article="anthropometrics-of-fit"] .ergo-article-sidebar,
+body[data-article="pelvic-stabilization"] .ergo-article-sidebar,
+body[data-article="healthy-movement-alignment"] .ergo-article-sidebar,
+body[data-article="oxygen-flow"] .ergo-article-sidebar,
+body[data-article="supporting-the-spine"] .ergo-article-sidebar,
+body[data-article="sit-stand-move-repeat"] .ergo-article-sidebar {
+    position: relative;
+    top: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+}
+
+body[data-article="living-well"] .ergo-article-content,
+body[data-article="all-together-now"] .ergo-article-content,
+body[data-article="evolution-of-anthropometrics"] .ergo-article-content,
+body[data-article="biomechanics-of-movement"] .ergo-article-content,
+body[data-article="pressure-distribution"] .ergo-article-content,
+body[data-article="thermal-comfort"] .ergo-article-content,
+body[data-article="task-lighting"] .ergo-article-content,
+body[data-article="eyes-always-win"] .ergo-article-content,
+body[data-article="embody-heart-rate"] .ergo-article-content,
+body[data-article="multiple-monitors"] .ergo-article-content,
+body[data-article="maintaining-concordance"] .ergo-article-content,
+body[data-article="kinematics-of-sitting"] .ergo-article-content,
+body[data-article="anthropometrics-of-fit"] .ergo-article-content,
+body[data-article="pelvic-stabilization"] .ergo-article-content,
+body[data-article="healthy-movement-alignment"] .ergo-article-content,
+body[data-article="oxygen-flow"] .ergo-article-content,
+body[data-article="supporting-the-spine"] .ergo-article-content,
+body[data-article="sit-stand-move-repeat"] .ergo-article-content {
+    max-width: 100%;
+}
+
+body[data-article="living-well"] .ergo-article-gallery,
+body[data-article="all-together-now"] .ergo-article-gallery,
+body[data-article="evolution-of-anthropometrics"] .ergo-article-gallery,
+body[data-article="biomechanics-of-movement"] .ergo-article-gallery,
+body[data-article="pressure-distribution"] .ergo-article-gallery,
+body[data-article="thermal-comfort"] .ergo-article-gallery,
+body[data-article="task-lighting"] .ergo-article-gallery,
+body[data-article="eyes-always-win"] .ergo-article-gallery,
+body[data-article="embody-heart-rate"] .ergo-article-gallery,
+body[data-article="multiple-monitors"] .ergo-article-gallery,
+body[data-article="maintaining-concordance"] .ergo-article-gallery,
+body[data-article="kinematics-of-sitting"] .ergo-article-gallery,
+body[data-article="anthropometrics-of-fit"] .ergo-article-gallery,
+body[data-article="pelvic-stabilization"] .ergo-article-gallery,
+body[data-article="healthy-movement-alignment"] .ergo-article-gallery,
+body[data-article="oxygen-flow"] .ergo-article-gallery,
+body[data-article="supporting-the-spine"] .ergo-article-gallery,
+body[data-article="sit-stand-move-repeat"] .ergo-article-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+body[data-article="living-well"] .ergo-article-gallery figure,
+body[data-article="all-together-now"] .ergo-article-gallery figure,
+body[data-article="evolution-of-anthropometrics"] .ergo-article-gallery figure,
+body[data-article="biomechanics-of-movement"] .ergo-article-gallery figure,
+body[data-article="pressure-distribution"] .ergo-article-gallery figure,
+body[data-article="thermal-comfort"] .ergo-article-gallery figure,
+body[data-article="task-lighting"] .ergo-article-gallery figure,
+body[data-article="eyes-always-win"] .ergo-article-gallery figure,
+body[data-article="embody-heart-rate"] .ergo-article-gallery figure,
+body[data-article="multiple-monitors"] .ergo-article-gallery figure,
+body[data-article="maintaining-concordance"] .ergo-article-gallery figure,
+body[data-article="kinematics-of-sitting"] .ergo-article-gallery figure,
+body[data-article="anthropometrics-of-fit"] .ergo-article-gallery figure,
+body[data-article="pelvic-stabilization"] .ergo-article-gallery figure,
+body[data-article="healthy-movement-alignment"] .ergo-article-gallery figure,
+body[data-article="oxygen-flow"] .ergo-article-gallery figure,
+body[data-article="supporting-the-spine"] .ergo-article-gallery figure,
+body[data-article="sit-stand-move-repeat"] .ergo-article-gallery figure {
+    min-height: 420px;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body[data-article="living-well"] .ergo-article-gallery img,
+body[data-article="all-together-now"] .ergo-article-gallery img,
+body[data-article="evolution-of-anthropometrics"] .ergo-article-gallery img,
+body[data-article="biomechanics-of-movement"] .ergo-article-gallery img,
+body[data-article="pressure-distribution"] .ergo-article-gallery img,
+body[data-article="thermal-comfort"] .ergo-article-gallery img,
+body[data-article="task-lighting"] .ergo-article-gallery img,
+body[data-article="eyes-always-win"] .ergo-article-gallery img,
+body[data-article="embody-heart-rate"] .ergo-article-gallery img,
+body[data-article="multiple-monitors"] .ergo-article-gallery img,
+body[data-article="maintaining-concordance"] .ergo-article-gallery img,
+body[data-article="kinematics-of-sitting"] .ergo-article-gallery img,
+body[data-article="anthropometrics-of-fit"] .ergo-article-gallery img,
+body[data-article="pelvic-stabilization"] .ergo-article-gallery img,
+body[data-article="healthy-movement-alignment"] .ergo-article-gallery img,
+body[data-article="oxygen-flow"] .ergo-article-gallery img,
+body[data-article="supporting-the-spine"] .ergo-article-gallery img,
+body[data-article="sit-stand-move-repeat"] .ergo-article-gallery img {
+    height: 100%;
+    object-fit: contain;
+    padding: 18px;
+    background: #fff;
+}
+
+.reveal {
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left {
+    transform: translateX(-84px);
+}
+
+.reveal-right {
+    transform: translateX(84px);
+}
+
+.reveal-up {
+    transform: translateY(66px);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+@media (max-width: 1100px) {
+    .ergo-article-hero,
+    .ergo-article-grid,
+    .ergo-article-gallery,
+    .ergo-credits-grid,
+    .ergo-next-card {
+        grid-template-columns: 1fr;
+    }
+
+    .ergo-article-sidebar {
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .ergo-article-main {
+        padding-top: 80px;
+    }
+
+    .ergo-article-shell {
+        width: calc(100% - 28px);
+    }
+
+    .ergo-article-copy,
+    .ergo-article-section,
+    .ergo-article-sidebar,
+    .ergo-next-copy {
+        padding: 22px;
+    }
+
+    .ergo-lightbox {
+        padding: 14px;
+    }
+
+    body[data-article="living-well"] .ergo-article-sidebar,
+    body[data-article="all-together-now"] .ergo-article-sidebar,
+    body[data-article="evolution-of-anthropometrics"] .ergo-article-sidebar,
+    body[data-article="biomechanics-of-movement"] .ergo-article-sidebar,
+    body[data-article="pressure-distribution"] .ergo-article-sidebar,
+    body[data-article="thermal-comfort"] .ergo-article-sidebar,
+    body[data-article="task-lighting"] .ergo-article-sidebar,
+    body[data-article="eyes-always-win"] .ergo-article-sidebar,
+    body[data-article="embody-heart-rate"] .ergo-article-sidebar,
+    body[data-article="multiple-monitors"] .ergo-article-sidebar,
+    body[data-article="maintaining-concordance"] .ergo-article-sidebar,
+    body[data-article="kinematics-of-sitting"] .ergo-article-sidebar,
+    body[data-article="anthropometrics-of-fit"] .ergo-article-sidebar,
+    body[data-article="pelvic-stabilization"] .ergo-article-sidebar,
+    body[data-article="healthy-movement-alignment"] .ergo-article-sidebar,
+    body[data-article="oxygen-flow"] .ergo-article-sidebar,
+    body[data-article="supporting-the-spine"] .ergo-article-sidebar,
+    body[data-article="sit-stand-move-repeat"] .ergo-article-sidebar,
+    body[data-article="living-well"] .ergo-article-gallery,
+    body[data-article="all-together-now"] .ergo-article-gallery,
+    body[data-article="evolution-of-anthropometrics"] .ergo-article-gallery,
+    body[data-article="biomechanics-of-movement"] .ergo-article-gallery,
+    body[data-article="pressure-distribution"] .ergo-article-gallery,
+    body[data-article="thermal-comfort"] .ergo-article-gallery,
+    body[data-article="task-lighting"] .ergo-article-gallery,
+    body[data-article="eyes-always-win"] .ergo-article-gallery,
+    body[data-article="embody-heart-rate"] .ergo-article-gallery,
+    body[data-article="multiple-monitors"] .ergo-article-gallery,
+    body[data-article="maintaining-concordance"] .ergo-article-gallery,
+    body[data-article="kinematics-of-sitting"] .ergo-article-gallery,
+    body[data-article="anthropometrics-of-fit"] .ergo-article-gallery,
+    body[data-article="pelvic-stabilization"] .ergo-article-gallery,
+    body[data-article="healthy-movement-alignment"] .ergo-article-gallery,
+    body[data-article="oxygen-flow"] .ergo-article-gallery,
+    body[data-article="supporting-the-spine"] .ergo-article-gallery,
+    body[data-article="sit-stand-move-repeat"] .ergo-article-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .ergo-inline-image-row {
+        grid-template-columns: 1fr;
+    }
+}

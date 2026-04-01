@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergonomics Performance Specialists | Workspace Studio</title>
+    <meta name="description" content="Workspace Studio designs healthier, sharper, and more adaptive workplaces through ergonomics strategy, product fit, and performance-driven workplace planning.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="ergonomics-specialists.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="ergonomics-page">
+    <nav class="navbar main-nav visible-nav ergo-page-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt is-active">Ergonomics</a>
+                <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
+            </div>
+
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links">
+                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
+                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                </nav>
+
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="ergo-hub-main">
+        <section class="ergo-hub-hero">
+            <div class="ergo-shell hub-hero-grid">
+                <div class="hub-hero-copy reveal">
+                    <span class="ergo-kicker">Ergonomics Library</span>
+                    <h1>Ergonomics stories, now split into clear, usable subpages.</h1>
+                    <p class="hub-lead">This library now keeps much more of the original research language while making each topic easier to read, easier to scan, and easier to revisit with strong imagery and dedicated story pages.</p>
+                    <div class="hub-chip-row">
+                        <button class="hub-chip is-active" type="button" data-filter="all">All Stories</button>
+                        <button class="hub-chip" type="button" data-filter="movement">Movement</button>
+                        <button class="hub-chip" type="button" data-filter="seating">Seating</button>
+                        <button class="hub-chip" type="button" data-filter="research">Research</button>
+                        <button class="hub-chip" type="button" data-filter="workplace">Workplace</button>
+                    </div>
+                    <div class="ergo-hero-actions">
+                        <a href="articles/living-well.html" class="ergo-cta-primary">Open Featured Story</a>
+                        <a href="../contact/contact.html" class="ergo-cta-secondary">Talk to Workspace Studio</a>
+                    </div>
+                </div>
+
+                <a class="hub-feature-card reveal" href="articles/living-well.html">
+                    <div class="hub-feature-media">
+                        <img src="pictures/living-well-hero.jpg" alt="Athletes training in a bright wellness environment">
+                    </div>
+                    <div class="hub-feature-copy">
+                        <span class="hub-feature-label">Featured case study</span>
+                        <h2>Living Well</h2>
+                        <p>An environment where athletes and employees can thrive, built around care, performance, and collaboration.</p>
+                        <span class="hub-feature-link">Open story</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="hub-story-section">
+            <div class="ergo-shell hub-story-header reveal">
+                <div>
+                    <span class="ergo-section-label">Browse Stories</span>
+                    <h2>Eighteen focused readings, each with its own page, imagery, and reading rhythm.</h2>
+                </div>
+                <p>Use the filters to reduce clutter quickly. Every card opens a dedicated subpage with richer text, key points, and image-based reading breaks.</p>
+            </div>
+
+            <div class="ergo-shell hub-story-grid" id="hubStoryGrid">
+                <a class="hub-story-card reveal" data-tags="case-study workplace movement" href="articles/living-well.html">
+                    <img src="pictures/living-well-hero.jpg" alt="Integrated sports and health centre">
+                    <div class="hub-story-copy">
+                        <span>Case Study</span>
+                        <h3>Living Well</h3>
+                        <p>How Fortius built an athlete-centred environment that treats health as performance for life.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="movement workplace research" href="articles/sit-stand-move-repeat.html">
+                    <img src="pictures/sit-stand-move-repeat-hero.jpg" alt="Standing and moving during work">
+                    <div class="hub-story-copy">
+                        <span>Movement</span>
+                        <h3>Sit. Stand. Move. Repeat.</h3>
+                        <p>Why postural variety beats sitting all day and standing all day.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating research" href="articles/supporting-the-spine.html">
+                    <img src="pictures/supporting-the-spine-hero.jpg" alt="Chair designed to support the spine">
+                    <div class="hub-story-copy">
+                        <span>Seating Science</span>
+                        <h3>Supporting the Spine When Seated</h3>
+                        <p>The anatomy, dynamic support, and research logic behind Mirra 2.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="workplace workplace strategy" href="articles/all-together-now.html">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="Workplace collaboration with technology">
+                    <div class="hub-story-copy">
+                        <span>Workplace Strategy</span>
+                        <h3>All Together Now</h3>
+                        <p>Why surroundings, furnishings, and tools must finally start working together.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="research seating" href="articles/evolution-of-anthropometrics.html">
+                    <img src="pictures/the-evolution-of-anthropometrics-and-user-control-hero.jpg" alt="Human measurements and workplace research">
+                    <div class="hub-story-copy">
+                        <span>Research</span>
+                        <h3>The Evolution of Anthropometrics and User Control</h3>
+                        <p>From average sizing to responsive fit for real people and real work postures.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="movement seating research" href="articles/biomechanics-of-movement.html">
+                    <img src="pictures/supporting-the-biomechanics-of-movement-hero.jpg" alt="Movement and recline in an office chair">
+                    <div class="hub-story-copy">
+                        <span>Biomechanics</span>
+                        <h3>Supporting the Biomechanics of Movement</h3>
+                        <p>How tilt kinematics can mirror the body instead of forcing it to adapt.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating research" href="articles/pressure-distribution.html">
+                    <img src="pictures/the-art-of-science-of-pressure-distribution-hero.jpg" alt="Pressure mapping and chair support">
+                    <div class="hub-story-copy">
+                        <span>Seating Science</span>
+                        <h3>The Art and Science of Pressure Distribution</h3>
+                        <p>Why topographically neutral support matters more than simple padding.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating research workplace" href="articles/thermal-comfort.html">
+                    <img src="pictures/the-attributes-of-thermal-comfort-hero.jpg" alt="Breathable work chair materials">
+                    <div class="hub-story-copy">
+                        <span>Thermal Comfort</span>
+                        <h3>The Attributes of Thermal Comfort</h3>
+                        <p>How breathable materials keep seated work from becoming hot, sticky, and fatiguing.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="workplace research" href="articles/task-lighting.html">
+                    <img src="pictures/the-case-for-task-lighting-hero.jpg" alt="Task lighting at a workstation">
+                    <div class="hub-story-copy">
+                        <span>Visual Comfort</span>
+                        <h3>The Case for Task Lighting</h3>
+                        <p>Why individual lighting control saves energy, reduces strain, and supports posture.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating research movement" href="articles/embody-heart-rate.html">
+                    <img src="pictures/sitting-can-be-good-for-the-circulatory-system-hero.jpg" alt="Dynamic seating and cardiovascular benefit">
+                    <div class="hub-story-copy">
+                        <span>Health Research</span>
+                        <h3>Sitting Can Be Good for the Circulatory System</h3>
+                        <p>How Embody was studied for lower heart rate during office work.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="workplace research" href="articles/multiple-monitors.html">
+                    <img src="pictures/seeing-double-hero.jpg" alt="Multiple monitors on a desk">
+                    <div class="hub-story-copy">
+                        <span>Monitor Ergonomics</span>
+                        <h3>Seeing Double</h3>
+                        <p>The productivity gains and posture risks that come with dual and triple displays.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="workplace research" href="articles/eyes-always-win.html">
+                    <img src="pictures/the-eyes-always-win-hero.jpg" alt="Adjustable monitor arm">
+                    <div class="hub-story-copy">
+                        <span>Monitor Ergonomics</span>
+                        <h3>The Eyes Always Win</h3>
+                        <p>Why adjustable monitor arms are almost as important as the chair itself.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="workplace movement research" href="articles/maintaining-concordance.html">
+                    <img src="pictures/maintaining-concordance-as-seated-posture-changes-hero.jpg" alt="Chair and desk working together">
+                    <div class="hub-story-copy">
+                        <span>Workstation Design</span>
+                        <h3>Maintaining Concordance as Seated Postures Change</h3>
+                        <p>How Envelop keeps chair, desk, and technology aligned as posture changes.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating movement research" href="articles/kinematics-of-sitting.html">
+                    <img src="pictures/the-kinematics-of-sitting-hero.jpg" alt="Aeron-inspired movement and support">
+                    <div class="hub-story-copy">
+                        <span>Aeron Research</span>
+                        <h3>The Kinematics of Sitting</h3>
+                        <p>Why the chair should follow the body's linkages instead of the reverse.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating research" href="articles/anthropometrics-of-fit.html">
+                    <img src="pictures/the-anthropometrics-to-fit-hero.jpg" alt="Anthropometric fit research">
+                    <div class="hub-story-copy">
+                        <span>Aeron Research</span>
+                        <h3>The Anthropometrics of Fit</h3>
+                        <p>Why real fit starts by designing beyond the mythical average user.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating research" href="articles/pelvic-stabilization.html">
+                    <img src="pictures/the-benefits-of-pelvic-stabilization-hero.jpg" alt="Pelvic support and upright sitting">
+                    <div class="hub-story-copy">
+                        <span>Aeron Research</span>
+                        <h3>The Benefits of Pelvic Stabilization</h3>
+                        <p>Why sacral-pelvic support matters in upright computer work.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="movement seating research" href="articles/healthy-movement-alignment.html">
+                    <img src="pictures/promoting-healthy-movement-and-natural-alignment-hero.jpg" alt="Natural alignment and movement while seated">
+                    <div class="hub-story-copy">
+                        <span>Embody Research</span>
+                        <h3>Promoting Healthy Movement and Natural Alignment</h3>
+                        <p>How Embody supports equilibrium across upright and reclined work.</p>
+                    </div>
+                </a>
+
+                <a class="hub-story-card reveal" data-tags="seating movement research" href="articles/oxygen-flow.html">
+                    <img src="pictures/improving-oxygen-flow-while-seated-hero.jpg" alt="Comfort and circulation while seated">
+                    <div class="hub-story-copy">
+                        <span>Embody Research</span>
+                        <h3>Improving Oxygen Flow While Seated</h3>
+                        <p>How a dynamic seat supports tissue perfusion and longer focused work.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="hub-preview-band">
+            <div class="ergo-shell hub-preview-grid">
+                <div class="hub-preview-copy reveal">
+                    <span class="ergo-section-label">Quick View</span>
+                    <h2 id="hubPreviewTitle">Living Well</h2>
+                    <p id="hubPreviewText">A healthcare and performance case study about designing a centre where athletes, staff, and clients can all thrive.</p>
+                    <a id="hubPreviewLink" href="articles/living-well.html" class="ergo-cta-primary">Read this article</a>
+                </div>
+                <div class="hub-preview-media reveal">
+                    <img id="hubPreviewImage" src="pictures/living-well-hero.jpg" alt="Living Well preview">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ergonomics-specialists.js"></script>
+</body>
+</html>

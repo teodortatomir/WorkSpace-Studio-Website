@@ -1,0 +1,579 @@
+body.turnkey-page {
+    background:
+        radial-gradient(circle at top left, rgba(174, 102, 54, 0.08), transparent 30%),
+        linear-gradient(180deg, #f1eae0 0%, #f7f1ea 42%, #f3ede6 100%);
+    color: #201a16;
+    font-family: "Manrope", sans-serif;
+}
+
+.turnkey-nav {
+    background: rgba(239, 231, 220, 0.88);
+    backdrop-filter: blur(16px);
+}
+
+.turnkey-nav .brand-name-text.is-active::after {
+    width: 100%;
+    background: #a35a2c;
+}
+
+.tk-shell {
+    width: calc(100% - 64px);
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.tk-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(163, 90, 44, 0.1);
+    color: #8f4b20;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.tk-chip-dark {
+    background: rgba(26, 20, 16, 0.08);
+    color: #201a16;
+}
+
+.tk-hero-copy h1,
+.tk-story-card h2,
+.tk-route-intro h2,
+.tk-route-copy h3,
+.tk-panorama-head h2,
+.tk-handover-copy h2,
+.tk-cta-copy h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    letter-spacing: -0.045em;
+}
+
+.tk-hero-copy p,
+.tk-story-card p,
+.tk-route-intro p,
+.tk-route-copy p,
+.tk-panorama-copy p,
+.tk-handover-copy p,
+.tk-cta-copy p {
+    line-height: 1.8;
+}
+
+.tk-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 220ms ease, background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.tk-btn:hover {
+    transform: translateY(-2px);
+}
+
+.tk-btn-primary {
+    background: #201a16;
+    color: #f8f2ea;
+}
+
+.tk-btn-secondary {
+    border: 1px solid rgba(32, 26, 22, 0.16);
+    color: #201a16;
+}
+
+.tk-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 108px 0 16px;
+    overflow: hidden;
+}
+
+.tk-hero-visual,
+.tk-hero-wash {
+    position: absolute;
+    inset: 0;
+}
+
+.tk-hero-visual img,
+.tk-route-media img,
+.tk-panorama-image img,
+.tk-handover-image img,
+.tk-cta-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tk-hero-wash {
+    background:
+        linear-gradient(90deg, rgba(20, 15, 12, 0.88) 0%, rgba(20, 15, 12, 0.64) 34%, rgba(20, 15, 12, 0.24) 62%, rgba(20, 15, 12, 0.1) 100%),
+        linear-gradient(180deg, rgba(20, 15, 12, 0.04) 0%, rgba(20, 15, 12, 0.34) 100%);
+}
+
+.tk-hero-story {
+    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 124px);
+    display: grid;
+    align-content: center;
+    grid-template-columns: minmax(320px, 0.96fr) minmax(260px, 0.36fr);
+    gap: 22px;
+}
+
+.tk-hero-copy,
+.tk-hero-aside,
+.tk-route-card,
+.tk-panorama-frame,
+.tk-cta-panel {
+    border: 1px solid rgba(32, 26, 22, 0.08);
+    box-shadow: 0 22px 70px rgba(50, 35, 22, 0.12);
+}
+
+.tk-hero-copy,
+.tk-hero-aside {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(28, 20, 16, 0.34);
+    backdrop-filter: blur(10px);
+}
+
+.tk-hero-copy {
+    padding: 28px 30px 30px;
+    border-radius: 28px;
+}
+
+.tk-hero-copy h1 {
+    margin-top: 18px;
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 0.92;
+    max-width: 10ch;
+    color: #f8f2ea;
+}
+
+.tk-hero-copy p {
+    margin-top: 16px;
+    max-width: 54ch;
+    font-size: 0.98rem;
+    color: rgba(248, 242, 234, 0.82);
+}
+
+.tk-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tk-hero-copy .tk-btn-secondary {
+    border-color: rgba(248, 242, 234, 0.3);
+    background: rgba(248, 242, 234, 0.14);
+    color: #f8f2ea;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.tk-hero-copy .tk-btn-secondary:hover {
+    background: rgba(248, 242, 234, 0.22);
+    border-color: rgba(248, 242, 234, 0.44);
+}
+
+.tk-hero-aside {
+    align-self: center;
+    padding: 22px 22px 24px;
+    border-radius: 24px;
+}
+
+.tk-hero-aside-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #d9b49b;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.tk-hero-aside p {
+    color: rgba(248, 242, 234, 0.78);
+}
+
+.tk-story,
+.tk-route,
+.tk-panorama,
+.tk-handover,
+.tk-cta {
+    padding: 22px 0 34px;
+}
+
+.tk-route {
+    scroll-margin-top: 110px;
+}
+
+.tk-story-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    border: 0;
+}
+
+.tk-story-card {
+    min-height: 220px;
+    padding: 24px 24px 26px;
+    border: 1px solid rgba(32, 26, 22, 0.08);
+    border-radius: 26px;
+    background: rgba(255, 252, 248, 0.48);
+}
+
+.tk-story-index {
+    display: inline-flex;
+    margin-bottom: 18px;
+    color: #a35a2c;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.tk-story-card h2 {
+    font-size: clamp(1.9rem, 3vw, 3rem);
+    line-height: 0.98;
+}
+
+.tk-story-card p {
+    margin-top: 14px;
+    max-width: 34ch;
+    color: rgba(32, 26, 22, 0.72);
+}
+
+.tk-route-grid,
+.tk-handover-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.44fr) minmax(0, 0.56fr);
+    gap: 24px;
+    align-items: center;
+}
+
+.tk-route-intro {
+    position: static;
+}
+
+.tk-route-intro h2,
+.tk-panorama-head h2,
+.tk-handover-copy h2,
+.tk-cta-copy h2 {
+    margin-top: 16px;
+    font-size: clamp(2.3rem, 4.8vw, 4.6rem);
+    line-height: 0.96;
+}
+
+.tk-route-intro p {
+    margin-top: 14px;
+    color: rgba(32, 26, 22, 0.74);
+}
+
+.tk-route-switches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.tk-route-switch {
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid rgba(32, 26, 22, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 252, 248, 0.56);
+    color: rgba(32, 26, 22, 0.74);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+
+.tk-route-switch:hover,
+.tk-route-switch.is-active {
+    background: #201a16;
+    border-color: #201a16;
+    color: #f8f2ea;
+    transform: translateY(-1px);
+}
+
+.tk-route-card {
+    overflow: hidden;
+    border-radius: 30px;
+    background: rgba(255, 252, 248, 0.78);
+}
+
+.tk-route-media {
+    height: 430px;
+}
+
+.tk-route-copy {
+    padding: 24px 26px 28px;
+}
+
+.tk-route-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a35a2c;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.tk-route-copy h3 {
+    font-size: clamp(1.9rem, 3vw, 3rem);
+    line-height: 0.98;
+}
+
+.tk-route-copy p {
+    margin-top: 14px;
+    color: rgba(32, 26, 22, 0.74);
+}
+
+.tk-panorama-head {
+    margin-bottom: 16px;
+    max-width: 860px;
+}
+
+.tk-panorama-frame {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
+    grid-template-rows: minmax(380px, 58vh) auto;
+    overflow: hidden;
+    border-radius: 30px;
+    background: rgba(255, 252, 248, 0.78);
+}
+
+.tk-panorama-image {
+    grid-row: 1 / span 2;
+    min-height: 100%;
+}
+
+.tk-panorama-copy {
+    display: grid;
+    align-content: center;
+    padding: 26px 26px 18px;
+    background: rgba(255, 250, 245, 0.86);
+}
+
+.tk-panorama-copy p {
+    margin-top: 12px;
+    color: rgba(32, 26, 22, 0.74);
+}
+
+.tk-panorama-nav {
+    display: grid;
+    border-top: 1px solid rgba(32, 26, 22, 0.08);
+}
+
+.tk-gallery-thumb {
+    border: 0;
+    border-bottom: 1px solid rgba(32, 26, 22, 0.08);
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 220ms ease, color 220ms ease;
+}
+
+.tk-gallery-thumb:last-child {
+    border-bottom: 0;
+}
+
+.tk-gallery-thumb span {
+    display: block;
+    width: 100%;
+    min-height: 58px;
+    padding: 0 20px;
+    text-align: left;
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 62px;
+    color: rgba(32, 26, 22, 0.76);
+}
+
+.tk-gallery-thumb:hover,
+.tk-gallery-thumb.is-active {
+    background: #201a16;
+}
+
+.tk-gallery-thumb.is-active span,
+.tk-gallery-thumb:hover span {
+    color: #f8f2ea;
+}
+
+.tk-handover-image,
+.tk-cta-image {
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 20px 58px rgba(54, 36, 23, 0.12);
+}
+
+.tk-handover-image {
+    min-height: 0;
+    aspect-ratio: 2880 / 1339;
+}
+
+.tk-handover-image img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.tk-handover-copy {
+    align-self: center;
+    padding: 8px 6px 8px 0;
+}
+
+.tk-handover-copy p {
+    margin-top: 14px;
+    color: rgba(32, 26, 22, 0.74);
+}
+
+.tk-cta-panel {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+    gap: 22px;
+    border-radius: 30px;
+    padding: 18px;
+    background: rgba(255, 252, 248, 0.78);
+}
+
+.tk-cta-image {
+    min-height: 280px;
+}
+
+.tk-cta-copy {
+    padding: 10px 4px 10px 4px;
+    align-self: center;
+}
+
+.turnkey-page .reveal {
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.turnkey-page .reveal-left {
+    transform: translateX(-54px);
+}
+
+.turnkey-page .reveal-right {
+    transform: translateX(54px);
+}
+
+.turnkey-page .reveal-up {
+    transform: translateY(42px);
+}
+
+.turnkey-page .reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+@media (max-width: 1100px) {
+    .tk-hero-story,
+    .tk-route-grid,
+    .tk-panorama-frame,
+    .tk-handover-grid,
+    .tk-cta-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .tk-story-track,
+    .tk-hero-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .tk-route-intro {
+        position: static;
+    }
+
+    .tk-panorama-frame {
+        grid-template-rows: 320px auto auto;
+    }
+
+    .tk-panorama-image {
+        grid-row: auto;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tk-shell {
+        width: calc(100% - 28px);
+    }
+
+    .tk-hero {
+        height: 100vh;
+        min-height: 100vh;
+        padding-top: 104px;
+        padding-bottom: 16px;
+    }
+
+    .tk-hero-story {
+        min-height: calc(100vh - 120px);
+    }
+
+    .tk-hero-copy,
+    .tk-hero-aside {
+        padding: 22px 20px;
+        border-radius: 24px;
+    }
+
+    .tk-hero-copy h1 {
+        font-size: clamp(2.9rem, 13vw, 4.8rem);
+    }
+
+    .tk-story-card {
+        min-height: auto;
+        padding: 22px 20px 24px;
+    }
+
+    .tk-route-media {
+        height: 280px;
+    }
+
+    .tk-route-copy,
+    .tk-panorama-copy {
+        padding: 22px 20px;
+    }
+
+    .tk-panorama-frame {
+        border-radius: 26px;
+    }
+
+    .tk-panorama-image {
+        min-height: 280px;
+    }
+
+    .tk-gallery-thumb span {
+        min-height: 56px;
+        padding: 0 18px;
+        line-height: 56px;
+    }
+
+    .tk-handover-image,
+    .tk-cta-image {
+        min-height: 240px;
+    }
+
+    .tk-handover-image {
+        min-height: 0;
+    }
+
+    .tk-cta-panel {
+        padding: 14px;
+    }
+
+    .tk-cta-copy,
+    .tk-handover-copy {
+        padding: 6px 4px 8px;
+    }
+}

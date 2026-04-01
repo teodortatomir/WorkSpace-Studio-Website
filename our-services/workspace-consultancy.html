@@ -4,202 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Consultancy | Workspace Studio</title>
+    <meta name="description" content="Workspace consultancy by Workspace Studio: audit, strategy, feasibility, cost logic, and decision support for workplace transformation.">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="secondary.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="workspace-consultancy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: var(--bg-warm);">
-    <nav class="hero-navbar" aria-label="Page navigation">
-        <div class="hero-navbar-inner">
-            <a href="../index.html" class="hero-logo-link" aria-label="Workspace Studio home">
-                <img src="../logos/WorkspaceW.svg" alt="Workspace Studio W" class="hero-logo-mark">
-            </a>
-            <div class="hero-nav-actions">
-                <div class="hero-search-shell" id="heroSearchShell">
-                    <button class="hero-icon-button" id="heroSearchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="heroSearchForm">
-                        <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
-                            <path d="M20 20L16.65 16.65" stroke-width="1.8" stroke-linecap="round"></path>
-                        </svg>
-                    </button>
-                    <form class="hero-search-form" id="heroSearchForm" role="search">
-                        <input type="search" id="heroSearchInput" class="hero-search-input" placeholder="Search pages" aria-label="Search pages">
-                    </form>
+<body class="consultancy-page">
+    <nav class="navbar main-nav visible-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
                 </div>
-                <button class="hero-icon-button hero-menu-button" id="menuOpen" type="button" aria-label="Open menu">
-                    <span class="hero-menu-line"></span>
-                    <span class="hero-menu-line"></span>
-                    <span class="hero-menu-line"></span>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle menu-open" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <div class="menu-overlay" id="menuOverlay">
-        <button class="menu-close" id="menuClose">&times;</button>
+    <div class="menu-overlay">
+        <button class="menu-close" type="button" aria-label="Close menu">&times;</button>
         <div class="menu-split-container">
             <div class="menu-left-images">
-                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
-                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
-                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
-                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
-                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
-                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
-                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-preview-img active" data-index="0" alt="">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-preview-img" data-index="1" alt="">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-preview-img" data-index="2" alt="">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-preview-img" data-index="3" alt="">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-preview-img" data-index="4" alt="">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-preview-img" data-index="5" alt="">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-preview-img" data-index="6" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item" alt="" onclick="window.location.href='../index.html'">
             </div>
             <div class="menu-right-content">
                 <span class="menu-label-top">Menu</span>
                 <nav class="menu-right-links">
-                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
-                    <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
-                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
-                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
-                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
-                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
-                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                    <div class="menu-item"><a class="menu-link" href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-item"><a class="menu-link" href="../index.html#services">Services</a></div>
+                    <div class="menu-item"><a class="menu-link" href="../partners/partners.html">Brands &amp; Partners</a></div>
+                    <div class="menu-item"><a class="menu-link" href="../about/about.html">About</a></div>
+                    <div class="menu-item"><a class="menu-link" href="../insights/insights.html">Insights</a></div>
+                    <div class="menu-item"><a class="menu-link" href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-item"><a class="menu-link" href="../contact/contact.html">Contact / Start a Project</a></div>
                 </nav>
                 <div class="menu-footer">
                     <div class="menu-socials">
-                        <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
-                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
-                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <main class="services-page-layout">
-        <div class="services-image-bg">
-            <img src="workspace_consultancy_cropped.jpg" alt="Workspace Strategy">
-            <div class="overlay-gradient"></div>
-        </div>
-
-        <div class="services-content-overlay">
-            <header class="content-header">
-                <span class="mission-label">Workspace Strategy</span>
-                <h1 class="modal-title">Workspace<br>Consultancy</h1>
-            </header>
-
-            <div class="consultancy-manifest">
-                <p class="modal-description">
-                    In businesses around the world the workforce is changing. Expectations are changing. How work gets done is changing. The tools of work are changing. The work itself is changing. <strong>The space is fluid.</strong>
-                </p>
-                <p class="modal-description small-text">
-                    There is a new landscape of work. We can help you shape a workspace that suits your requirements as your company evolves, providing a bedrock for productivity and well-being.
-                </p>
-            </div>
-
-            <div class="consultancy-grid-details">
-                <div class="list-section">
-                    <span class="list-title-small">Workplace Audit</span>
-                    <ul class="services-list-detail compact">
-                        <li><span class="num"></span> Staff movements</li>
-                        <li><span class="num"></span> Desk & Storage usage</li>
-                        <li><span class="num"></span> Teamwork & Interaction</li>
-                        <li><span class="num"></span> Meeting room requirements</li>
-                        <li><span class="num"></span> Technology & Privacy</li>
-                    </ul>
+    <main class="consult-main">
+        <section class="consult-hero">
+            <div class="consult-shell consult-hero-layout">
+                <div class="consult-hero-copy">
+                    <span class="consult-kicker">Workspace Consultancy</span>
+                    <h1>Before we redesign the workplace, we learn how it really works.</h1>
+                    <p>Consultancy helps leadership teams understand behaviour, capacity, friction, and ambition before design decisions start shaping the wrong answer beautifully.</p>
                 </div>
+                <figure class="consult-hero-image consult-hero-image-large">
+                    <img src="consultancy-pictures/consultancy-hero.jpg" alt="Workspace consultancy and office analysis">
+                </figure>
+            </div>
+        </section>
 
-                <div class="list-section">
-                    <span class="list-title-small">Cost Management</span>
-                    <ul class="services-list-detail compact">
-                        <li><span class="num"></span> Budgeting</li>
-                        <li><span class="num"></span> ROI Analysis</li>
-                        <li><span class="num"></span> Feasibility studies</li>
-                        <li><span class="num"></span> Building appraisal</li>
-                        <li><span class="num"></span> Workplace strategy</li>
-                    </ul>
+        <section class="consult-gallery">
+            <div class="consult-shell consult-gallery-grid">
+                <figure class="consult-gallery-card consult-gallery-card-tall">
+                    <img src="consultancy-pictures/consultancy-1.jpg" alt="Teams using workplace settings">
+                </figure>
+                <figure class="consult-gallery-card">
+                    <img src="consultancy-pictures/consultancy-2.jpg" alt="Workplace strategy and planning">
+                </figure>
+                <figure class="consult-gallery-card">
+                    <img src="consultancy-pictures/consultancy-3.jpg" alt="Workplace consultancy visual study">
+                </figure>
+            </div>
+        </section>
+
+        <section class="consult-intro">
+            <div class="consult-shell consult-intro-layout">
+                <div class="consult-intro-copy">
+                    <span class="consult-section-label">Why Consultancy</span>
+                    <h2>Good workplace change starts with evidence, not assumptions.</h2>
+                    <p>We study how people use the office today, what the business needs next, and what the space can realistically support. That gives the project a more reliable foundation for design, phasing, and budget decisions.</p>
+                </div>
+                <div class="consult-benefits">
+                    <article class="consult-benefit-card">
+                        <strong>Clearer priorities</strong>
+                        <p>See what should change first and what matters less.</p>
+                    </article>
+                    <article class="consult-benefit-card">
+                        <strong>Better use of space</strong>
+                        <p>Match layout and capacity to real patterns of work.</p>
+                    </article>
+                    <article class="consult-benefit-card">
+                        <strong>Stronger project logic</strong>
+                        <p>Connect ambition, cost, and feasibility earlier.</p>
+                    </article>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="consult-approach">
+            <div class="consult-shell">
+                <div class="consult-section-head">
+                    <span class="consult-section-label">Approach</span>
+                    <h2>A simple process built around people, place, and performance.</h2>
+                </div>
+                <div class="consult-approach-grid">
+                    <article class="consult-approach-card">
+                        <figure class="consult-approach-image">
+                            <img src="consultancy-pictures/people.jpg" alt="People and workplace behaviour">
+                        </figure>
+                        <h3>People</h3>
+                        <p>We look at focus, collaboration, meetings, privacy, and the daily behaviours that shape how the office really performs.</p>
+                    </article>
+                    <article class="consult-approach-card">
+                        <figure class="consult-approach-image">
+                            <img src="../projects-pictures/konecta.jpg" alt="Office place analysis">
+                        </figure>
+                        <h3>Place</h3>
+                        <p>We study layout logic, constraints, adjacencies, capacity, and how flexible the workplace needs to be over time.</p>
+                    </article>
+                    <article class="consult-approach-card">
+                        <figure class="consult-approach-image">
+                            <img src="../projects-pictures/leading-it.jpg" alt="Business performance and workplace strategy">
+                        </figure>
+                        <h3>Performance</h3>
+                        <p>We connect spatial decisions to business goals, growth plans, culture, and the outcomes the workplace should support next.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="consult-steps">
+            <div class="consult-shell consult-steps-layout">
+                <div class="consult-steps-copy">
+                    <span class="consult-section-label">Consulting Flow</span>
+                    <h2>We keep the process readable from first audit to decision framework.</h2>
+                </div>
+                <div class="consult-steps-list">
+                    <article class="consult-step-card">
+                        <span>01</span>
+                        <h3>Audit</h3>
+                        <p>Understand occupancy, movement, team patterns, focus needs, and workplace friction.</p>
+                    </article>
+                    <article class="consult-step-card">
+                        <span>02</span>
+                        <h3>Strategy</h3>
+                        <p>Translate findings into a workplace brief, priorities, and a clearer direction for change.</p>
+                    </article>
+                    <article class="consult-step-card">
+                        <span>03</span>
+                        <h3>Feasibility</h3>
+                        <p>Test the space, budget, and project ambition before the solution starts hardening.</p>
+                    </article>
+                    <article class="consult-step-card">
+                        <span>04</span>
+                        <h3>Decision Support</h3>
+                        <p>Give leadership a stronger basis for design, phasing, budgeting, and next-step planning.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="consult-strip">
+            <div class="consult-shell consult-strip-layout">
+                <figure class="consult-strip-image">
+                    <img src="../projects-pictures/skytower-block.jpg" alt="Workplace consultancy results and office planning">
+                </figure>
+                <div class="consult-strip-copy">
+                    <span class="consult-section-label">Outcome</span>
+                    <h2>You leave with a clearer workplace brief, not just more information.</h2>
+                    <p>Consultancy gives the project a more intelligent starting point: what the office should support, where investment matters most, and how the next design or fit-out phase can move with more confidence.</p>
+                    <a href="../contact/contact.html" class="consult-link">Talk to Workspace Studio</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script>
-        const menuOpen = document.getElementById('menuOpen');
-        const menuClose = document.getElementById('menuClose');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuItems = document.querySelectorAll('.menu-nav-item');
-        const menuLinks = document.querySelectorAll('.menu-nav-item a');
-        const allVisuals = document.querySelectorAll('.menu-visual-item');
-        const heroSearchShell = document.getElementById('heroSearchShell');
-        const heroSearchToggle = document.getElementById('heroSearchToggle');
-        const heroSearchForm = document.getElementById('heroSearchForm');
-        const heroSearchInput = document.getElementById('heroSearchInput');
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        document.querySelectorAll('.menu-img-item').forEach(img => {
-            const loader = new Image();
-            loader.src = img.src;
-        });
-
-        const closeHeroSearch = () => {
-            heroSearchShell?.classList.remove('is-open');
-            heroSearchToggle?.setAttribute('aria-expanded', 'false');
-            if (heroSearchInput) heroSearchInput.value = '';
-        };
-
-        const openHeroSearch = () => {
-            heroSearchShell?.classList.add('is-open');
-            heroSearchToggle?.setAttribute('aria-expanded', 'true');
-            window.setTimeout(() => heroSearchInput?.focus(), 120);
-        };
-
-        heroSearchToggle?.addEventListener('click', () => {
-            if (heroSearchShell?.classList.contains('is-open')) closeHeroSearch();
-            else openHeroSearch();
-        });
-
-        heroSearchForm?.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const query = (heroSearchInput?.value || '').trim().toLowerCase();
-            if (!query) return closeHeroSearch();
-
-            const searchRoutes = [
-                { match: ['project', 'projects', 'portfolio', 'work'], href: '../projects-scene/proiecte.html' },
-                { match: ['service', 'services', 'expertise'], href: '../index.html#services' },
-                { match: ['about', 'studio'], href: '../about/about.html' },
-                { match: ['insight', 'insights', 'articles', 'news'], href: '../insights/insights.html' },
-                { match: ['partner', 'partners', 'brands'], href: '../partners/partners.html' },
-                { match: ['contact', 'brief'], href: '../contact/contact.html' },
-                { match: ['shop'], href: 'https://shop.workspaces.ro/en/catalog' }
-            ];
-
-            const target = searchRoutes.find(route => route.match.some(keyword => query.includes(keyword))) || searchRoutes[0];
-            window.location.href = target.href;
-        });
-
-        menuOpen?.addEventListener('click', () => {
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        menuClose?.addEventListener('click', () => {
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        menuItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                const targetId = item.getAttribute('data-target');
-                allVisuals.forEach(visual => visual.classList.remove('active'));
-                document.querySelectorAll(`[data-visual-target="${targetId}"]`).forEach(visual => visual.classList.add('active'));
-            });
-        });
-
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <script src="workspace-consultancy.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -23,10 +23,10 @@
         </div>
 
         <div class="nav-col nav-center">
-            <span class="brand-name-text ergonomics-txt">Ergonomics</span>
-            <span class="brand-name-text design-txt">Design</span>
-            <span class="brand-name-text sustainability-txt">Sustainability</span>
-            <span class="brand-name-text turnkey-txt">Turn Key</span>
+            <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+            <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+            <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+            <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
         </div>
 
         <div class="nav-col nav-right">
@@ -306,10 +306,10 @@
                 statusDiv.classList.add('error');
                 statusDiv.style.display = 'block';
             } else {
-                // MODIFICARE: Trimitere Reală prin AJAX (Fetch)
+                // MODIFICARE: Trimitere RealÃ„Æ’ prin AJAX (Fetch)
                 const data = new FormData(form);
                 
-                // Feedback vizual: Schimbăm textul butonului în timp ce trimite
+                // Feedback vizual: SchimbÃ„Æ’m textul butonului ÃƒÂ®n timp ce trimite
                 const originalBtnText = submitBtn.querySelector('span').innerText;
                 submitBtn.querySelector('span').innerText = "Sending...";
                 submitBtn.style.opacity = "0.7";
@@ -350,3 +350,5 @@
     </script>
 </body>
 </html>
+
+

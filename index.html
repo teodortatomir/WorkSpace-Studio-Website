@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -49,10 +49,10 @@
         </div>
 
         <div class="nav-col nav-center">
-            <span class="brand-name-text ergonomics-txt">Ergonomics</span>
-            <span class="brand-name-text design-txt">Design</span>
-            <span class="brand-name-text sustainability-txt">Sustainability</span>
-            <span class="brand-name-text turnkey-txt">Turn Key</span>
+            <a href="ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+            <a href="our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+            <a href="sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+            <a href="our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
         </div>
 
         <div class="nav-col nav-right">
@@ -210,7 +210,7 @@
             <div class="split-text">
                 <span class="category">Energy / Corporate Campus</span>
                 <h2>OMV Petrom City</h2>
-                <p>Petrom City — a sustainable and ergonomic approach to the workspace for the largest energy group in Southeast Europe.</p>
+                <p>Petrom City Ã¢â‚¬â€ a sustainable and ergonomic approach to the workspace for the largest energy group in Southeast Europe.</p>
                 <a href="#" class="pivot-link">VIEW PROJECT</a>
             </div>
         </div>
@@ -490,7 +490,7 @@
                 </div>
             </a>
 
-            <a href="our-services/ergonomics-specialists.html" class="service-gallery-card reveal">
+            <a href="ergonomics-specialists/index.html" class="service-gallery-card reveal">
                 <img src="footer/precision-ergonomics.jpg" alt="Ergonomics">
                 <div class="service-gallery-overlay">
                     <h3>Ergonomics</h3>
@@ -788,26 +788,26 @@
                                     e.preventDefault();
                                     performSnap(projectsTop);
                                 } 
-                                // SNAP înapoi la Hero
+                                // SNAP ÃƒÂ®napoi la Hero
                                 else if (currentScroll <= projectsTop + 50 && e.deltaY < 0) {
                                     e.preventDefault();
                                     performSnap(heroTop);
                                 }
-                                // SNAP: De la sfârșitul listei de proiecte la Expertise
+                                // SNAP: De la sfÃƒÂ¢rÃˆâ„¢itul listei de proiecte la Expertise
                                 else if (currentScroll > projectsTop + 50 && currentScroll < servicesTop - 50 && e.deltaY > 0) {
-                                    // Detectăm dacă suntem aproape de butonul "View all projects"
+                                    // DetectÃ„Æ’m dacÃ„Æ’ suntem aproape de butonul "View all projects"
                                     const projectsEnd = document.getElementById('projects-end-anchor').offsetTop - window.innerHeight + 100;
                                     if (currentScroll > projectsEnd) {
                                         e.preventDefault();
                                         performSnap(servicesTop);
                                     }
                                 }
-                                // SNAP înapoi la Projects de la Services
+                                // SNAP ÃƒÂ®napoi la Projects de la Services
                                 else if (currentScroll >= servicesTop - 10 && currentScroll <= servicesTop + 50 && e.deltaY < 0) {
                                     e.preventDefault();
                                     performSnap(projectsTop);
                                 }
-                                // După Services, lăsăm scroll-ul normal pentru Contact și Footer (nu facem preventDefault)
+                                // DupÃ„Æ’ Services, lÃ„Æ’sÃ„Æ’m scroll-ul normal pentru Contact Ãˆâ„¢i Footer (nu facem preventDefault)
                             }, { passive: false });
 
                             // Fix pentru tranzitia Projects -> What We Do: un singur scroll
@@ -1120,3 +1120,5 @@
         </script>
     </body>
 </html>
+
+

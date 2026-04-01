@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -24,10 +24,10 @@
                 </div>
 
                 <div class="nav-col nav-center">
-                    <span class="brand-name-text ergonomics-txt">Ergonomics</span>
-                    <span class="brand-name-text design-txt">Design</span>
-                    <span class="brand-name-text sustainability-txt">Sustainability</span>
-                    <span class="brand-name-text turnkey-txt">Turn Key</span>
+                    <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                    <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+                    <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                    <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
                 </div>
 
                 <div class="nav-col nav-right">
@@ -153,11 +153,11 @@
             });
 
             const handleNavScroll = () => {
-                // Căutăm Hero-ul de fiecare dată în caz că React l-a randat mai târziu
+                // CÃ„Æ’utÃ„Æ’m Hero-ul de fiecare datÃ„Æ’ ÃƒÂ®n caz cÃ„Æ’ React l-a randat mai tÃƒÂ¢rziu
                 const heroSection = document.querySelector(".hero-abstract");
                 
                 if (!heroSection) {
-                    // Dacă încă nu a apărut Hero-ul, dar am scrollat puțin, îl arătăm oricum
+                    // DacÃ„Æ’ ÃƒÂ®ncÃ„Æ’ nu a apÃ„Æ’rut Hero-ul, dar am scrollat puÃˆâ€ºin, ÃƒÂ®l arÃ„Æ’tÃ„Æ’m oricum
                     if (window.scrollY > 300) nav.classList.add("visible-nav");
                     return;
                 }
@@ -175,14 +175,16 @@
 
             window.addEventListener("scroll", handleNavScroll);
             
-            // Verificăm la intervale mici la început (fix pentru React)
+            // VerificÃ„Æ’m la intervale mici la ÃƒÂ®nceput (fix pentru React)
             const retryInterval = setInterval(() => {
                 handleNavScroll();
                 if (document.querySelector(".hero-abstract")) clearInterval(retryInterval);
             }, 100);
 
-            // Oprirea intervalului după 3 secunde oricum
+            // Oprirea intervalului dupÃ„Æ’ 3 secunde oricum
             setTimeout(() => clearInterval(retryInterval), 3000);
         </script>
     </body>
 </html>
+
+
