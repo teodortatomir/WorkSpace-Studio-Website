@@ -84,6 +84,22 @@ body {
 
 .brand-name-text:hover::after { width: 100%; }
 
+.nav-search-button {
+    color: var(--text-main);
+}
+
+.nav-search-icon {
+    stroke: currentColor;
+}
+
+.menu-toggle {
+    background: transparent;
+}
+
+.hamburger-line {
+    background: var(--text-main);
+}
+
 .nav-btn {
     font-family: 'Inter', sans-serif;
     font-size: 11px;
@@ -109,6 +125,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    background: var(--bg-warm);
 }
 
 .contact-grid {
@@ -119,6 +136,7 @@ body {
     margin: 0 auto;
     gap: 80px;
     align-items: start;
+    background: transparent;
 }
 
 .category-tag {
@@ -303,7 +321,31 @@ body {
 }
 
 /* --- FOOTER --- */
-.contact-footer { padding: 32px 24px; text-align: left; font-size: inherit; letter-spacing: normal; opacity: 1; }
+.contact-footer {
+    padding: 32px 24px;
+    text-align: left;
+    font-size: inherit;
+    letter-spacing: normal;
+    opacity: 1;
+    background: #06080b;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-footer .site-footer-link,
+.contact-footer .site-footer-copy,
+.contact-footer .site-footer a {
+    color: #ffffff;
+}
+
+.contact-footer .site-footer-action {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-footer .site-footer-action:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
 
 /* ==========================================================================
    MOBILE OPTIMIZATION (FORȚĂM ALINIEREA LA MARGINI CA ÎN PROJECTS)

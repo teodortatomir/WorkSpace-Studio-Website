@@ -16,12 +16,6 @@ body.partners-light-theme {
     padding: 0 5%;
 }
 
-.navbar {
-    background: rgba(252, 250, 247, 0.98) !important;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
 .nav-center {
     flex: 2;
     display: flex;
@@ -39,11 +33,6 @@ body.partners-light-theme {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
-.ergonomics-txt { color: #e30613; }
-.design-txt { color: #66007a; }
-.sustainability-txt { color: #009640; }
-.turnkey-txt { color: #004d43; }
 
 .partners-hero {
     padding: 140px 0 84px;

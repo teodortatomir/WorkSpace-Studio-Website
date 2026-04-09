@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -10,12 +10,12 @@
 </head>
 <body>
 
-    <nav class="navbar main-nav visible-nav">
+    <nav class="navbar main-nav visible-nav contact-nav-theme">
     <div class="nav-container">
         <div class="nav-col nav-left">
             <div class="logo-wrapper">
                 <a href="../index.html" class="logo-link">
-                    <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
                 </a>
                 <div class="nav-logo-separator"></div>
                 <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
@@ -80,7 +80,7 @@
                 
                 <nav class="menu-right-links">
                     <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
-                    <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../services/index.html">Services</a></div>
                     <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands & Partners</a></div>
                     <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
                     <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
@@ -193,7 +193,7 @@
             <div class="site-footer-top">
                 <nav class="site-footer-nav" aria-label="Footer navigation">
                     <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
-                    <a class="site-footer-link" href="../index.html#services">Services</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
                     <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
                     <a class="site-footer-link" href="../about/about.html">About</a>
                     <a class="site-footer-link" href="../insights/insights.html">Insights</a>
@@ -306,10 +306,10 @@
                 statusDiv.classList.add('error');
                 statusDiv.style.display = 'block';
             } else {
-                // MODIFICARE: Trimitere RealÃ„Æ’ prin AJAX (Fetch)
+                // MODIFICARE: Trimitere RealÄƒ prin AJAX (Fetch)
                 const data = new FormData(form);
                 
-                // Feedback vizual: SchimbÃ„Æ’m textul butonului ÃƒÂ®n timp ce trimite
+                // Feedback vizual: SchimbÄƒm textul butonului Ã®n timp ce trimite
                 const originalBtnText = submitBtn.querySelector('span').innerText;
                 submitBtn.querySelector('span').innerText = "Sending...";
                 submitBtn.style.opacity = "0.7";
@@ -350,5 +350,6 @@
     </script>
 </body>
 </html>
+
 
 

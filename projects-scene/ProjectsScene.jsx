@@ -246,7 +246,17 @@ function ProjectsScene() {
                             >
                                 <a href={p.link} className="block no-underline">
                                     <div className="img-container-editorial">
-                                        <div className="discover-badge-editorial"><span>View Project</span></div>
+                                        <div className={`discover-badge-editorial${p.title === "UiPath" ? " logo-badge-editorial" : ""}`}>
+                                            {p.title === "UiPath" ? (
+                                                <img
+                                                    src="../logos-projects/uipath-seeklogo.svg"
+                                                    alt="UiPath"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : (
+                                                <span>View Project</span>
+                                            )}
+                                        </div>
                                         <img src={p.img} alt={p.title} className="img-editorial" loading="lazy" />
                                     </div>
                                     <div className="content-editorial">

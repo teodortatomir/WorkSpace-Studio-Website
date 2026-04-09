@@ -16,7 +16,117 @@
 }
 
 body::-webkit-scrollbar { display: none; }
-body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--white); overflow-x: hidden; font-family: 'Inter', sans-serif; color: var(--text-dark); margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background:
+        radial-gradient(circle at top, rgba(190, 167, 145, 0.14), transparent 24%),
+        linear-gradient(180deg, #050709 0%, #0b1015 22%, #0f151b 55%, #121920 100%);
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #e7e2d9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- DARK THEME ALIGNMENT FOR PROJECTS PAGE --- */
+body main.projects-container {
+    background:
+        radial-gradient(circle at top, rgba(190, 167, 145, 0.08), transparent 22%),
+        linear-gradient(180deg, rgba(18, 24, 31, 0.98) 0%, rgba(10, 15, 19, 0.98) 100%) !important;
+}
+
+body main.projects-container .title-editorial {
+    color: #f3efe8 !important;
+}
+
+body main.projects-container .view-more-btn {
+    color: #e7e2d9;
+}
+
+body .testimonial-slider-section {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(190, 167, 145, 0.12), transparent 24%),
+        linear-gradient(180deg, #0d1318 0%, #090d11 100%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body .testimonial-slider-section .testimonial-quote {
+    color: rgba(243, 239, 232, 0.9);
+}
+
+/* --- HOMEPAGE NAVBAR LOOK FOR PROJECTS PAGE --- */
+body .navbar.main-nav {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 0 !important;
+}
+
+body .navbar.main-nav.visible-nav,
+body .navbar.main-nav.scrolled {
+    background: rgba(4, 6, 8, 0.94) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body .navbar.main-nav .workspace-logo {
+    display: block !important;
+    width: auto !important;
+    height: 60px !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+}
+
+body .navbar.main-nav .miller-dealer-logo {
+    filter: brightness(0) invert(1) !important;
+}
+
+body .navbar.main-nav .nav-logo-separator {
+    background: rgba(255, 255, 255, 0.16) !important;
+}
+
+body .navbar.main-nav .brand-name-text {
+    color: rgba(255, 255, 255, 0.86) !important;
+}
+
+body .navbar.main-nav .ergonomics-txt {
+    color: #a4363f !important;
+}
+
+body .navbar.main-nav .design-txt {
+    color: #6a437f !important;
+}
+
+body .navbar.main-nav .sustainability-txt {
+    color: #4f7a60 !important;
+}
+
+body .navbar.main-nav .turnkey-txt {
+    color: #3f5f59 !important;
+}
+
+body .navbar.main-nav .nav-search-button {
+    color: rgba(255, 255, 255, 0.86) !important;
+    opacity: 1 !important;
+}
+
+body .navbar.main-nav .nav-search-icon {
+    stroke: currentColor !important;
+}
+
+body .navbar.main-nav .menu-toggle {
+    opacity: 1 !important;
+}
+
+body .navbar.main-nav .hamburger-line {
+    background: rgba(255, 255, 255, 0.86) !important;
+    opacity: 1 !important;
+}
 
 /* ==========================================
    NAVBAR (WARM CREAM STYLE - REPARAT)
@@ -105,6 +215,24 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     height: 25px !important;
     background-color: rgba(0, 0, 0, 0.15) !important;
     margin: 0 25px !important;
+}
+
+.contact-nav-theme .nav-search-button {
+    color: #1f1a17 !important;
+    opacity: 1 !important;
+}
+
+.contact-nav-theme .nav-search-icon {
+    stroke: currentColor !important;
+}
+
+.contact-nav-theme .menu-toggle {
+    opacity: 1 !important;
+}
+
+.contact-nav-theme .hamburger-line {
+    background: #1f1a17 !important;
+    opacity: 1 !important;
 }
 
 /* Logo-ul care devine ancoră la scroll */
@@ -223,6 +351,12 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     padding: 60px 5%; 
     width: 90%; 
     scroll-margin-top: 100px; /* Exact height of your navbar */
+    background:
+        radial-gradient(circle at top, rgba(190, 167, 145, 0.08), transparent 22%),
+        linear-gradient(180deg, rgba(18, 24, 31, 0.96) 0%, rgba(11, 16, 21, 0.98) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+    color: #e7e2d9;
 }
 
 /* --- HERO SECTION --- */
@@ -342,19 +476,22 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 .hero-gallery-abstract img { width: 100%; height: 100%; object-fit: cover; }
 
 /* --- TOOLBAR & GRID --- */
-.toolbar-visual { display: flex; justify-content: space-between; align-items: flex-end; padding: 60px 0 20px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 80px; flex-wrap: wrap;}
+.toolbar-visual { display: flex; justify-content: space-between; align-items: flex-end; padding: 60px 0 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 80px; flex-wrap: wrap;}
 .filter-bar-editorial { display: flex; gap: 40px; flex-wrap: wrap; }
-.filter-link { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); background: none; border: none; padding: 0 0 12px 0; position: relative; cursor: pointer; }
-.filter-link.active { color: var(--primary); font-weight: 800; border-bottom: 3px solid var(--primary); }
+.filter-link { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: rgba(231, 226, 217, 0.62); background: none; border: none; padding: 0 0 12px 0; position: relative; cursor: pointer; transition: color 0.3s ease, opacity 0.3s ease; }
+.filter-link:hover { color: rgba(231, 226, 217, 0.9); }
+.filter-link.active { color: #bea791; font-weight: 800; border-bottom: 3px solid #bea791; }
 .search-glass { 
     display: flex; 
     align-items: center; 
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.04); 
     padding: 10px 20px; 
     border-radius: 50px; 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(231, 226, 217, 0.82);
 }
-.search-input-visual { border: none; outline: none; margin-left: 12px; font-size: 13px; background: transparent; }
+.search-input-visual { border: none; outline: none; margin-left: 12px; font-size: 13px; background: transparent; color: #f2ede5; width: 100%; }
+.search-input-visual::placeholder { color: rgba(231, 226, 217, 0.48); }
 .search-container-visual {
     flex-grow: 1; /* Search bar fills space on mobile */
     max-width: 400px;
@@ -373,14 +510,15 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
     position: relative; 
     aspect-ratio: 1 / 1; 
     overflow: hidden; 
-    background: #fdfcfb; 
+    background: linear-gradient(180deg, #1a232d 0%, #111920 100%); 
     margin: 0 auto 25px; 
     border-radius: 4px; 
     width: 100%; /* Ocupă 90% din coloană pentru a lăsa spațiu între carduri */
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
 }
 .img-editorial { 
     width: 100%; 
@@ -391,6 +529,22 @@ body { -ms-overflow-style: none; scrollbar-width: none; background-color: var(--
 .project-card-editorial:hover .img-editorial { transform: scale(1.1); }
 .discover-badge-editorial { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110px; height: 110px; background: #bea791; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.6s; z-index: 20; color: white; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
 .project-card-editorial:hover .discover-badge-editorial { opacity: 1; }
+.logo-badge-editorial {
+    width: 168px;
+    height: 168px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.discover-logo-editorial {
+    display: block;
+    width: 108px;
+    height: auto;
+    max-width: 72%;
+    object-fit: contain;
+    filter: none;
+}
 .cat-tag-editorial { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; color: var(--primary); font-weight: 800; display: block; margin-bottom: 10px; }
 .title-editorial {
     font-size: 22px;

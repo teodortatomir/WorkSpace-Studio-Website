@@ -1,40 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workspace Studio Entry</title>
+    <title>Services | Workspace Studio</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../insights/article.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    <style>
-        .cms-entry-page .article-body {
-            grid-template-columns: minmax(0, 1fr);
-        }
-
-        .cms-entry-page .article-content {
-            max-width: 920px;
-        }
-    </style>
+    <link rel="stylesheet" href="services.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body class="insight-article-page cms-entry-page">
-    <nav class="navbar main-nav visible-nav contact-nav-theme">
+<body class="services-page">
+    <nav class="navbar main-nav visible-nav">
         <div class="nav-container">
             <div class="nav-col nav-left">
                 <div class="logo-wrapper">
                     <a href="../index.html" class="logo-link">
-                        <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                        <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
                     </a>
                     <div class="nav-logo-separator"></div>
                     <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
                 </div>
             </div>
+
             <div class="nav-col nav-center">
                 <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
                 <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
                 <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
                 <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
             </div>
+
             <div class="nav-col nav-right">
                 <button class="nav-search-button" type="button" aria-label="Search">
                     <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -50,6 +43,14 @@
             </div>
         </div>
     </nav>
+
+    <div style="display:none; visibility:hidden; width:0; height:0; overflow:hidden;">
+        <img src="../our-services/design_and_build.jpg" alt="">
+        <img src="../footer/sustainable-features.jpg" alt="">
+        <img src="../our-services/workspace_consultancy_cropped.jpg" alt="">
+        <img src="../footer/precision-ergonomics.jpg" alt="">
+        <img src="../projects-pictures/skytower-hero.jpg" alt="">
+    </div>
 
     <div class="menu-overlay" id="menuOverlay">
         <button class="menu-close" id="menuClose">&times;</button>
@@ -81,13 +82,92 @@
                     <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
                     <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
                 </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <main class="article-main" id="cmsEntryRoot"></main>
+    <main class="services-main">
+        <section class="services-hero">
+            <div class="services-hero-head reveal">
+                <h1>Expertise</h1>
+            </div>
+        </section>
 
-    <footer class="site-footer article-footer">
+        <section class="services-grid-section">
+            <div class="services-grid">
+                <a href="../our-services/design-services.html" class="service-editorial-card reveal">
+                    <img src="../our-services/design_and_build.jpg" alt="Design and build">
+                    <div class="service-editorial-overlay">
+                        <h2>Design &amp; Build</h2>
+                    </div>
+                </a>
+
+                <a href="../our-services/workspace-consultancy.html" class="service-editorial-card reveal">
+                    <img src="../our-services/workspace_consultancy_cropped.jpg" alt="Workspace consultancy">
+                    <div class="service-editorial-overlay">
+                        <h2>Consultancy</h2>
+                    </div>
+                </a>
+
+                <a href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer" class="service-editorial-card reveal">
+                    <img src="../projects-pictures/workspace-studio.jpg" alt="Furniture selection">
+                    <div class="service-editorial-overlay">
+                        <h2>Furniture</h2>
+                    </div>
+                </a>
+
+                <a href="../our-services/architectural-solutions.html" class="service-editorial-card reveal">
+                    <img src="../footer/sustainable-features.jpg" alt="Architectural solutions">
+                    <div class="service-editorial-overlay">
+                        <h2>Architectural Solutions</h2>
+                    </div>
+                </a>
+
+                <a href="../ergonomics-specialists/index.html" class="service-editorial-card reveal">
+                    <img src="../footer/precision-ergonomics.jpg" alt="Ergonomics">
+                    <div class="service-editorial-overlay">
+                        <h2>Ergonomics</h2>
+                    </div>
+                </a>
+
+                <a href="../our-services/turn-key.html" class="service-editorial-card reveal">
+                    <img src="../our-services/turn-key-solutions.jpg" alt="Turn key delivery">
+                    <div class="service-editorial-overlay">
+                        <h2>Turn Key</h2>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="services-visual-band reveal">
+            <div class="services-band-media">
+                <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio services">
+            </div>
+            <div class="services-band-copy">
+                <span class="section-kicker">Integrated</span>
+                <h2>One spatial language. Multiple services.</h2>
+                <p>Strategy, design, furniture and delivery shaped as one continuous experience.</p>
+            </div>
+        </section>
+
+        <section class="services-cta reveal">
+            <span class="section-kicker">Start a Project</span>
+            <h2>Looking for the right service mix?</h2>
+            <a href="../contact/contact.html" class="btn-discover-more">
+                <span class="btn-text">GET IN TOUCH</span>
+                <span class="btn-line"></span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer services-footer">
         <div class="site-footer-inner">
             <div class="site-footer-top">
                 <nav class="site-footer-nav" aria-label="Footer navigation">
@@ -99,7 +179,7 @@
                     <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
                     <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
                 </nav>
-                <a class="site-footer-link site-footer-action" href="../insights/insights.html">Back</a>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
             </div>
             <div class="site-footer-bottom">
                 <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
@@ -112,10 +192,48 @@
         </div>
     </footer>
 
-    <script src="cms.js"></script>
-    <script src="entry.js"></script>
+    <script>
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuItems = document.querySelectorAll('.menu-nav-item');
+        const menuLinks = document.querySelectorAll('.menu-nav-item a');
+        const allVisuals = document.querySelectorAll('.menu-visual-item');
+
+        function openMenuOverlay() {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuOverlay() {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuOpen?.addEventListener('click', openMenuOverlay);
+        menuClose?.addEventListener('click', closeMenuOverlay);
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const targetId = item.getAttribute('data-target');
+                allVisuals.forEach(visual => visual.classList.remove('active'));
+                document.querySelectorAll(`[data-visual-target="${targetId}"]`).forEach(visual => visual.classList.add('active'));
+            });
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenuOverlay();
+            });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
-
-
-

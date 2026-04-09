@@ -106,7 +106,7 @@
             
             <nav class="menu-right-links">
                 <div class="menu-nav-item" data-target="img-projects"><a href="projects-scene/proiecte.html">Projects</a></div>
-                <div class="menu-nav-item" data-target="img-services"><a href="#services">Services</a></div>
+                <div class="menu-nav-item" data-target="img-services"><a href="services/index.html">Services</a></div>
                 <div class="menu-nav-item" data-target="img-partners"><a href="partners/partners.html">Brands & Partners</a></div>
                 <div class="menu-nav-item" data-target="img-about"><a href="about/about.html">About</a></div>
                 <div class="menu-nav-item" data-target="img-insights"><a href="insights/insights.html">Insights</a></div>
@@ -149,10 +149,6 @@
     </header>
 
     <section class="pivot-projects" id="projects">
-        <div class="services-header reveal">
-            <span class="category-tag">Portfolio</span>
-        </div>
-
         <div class="projects-equal-grid reveal">
             <article class="project-equal-card">
                 <img src="images/uipath-header.jpg" alt="UiPath">
@@ -221,10 +217,11 @@
             </button>
             <div class="projects-slider-viewport">
                 <div class="projects-slider-track" data-projects-track>
-                    <article class="project-slider-card">
+                    <article class="project-slider-card project-slider-card-logo" data-project-link="projects/UiPath/uipath.html">
                         <img src="projects-pictures/uipath.jpg" alt="UiPath">
                         <div class="project-slider-overlay">
                             <h3>UiPath</h3>
+                            <img src="logos-projects/uipath-seeklogo.svg" alt="UiPath" class="project-slider-hover-logo">
                             <a href="projects/UiPath/uipath.html" class="pivot-link">View Project</a>
                         </div>
                     </article>
@@ -445,17 +442,17 @@
             </button>
         </div>
 
-        <div class="view-all-container projects-cta-wrap" id="projects-end-anchor"> <a href="projects-scene/proiecte.html" class="btn-discover-more btn-projects-cta">
-        <span class="btn-text">VIEW ALL PROJECTS</span>
-        <span class="btn-line"></span>
-    </a>
-</div>
+        <div class="projects-cta-wrap reveal" id="projects-end-anchor">
+            <a href="projects-scene/proiecte.html" class="btn-discover-more btn-projects-cta">
+                <span class="btn-text">VIEW ALL PROJECTS</span>
+                <span class="btn-line"></span>
+            </a>
+        </div>
     </section>
 
     <section class="ntgrate-services" id="services">
         <div class="services-header reveal">
-            <span class="category-tag">Expertise</span>
-            <h2>What We <span class="font-serif italic text-[#c5a37d]">Do</span></h2>
+            <h2>Expertise</h2>
         </div>
         <div class="services-gallery-grid">
             <a href="https://shop.workspaces.ro/en/catalog" target="_blank" class="service-gallery-card reveal">
@@ -544,9 +541,38 @@
         </div>
     </section>
 
-    <section class="mission-minimal" id="contact-cta" style="background-color: var(--bg-warm) !important;">
+    <section class="about-feature-section" id="about-feature">
+        <div class="about-feature-shell">
+            <a href="about/about.html" class="about-feature-media reveal">
+                <img src="projects-pictures/workspace-studio.jpg" alt="Workspace Studio team and studio environment">
+                <span class="about-feature-label">About</span>
+            </a>
+
+            <div class="about-feature-copy reveal">
+                <span class="about-feature-kicker">About</span>
+                <p>We create tailored workplace environments that connect strategy, ergonomics and premium design into one coherent experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="insights-feature-section" id="insights-feature">
+        <div class="insights-feature-shell">
+            <div class="insights-feature-copy reveal">
+                <span class="insights-feature-kicker">Insights</span>
+                <p>Ideas, workplace trends and project stories that shape how we think about better environments.</p>
+                <a href="insights/insights.html" class="insights-feature-link">Visit Insights</a>
+            </div>
+
+            <a href="insights/insights.html" class="insights-feature-media reveal">
+                <img src="projects-pictures/skytower-hero.jpg" alt="Workspace insights and editorial stories">
+                <span class="insights-feature-label">Insights</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="mission-minimal" id="contact-cta">
         <div class="container">
-            <div class="mission-wrapper">
+            <div class="mission-wrapper reveal">
                 <span class="mission-label">READY TO START?</span>
                 <h2 class="mission-text visible">
                     Let's create your <span class="dark-accent">future workspace</span> together.
@@ -566,7 +592,7 @@
                 <div class="site-footer-top">
                     <nav class="site-footer-nav" aria-label="Footer navigation">
                         <a class="site-footer-link" href="projects-scene/proiecte.html">Projects</a>
-                        <a class="site-footer-link" href="#services">Services</a>
+                    <a class="site-footer-link" href="services/index.html">Services</a>
                         <a class="site-footer-link" href="partners/partners.html">Brands &amp; Partners</a>
                         <a class="site-footer-link" href="about/about.html">About</a>
                         <a class="site-footer-link" href="insights/insights.html">Insights</a>
@@ -597,11 +623,16 @@
                         if (sliderTrack && customProjects.length) {
                             customProjects.forEach(project => {
                                 const card = document.createElement('article');
-                                card.className = 'project-slider-card';
+                                const isUiPath = /uipath/i.test(project.title || '');
+                                card.className = `project-slider-card${isUiPath ? ' project-slider-card-logo' : ''}`;
+                                if (isUiPath) {
+                                    card.setAttribute('data-project-link', project.sourceLink || `cms/entry.html?type=project&slug=${encodeURIComponent(project.slug)}`);
+                                }
                                 card.innerHTML = `
                                     <img src="${project.coverImage || 'projects-pictures/skytower-hero.jpg'}" alt="${project.title}">
                                     <div class="project-slider-overlay">
                                         <h3>${project.title}</h3>
+                                        ${isUiPath ? '<img src="logos-projects/uipath-seeklogo.svg" alt="UiPath" class="project-slider-hover-logo">' : ''}
                                         <a href="${project.sourceLink || `cms/entry.html?type=project&slug=${encodeURIComponent(project.slug)}`}" class="pivot-link">View Project</a>
                                     </div>
                                 `;
@@ -623,7 +654,7 @@
                             const heroSearchForm = document.getElementById('heroSearchForm');
                             const heroSearchInput = document.getElementById('heroSearchInput');
                             const heroScrollButton = document.getElementById('heroScrollButton');
-                            const heroSection = document.getElementById('hero');
+                        const heroSection = document.getElementById('hero');
 
                         const closeHeroSearch = () => {
                             heroSearchShell?.classList.remove('is-open');
@@ -748,7 +779,7 @@
 
                                 const searchRoutes = [
                                     { match: ['project', 'projects', 'portfolio', 'work'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
-                                    { match: ['service', 'services', 'expertise'], action: () => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
+                                    { match: ['service', 'services', 'expertise'], action: () => { window.location.href = 'services/index.html'; } },
                                     { match: ['about', 'studio'], action: () => { window.location.href = 'about/about.html'; } },
                                     { match: ['insight', 'insights', 'articles', 'news'], action: () => { window.location.href = 'insights/insights.html'; } },
                                     { match: ['partner', 'partners', 'brands'], action: () => { window.location.href = 'partners/partners.html'; } },
@@ -769,61 +800,10 @@
 
                             heroScrollButton?.addEventListener('click', () => {
                                 const projectsTop = document.getElementById('projects')?.offsetTop ?? 0;
-                                performSnap(projectsTop);
+                                performSnap(Math.max(0, projectsTop - 56));
                             });
 
-                            // 3. HYBRID SCROLL LOGIC (Snap + Normal)
                             let isAnimating = false;
-
-                            window.addEventListener('wheel', (e) => {
-                                if (window.__workspaceHomeSnapV2) return;
-                                const currentScroll = window.pageYOffset;
-                                const heroTop = 0;
-                                const projectsTop = document.getElementById('projects').offsetTop;
-                                const servicesTop = document.getElementById('services').offsetTop;
-                                const contactTop = document.getElementById('contact-cta').offsetTop;
-
-                                // SNAP 1: De la Hero la Projects
-                                if (currentScroll < projectsTop - 50 && e.deltaY > 0) {
-                                    e.preventDefault();
-                                    performSnap(projectsTop);
-                                } 
-                                // SNAP ÃƒÂ®napoi la Hero
-                                else if (currentScroll <= projectsTop + 50 && e.deltaY < 0) {
-                                    e.preventDefault();
-                                    performSnap(heroTop);
-                                }
-                                // SNAP: De la sfÃƒÂ¢rÃˆâ„¢itul listei de proiecte la Expertise
-                                else if (currentScroll > projectsTop + 50 && currentScroll < servicesTop - 50 && e.deltaY > 0) {
-                                    // DetectÃ„Æ’m dacÃ„Æ’ suntem aproape de butonul "View all projects"
-                                    const projectsEnd = document.getElementById('projects-end-anchor').offsetTop - window.innerHeight + 100;
-                                    if (currentScroll > projectsEnd) {
-                                        e.preventDefault();
-                                        performSnap(servicesTop);
-                                    }
-                                }
-                                // SNAP ÃƒÂ®napoi la Projects de la Services
-                                else if (currentScroll >= servicesTop - 10 && currentScroll <= servicesTop + 50 && e.deltaY < 0) {
-                                    e.preventDefault();
-                                    performSnap(projectsTop);
-                                }
-                                // DupÃ„Æ’ Services, lÃ„Æ’sÃ„Æ’m scroll-ul normal pentru Contact Ãˆâ„¢i Footer (nu facem preventDefault)
-                            }, { passive: false });
-
-                            // Fix pentru tranzitia Projects -> What We Do: un singur scroll
-                            window.addEventListener('wheel', (e) => {
-                                if (window.__workspaceHomeSnapV2) return;
-                                if (isAnimating || e.deltaY <= 0) return;
-
-                                const currentScroll = window.pageYOffset;
-                                const projectsTop = document.getElementById('projects').offsetTop;
-                                const servicesTop = document.getElementById('services').offsetTop;
-
-                                if (currentScroll >= projectsTop - 20 && currentScroll < servicesTop - 50) {
-                                    e.preventDefault();
-                                    performSnap(servicesTop);
-                                }
-                            }, { passive: false });
 
                     function performSnap(target) {
                         if (isAnimating) return;
@@ -908,6 +888,15 @@
 
                         prevBtn.addEventListener('click', () => slideProjects(-1));
                         nextBtn.addEventListener('click', () => slideProjects(1));
+
+                        track.addEventListener('click', (event) => {
+                            if (event.target.closest('.pivot-link')) return;
+
+                            const card = event.target.closest('.project-slider-card[data-project-link]');
+                            if (!card) return;
+
+                            window.location.href = card.dataset.projectLink;
+                        });
 
                         const onPointerStart = (clientX, clientY) => {
                             pointerStartX = clientX;
@@ -1001,58 +990,14 @@
                         rebuildProjectsSlider();
                     }
 
-                    window.__workspaceHomeSnapV2 = true;
-
-                            window.addEventListener('wheel', (e) => {
-                                if (isAnimating) {
-                                    e.preventDefault();
-                                    return;
-                                }
-
-                                const currentScroll = window.pageYOffset;
-                                const heroTop = 0;
-                                const projectsTop = document.getElementById('projects').offsetTop;
-                                const servicesTop = document.getElementById('services').offsetTop;
-                                const snapTolerance = 80;
-
-                                if (e.deltaY > 0 && currentScroll < projectsTop - snapTolerance) {
-                                    e.preventDefault();
-                                    performSnap(projectsTop);
-                                    return;
-                                }
-
-                                if (
-                                    e.deltaY > 0 &&
-                                    currentScroll >= projectsTop - snapTolerance &&
-                                    currentScroll < servicesTop - snapTolerance
-                                ) {
-                                    e.preventDefault();
-                                    performSnap(servicesTop);
-                                    return;
-                                }
-
-                                if (
-                                    e.deltaY < 0 &&
-                                    currentScroll > projectsTop + snapTolerance &&
-                                    currentScroll <= servicesTop + snapTolerance
-                                ) {
-                                    e.preventDefault();
-                                    performSnap(projectsTop);
-                                    return;
-                                }
-
-                                if (e.deltaY < 0 && currentScroll <= projectsTop + snapTolerance) {
-                                    e.preventDefault();
-                                    performSnap(heroTop);
-                                }
-                            }, { passive: false });
+                    window.__workspaceHomeSnapV2 = false;
 
                             const revealObserver = new IntersectionObserver((entries) => {
                                 entries.forEach(entry => {
                                     if (entry.isIntersecting) entry.target.classList.add('visible');
                                 });
                             }, { threshold: 0.15 });
-                            document.querySelectorAll('.reveal, .split-row, .nt-card').forEach(el => revealObserver.observe(el));
+                            document.querySelectorAll('.reveal, .split-row, .nt-card, .why-card, .metric-card').forEach(el => revealObserver.observe(el));
                         });
 
                         // --- LOGICA MENIU OVERLAY (STRICT PERFORMANCE) ---
@@ -1101,18 +1046,6 @@
         menuLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
-
-                if (href === '#services') {
-                    e.preventDefault();
-                    closeMenuOverlay();
-                    const servicesSection = document.getElementById('services');
-                    if (servicesSection) {
-                        setTimeout(() => {
-                            servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 250);
-                    }
-                    return;
-                }
 
                 closeMenuOverlay();
             });

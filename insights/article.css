@@ -6,6 +6,19 @@ body.insight-article-page {
     overflow-x: hidden;
 }
 
+body.insight-article-page .nav-btn {
+    background: #1f1a17;
+    border-color: #1f1a17;
+    color: #fcfaf7;
+    border-radius: 999px;
+}
+
+body.insight-article-page .nav-btn:hover {
+    background: #c5a37d;
+    border-color: #c5a37d;
+    color: #1f1a17;
+}
+
 .article-main {
     padding-top: 98px;
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -81,7 +81,7 @@
                     
                     <nav class="menu-right-links">
                         <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
-                        <div class="menu-nav-item" data-target="img-services"><a href="../index.html#services">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../services/index.html">Services</a></div>
                         <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands & Partners</a></div>
                         <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
                         <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
@@ -153,11 +153,11 @@
             });
 
             const handleNavScroll = () => {
-                // CÃ„Æ’utÃ„Æ’m Hero-ul de fiecare datÃ„Æ’ ÃƒÂ®n caz cÃ„Æ’ React l-a randat mai tÃƒÂ¢rziu
+                // CÄƒutÄƒm Hero-ul de fiecare datÄƒ Ã®n caz cÄƒ React l-a randat mai tÃ¢rziu
                 const heroSection = document.querySelector(".hero-abstract");
                 
                 if (!heroSection) {
-                    // DacÃ„Æ’ ÃƒÂ®ncÃ„Æ’ nu a apÃ„Æ’rut Hero-ul, dar am scrollat puÃˆâ€ºin, ÃƒÂ®l arÃ„Æ’tÃ„Æ’m oricum
+                    // DacÄƒ Ã®ncÄƒ nu a apÄƒrut Hero-ul, dar am scrollat puÈ›in, Ã®l arÄƒtÄƒm oricum
                     if (window.scrollY > 300) nav.classList.add("visible-nav");
                     return;
                 }
@@ -175,16 +175,17 @@
 
             window.addEventListener("scroll", handleNavScroll);
             
-            // VerificÃ„Æ’m la intervale mici la ÃƒÂ®nceput (fix pentru React)
+            // VerificÄƒm la intervale mici la Ã®nceput (fix pentru React)
             const retryInterval = setInterval(() => {
                 handleNavScroll();
                 if (document.querySelector(".hero-abstract")) clearInterval(retryInterval);
             }, 100);
 
-            // Oprirea intervalului dupÃ„Æ’ 3 secunde oricum
+            // Oprirea intervalului dupÄƒ 3 secunde oricum
             setTimeout(() => clearInterval(retryInterval), 3000);
         </script>
     </body>
 </html>
+
 
 

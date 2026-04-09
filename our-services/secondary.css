@@ -37,6 +37,57 @@
     padding-top: 20px;
 }
 
+.contact-nav-theme.services-nav,
+.contact-nav-theme.arch-nav,
+.contact-nav-theme.turnkey-nav {
+    mix-blend-mode: normal !important;
+    background: rgba(247, 243, 237, 0.96) !important;
+    height: 80px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.contact-nav-theme.services-nav .brand-name-text,
+.contact-nav-theme.arch-nav .brand-name-text,
+.contact-nav-theme.turnkey-nav .brand-name-text,
+.contact-nav-theme.services-nav .nav-btn,
+.contact-nav-theme.arch-nav .nav-btn,
+.contact-nav-theme.turnkey-nav .nav-btn {
+    text-shadow: none !important;
+}
+
+.contact-nav-theme.services-nav .miller-dealer-logo,
+.contact-nav-theme.arch-nav .miller-dealer-logo,
+.contact-nav-theme.turnkey-nav .miller-dealer-logo {
+    filter: brightness(0) !important;
+}
+
+.contact-nav-theme.services-nav .nav-logo-separator,
+.contact-nav-theme.arch-nav .nav-logo-separator,
+.contact-nav-theme.turnkey-nav .nav-logo-separator {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.contact-nav-theme.services-nav .nav-search-button,
+.contact-nav-theme.arch-nav .nav-search-button,
+.contact-nav-theme.turnkey-nav .nav-search-button {
+    color: var(--text-main) !important;
+}
+
+.contact-nav-theme.services-nav .hamburger-line,
+.contact-nav-theme.arch-nav .hamburger-line,
+.contact-nav-theme.turnkey-nav .hamburger-line {
+    background: var(--text-main) !important;
+}
+
+.contact-nav-theme.services-nav .nav-container,
+.contact-nav-theme.arch-nav .nav-container,
+.contact-nav-theme.turnkey-nav .nav-container {
+    padding-top: 0;
+}
+
 /* ==========================================================================
    2. STRUCTURA CONȚINUT CONSULTANCY (Păstrat)
    ========================================================================== */

@@ -36,10 +36,30 @@ body {
     overflow-x: hidden;
 }
 
+.services-nav .workspace-logo {
+    height: 55px;
+    width: auto;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.services-nav .miller-dealer-logo {
+    height: 35px;
+    width: auto;
+    filter: brightness(0) !important;
+}
+
+.services-nav .nav-logo-separator {
+    width: 1px;
+    height: 30px;
+    background-color: rgba(24, 22, 19, 0.15) !important;
+    margin: 0;
+}
+
 
 .services-nav {
-    border-bottom: none !important;
-    box-shadow: none !important;
+    border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
     position: fixed;
     top: 0; left: 0;
     width: 100%;
@@ -47,17 +67,19 @@ body {
     z-index: 3000;
     display: flex;
     align-items: center;
-    background-color: transparent !important;
+    background: rgba(247, 243, 237, 0.96) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     padding: 0 !important;
 }
 
 .brand-name-text, .nav-btn {
-    color: #ffffff !important;
+    color: #1f1a17 !important;
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    text-shadow: none;
     text-decoration: none;
 }
 
@@ -174,14 +196,22 @@ body {
 
 .p-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; }
 .p-slide.active { opacity: 1; z-index: 1; }
-.p-slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); }
+.p-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.78);
+    image-rendering: auto;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
 
 .hero-gradient-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, 
-        rgba(13, 13, 13, 0.8) 0%, 
-        rgba(13, 13, 13, 0.2) 40%, 
+        rgba(13, 13, 13, 0.46) 0%, 
+        rgba(13, 13, 13, 0.14) 40%, 
         transparent 100%);
     z-index: 2;
 }
@@ -367,16 +397,29 @@ body {
 .bento-item img {
     width: 100%; height: 100%; object-fit: cover;
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: brightness(0.8);
+    filter: none;
+    image-rendering: auto;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
-.bento-item:hover img { transform: scale(1.08); filter: brightness(1); }
+.bento-item:hover img { transform: translateZ(0) scale(1.04); filter: none; }
 
 .bento-item.tall { grid-row: span 2; }
 .bento-item.wide { grid-column: span 2; }
 
 /* REVEAL LOGIC */
-.reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(0) !important;
+    transition: opacity 1s ease-out, transform 1s ease-out, filter 0.35s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none !important;
+}
 
 /* SLIDER CONTROLS */
 .slider-controls-minimal {
@@ -391,7 +434,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 80px 0 120px;
+    padding: 80px 0 36px;
     background: transparent;
 }
 
@@ -425,7 +468,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 80px 0 120px;
+    padding: 80px 0 36px;
     background: transparent;
 }
 
@@ -612,7 +655,7 @@ body {
     }
 
     .gallery-footer {
-        padding: 40px 0 80px;
+        padding: 40px 0 24px;
     }
 
     .cta-back {
@@ -627,4 +670,166 @@ body {
     .project-title {
         font-size: 2.8rem;
     }
+}
+
+/* Final page-specific overrides */
+.project-detail-body .services-nav {
+    mix-blend-mode: normal !important;
+    background: rgba(247, 243, 237, 0.96) !important;
+    border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.project-detail-body .services-nav .workspace-logo {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.project-detail-body .services-nav .miller-dealer-logo {
+    filter: brightness(0) !important;
+}
+
+.project-detail-body .services-nav .nav-logo-separator {
+    background: rgba(24, 22, 19, 0.15) !important;
+}
+
+.project-detail-body .services-nav .nav-btn {
+    color: #1f1a17 !important;
+    text-shadow: none !important;
+}
+
+.project-detail-body .site-footer {
+    position: relative;
+    z-index: 20;
+    scroll-snap-align: none;
+}
+
+.project-detail-body.snap-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.project-detail-body .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    overflow: visible;
+}
+
+.project-detail-body .gallery-snap-section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible !important;
+}
+
+.project-detail-body .gallery-section {
+    min-height: 100vh;
+}
+
+.project-detail-body .services-nav {
+    height: 80px !important;
+    background-color: rgba(252, 250, 247, 0.98) !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.project-detail-body .services-nav .nav-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-detail-body .services-nav .nav-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.project-detail-body .services-nav .nav-left {
+    justify-content: flex-start;
+}
+
+.project-detail-body .services-nav .nav-center {
+    justify-content: center;
+    gap: 30px;
+}
+
+.project-detail-body .services-nav .nav-right {
+    justify-content: flex-end;
+    gap: 1px;
+}
+
+.project-detail-body .services-nav .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-detail-body .services-nav .workspace-logo {
+    height: 60px !important;
+    width: auto;
+}
+
+.project-detail-body .services-nav .miller-dealer-logo {
+    height: 28px !important;
+    width: auto;
+    filter: brightness(0) !important;
+}
+
+.project-detail-body .services-nav .nav-logo-separator {
+    width: 1px;
+    height: 22px;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    margin: 0 5px;
+}
+
+.project-detail-body .services-nav .brand-name-text {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    color: #1f1a17 !important;
+}
+
+.project-detail-body .services-nav .brand-name-text::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.project-detail-body .services-nav .brand-name-text:hover::after {
+    width: 100%;
+}
+
+.project-detail-body .services-nav .ergonomics-txt { color: #e30613 !important; }
+.project-detail-body .services-nav .design-txt { color: #66007a !important; }
+.project-detail-body .services-nav .sustainability-txt { color: #009640 !important; }
+.project-detail-body .services-nav .turnkey-txt { color: #004d43 !important; }
+
+.project-detail-body .services-nav .nav-search-button {
+    color: #2d2a26 !important;
+}
+
+.project-detail-body .services-nav .nav-search-icon {
+    stroke: currentColor;
+}
+
+.project-detail-body .services-nav .menu-toggle {
+    background: transparent;
+}
+
+.project-detail-body .services-nav .hamburger-line {
+    background: #2d2a26 !important;
 }
