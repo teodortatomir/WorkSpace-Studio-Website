@@ -545,6 +545,26 @@ body .navbar.main-nav .hamburger-line {
     object-fit: contain;
     filter: none;
 }
+
+.discover-logo-editorial-adobe,
+.discover-logo-editorial-uber {
+    width: 92px;
+    max-width: 62%;
+}
+
+.logo-badge-editorial-tiriac {
+    background: rgba(244, 238, 227, 0.92);
+    border-radius: 28px;
+}
+
+.discover-logo-editorial-tiriac {
+    width: 120px;
+    max-width: 74%;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
 .cat-tag-editorial { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; color: var(--primary); font-weight: 800; display: block; margin-bottom: 10px; }
 .title-editorial {
     font-size: 22px;

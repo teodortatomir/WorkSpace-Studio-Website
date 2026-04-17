@@ -24,7 +24,7 @@ body.arch-page {
 }
 
 .arch-shell {
-    width: min(100% - 48px, 1240px);
+    width: min(100% - 72px, 1680px);
     margin: 0 auto;
 }
 
@@ -80,8 +80,8 @@ body.arch-page {
 .arch-hero-layout,
 .arch-focus-layout {
     display: grid;
-    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
-    gap: 24px;
+    grid-template-columns: minmax(420px, 0.82fr) minmax(0, 1.18fr);
+    gap: 32px;
     align-items: center;
 }
 
@@ -114,6 +114,7 @@ body.arch-page {
 .arch-focus-image {
     margin: 0;
     min-height: 360px;
+    aspect-ratio: 1.18 / 1;
     overflow: hidden;
     border-radius: 28px;
     box-shadow: var(--arch-shadow);
@@ -125,6 +126,14 @@ body.arch-page {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.arch-hero-image img {
+    object-position: 72% center;
+}
+
+.arch-focus-image img {
+    object-position: center;
 }
 
 .arch-section-head {
@@ -142,7 +151,7 @@ body.arch-page {
 .arch-systems-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
+    gap: 22px;
 }
 
 .arch-system-card {
@@ -180,8 +189,8 @@ body.arch-page {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 24px 28px;
+    gap: 32px;
+    padding: 28px 32px;
 }
 
 .arch-cta-copy {
@@ -231,7 +240,7 @@ body.arch-page {
     }
 
     .arch-shell {
-        width: min(100% - 24px, 1240px);
+        width: min(100% - 24px, 1680px);
     }
 
     .arch-systems-grid {
@@ -248,6 +257,7 @@ body.arch-page {
     .arch-hero-image,
     .arch-focus-image {
         min-height: 240px;
+        aspect-ratio: auto;
         border-radius: 24px;
     }
 }

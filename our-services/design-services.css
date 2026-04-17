@@ -954,8 +954,26 @@ body.design-page {
 .design-cta-copy {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
     align-self: center;
     padding: 40px 18px 40px 0;
+}
+
+.design-cta-body {
+    display: grid;
+    gap: 0;
+}
+
+.design-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(102, 0, 122, 0.12);
 }
 
 .design-cta-visual {
@@ -1036,6 +1054,14 @@ body.design-page {
 
     .design-team-panoramic {
         min-height: 440px;
+    }
+
+    .design-cta-copy {
+        gap: 24px;
+    }
+
+    .design-cta-actions {
+        padding-top: 20px;
     }
 
     .design-team-card,

@@ -26,7 +26,7 @@ body.consultancy-page {
 }
 
 .consult-shell {
-    width: min(100% - 48px, 1320px);
+    width: min(100% - 72px, 1680px);
     margin: 0 auto;
 }
 
@@ -84,8 +84,8 @@ body.consultancy-page {
 .consult-intro-layout,
 .consult-strip-layout {
     display: grid;
-    grid-template-columns: minmax(320px, 0.86fr) minmax(0, 1.14fr);
-    gap: 24px;
+    grid-template-columns: minmax(420px, 0.8fr) minmax(0, 1.2fr);
+    gap: 32px;
     align-items: center;
 }
 
@@ -133,7 +133,7 @@ body.consultancy-page {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     grid-template-rows: 220px 220px;
-    gap: 18px;
+    gap: 24px;
 }
 
 .consult-gallery-card-tall {
@@ -198,7 +198,7 @@ body.consultancy-page {
 .consult-approach-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 24px;
 }
 
 .consult-approach-card {
@@ -228,7 +228,7 @@ body.consultancy-page {
 .consult-steps-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 22px;
     margin-top: 18px;
 }
 
@@ -310,7 +310,7 @@ body.consultancy-page {
     }
 
     .consult-shell {
-        width: min(100% - 24px, 1320px);
+        width: min(100% - 24px, 1680px);
     }
 
     .consult-gallery-grid,

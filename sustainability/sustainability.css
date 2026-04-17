@@ -22,7 +22,7 @@ body.sustainability-page {
 }
 
 .sustainability-shell {
-    width: min(1380px, calc(100% - 48px));
+    width: min(1680px, calc(100% - 72px));
     margin: 0 auto;
 }
 
@@ -56,8 +56,8 @@ body.sustainability-page {
 .story-grid,
 .roadmap-grid {
     display: grid;
-    grid-template-columns: minmax(360px, 0.82fr) minmax(420px, 1.18fr);
-    gap: 28px;
+    grid-template-columns: minmax(420px, 0.78fr) minmax(520px, 1.22fr);
+    gap: 34px;
     align-items: center;
 }
 
@@ -255,7 +255,7 @@ body.sustainability-page {
 .gallery-mosaic,
 .roadmap-steps {
     display: grid;
-    gap: 18px;
+    gap: 22px;
 }
 
 .metrics-grid {
@@ -346,8 +346,8 @@ body.sustainability-page {
 
 .material-stage {
     display: grid;
-    grid-template-columns: minmax(320px, 0.86fr) minmax(360px, 1.14fr);
-    gap: 18px;
+    grid-template-columns: minmax(380px, 0.82fr) minmax(520px, 1.18fr);
+    gap: 24px;
 }
 
 .material-stage-copy h3 {

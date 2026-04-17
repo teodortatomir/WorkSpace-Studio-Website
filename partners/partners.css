@@ -11,9 +11,10 @@ body.partners-light-theme {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: none;
     margin: 0 auto;
-    padding: 0 5%;
+    width: min(100% - 64px, 1920px);
+    padding: 0;
 }
 
 .nav-center {
@@ -99,7 +100,7 @@ body.partners-light-theme {
 .strategic-partners-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 30px;
 }
 
 .partner-card {
@@ -223,8 +224,8 @@ body.partners-light-theme {
 
 .brands-chip-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .brand-chip {
@@ -297,5 +298,11 @@ body.partners-light-theme {
 
     .brands-panel {
         padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: calc(100% - 28px);
     }
 }

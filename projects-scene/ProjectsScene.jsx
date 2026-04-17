@@ -246,12 +246,402 @@ function ProjectsScene() {
                             >
                                 <a href={p.link} className="block no-underline">
                                     <div className="img-container-editorial">
-                                        <div className={`discover-badge-editorial${p.title === "UiPath" ? " logo-badge-editorial" : ""}`}>
-                                            {p.title === "UiPath" ? (
+                                        <div className={`discover-badge-editorial${/uipath\s*2018|agentic\s*automation|uipath|adobe|honeywell|hbo|data\s*core|datacore|b\s*braun|bbraun|tchibo|intero\s*property\s*development|inte?ro|legrand|loreal\s*academy|l['’]?\s*oreal\s*academy|urban\s*bistro,\s*isho|isho|aj\s*brand|mindspace|grupo\s*bimbo|bimbo|diversinst|ams\s*accelerate\s*it|\bams\b|unilever|naos|rphi|rbi\s*group|vectra\s*international|vectra|the\s*business\s*factory|h\s*private\s*arghezi|arghezi|h\s*private|anvelope\.?\s*ro|anvelope|skytower|qualitest|united\s*media\s*services|axpo|evolution|laguna\s*technology|laguna|novo\s*nordisk|thought\s*works|thoughtworks|euroins|nestle|jgv|asociatii|\bvgp\b|edenred|adswizz|konecta|benefit\s*by\s*edenred|workspace\s*studio|millerknoll\s*certified\s*dealer|engie|xperi|exiger|esky|coca[\s-]?cola|panasonic|signivis|axway|crisp|west\s*gate|metro\s*systems|timken|gmv|playtika|w\.?\s*a\.?\s*g\.?|eurowag|bayer|impact\s*hub|tmf\s*group|profi|alfasigma|swixx|l['’]?\s*oreal\s*romania|loreal\s*romania|tiriac\s*collection|omv\s*petrom|petrom\s*city|uber/i.test(p.title) ? " logo-badge-editorial" : ""}${/tiriac\s*collection/i.test(p.title) ? " logo-badge-editorial-tiriac" : ""}`}>
+                                            {/uipath\s*2018|agentic\s*automation/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/uipath-agentic-automationlogo.png"
+                                                    alt="UiPath Agentic Automation"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /uipath/i.test(p.title) ? (
                                                 <img
                                                     src="../logos-projects/uipath-seeklogo.svg"
                                                     alt="UiPath"
                                                     className="discover-logo-editorial"
+                                                />
+                                            ) : /adobe/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/adobe-seeklogo.png"
+                                                    alt="Adobe"
+                                                    className="discover-logo-editorial discover-logo-editorial-adobe"
+                                                />
+                                            ) : /honeywell/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/honeywell-seeklogo.png"
+                                                    alt="Honeywell"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /hbo/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/hbo-seeklogo.png"
+                                                    alt="HBO Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /data\s*core|datacore/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/data_core_logo.png"
+                                                    alt="DataCore"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /b\s*braun|bbraun/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/bbraun-logo.png"
+                                                    alt="BBraun"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /tchibo/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/tchibo_logo.png"
+                                                    alt="Tchibo"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /intero\s*property\s*development|inte?ro/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/intero-logo-black.png"
+                                                    alt="InteRo Property Development"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /legrand/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/legrand_logo.png"
+                                                    alt="Legrand"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /loreal\s*academy|l['’]?\s*oreal\s*academy/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-loreal-academy.png"
+                                                    alt="Loreal Academy"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /urban\s*bistro,\s*isho|isho/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-isho.png"
+                                                    alt="Urban Bistro, ISHO"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /aj\s*brand/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/aj-brand-logo.jpg"
+                                                    alt="AJ Brand"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /mindspace/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/mindspace_logo.png"
+                                                    alt="Mindspace"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /grupo\s*bimbo|bimbo/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/grupo_bimbo-logo.png"
+                                                    alt="Grupo Bimbo"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /diversinst/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-diversinst.png"
+                                                    alt="Diversinst"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /ams\s*accelerate\s*it|\bams\b/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/ams-logo.png"
+                                                    alt="AMS Accelerate IT"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /unilever/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/unilever-logo.png"
+                                                    alt="Unilever"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /naos/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/naos-logo.png"
+                                                    alt="Naos Skin Care Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /rphi|rbi\s*group/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/rphi-logo.png"
+                                                    alt="RPHI member of RBI Group"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /vectra\s*international|vectra/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/vectra-international-logo.jpg"
+                                                    alt="Vectra International"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /the\s*business\s*factory/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/the-business-factory-logo.png"
+                                                    alt="The Business Factory"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /h\s*private\s*arghezi|arghezi|h\s*private/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo_targhezi_hprivate.png"
+                                                    alt="H Private Arghezi"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /anvelope\.?\s*ro|anvelope/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/anvelope-ro-logo.png"
+                                                    alt="Anvelope.ro"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /skytower/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-skytower.png"
+                                                    alt="Skytower"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /qualitest/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/qualitest.jpg"
+                                                    alt="QualiTest DC RO"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /united\s*media\s*services/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/united-media-services-logo.png"
+                                                    alt="United Media Services"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /axpo/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/axpo-logo.png"
+                                                    alt="AXPO ROMANIA"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /evolution/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/evolution-logo.png"
+                                                    alt="Evolution"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /laguna\s*technology|laguna/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo_laguna_technology.png"
+                                                    alt="Laguna Technology"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /novo\s*nordisk/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/novonordisk_logo.png"
+                                                    alt="Novo Nordisk Farma"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /thought\s*works|thoughtworks/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/thoughtworks-logo.png"
+                                                    alt="ThoughtWorks Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /euroins/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-euroins.png"
+                                                    alt="Euroins"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /nestle/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/nestle-logo.png"
+                                                    alt="Nestle Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /jgv|asociatii/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/jgv-asociatii-logo.jpg"
+                                                    alt="SCPA JGV & Asociatii"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /\bvgp\b/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/vgp_logo-building-tomorrow-today.jpg"
+                                                    alt="VGP Building"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /edenred\s*benefit|benefit\s*by\s*edenred|benefit/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-benefit-edenred.jpg"
+                                                    alt="Benefit by Edenred"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /edenred/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/edenred-logo.png"
+                                                    alt="Edenred"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /adswizz/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/adswizz-logo.png"
+                                                    alt="Adswizz Ro"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /konecta/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/konecta-logo.jpg"
+                                                    alt="Konecta Global"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /workspace\s*studio|millerknoll\s*certified\s*dealer/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-workspace-studio-mk_certifieddealer.jpg"
+                                                    alt="Workspace Studio MillerKnoll Certified Dealer"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /engie/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/engie_romania-logo.png"
+                                                    alt="ENGIE Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /xperi/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/xperi-logo.jpg"
+                                                    alt="Xperi"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /exiger/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/exiger-logo.jpg"
+                                                    alt="Exiger Diligence Tech"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /esky/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/esky-logo.jpg"
+                                                    alt="eSky Travel Search"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /coca[\s-]?cola/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/cocacola-logo.png"
+                                                    alt="Coca Cola Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /panasonic/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/panasonic-logo.jpg"
+                                                    alt="Panasonic"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /signivis/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/signivis-logo.jpg"
+                                                    alt="Signivis"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /axway/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/axway-logo.jpg"
+                                                    alt="AXWAY"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /crisp/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/crisp-logo.jpg"
+                                                    alt="CRISP Payments"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /west\s*gate/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/west_gate_logo.jpg"
+                                                    alt="West Gate"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /metro\s*systems/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/metrosystems-logo.jpg"
+                                                    alt="METRO SYSTEMS"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /timken/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/timken-logo.png"
+                                                    alt="TIMKEN"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /gmv/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/gmv-logo.png"
+                                                    alt="GMV"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /playtika/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/playtika-logo.jpg"
+                                                    alt="Playtika"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /w\.?\s*a\.?\s*g\.?|eurowag/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/eurowag-logo.png"
+                                                    alt="Eurowag"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /bayer/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/bayer-logo.jpg"
+                                                    alt="Bayer"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /impact\s*hub/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/impact_hub-logo.png"
+                                                    alt="Impact Hub"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /tmf\s*group/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-tmf.jpg"
+                                                    alt="TMF Group"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /profi/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/profi-logo.jpg"
+                                                    alt="Profi"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /alfasigma/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-alfasigma.png"
+                                                    alt="Alfasigma Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /swixx/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/swixx-biopharma.jpg"
+                                                    alt="Swixx BioPharma"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /l['’]?\s*oreal\s*romania|loreal\s*romania/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-loreal-romania.png"
+                                                    alt="L'Oreal Romania"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /tiriac\s*collection/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/logo-tiriac-collection.jpg"
+                                                    alt="Tiriac Collection"
+                                                    className="discover-logo-editorial discover-logo-editorial-tiriac"
+                                                />
+                                            ) : /omv\s*petrom|petrom\s*city/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/petrom-seeklogo.svg"
+                                                    alt="OMV Petrom"
+                                                    className="discover-logo-editorial"
+                                                />
+                                            ) : /uber/i.test(p.title) ? (
+                                                <img
+                                                    src="../logos-projects/uber-seeklogo.svg"
+                                                    alt="UBER Romania"
+                                                    className="discover-logo-editorial discover-logo-editorial-uber"
                                                 />
                                             ) : (
                                                 <span>View Project</span>

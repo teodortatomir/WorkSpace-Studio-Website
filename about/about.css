@@ -49,14 +49,14 @@ body.about-page {
 .about-closing {
     position: relative;
     z-index: 1;
-    width: min(1480px, calc(100% - 64px));
+    width: min(100% - 72px, 1780px);
     margin: 0 auto;
 }
 
 .about-hero {
     display: grid;
-    grid-template-columns: minmax(320px, 0.84fr) minmax(560px, 1.16fr);
-    gap: 42px;
+    grid-template-columns: minmax(420px, 0.78fr) minmax(760px, 1.22fr);
+    gap: 56px;
     align-items: center;
     padding: 64px 0 94px;
 }
@@ -178,8 +178,8 @@ body.about-page {
 
 .about-intro-grid {
     display: grid;
-    grid-template-columns: minmax(380px, 1fr) minmax(420px, 0.98fr);
-    gap: 34px;
+    grid-template-columns: minmax(460px, 1fr) minmax(480px, 1fr);
+    gap: 42px;
     align-items: start;
 }
 
@@ -274,8 +274,8 @@ body.about-page {
 
 .about-story-band {
     display: grid;
-    grid-template-columns: minmax(320px, 0.88fr) minmax(520px, 1.12fr);
-    gap: 44px;
+    grid-template-columns: minmax(420px, 0.8fr) minmax(760px, 1.2fr);
+    gap: 56px;
     align-items: center;
     padding: 12px 0 110px;
 }
@@ -299,25 +299,26 @@ body.about-page {
 }
 
 .about-story-image-main {
-    top: 0;
+    top: 12px;
     right: 0;
-    width: min(100%, 640px);
-    height: 520px;
+    width: min(100%, 700px);
+    height: 540px;
 }
 
 .about-story-image-offset {
-    left: 0;
-    bottom: 0;
-    width: min(52%, 360px);
-    height: 310px;
+    left: 40px;
+    bottom: 34px;
+    width: min(48%, 380px);
+    height: 292px;
     border: 12px solid rgba(252, 250, 247, 0.84);
+    z-index: 2;
 }
 
 .about-editorial-grid {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr 1fr;
     grid-auto-rows: 280px;
-    gap: 20px;
+    gap: 26px;
     padding-bottom: 108px;
 }
 
@@ -342,14 +343,15 @@ body.about-page {
 }
 
 .about-section-head {
-    max-width: 780px;
+    width: 100%;
+    max-width: none;
     margin-bottom: 38px;
 }
 
 .about-capabilities-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 24px;
 }
 
 .about-capability:nth-child(2),
@@ -373,8 +375,8 @@ body.about-page {
 .about-showroom,
 .about-closing-grid {
     display: grid;
-    grid-template-columns: minmax(460px, 1.14fr) minmax(320px, 0.86fr);
-    gap: 30px;
+    grid-template-columns: minmax(620px, 1.18fr) minmax(360px, 0.82fr);
+    gap: 40px;
     align-items: center;
 }
 

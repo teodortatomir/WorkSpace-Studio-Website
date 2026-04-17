@@ -17,8 +17,8 @@ body.turnkey-page {
 }
 
 .tk-shell {
-    width: calc(100% - 64px);
-    max-width: 1360px;
+    width: calc(100% - 80px);
+    max-width: 1680px;
     margin: 0 auto;
 }
 
@@ -126,8 +126,8 @@ body.turnkey-page {
     min-height: calc(100vh - 124px);
     display: grid;
     align-content: center;
-    grid-template-columns: minmax(320px, 0.96fr) minmax(260px, 0.36fr);
-    gap: 22px;
+    grid-template-columns: minmax(440px, 1fr) minmax(320px, 0.42fr);
+    gap: 30px;
 }
 
 .tk-hero-copy,
@@ -221,7 +221,7 @@ body.turnkey-page {
 .tk-story-track {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 24px;
     border: 0;
 }
 
@@ -256,8 +256,8 @@ body.turnkey-page {
 .tk-route-grid,
 .tk-handover-grid {
     display: grid;
-    grid-template-columns: minmax(300px, 0.44fr) minmax(0, 0.56fr);
-    gap: 24px;
+    grid-template-columns: minmax(380px, 0.4fr) minmax(0, 0.6fr);
+    gap: 32px;
     align-items: center;
 }
 
@@ -347,7 +347,7 @@ body.turnkey-page {
 
 .tk-panorama-frame {
     display: grid;
-    grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
+    grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr);
     grid-template-rows: minmax(380px, 58vh) auto;
     overflow: hidden;
     border-radius: 30px;
@@ -440,7 +440,7 @@ body.turnkey-page {
 .tk-cta-panel {
     display: grid;
     grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
-    gap: 22px;
+    gap: 28px;
     border-radius: 30px;
     padding: 18px;
     background: rgba(255, 252, 248, 0.78);

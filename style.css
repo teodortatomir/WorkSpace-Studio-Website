@@ -945,15 +945,17 @@ body::-webkit-scrollbar {
 .projects-slider-viewport {
     overflow: hidden;
     width: 100%;
-    touch-action: pan-y;
+    touch-action: pan-y pinch-zoom;
     cursor: grab;
+    overscroll-behavior-x: contain;
 }
 
 .projects-slider-track {
     display: flex;
     gap: var(--projects-gap);
-    transition: transform 0.45s ease;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 .project-slider-card {
@@ -966,6 +968,8 @@ body::-webkit-scrollbar {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.45s ease, opacity 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    contain: layout paint;
+    backface-visibility: hidden;
 }
 
 .project-slider-card > img {
@@ -974,6 +978,8 @@ body::-webkit-scrollbar {
     height: min(76vh, 760px);
     object-fit: cover;
     transition: transform 0.8s ease, filter 0.8s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .project-slider-card:hover > img {
@@ -1054,6 +1060,22 @@ body::-webkit-scrollbar {
     filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.16));
     transition: transform 0.35s ease, opacity 0.35s ease;
     object-fit: contain;
+}
+
+.project-slider-hover-logo-adobe,
+.project-slider-hover-logo-uber {
+    max-width: min(68%, 340px);
+    max-height: 148px;
+}
+
+.project-slider-hover-logo-tiriac {
+    max-width: 170px;
+    max-height: 170px;
+    padding: 12px;
+    border-radius: 26px;
+    background: rgba(245, 240, 230, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
 }
 
 .project-slider-card-logo .pivot-link {
@@ -2235,12 +2257,37 @@ footer {
         --projects-gap: 8px;
     }
 
+    .projects-slider-track {
+        will-change: auto;
+    }
+
     .project-slider-card {
         min-height: 500px;
+        transition: opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-slider-card img {
         height: 500px;
+    }
+
+    .project-slider-card > img,
+    .project-slider-card.is-peek > img,
+    .project-slider-card.is-focus > img {
+        filter: none;
+        transform: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-slider-card.is-peek {
+        opacity: 0.7;
+    }
+
+    .project-slider-card:hover,
+    .project-slider-card:hover > img,
+    .project-slider-card-logo:hover > img {
+        box-shadow: none;
+        filter: none !important;
+        transform: none;
     }
 
     .btn-projects-cta {

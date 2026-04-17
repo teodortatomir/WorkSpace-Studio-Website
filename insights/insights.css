@@ -47,7 +47,7 @@ body.insights-page {
 .news-grid {
     position: relative;
     z-index: 1;
-    width: min(1500px, calc(100% - 64px));
+    width: min(100% - 72px, 1780px);
     margin: 0 auto;
 }
 
@@ -96,8 +96,8 @@ body.insights-page {
 
 .insights-hub-hero {
     display: grid;
-    grid-template-columns: minmax(360px, 0.78fr) minmax(620px, 1.22fr);
-    gap: 46px;
+    grid-template-columns: minmax(420px, 0.74fr) minmax(760px, 1.26fr);
+    gap: 56px;
     align-items: center;
     padding: 64px 0 84px;
 }
@@ -326,8 +326,8 @@ body.insights-page {
 
 .publications-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
 }
 
 .publication-card {
@@ -395,8 +395,8 @@ body.insights-page {
 
 .newsroom-hero {
     display: grid;
-    grid-template-columns: minmax(360px, 0.78fr) minmax(620px, 1.22fr);
-    gap: 46px;
+    grid-template-columns: minmax(420px, 0.74fr) minmax(760px, 1.26fr);
+    gap: 56px;
     align-items: center;
     padding: 64px 0 44px;
 }
@@ -464,8 +464,8 @@ body.insights-page {
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
     padding-bottom: 110px;
 }
 
