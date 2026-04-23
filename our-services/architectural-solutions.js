@@ -1,9 +1,9 @@
 const menuOpen = document.querySelector(".menu-open");
 const menuClose = document.querySelector(".menu-close");
 const menuOverlay = document.querySelector(".menu-overlay");
-const menuItems = document.querySelectorAll(".menu-item");
-const menuLinks = document.querySelectorAll(".menu-link");
-const allVisuals = document.querySelectorAll(".menu-preview-img");
+const menuItems = document.querySelectorAll(".menu-nav-item");
+const menuLinks = document.querySelectorAll(".menu-nav-item a");
+const allVisuals = document.querySelectorAll(".menu-visual-item");
 
 if (menuOpen && menuClose && menuOverlay) {
   const openMenu = () => {
@@ -26,8 +26,10 @@ if (menuOpen && menuClose && menuOverlay) {
   menuItems.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
       allVisuals.forEach((visual) => visual.classList.remove("active"));
-      const current = document.querySelector(`.menu-preview-img[data-index="${index}"]`);
-      if (current) current.classList.add("active");
+      const target = item.getAttribute("data-target");
+      document.querySelectorAll(`.menu-visual-item[data-visual-target="${target}"]`).forEach((visual) => {
+        visual.classList.add("active");
+      });
     });
   });
 

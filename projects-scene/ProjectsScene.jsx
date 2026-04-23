@@ -635,7 +635,7 @@ function ProjectsScene() {
                                                 <img
                                                     src="../logos-projects/petrom-seeklogo.svg"
                                                     alt="OMV Petrom"
-                                                    className="discover-logo-editorial"
+                                                    className="discover-logo-editorial discover-logo-editorial-omv"
                                                 />
                                             ) : /uber/i.test(p.title) ? (
                                                 <img

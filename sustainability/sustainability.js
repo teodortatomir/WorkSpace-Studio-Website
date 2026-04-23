@@ -8,6 +8,8 @@ const revealItems = document.querySelectorAll(".reveal");
 const metricValues = document.querySelectorAll(".metric-value");
 const materialFilters = document.querySelectorAll(".material-filter");
 const faqItems = document.querySelectorAll(".faq-item");
+const materialStage = document.querySelector(".material-stage");
+const materialStageCopy = document.querySelector(".material-stage-copy");
 
 const materialContent = {
     durability: {
@@ -107,6 +109,19 @@ function updateMaterialStage(key) {
         image.src = data.image;
         image.alt = data.alt;
     }
+
+    syncMaterialStageHeight();
+}
+
+function syncMaterialStageHeight() {
+    if (!materialStage || !materialStageCopy || window.matchMedia("(max-width: 1180px)").matches) {
+        materialStage?.style.removeProperty("--material-stage-height");
+        return;
+    }
+
+    requestAnimationFrame(() => {
+        materialStage.style.setProperty("--material-stage-height", `${materialStageCopy.offsetHeight}px`);
+    });
 }
 
 materialFilters.forEach((button) => {
@@ -116,6 +131,11 @@ materialFilters.forEach((button) => {
         updateMaterialStage(button.dataset.material || "durability");
     });
 });
+
+syncMaterialStageHeight();
+window.addEventListener("resize", syncMaterialStageHeight);
+window.addEventListener("load", syncMaterialStageHeight);
+document.fonts?.ready?.then(syncMaterialStageHeight);
 
 faqItems.forEach((item) => {
     const trigger = item.querySelector(".faq-trigger");

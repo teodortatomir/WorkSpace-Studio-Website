@@ -348,6 +348,7 @@ body.sustainability-page {
     display: grid;
     grid-template-columns: minmax(380px, 0.82fr) minmax(520px, 1.18fr);
     gap: 24px;
+    align-items: start;
 }
 
 .material-stage-copy h3 {
@@ -358,7 +359,8 @@ body.sustainability-page {
 
 .material-stage-media {
     overflow: hidden;
-    min-height: 430px;
+    height: var(--material-stage-height, auto);
+    min-height: 0;
 }
 
 .gallery-mosaic {
@@ -499,6 +501,10 @@ body.sustainability-page {
         justify-content: stretch;
         margin-bottom: 26px;
         margin-right: 0;
+    }
+
+    .material-stage-media {
+        height: clamp(280px, 42vw, 460px);
     }
 }
 

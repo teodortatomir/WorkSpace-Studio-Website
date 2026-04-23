@@ -43,29 +43,35 @@
         </div>
     </nav>
 
-    <div class="menu-overlay">
+    <div class="menu-overlay" id="menuOverlay">
         <button class="menu-close" type="button" aria-label="Close menu">&times;</button>
         <div class="menu-split-container">
             <div class="menu-left-images">
-                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-preview-img active" data-index="0" alt="">
-                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-preview-img" data-index="1" alt="">
-                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-preview-img" data-index="2" alt="">
-                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-preview-img" data-index="3" alt="">
-                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-preview-img" data-index="4" alt="">
-                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-preview-img" data-index="5" alt="">
-                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-preview-img" data-index="6" alt="">
-                <img src="../logos/WorkspaceW.svg" class="menu-logo-item" alt="" onclick="window.location.href='../index.html'">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
             </div>
             <div class="menu-right-content">
                 <span class="menu-label-top">Menu</span>
                 <nav class="menu-right-links">
-                    <div class="menu-item"><a class="menu-link" href="../projects-scene/proiecte.html">Projects</a></div>
-    <div class="menu-item"><a class="menu-link" href="../services/index.html">Services</a></div>
-                    <div class="menu-item"><a class="menu-link" href="../partners/partners.html">Brands &amp; Partners</a></div>
-                    <div class="menu-item"><a class="menu-link" href="../about/about.html">About</a></div>
-                    <div class="menu-item"><a class="menu-link" href="../insights/insights.html">Insights</a></div>
-                    <div class="menu-item"><a class="menu-link" href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
-                    <div class="menu-item"><a class="menu-link" href="../contact/contact.html">Contact / Start a Project</a></div>
+                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-nav-item" data-target="img-services"><a href="../services/index.html">Services</a></div>
+                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
+                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
                 </nav>
                 <div class="menu-footer">
                     <div class="menu-socials">

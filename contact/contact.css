@@ -121,7 +121,7 @@ body {
 
 /* --- MAIN CONTENT --- */
 .contact-scene {
-    padding: 120px 0 60px;
+    padding: 120px clamp(24px, 4vw, 72px) 70px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -130,11 +130,11 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    max-width: 1400px;
-    width: 90%;
-    margin: 0 auto;
-    gap: 80px;
+    grid-template-columns: minmax(0, 1.35fr) minmax(420px, 0.9fr);
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    gap: clamp(36px, 5vw, 96px);
     align-items: start;
     background: transparent;
 }
@@ -160,7 +160,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
     color: #666;
-    max-width: 500px;
+    max-width: 680px;
     margin-bottom: 40px;
 }
 
@@ -277,6 +277,7 @@ body {
     flex-direction: column;
     gap: 40px;
     min-height: 640px;
+    width: 100%;
 }
 
 .info-label {
@@ -371,4 +372,14 @@ body {
 @media (max-width: 1024px) {
     .nav-center { display: none !important; } /* Ascundem categoriile pe tableta/mobil */
     .nav-left, .nav-right { flex: 1; }
+    .contact-scene { padding-left: 28px; padding-right: 28px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-info-container { min-height: auto; }
+}
+
+@media (min-width: 1500px) {
+    .contact-scene {
+        padding-left: clamp(72px, 5vw, 110px);
+        padding-right: clamp(72px, 5vw, 110px);
+    }
 }
