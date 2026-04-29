@@ -64,15 +64,51 @@
             </div>
             <div class="menu-right-content">
                 <span class="menu-label-top">Menu</span>
-                <nav class="menu-right-links">
-                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
-                    <div class="menu-nav-item" data-target="img-services"><a href="../services/index.html">Services</a></div>
-                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
-                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
-                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
-                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
-                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
-                </nav>
+                    <nav class="menu-right-links" aria-label="Main menu">
+                        <div class="menu-nav-item has-submenu" data-target="img-projects">
+                            <a href="../projects-scene/proiecte.html">Projects</a>
+                            <div class="menu-subnav" aria-label="Projects submenu">
+                                <span class="menu-subnav-title">Projects</span>
+                                <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                                <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                                <a href="../projects-scene/proiecte.html">General Contracting</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-services">
+                            <a href="../services/index.html">What we do</a>
+                            <div class="menu-subnav" aria-label="What we do submenu">
+                                <span class="menu-subnav-title">What we do</span>
+                                <a href="../our-services/design-services.html">Design &amp; Build</a>
+                                <a href="../our-services/general-contracting.html">General Contracting</a>
+                                <a href="../our-services/furniture.html">Furniture</a>
+                                <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                                <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                                <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-partners">
+                            <a href="../why-us/index.html">Why us</a>
+                            <div class="menu-subnav" aria-label="Why us submenu">
+                                <span class="menu-subnav-title">Why us</span>
+                                <a href="../partners/partners.html">Brands &amp; Partners</a>
+                                <a href="../sustainability/index.html">Sustainability</a>
+                                <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                                <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                        <div class="menu-nav-item has-submenu" data-target="img-insights">
+                            <a href="../insights/insights.html">News &amp; Insights</a>
+                            <div class="menu-subnav" aria-label="News and Insights submenu">
+                                <span class="menu-subnav-title">News &amp; Insights</span>
+                                <a href="../insights/press-releases.html">Press Releases</a>
+                                <a href="../insights/in-the-news.html">In the News</a>
+                                <a href="../insights/insights.html">Office Insights</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                    </nav>
                 <div class="menu-footer">
                     <div class="menu-socials">
                         <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -86,29 +122,16 @@
 
     <main class="sustainability-main">
         <section class="sustainability-hero">
-            <div class="sustainability-hero-stage reveal reveal-up">
-                <div class="sustainability-hero-backdrop">
-                    <img src="hero-picture.jpg" alt="Sustainable office interior with natural light">
-                </div>
-                <div class="sustainability-hero-overlay"></div>
+            <figure class="sustainability-hero-visual reveal reveal-up">
+                <img src="hero-picture.jpg" alt="Sustainable office interior with natural light">
+            </figure>
+        </section>
 
-                <div class="sustainability-shell sustainability-hero-content">
-                    <div class="sustainability-hero-panel">
-                        <span class="sustainability-kicker">Sustainability by Workspace Studio</span>
-                        <h1>Spaces that leave a lighter footprint and a stronger impression.</h1>
-                        <p class="sustainability-lead">We approach sustainability through longevity, circularity, healthier materials, and workplaces that stay relevant long after the first handover.</p>
-                        <div class="sustainability-hero-actions">
-                            <a href="#impact" class="sustainability-btn-primary">Explore the page</a>
-                            <a href="../contact/contact.html" class="sustainability-btn-secondary">Start a project</a>
-                        </div>
-                    </div>
-
-                    <div class="sustainability-hero-strip">
-                        <figure class="hero-strip-card"><img src="picture1-hero.jpg" alt="Natural textures in workplace"></figure>
-                        <figure class="hero-strip-card"><img src="picture2-hero.jpg" alt="Warm sustainable office interior"></figure>
-                        <figure class="hero-strip-card"><img src="picture3-hero.jpg" alt="Collaborative office with daylight"></figure>
-                    </div>
-                </div>
+        <section class="sustainability-intro">
+            <div class="sustainability-shell sustainability-intro-copy reveal reveal-up">
+                <span>Expertise / Sustainability</span>
+                <h1>Spaces that leave a lighter footprint and a stronger impression.</h1>
+                <p>We approach sustainability through longevity, circularity, healthier materials, and workplaces that stay relevant long after the first handover.</p>
             </div>
         </section>
 
@@ -134,10 +157,6 @@
 
         <section class="sustainability-principles">
             <div class="sustainability-shell">
-                <div class="section-head reveal reveal-up">
-                    <span class="section-kicker">Four Principles</span>
-                    <h2>What we optimize when we design a lower-impact workplace.</h2>
-                </div>
                 <div class="principles-grid">
                     <article class="principle-card reveal reveal-up"><h3>Design For Long Life</h3><p>We prioritize products and layouts that survive change, relocation, reconfiguration, and heavy use without losing dignity or performance.</p></article>
                     <article class="principle-card reveal reveal-up"><h3>Reduce Hidden Waste</h3><p>Waste often enters a project through overspecification, throwaway fit-out decisions, and short-term thinking. We try to remove it early.</p></article>
@@ -149,10 +168,6 @@
 
         <section class="sustainability-materials">
             <div class="sustainability-shell">
-                <div class="section-head reveal reveal-left">
-                    <span class="section-kicker">Material Lens</span>
-                    <h2>Choose what the project stands on, wraps in, and sits on.</h2>
-                </div>
                 <div class="material-filter-bar reveal reveal-up">
                     <button class="material-filter is-active" type="button" data-material="durability">Durability</button>
                     <button class="material-filter" type="button" data-material="circularity">Circularity</button>
@@ -165,23 +180,6 @@
                         <p id="materialStageText">Instead of chasing novelty, we look for surfaces, textiles, and furniture systems that age well, can be cleaned, repaired, and reconfigured, and avoid the replacement cycle created by fragile trend-led choices.</p>
                     </div>
                     <div class="material-stage-media reveal reveal-right"><img id="materialStageImage" src="../projects-pictures/skytower-block.jpg" alt="Durable materials in office"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="sustainability-gallery">
-            <div class="sustainability-shell">
-                <div class="section-head reveal reveal-up">
-                    <span class="section-kicker">Visual Field</span>
-                    <h2>Many images, one idea: sustainability should feel warm, intelligent, and real.</h2>
-                </div>
-                <div class="gallery-mosaic">
-                    <figure class="gallery-tile reveal reveal-left"><img src="../projects-pictures/aj.jpg" alt="Collaborative office with daylight"><figcaption>Daylight and social energy.</figcaption></figure>
-                    <figure class="gallery-tile reveal reveal-up"><img src="../projects-pictures/kraftanlagen.jpg" alt="Creative workplace"><figcaption>Reuse works best when culture still feels current.</figcaption></figure>
-                    <figure class="gallery-tile reveal reveal-right"><img src="../projects-pictures/ciero.jpg" alt="Natural material details"><figcaption>Material tactility matters.</figcaption></figure>
-                    <figure class="gallery-tile reveal reveal-left"><img src="../projects-pictures/konecta.jpg" alt="Bright office lounge"><figcaption>Softness, not eco-austerity.</figcaption></figure>
-                    <figure class="gallery-tile reveal reveal-up"><img src="../projects-pictures/axpo.jpg" alt="Office with plants and natural light"><figcaption>Biophilic cues that feel architectural.</figcaption></figure>
-                    <figure class="gallery-tile reveal reveal-right"><img src="../projects-pictures/loreal-romania.jpg" alt="Modern workplace zone"><figcaption>Flexible layouts reduce churn.</figcaption></figure>
                 </div>
             </div>
         </section>
@@ -205,7 +203,6 @@
         <section class="sustainability-faq">
             <div class="sustainability-shell">
                 <div class="section-head reveal reveal-left">
-                    <span class="section-kicker">Commitments</span>
                     <h2>What clients usually want to know first.</h2>
                 </div>
                 <div class="faq-list">
@@ -216,17 +213,6 @@
             </div>
         </section>
 
-        <section class="sustainability-cta">
-            <div class="sustainability-shell cta-panel reveal reveal-up">
-                <span class="section-kicker">Next Step</span>
-                <h2>Build a sustainability strategy that still feels like great design.</h2>
-                <p>We can help shape workplaces that are lower impact, more adaptable, and more compelling to use every day.</p>
-                <div class="sustainability-hero-actions">
-                    <a href="../contact/contact.html" class="sustainability-btn-primary">Talk to Workspace Studio</a>
-                    <a href="../projects-scene/proiecte.html" class="sustainability-btn-secondary">View projects</a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
@@ -254,7 +240,7 @@
         </div>
     </footer>
 
-    <script src="sustainability.js"></script>
+    <script src="sustainability.js?v=hero-clean"></script>
+    <script src="../menu-state.js"></script>
 </body>
 </html>
-

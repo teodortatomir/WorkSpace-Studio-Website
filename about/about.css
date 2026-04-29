@@ -1,15 +1,45 @@
 body.about-page {
-    background:
-        radial-gradient(circle at top left, rgba(197, 163, 125, 0.18), transparent 26%),
-        linear-gradient(135deg, rgba(226, 210, 193, 0.35) 0%, transparent 34%),
-        linear-gradient(180deg, #fcfaf7 0%, #f6f0e8 52%, #f7f3ee 100%);
-    color: #2d2a26;
+    background: #fff;
+    color: #171717;
     overflow-x: hidden;
+}
+
+.about-nav,
+.about-page .navbar.main-nav.visible-nav,
+.about-page .navbar.main-nav.scrolled,
+.about-page .navbar.main-nav.contact-nav-theme {
+    background: #fff !important;
+    border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.about-page .workspace-logo {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.about-page .miller-dealer-logo {
+    filter: brightness(0) !important;
+}
+
+.about-page .nav-logo-separator {
+    background: rgba(24, 22, 19, 0.15) !important;
+}
+
+.about-page .nav-search-button {
+    color: #1f1a17 !important;
+}
+
+.about-page .hamburger-line {
+    background: #1f1a17 !important;
 }
 
 .about-main {
     position: relative;
-    padding-top: 98px;
+    padding-top: 0;
+    background: #fff;
 }
 
 .about-main::before,
@@ -21,26 +51,15 @@ body.about-page {
 }
 
 .about-main::before {
-    top: 180px;
-    left: -140px;
-    width: 340px;
-    height: 340px;
-    border-radius: 38px;
-    background: linear-gradient(180deg, rgba(197, 163, 125, 0.22), rgba(197, 163, 125, 0.06));
-    transform: rotate(-14deg);
+    display: none;
 }
 
 .about-main::after {
-    right: -120px;
-    top: 980px;
-    width: 260px;
-    height: 560px;
-    border-radius: 999px;
-    background: linear-gradient(180deg, rgba(214, 189, 164, 0.18), rgba(255, 255, 255, 0));
-    transform: rotate(12deg);
+    display: none;
 }
 
 .about-hero,
+.about-page-intro,
 .about-intro,
 .about-story-band,
 .about-editorial-grid,
@@ -49,16 +68,71 @@ body.about-page {
 .about-closing {
     position: relative;
     z-index: 1;
-    width: min(100% - 72px, 1780px);
+    width: 100%;
     margin: 0 auto;
+    padding-left: 36px;
+    padding-right: 36px;
+    box-sizing: border-box;
 }
 
 .about-hero {
+    display: block;
+    padding-top: 80px;
+    padding-bottom: 22px;
+}
+
+.about-hero-visual {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: clamp(420px, 62vh, 720px);
+    margin: 0;
+    background: #f4f1ec;
+}
+
+.about-hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page-intro {
+    padding-bottom: 56px;
+}
+
+.about-page-intro-copy {
     display: grid;
-    grid-template-columns: minmax(420px, 0.78fr) minmax(760px, 1.22fr);
-    gap: 56px;
-    align-items: center;
-    padding: 64px 0 94px;
+    justify-items: center;
+    gap: 16px;
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-page-intro-copy span {
+    color: rgba(31, 26, 23, 0.5);
+    font-size: clamp(1.15rem, 1.8vw, 1.85rem);
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.about-page-intro-copy h1 {
+    max-width: 920px;
+    margin: 0;
+    color: #171717;
+    font-size: clamp(1.65rem, 2.7vw, 3rem);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+}
+
+.about-page-intro-copy p {
+    max-width: 720px;
+    margin: 0;
+    color: rgba(17, 17, 17, 0.64);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .about-hero-copy {
@@ -106,12 +180,7 @@ body.about-page {
 }
 
 .about-accent-hero {
-    top: -28px;
-    right: 48px;
-    width: 32%;
-    height: 46%;
-    border-radius: 34px;
-    background: linear-gradient(180deg, rgba(197, 163, 125, 0.42), rgba(197, 163, 125, 0.12));
+    display: none;
 }
 
 .hero-image,
@@ -121,8 +190,8 @@ body.about-page {
 .about-closing-image {
     position: relative;
     overflow: hidden;
-    background: #ece4da;
-    box-shadow: 0 30px 72px rgba(42, 35, 28, 0.12);
+    background: #f4f1ec;
+    box-shadow: none;
 }
 
 .hero-image,
@@ -132,7 +201,7 @@ body.about-page {
 .about-closing-image,
 .about-stat-card,
 .about-capability {
-    border-radius: 30px;
+    border-radius: 0;
 }
 
 .hero-image img,
@@ -173,7 +242,8 @@ body.about-page {
 }
 
 .about-intro {
-    padding: 8px 0 104px;
+    padding-top: 8px;
+    padding-bottom: 104px;
 }
 
 .about-intro-grid {
@@ -185,7 +255,7 @@ body.about-page {
 
 .section-kicker {
     display: inline-block;
-    color: #c5a37d;
+    color: rgba(17, 17, 17, 0.5);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 4px;
@@ -202,15 +272,7 @@ body.about-page {
 .about-intro-text::before,
 .about-story-copy::before,
 .about-closing-copy::before {
-    content: "";
-    position: absolute;
-    top: -16px;
-    left: -18px;
-    width: 74px;
-    height: 74px;
-    border-radius: 24px;
-    background: rgba(197, 163, 125, 0.12);
-    z-index: -1;
+    display: none;
 }
 
 .about-intro-text h2,
@@ -230,7 +292,7 @@ body.about-page {
 .about-showroom-copy p,
 .about-closing-copy p {
     margin-top: 18px;
-    color: rgba(45, 42, 38, 0.74);
+    color: rgba(17, 17, 17, 0.72);
     font-size: 1.02rem;
     line-height: 1.82;
 }
@@ -246,19 +308,19 @@ body.about-page {
 .about-capability {
     padding: 30px 24px;
     border: 1px solid rgba(45, 42, 38, 0.08);
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 18px 38px rgba(42, 35, 28, 0.08);
+    background: #fff;
+    backdrop-filter: none;
+    box-shadow: none;
 }
 
 .about-stat-card:nth-child(2),
 .about-stat-card:nth-child(4) {
-    transform: translateY(34px);
+    transform: none;
 }
 
 .about-stat-value {
     display: block;
-    color: #c5a37d;
+    color: #111111;
     font-size: 1.95rem;
     font-weight: 600;
     line-height: 1;
@@ -267,7 +329,7 @@ body.about-page {
 .about-stat-label {
     display: block;
     margin-top: 12px;
-    color: rgba(45, 42, 38, 0.72);
+    color: rgba(17, 17, 17, 0.72);
     font-size: 0.95rem;
     line-height: 1.68;
 }
@@ -290,8 +352,7 @@ body.about-page {
     bottom: 58px;
     width: 180px;
     height: 240px;
-    border-radius: 34px;
-    background: linear-gradient(180deg, rgba(197, 163, 125, 0.38), rgba(197, 163, 125, 0.1));
+    display: none;
 }
 
 .about-story-image {
@@ -310,7 +371,7 @@ body.about-page {
     bottom: 34px;
     width: min(48%, 380px);
     height: 292px;
-    border: 12px solid rgba(252, 250, 247, 0.84);
+    border: 0;
     z-index: 2;
 }
 
@@ -331,11 +392,11 @@ body.about-page {
 }
 
 .editorial-card:nth-child(2) {
-    transform: translateY(42px);
+    transform: none;
 }
 
 .editorial-card:nth-child(3) {
-    transform: translateY(-18px);
+    transform: none;
 }
 
 .about-capabilities {
@@ -356,7 +417,7 @@ body.about-page {
 
 .about-capability:nth-child(2),
 .about-capability:nth-child(5) {
-    transform: translateY(28px);
+    transform: none;
 }
 
 .about-capability h3 {
@@ -367,7 +428,7 @@ body.about-page {
 
 .about-capability p {
     margin-top: 14px;
-    color: rgba(45, 42, 38, 0.72);
+    color: rgba(17, 17, 17, 0.72);
     font-size: 0.96rem;
     line-height: 1.72;
 }
@@ -393,8 +454,7 @@ body.about-page {
     bottom: -28px;
     width: 180px;
     height: 180px;
-    border-radius: 40px;
-    background: rgba(197, 163, 125, 0.18);
+    display: none;
 }
 
 .about-showroom-copy {
@@ -405,7 +465,7 @@ body.about-page {
     display: grid;
     gap: 10px;
     margin-top: 28px;
-    color: #c5a37d;
+    color: #111111;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -428,8 +488,8 @@ body.about-page {
     display: inline-flex;
     margin-top: 28px;
     padding: 0 0 8px;
-    border-bottom: 2px solid #c5a37d;
-    color: #2d2a26;
+    border-bottom: 2px solid #111111;
+    color: #171717;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -439,12 +499,23 @@ body.about-page {
 }
 
 .about-cta-link:hover {
-    color: #c5a37d;
+    color: #111111;
     transform: translateX(6px);
 }
 
 .about-footer {
     padding: 32px 24px;
+}
+
+.about-page .hero-image,
+.about-page .editorial-card,
+.about-page .about-story-image,
+.about-page .about-showroom-media,
+.about-page .about-closing-image,
+.about-page .about-stat-card,
+.about-page .about-capability {
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .reveal {

@@ -181,32 +181,27 @@ function ProjectsScene() {
         <div className="page-wrapper bg-white">
             {/* HERO SECTION */}
             <section className="hero-abstract">
-                <div className="hero-container">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }} 
-                        animate={{ opacity: 1, y: 0 }} 
-                        transition={{ duration: 0.8 }} 
-                        className="hero-text-side"
-                    >
-                        <span className="hero-tag">Workspace Studio</span>
-                        <h1 className="hero-title-main">
-                            Modern 
-                            <span className="font-serif">Workspaces.</span>
-                        </h1>
-                        <p className="hero-desc">
-                            Elevating commercial environments through high-performance design and architectural precision.
-                        </p>
-                        <button onClick={scrollToProjects} className="hero-discover-btn">
-                            Explore Projects 
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
-                        </button>
-                    </motion.div>
-                    <div className="hero-gallery-abstract">
-                        <motion.div animate={{ y: [0, -25, 0] }} transition={{ duration: 7, repeat: Infinity }} className="abs-img-1"><img src="../projects-pictures/leading-it.jpg" alt="" /></motion.div>
-                        <motion.div animate={{ y: [0, 25, 0] }} transition={{ duration: 9, repeat: Infinity }} className="abs-img-2"><img src="../projects-pictures/loreal-romania.jpg" alt="" /></motion.div>
-                        <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 1 }} className="abs-img-main"><img src="../projects-pictures/omvpetrom.jpg" alt="" /></motion.div>
-                    </div>
-                </div>
+                <motion.figure
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="projects-hero-visual"
+                >
+                    <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio project portfolio" />
+                </motion.figure>
+            </section>
+
+            <section className="projects-intro">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.08 }}
+                    className="projects-intro-copy"
+                >
+                    <span>Workspace Studio / Projects</span>
+                    <h1>Modern workspaces shaped with clarity, precision, and presence.</h1>
+                    <p>Explore commercial interiors, headquarters, hospitality spaces, and workplace environments delivered across different industries.</p>
+                </motion.div>
             </section>
 
             {/* PROJECTS SECTION */}

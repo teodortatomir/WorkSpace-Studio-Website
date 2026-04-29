@@ -1,20 +1,43 @@
 body.sustainability-page {
-    background:
-        radial-gradient(circle at top left, rgba(151, 178, 128, 0.22), transparent 24%),
-        radial-gradient(circle at right 20%, rgba(206, 174, 126, 0.18), transparent 28%),
-        linear-gradient(180deg, #f7f3ea 0%, #efe8dc 100%);
-    color: #1f261d;
+    background: #fff;
+    color: #171717;
     font-family: "Manrope", sans-serif;
 }
 
 .sustainability-nav {
-    background: rgba(247, 243, 234, 0.74);
-    backdrop-filter: blur(16px);
+    background: #fff !important;
+    border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.sustainability-page .navbar.sustainability-nav.visible-nav,
+.sustainability-page .navbar.sustainability-nav.scrolled,
+.sustainability-page .contact-nav-theme.sustainability-nav.visible-nav,
+.sustainability-page .contact-nav-theme.sustainability-nav.navbar.scrolled {
+    background: #fff !important;
+}
+
+.sustainability-page .miller-dealer-logo {
+    filter: brightness(0) !important;
+}
+
+.sustainability-page .nav-logo-separator {
+    background: rgba(24, 22, 19, 0.15) !important;
+}
+
+.sustainability-page .nav-search-button {
+    color: #1f1a17 !important;
+}
+
+.sustainability-page .hamburger-line {
+    background: #1f1a17 !important;
 }
 
 .sustainability-nav .brand-name-text.is-active::after {
     width: 100%;
-    background: #009640;
+    background: currentColor;
 }
 
 .sustainability-main {
@@ -22,8 +45,11 @@ body.sustainability-page {
 }
 
 .sustainability-shell {
-    width: min(1680px, calc(100% - 72px));
+    width: 100%;
     margin: 0 auto;
+    padding-left: 36px;
+    padding-right: 36px;
+    box-sizing: border-box;
 }
 
 .sustainability-kicker,
@@ -32,9 +58,9 @@ body.sustainability-page {
     display: inline-flex;
     align-items: center;
     padding: 8px 12px;
-    border-radius: 999px;
-    background: rgba(118, 149, 92, 0.12);
-    color: #54703e;
+    border-radius: 0;
+    background: rgba(17, 17, 17, 0.12);
+    color: #111111;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.18em;
@@ -42,6 +68,7 @@ body.sustainability-page {
 }
 
 .sustainability-hero,
+.sustainability-intro,
 .sustainability-metrics,
 .sustainability-story,
 .sustainability-principles,
@@ -51,6 +78,50 @@ body.sustainability-page {
 .sustainability-faq,
 .sustainability-cta {
     padding: 0 0 58px;
+}
+
+.sustainability-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 22px;
+    background: #fff;
+}
+
+.sustainability-intro {
+    background: #fff;
+    padding-bottom: 56px;
+}
+
+.sustainability-intro-copy {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.sustainability-intro-copy span {
+    color: rgba(31, 26, 23, 0.5);
+    font-size: clamp(1.15rem, 1.8vw, 1.85rem);
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.sustainability-intro-copy h1 {
+    max-width: 860px;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.65rem, 2.7vw, 3rem);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+}
+
+.sustainability-intro-copy p {
+    max-width: 720px;
+    margin: 0;
+    color: rgba(17, 17, 17, 0.64);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .story-grid,
@@ -71,10 +142,10 @@ body.sustainability-page {
 .faq-item,
 .cta-panel,
 .gallery-tile {
-    border: 1px solid rgba(31, 38, 29, 0.08);
-    border-radius: 30px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.68);
-    box-shadow: 0 24px 56px rgba(48, 41, 30, 0.08);
+    box-shadow: none;
 }
 
 .story-copy,
@@ -84,7 +155,6 @@ body.sustainability-page {
     padding: 30px;
 }
 
-.sustainability-hero-panel h1,
 .section-head h2,
 .story-copy h2,
 .roadmap-copy h2,
@@ -104,7 +174,7 @@ body.sustainability-page {
 .roadmap-step p,
 .faq-panel p,
 .metric-label {
-    color: rgba(31, 38, 29, 0.74);
+    color: rgba(17, 17, 17, 0.74);
     line-height: 1.82;
 }
 
@@ -127,20 +197,20 @@ body.sustainability-page {
     justify-content: center;
     min-height: 52px;
     padding: 0 20px;
-    border-radius: 999px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 700;
     transition: transform 0.3s ease;
 }
 
 .sustainability-btn-primary {
-    background: #6f8c57;
-    color: #f7f3ea;
+    background: #111111;
+    color: #f7f7f4;
 }
 
 .sustainability-btn-secondary {
-    border: 1px solid rgba(31, 38, 29, 0.12);
-    color: #1f261d;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    color: #171717;
 }
 
 .sustainability-btn-primary:hover,
@@ -148,106 +218,23 @@ body.sustainability-page {
     transform: translateY(-2px);
 }
 
-.sustainability-hero-stage {
+.sustainability-hero-visual {
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    width: 100%;
+    height: clamp(420px, 62vh, 720px);
+    margin: 0;
+    background: #f4f1ec;
 }
 
-.sustainability-hero-backdrop,
-.sustainability-hero-overlay {
-    position: absolute;
-    inset: 0;
-}
-
-.sustainability-hero-backdrop img,
+.sustainability-hero-visual img,
 .story-visual img,
 .material-stage-media img,
-.gallery-tile img,
-.hero-strip-card img {
+.gallery-tile img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.sustainability-hero-overlay {
-    background:
-        linear-gradient(90deg, rgba(18, 27, 20, 0.72) 0%, rgba(18, 27, 20, 0.32) 42%, rgba(18, 27, 20, 0.14) 100%),
-        linear-gradient(180deg, rgba(18, 27, 20, 0.1) 0%, rgba(18, 27, 20, 0.52) 100%);
-}
-
-.sustainability-hero-panel {
-    position: relative;
-    z-index: 2;
-    max-width: 560px;
-    margin: 118px 0 0;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 30px;
-    background: rgba(16, 23, 18, 0.36);
-    backdrop-filter: blur(12px);
-}
-
-.sustainability-hero-content {
-    position: relative;
-    z-index: 2;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sustainability-hero-panel h1 {
-    margin-top: 18px;
-    font-size: clamp(3.2rem, 7vw, 5.9rem);
-    line-height: 0.9;
-    color: #f7f3ea;
-}
-
-.sustainability-hero-panel .sustainability-lead {
-    color: rgba(247, 243, 234, 0.88);
-    max-width: 500px;
-    font-size: 0.98rem;
-    line-height: 1.68;
-}
-
-.sustainability-hero-panel .sustainability-kicker {
-    background: rgba(247, 243, 234, 0.12);
-    color: #dfe9d6;
-}
-
-.sustainability-hero-panel .sustainability-btn-secondary {
-    border-color: rgba(247, 243, 234, 0.28);
-    background: rgba(247, 243, 234, 0.14);
-    color: #f7f3ea;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-}
-
-.sustainability-hero-panel .sustainability-btn-secondary:hover {
-    background: rgba(247, 243, 234, 0.22);
-    border-color: rgba(247, 243, 234, 0.42);
-}
-
-.sustainability-hero-strip {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 112px);
-    gap: 10px;
-    justify-content: end;
-    margin-bottom: 30px;
-    margin-right: 10px;
-}
-
-.hero-strip-card {
-    overflow: hidden;
-    height: 126px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.14);
-    box-shadow: 0 20px 48px rgba(15, 17, 16, 0.2);
 }
 
 .metrics-grid,
@@ -272,7 +259,7 @@ body.sustainability-page {
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(3rem, 6vw, 4.8rem);
     line-height: 0.9;
-    color: #5f7e48;
+    color: #111111;
 }
 
 .story-copy h2,
@@ -323,6 +310,7 @@ body.sustainability-page {
 .material-filter-bar {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 18px;
 }
@@ -330,18 +318,18 @@ body.sustainability-page {
 .material-filter {
     min-height: 44px;
     padding: 0 16px;
-    border: 1px solid rgba(31, 38, 29, 0.1);
-    border-radius: 999px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.72);
-    color: #1f261d;
+    color: #171717;
     cursor: pointer;
     font-weight: 700;
 }
 
 .material-filter.is-active {
-    background: #6f8c57;
-    border-color: #6f8c57;
-    color: #f7f3ea;
+    background: #111111;
+    border-color: #111111;
+    color: #f7f7f4;
 }
 
 .material-stage {
@@ -374,7 +362,7 @@ body.sustainability-page {
 
 .gallery-tile figcaption {
     padding: 15px 18px 18px;
-    color: rgba(31, 38, 29, 0.68);
+    color: rgba(17, 17, 17, 0.68);
 }
 
 .roadmap-grid {
@@ -388,7 +376,7 @@ body.sustainability-page {
 .roadmap-step span {
     display: inline-flex;
     margin-bottom: 14px;
-    color: #76955c;
+    color: #111111;
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.18em;
@@ -419,7 +407,7 @@ body.sustainability-page {
 .faq-symbol {
     font-size: 1.5rem;
     line-height: 1;
-    color: #6f8c57;
+    color: #111111;
 }
 
 .faq-panel {
@@ -448,6 +436,26 @@ body.sustainability-page {
 
 .cta-panel .sustainability-hero-actions {
     justify-content: center;
+}
+
+.sustainability-page .story-copy,
+.sustainability-page .story-visual,
+.sustainability-page .metric-card,
+.sustainability-page .principle-card,
+.sustainability-page .material-stage-copy,
+.sustainability-page .material-stage-media,
+.sustainability-page .roadmap-step,
+.sustainability-page .faq-item,
+.sustainability-page .cta-panel,
+.sustainability-page .gallery-tile,
+.sustainability-page .sustainability-kicker,
+.sustainability-page .section-kicker,
+.sustainability-page .material-stage-label,
+.sustainability-page .material-filter,
+.sustainability-page .sustainability-btn-primary,
+.sustainability-page .sustainability-btn-secondary {
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .reveal {
@@ -487,22 +495,6 @@ body.sustainability-page {
         grid-template-columns: 1fr 1fr;
     }
 
-    .sustainability-hero-stage {
-        height: 100svh;
-    }
-
-    .sustainability-hero-panel {
-        margin: 108px 0 0;
-        max-width: 520px;
-    }
-
-    .sustainability-hero-strip {
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: stretch;
-        margin-bottom: 26px;
-        margin-right: 0;
-    }
-
     .material-stage-media {
         height: clamp(280px, 42vw, 460px);
     }
@@ -515,6 +507,17 @@ body.sustainability-page {
 
     .sustainability-shell {
         width: calc(100% - 28px);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sustainability-hero {
+        padding-top: 102px;
+        padding-bottom: 16px;
+    }
+
+    .sustainability-hero-visual {
+        min-height: 320px;
     }
 
     .metrics-grid,
@@ -527,25 +530,4 @@ body.sustainability-page {
         grid-template-columns: 1fr;
     }
 
-    .sustainability-hero-stage {
-        height: 100svh;
-    }
-
-    .sustainability-hero-panel {
-        margin: 94px 0 0;
-        padding: 20px;
-    }
-
-    .sustainability-hero-panel h1 {
-        font-size: clamp(2.6rem, 13vw, 4.1rem);
-    }
-
-    .sustainability-hero-strip {
-        grid-template-columns: 1fr;
-        margin-bottom: 16px;
-    }
-
-    .hero-strip-card {
-        height: 86px;
-    }
 }

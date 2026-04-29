@@ -11,12 +11,12 @@
 </head>
     <body>
 
-        <nav class="navbar main-nav hidden-nav">
+        <nav class="navbar main-nav visible-nav contact-nav-theme projects-nav">
             <div class="nav-container">
                 <div class="nav-col nav-left">
                     <div class="logo-wrapper">
                         <a href="../index.html" class="logo-link">
-                            <img src="../logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                            <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
                         </a>
                         <div class="nav-logo-separator"></div>
                         <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
@@ -78,15 +78,50 @@
                 </div>
                 <div class="menu-right-content">
                     <span class="menu-label-top">Menu</span>
-                    
-                    <nav class="menu-right-links">
-                        <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
-                    <div class="menu-nav-item" data-target="img-services"><a href="../services/index.html">Services</a></div>
-                        <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands & Partners</a></div>
-                        <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
-                        <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
+                    <nav class="menu-right-links" aria-label="Main menu">
+                        <div class="menu-nav-item has-submenu" data-target="img-projects">
+                            <a href="../projects-scene/proiecte.html">Projects</a>
+                            <div class="menu-subnav" aria-label="Projects submenu">
+                                <span class="menu-subnav-title">Projects</span>
+                                <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                                <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                                <a href="../projects-scene/proiecte.html">General Contracting</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-services">
+                            <a href="../services/index.html">What we do</a>
+                            <div class="menu-subnav" aria-label="What we do submenu">
+                                <span class="menu-subnav-title">What we do</span>
+                                <a href="../our-services/design-services.html">Design &amp; Build</a>
+                                <a href="../our-services/general-contracting.html">General Contracting</a>
+                                <a href="../our-services/furniture.html">Furniture</a>
+                                <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                                <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                                <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-partners">
+                            <a href="../why-us/index.html">Why us</a>
+                            <div class="menu-subnav" aria-label="Why us submenu">
+                                <span class="menu-subnav-title">Why us</span>
+                                <a href="../partners/partners.html">Brands &amp; Partners</a>
+                                <a href="../sustainability/index.html">Sustainability</a>
+                                <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                                <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                        <div class="menu-nav-item has-submenu" data-target="img-insights">
+                            <a href="../insights/insights.html">News &amp; Insights</a>
+                            <div class="menu-subnav" aria-label="News and Insights submenu">
+                                <span class="menu-subnav-title">News &amp; Insights</span>
+                                <a href="../insights/press-releases.html">Press Releases</a>
+                                <a href="../insights/in-the-news.html">In the News</a>
+                                <a href="../insights/insights.html">Office Insights</a>
+                            </div>
+                        </div>
                         <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
-                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
+                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
                     </nav>
 
                     <div class="menu-footer">
@@ -184,8 +219,8 @@
             // Oprirea intervalului dupÄƒ 3 secunde oricum
             setTimeout(() => clearInterval(retryInterval), 3000);
         </script>
-    </body>
+    <script src="../menu-state.js"></script>
+</body>
 </html>
-
 
 

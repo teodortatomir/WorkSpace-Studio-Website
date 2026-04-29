@@ -67,15 +67,51 @@
 
             <div class="menu-right-content">
                 <span class="menu-label-top">Menu</span>
-                <nav class="menu-right-links">
-                    <div class="menu-nav-item" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
-                    <div class="menu-nav-item" data-target="img-services"><a href="../services/index.html">Services</a></div>
-                    <div class="menu-nav-item" data-target="img-partners"><a href="../partners/partners.html">Brands &amp; Partners</a></div>
-                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">About</a></div>
-                    <div class="menu-nav-item" data-target="img-insights"><a href="../insights/insights.html">Insights</a></div>
-                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
-                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact / Start a Project</a></div>
-                </nav>
+                    <nav class="menu-right-links" aria-label="Main menu">
+                        <div class="menu-nav-item has-submenu" data-target="img-projects">
+                            <a href="../projects-scene/proiecte.html">Projects</a>
+                            <div class="menu-subnav" aria-label="Projects submenu">
+                                <span class="menu-subnav-title">Projects</span>
+                                <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                                <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                                <a href="../projects-scene/proiecte.html">General Contracting</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-services">
+                            <a href="../services/index.html">What we do</a>
+                            <div class="menu-subnav" aria-label="What we do submenu">
+                                <span class="menu-subnav-title">What we do</span>
+                                <a href="../our-services/design-services.html">Design &amp; Build</a>
+                                <a href="../our-services/general-contracting.html">General Contracting</a>
+                                <a href="../our-services/furniture.html">Furniture</a>
+                                <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                                <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                                <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-partners">
+                            <a href="../why-us/index.html">Why us</a>
+                            <div class="menu-subnav" aria-label="Why us submenu">
+                                <span class="menu-subnav-title">Why us</span>
+                                <a href="../partners/partners.html">Brands &amp; Partners</a>
+                                <a href="../sustainability/index.html">Sustainability</a>
+                                <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                                <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                        <div class="menu-nav-item has-submenu" data-target="img-insights">
+                            <a href="../insights/insights.html">News &amp; Insights</a>
+                            <div class="menu-subnav" aria-label="News and Insights submenu">
+                                <span class="menu-subnav-title">News &amp; Insights</span>
+                                <a href="../insights/press-releases.html">Press Releases</a>
+                                <a href="../insights/in-the-news.html">In the News</a>
+                                <a href="../insights/insights.html">Office Insights</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                    </nav>
 
                 <div class="menu-footer">
                     <div class="menu-socials">
@@ -90,54 +126,35 @@
 
     <main class="ergo-hub-main">
         <section class="ergo-hub-hero">
-            <div class="ergo-shell hub-hero-grid">
-                <div class="hub-hero-copy reveal">
-                    <span class="ergo-kicker">Ergonomics Library</span>
-                    <h1>Ergonomics stories, now split into clear, usable subpages.</h1>
-                    <p class="hub-lead">This library now keeps much more of the original research language while making each topic easier to read, easier to scan, and easier to revisit with strong imagery and dedicated story pages.</p>
-                    <div class="hub-chip-row">
-                        <button class="hub-chip is-active" type="button" data-filter="all">All Stories</button>
-                        <button class="hub-chip" type="button" data-filter="movement">Movement</button>
-                        <button class="hub-chip" type="button" data-filter="seating">Seating</button>
-                        <button class="hub-chip" type="button" data-filter="research">Research</button>
-                        <button class="hub-chip" type="button" data-filter="workplace">Workplace</button>
-                    </div>
-                    <div class="ergo-hero-actions">
-                        <a href="articles/living-well.html" class="ergo-cta-primary">Open Featured Story</a>
-                        <a href="../contact/contact.html" class="ergo-cta-secondary">Talk to Workspace Studio</a>
-                    </div>
-                </div>
+            <a class="hub-hero-feature reveal" href="articles/living-well.html">
+                <img src="pictures/living-well-hero.jpg" alt="Athletes training in a bright wellness environment">
+            </a>
+        </section>
 
-                <a class="hub-feature-card reveal" href="articles/living-well.html">
-                    <div class="hub-feature-media">
-                        <img src="pictures/living-well-hero.jpg" alt="Athletes training in a bright wellness environment">
-                    </div>
-                    <div class="hub-feature-copy">
-                        <span class="hub-feature-label">Featured case study</span>
-                        <h2>Living Well</h2>
-                        <p>An environment where athletes and employees can thrive, built around care, performance, and collaboration.</p>
-                        <span class="hub-feature-link">Open story</span>
-                    </div>
-                </a>
+        <section class="hub-intro-section">
+            <div class="ergo-shell hub-intro-copy reveal">
+                <span>Expertise / Ergonomics</span>
+                <h1>Human centered approach for comfort &amp; productivity</h1>
+            </div>
+        </section>
+
+        <section class="hub-filter-section" aria-label="Ergonomics article filters">
+            <div class="ergo-shell hub-chip-row reveal">
+                <button class="hub-chip is-active" type="button" data-filter="all">All Stories</button>
+                <button class="hub-chip" type="button" data-filter="movement">Movement</button>
+                <button class="hub-chip" type="button" data-filter="seating">Seating</button>
+                <button class="hub-chip" type="button" data-filter="research">Research</button>
+                <button class="hub-chip" type="button" data-filter="workplace">Workplace</button>
             </div>
         </section>
 
         <section class="hub-story-section">
-            <div class="ergo-shell hub-story-header reveal">
-                <div>
-                    <span class="ergo-section-label">Browse Stories</span>
-                    <h2>Eighteen focused readings, each with its own page, imagery, and reading rhythm.</h2>
-                </div>
-                <p>Use the filters to reduce clutter quickly. Every card opens a dedicated subpage with richer text, key points, and image-based reading breaks.</p>
-            </div>
-
             <div class="ergo-shell hub-story-grid" id="hubStoryGrid">
                 <a class="hub-story-card reveal" data-tags="case-study workplace movement" href="articles/living-well.html">
                     <img src="pictures/living-well-hero.jpg" alt="Integrated sports and health centre">
                     <div class="hub-story-copy">
                         <span>Case Study</span>
                         <h3>Living Well</h3>
-                        <p>How Fortius built an athlete-centred environment that treats health as performance for life.</p>
                     </div>
                 </a>
 
@@ -146,7 +163,6 @@
                     <div class="hub-story-copy">
                         <span>Movement</span>
                         <h3>Sit. Stand. Move. Repeat.</h3>
-                        <p>Why postural variety beats sitting all day and standing all day.</p>
                     </div>
                 </a>
 
@@ -155,7 +171,6 @@
                     <div class="hub-story-copy">
                         <span>Seating Science</span>
                         <h3>Supporting the Spine When Seated</h3>
-                        <p>The anatomy, dynamic support, and research logic behind Mirra 2.</p>
                     </div>
                 </a>
 
@@ -164,7 +179,6 @@
                     <div class="hub-story-copy">
                         <span>Workplace Strategy</span>
                         <h3>All Together Now</h3>
-                        <p>Why surroundings, furnishings, and tools must finally start working together.</p>
                     </div>
                 </a>
 
@@ -173,7 +187,6 @@
                     <div class="hub-story-copy">
                         <span>Research</span>
                         <h3>The Evolution of Anthropometrics and User Control</h3>
-                        <p>From average sizing to responsive fit for real people and real work postures.</p>
                     </div>
                 </a>
 
@@ -182,7 +195,6 @@
                     <div class="hub-story-copy">
                         <span>Biomechanics</span>
                         <h3>Supporting the Biomechanics of Movement</h3>
-                        <p>How tilt kinematics can mirror the body instead of forcing it to adapt.</p>
                     </div>
                 </a>
 
@@ -191,7 +203,6 @@
                     <div class="hub-story-copy">
                         <span>Seating Science</span>
                         <h3>The Art and Science of Pressure Distribution</h3>
-                        <p>Why topographically neutral support matters more than simple padding.</p>
                     </div>
                 </a>
 
@@ -200,7 +211,6 @@
                     <div class="hub-story-copy">
                         <span>Thermal Comfort</span>
                         <h3>The Attributes of Thermal Comfort</h3>
-                        <p>How breathable materials keep seated work from becoming hot, sticky, and fatiguing.</p>
                     </div>
                 </a>
 
@@ -209,7 +219,6 @@
                     <div class="hub-story-copy">
                         <span>Visual Comfort</span>
                         <h3>The Case for Task Lighting</h3>
-                        <p>Why individual lighting control saves energy, reduces strain, and supports posture.</p>
                     </div>
                 </a>
 
@@ -218,7 +227,6 @@
                     <div class="hub-story-copy">
                         <span>Health Research</span>
                         <h3>Sitting Can Be Good for the Circulatory System</h3>
-                        <p>How Embody was studied for lower heart rate during office work.</p>
                     </div>
                 </a>
 
@@ -227,7 +235,6 @@
                     <div class="hub-story-copy">
                         <span>Monitor Ergonomics</span>
                         <h3>Seeing Double</h3>
-                        <p>The productivity gains and posture risks that come with dual and triple displays.</p>
                     </div>
                 </a>
 
@@ -236,7 +243,6 @@
                     <div class="hub-story-copy">
                         <span>Monitor Ergonomics</span>
                         <h3>The Eyes Always Win</h3>
-                        <p>Why adjustable monitor arms are almost as important as the chair itself.</p>
                     </div>
                 </a>
 
@@ -245,7 +251,6 @@
                     <div class="hub-story-copy">
                         <span>Workstation Design</span>
                         <h3>Maintaining Concordance as Seated Postures Change</h3>
-                        <p>How Envelop keeps chair, desk, and technology aligned as posture changes.</p>
                     </div>
                 </a>
 
@@ -254,7 +259,6 @@
                     <div class="hub-story-copy">
                         <span>Aeron Research</span>
                         <h3>The Kinematics of Sitting</h3>
-                        <p>Why the chair should follow the body's linkages instead of the reverse.</p>
                     </div>
                 </a>
 
@@ -263,7 +267,6 @@
                     <div class="hub-story-copy">
                         <span>Aeron Research</span>
                         <h3>The Anthropometrics of Fit</h3>
-                        <p>Why real fit starts by designing beyond the mythical average user.</p>
                     </div>
                 </a>
 
@@ -272,7 +275,6 @@
                     <div class="hub-story-copy">
                         <span>Aeron Research</span>
                         <h3>The Benefits of Pelvic Stabilization</h3>
-                        <p>Why sacral-pelvic support matters in upright computer work.</p>
                     </div>
                 </a>
 
@@ -281,7 +283,6 @@
                     <div class="hub-story-copy">
                         <span>Embody Research</span>
                         <h3>Promoting Healthy Movement and Natural Alignment</h3>
-                        <p>How Embody supports equilibrium across upright and reclined work.</p>
                     </div>
                 </a>
 
@@ -290,29 +291,15 @@
                     <div class="hub-story-copy">
                         <span>Embody Research</span>
                         <h3>Improving Oxygen Flow While Seated</h3>
-                        <p>How a dynamic seat supports tissue perfusion and longer focused work.</p>
                     </div>
                 </a>
             </div>
-        </section>
 
-        <section class="hub-preview-band">
-            <div class="ergo-shell hub-preview-grid">
-                <div class="hub-preview-copy reveal">
-                    <div class="hub-preview-body">
-                        <span class="ergo-section-label">Quick View</span>
-                        <h2 id="hubPreviewTitle">Living Well</h2>
-                        <p id="hubPreviewText">A healthcare and performance case study about designing a centre where athletes, staff, and clients can all thrive.</p>
-                    </div>
-                    <div class="hub-preview-actions">
-                        <a id="hubPreviewLink" href="articles/living-well.html" class="ergo-cta-primary">Read this article</a>
-                    </div>
-                </div>
-                <div class="hub-preview-media reveal">
-                    <img id="hubPreviewImage" src="pictures/living-well-hero.jpg" alt="Living Well preview">
-                </div>
+            <div class="ergo-shell hub-load-more-wrap">
+                <button class="hub-load-more" id="hubLoadMore" type="button">Load More</button>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer">
@@ -340,7 +327,7 @@
         </div>
     </footer>
 
-    <script src="ergonomics-specialists.js"></script>
+    <script src="ergonomics-specialists.js?v=load-more-8"></script>
+    <script src="../menu-state.js"></script>
 </body>
 </html>
-

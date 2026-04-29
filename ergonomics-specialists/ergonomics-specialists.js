@@ -4,12 +4,12 @@ const menuOverlay = document.getElementById('menuOverlay');
 const menuItems = document.querySelectorAll('.menu-nav-item');
 const menuLinks = document.querySelectorAll('.menu-nav-item a');
 const allVisuals = document.querySelectorAll('.menu-visual-item');
-const hubCards = document.querySelectorAll('.hub-story-card');
+const hubCards = Array.from(document.querySelectorAll('.hub-story-card'));
 const filterButtons = document.querySelectorAll('.hub-chip');
-const previewTitle = document.getElementById('hubPreviewTitle');
-const previewText = document.getElementById('hubPreviewText');
-const previewLink = document.getElementById('hubPreviewLink');
-const previewImage = document.getElementById('hubPreviewImage');
+const loadMoreButton = document.getElementById('hubLoadMore');
+const pageSize = 8;
+let activeFilter = 'all';
+let visibleLimit = pageSize;
 
 document.querySelectorAll('.menu-img-item').forEach(img => {
     const loader = new Image();
@@ -52,42 +52,44 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 
 document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
 
-function setPreview(card) {
-    const title = card.querySelector('h3')?.textContent || '';
-    const text = card.querySelector('p')?.textContent || '';
-    const image = card.querySelector('img');
-
-    if (previewTitle) previewTitle.textContent = title;
-    if (previewText) previewText.textContent = text;
-    if (previewLink) previewLink.href = card.href;
-    if (image && previewImage) {
-        previewImage.src = image.src;
-        previewImage.alt = image.alt;
-    }
-}
-
 hubCards.forEach((card, index) => {
     card.dataset.index = String(index);
-    card.addEventListener('mouseenter', () => setPreview(card));
-    card.addEventListener('focus', () => setPreview(card));
 });
+
+function getMatchingCards() {
+    return hubCards.filter(card => {
+        const tags = card.dataset.tags || '';
+        return activeFilter === 'all' || tags.includes(activeFilter);
+    });
+}
+
+function renderHubCards() {
+    const matchingCards = getMatchingCards();
+
+    hubCards.forEach(card => {
+        const match = matchingCards.includes(card);
+        const visibleIndex = matchingCards.indexOf(card);
+        card.classList.toggle('is-hidden', !match || visibleIndex >= visibleLimit);
+    });
+
+    loadMoreButton?.classList.toggle('is-hidden', matchingCards.length <= visibleLimit);
+}
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const filter = button.dataset.filter || 'all';
+        activeFilter = button.dataset.filter || 'all';
+        visibleLimit = pageSize;
 
         filterButtons.forEach(entry => entry.classList.remove('is-active'));
         button.classList.add('is-active');
 
-        let firstVisibleCard = null;
-
-        hubCards.forEach(card => {
-            const tags = card.dataset.tags || '';
-            const match = filter === 'all' || tags.includes(filter);
-            card.classList.toggle('is-hidden', !match);
-            if (match && !firstVisibleCard) firstVisibleCard = card;
-        });
-
-        if (firstVisibleCard) setPreview(firstVisibleCard);
+        renderHubCards();
     });
 });
+
+loadMoreButton?.addEventListener('click', () => {
+    visibleLimit += pageSize;
+    renderHubCards();
+});
+
+renderHubCards();

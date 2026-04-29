@@ -36,12 +36,12 @@
         </div>
     </nav>
 
-    <nav class="navbar main-nav hidden-nav">
+    <nav class="navbar main-nav home-main-nav hidden-nav">
     <div class="nav-container">
         <div class="nav-col nav-left">
             <div class="logo-wrapper">
                 <a href="index.html" class="logo-link">
-                    <img src="logos/workspace-logo.svg" alt="Workspace Studio" class="workspace-logo">
+                    <img src="logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
                 </a>
                 <div class="nav-logo-separator"></div>
                 <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
@@ -103,16 +103,51 @@
         </div>
         <div class="menu-right-content">
             <span class="menu-label-top">Menu</span>
-            
-            <nav class="menu-right-links">
-                <div class="menu-nav-item" data-target="img-projects"><a href="projects-scene/proiecte.html">Projects</a></div>
-                <div class="menu-nav-item" data-target="img-services"><a href="services/index.html">Services</a></div>
-                <div class="menu-nav-item" data-target="img-partners"><a href="partners/partners.html">Brands & Partners</a></div>
-                <div class="menu-nav-item" data-target="img-about"><a href="about/about.html">About</a></div>
-                <div class="menu-nav-item" data-target="img-insights"><a href="insights/insights.html">Insights</a></div>
-                <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
-                <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="contact/contact.html">Contact / Start a Project</a></div>
-            </nav>
+                    <nav class="menu-right-links" aria-label="Main menu">
+                        <div class="menu-nav-item has-submenu" data-target="img-projects">
+                            <a href="projects-scene/proiecte.html">Projects</a>
+                            <div class="menu-subnav" aria-label="Projects submenu">
+                                <span class="menu-subnav-title">Projects</span>
+                                <a href="projects-scene/proiecte.html">Furniture Projects</a>
+                                <a href="projects-scene/proiecte.html">Turn Key Projects</a>
+                                <a href="projects-scene/proiecte.html">General Contracting</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-services">
+                            <a href="services/index.html">What we do</a>
+                            <div class="menu-subnav" aria-label="What we do submenu">
+                                <span class="menu-subnav-title">What we do</span>
+                                <a href="our-services/design-services.html">Design &amp; Build</a>
+                                <a href="our-services/general-contracting.html">General Contracting</a>
+                                <a href="our-services/furniture.html">Furniture</a>
+                                <a href="our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                                <a href="our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                                <a href="our-services/workplace-strategy.html">Workplace Strategy</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-partners">
+                            <a href="why-us/index.html">Why us</a>
+                            <div class="menu-subnav" aria-label="Why us submenu">
+                                <span class="menu-subnav-title">Why us</span>
+                                <a href="partners/partners.html">Brands &amp; Partners</a>
+                                <a href="sustainability/index.html">Sustainability</a>
+                                <a href="ergonomics-specialists/index.html">Ergonomics</a>
+                                <a href="why-us/budget-centricity.html">Budget Centricity</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="about/about.html">Who we are</a></div>
+                        <div class="menu-nav-item has-submenu" data-target="img-insights">
+                            <a href="insights/insights.html">News &amp; Insights</a>
+                            <div class="menu-subnav" aria-label="News and Insights submenu">
+                                <span class="menu-subnav-title">News &amp; Insights</span>
+                                <a href="insights/press-releases.html">Press Releases</a>
+                                <a href="insights/in-the-news.html">In the News</a>
+                                <a href="insights/insights.html">Office Insights</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="contact/contact.html">Contact</a></div>
+                    </nav>
 
             <div class="menu-footer">
                 <div class="menu-socials">
@@ -440,45 +475,13 @@
     </section>
 
     <section class="why-us-section" id="why-us">
-        <div class="why-us-shell">
-            <div class="why-us-intro reveal">
-                <span class="category-tag">Why Us</span>
-                <h2>Strong points that turn a <span class="font-serif italic text-[#c5a37d]">nice office</span> into a high-performing workspace.</h2>
-                <p>We connect strategy, ergonomics, premium brands, and execution in one coherent process so the final result feels refined, functional, and ready to scale.</p>
-
-                <div class="why-us-metrics">
-                    <div class="metric-card reveal">
-                        <span class="metric-value">2008</span>
-                        <span class="metric-label">Delivering workspace projects with long-term partner focus.</span>
-                    </div>
-                    <div class="metric-card reveal">
-                        <span class="metric-value">100+</span>
-                        <span class="metric-label">Global manufacturers, finishes, and workplace solutions curated for fit.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="why-us-grid">
-                <article class="why-card reveal">
-                    <span class="why-card-index">01</span>
-                    <h3>Human-Centered Planning</h3>
-                    <p>Every concept starts from how people focus, collaborate, move, and recover energy across the workday.</p>
-                </article>
-                <article class="why-card reveal">
-                    <span class="why-card-index">02</span>
-                    <h3>Premium Brand Access</h3>
-                    <p>We assemble the right mix of furniture, acoustics, architectural systems, and detail pieces from global leaders.</p>
-                </article>
-                <article class="why-card reveal">
-                    <span class="why-card-index">03</span>
-                    <h3>End-to-End Delivery</h3>
-                    <p>Design, specification, procurement, coordination, and implementation are aligned under one clear vision.</p>
-                </article>
-                <article class="why-card reveal">
-                    <span class="why-card-index">04</span>
-                    <h3>Tailored, Not Generic</h3>
-                    <p>We shape each workspace around company culture, team dynamics, and future growth, not around a template.</p>
-                </article>
+        <div class="why-us-feature-shell">
+            <a href="why-us/index.html" class="why-us-feature-media reveal" aria-label="Open Why us page">
+                <img src="projects-pictures/skytower-hero.jpg" alt="Modern workplace project">
+            </a>
+            <div class="why-us-feature-copy reveal">
+                <h2>Full-Service Workplace Transformation Partner</h2>
+                <p>We deliver high quality modern workplaces through integrated design, fit-out, furniture, and human-centered solutions that elevate business performance, combining global insight with proven local execution and know how.</p>
             </div>
         </div>
     </section>
@@ -1394,7 +1397,7 @@
                                     if (entry.isIntersecting) entry.target.classList.add('visible');
                                 });
                             }, { threshold: 0.15 });
-                            document.querySelectorAll('.reveal, .split-row, .nt-card, .why-card, .metric-card').forEach(el => revealObserver.observe(el));
+                            document.querySelectorAll('.reveal, .split-row, .nt-card').forEach(el => revealObserver.observe(el));
                         });
 
                         // --- LOGICA MENIU OVERLAY (STRICT PERFORMANCE) ---
@@ -1448,7 +1451,6 @@
             });
         });
         </script>
-    </body>
+    <script src="menu-state.js"></script>
+</body>
 </html>
-
-

@@ -1,25 +1,52 @@
 body.turnkey-page {
-    background:
-        radial-gradient(circle at top left, rgba(174, 102, 54, 0.08), transparent 30%),
-        linear-gradient(180deg, #f1eae0 0%, #f7f1ea 42%, #f3ede6 100%);
-    color: #201a16;
+    background: #fff;
+    color: #171717;
     font-family: "Manrope", sans-serif;
 }
 
 .turnkey-nav {
-    background: rgba(239, 231, 220, 0.88);
-    backdrop-filter: blur(16px);
+    background: #fff !important;
+    border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.turnkey-page .navbar.turnkey-nav.visible-nav,
+.turnkey-page .navbar.turnkey-nav.scrolled,
+.turnkey-page .contact-nav-theme.turnkey-nav.visible-nav,
+.turnkey-page .contact-nav-theme.turnkey-nav.navbar.scrolled {
+    background: #fff !important;
+}
+
+.turnkey-page .miller-dealer-logo {
+    filter: brightness(0) !important;
+}
+
+.turnkey-page .nav-logo-separator {
+    background: rgba(24, 22, 19, 0.15) !important;
+}
+
+.turnkey-page .nav-search-button {
+    color: #1f1a17 !important;
+}
+
+.turnkey-page .hamburger-line {
+    background: #1f1a17 !important;
 }
 
 .turnkey-nav .brand-name-text.is-active::after {
     width: 100%;
-    background: #a35a2c;
+    background: currentColor;
 }
 
 .tk-shell {
-    width: calc(100% - 80px);
-    max-width: 1680px;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
+    padding-left: 36px;
+    padding-right: 36px;
+    box-sizing: border-box;
 }
 
 .tk-chip {
@@ -27,9 +54,9 @@ body.turnkey-page {
     align-items: center;
     min-height: 34px;
     padding: 0 14px;
-    border-radius: 999px;
-    background: rgba(163, 90, 44, 0.1);
-    color: #8f4b20;
+    border-radius: 0;
+    background: rgba(17, 17, 17, 0.08);
+    color: #111111;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.2em;
@@ -38,10 +65,9 @@ body.turnkey-page {
 
 .tk-chip-dark {
     background: rgba(26, 20, 16, 0.08);
-    color: #201a16;
+    color: #171717;
 }
 
-.tk-hero-copy h1,
 .tk-story-card h2,
 .tk-route-intro h2,
 .tk-route-copy h3,
@@ -53,7 +79,6 @@ body.turnkey-page {
     letter-spacing: -0.045em;
 }
 
-.tk-hero-copy p,
 .tk-story-card p,
 .tk-route-intro p,
 .tk-route-copy p,
@@ -69,7 +94,7 @@ body.turnkey-page {
     justify-content: center;
     min-height: 52px;
     padding: 0 22px;
-    border-radius: 999px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 700;
     transition: transform 220ms ease, background-color 220ms ease, color 220ms ease, border-color 220ms ease;
@@ -80,27 +105,67 @@ body.turnkey-page {
 }
 
 .tk-btn-primary {
-    background: #201a16;
-    color: #f8f2ea;
+    background: #111111;
+    color: #f7f7f4;
 }
 
 .tk-btn-secondary {
-    border: 1px solid rgba(32, 26, 22, 0.16);
-    color: #201a16;
+    border: 1px solid rgba(17, 17, 17, 0.14);
+    color: #171717;
 }
 
 .tk-hero {
     position: relative;
-    height: 100vh;
-    min-height: 100vh;
-    padding: 108px 0 16px;
+    min-height: 0;
+    padding: 80px 0 22px;
     overflow: hidden;
+    background: #fff;
 }
 
-.tk-hero-visual,
-.tk-hero-wash {
-    position: absolute;
-    inset: 0;
+.tk-intro {
+    padding: 0 0 56px;
+    background: #fff;
+}
+
+.tk-intro-copy {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.tk-intro-copy span {
+    color: rgba(31, 26, 23, 0.5);
+    font-size: clamp(1.15rem, 1.8vw, 1.85rem);
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.tk-intro-copy h1 {
+    max-width: 900px;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.65rem, 2.7vw, 3rem);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+}
+
+.tk-intro-copy p {
+    max-width: 760px;
+    margin: 0;
+    color: rgba(17, 17, 17, 0.64);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.tk-hero-visual {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: clamp(420px, 62vh, 720px);
+    margin: 0;
+    background: #f4f1ec;
 }
 
 .tk-hero-visual img,
@@ -115,9 +180,7 @@ body.turnkey-page {
 }
 
 .tk-hero-wash {
-    background:
-        linear-gradient(90deg, rgba(20, 15, 12, 0.88) 0%, rgba(20, 15, 12, 0.64) 34%, rgba(20, 15, 12, 0.24) 62%, rgba(20, 15, 12, 0.1) 100%),
-        linear-gradient(180deg, rgba(20, 15, 12, 0.04) 0%, rgba(20, 15, 12, 0.34) 100%);
+    display: none;
 }
 
 .tk-hero-story {
@@ -136,7 +199,7 @@ body.turnkey-page {
 .tk-panorama-frame,
 .tk-cta-panel {
     border: 1px solid rgba(32, 26, 22, 0.08);
-    box-shadow: 0 22px 70px rgba(50, 35, 22, 0.12);
+    box-shadow: none;
 }
 
 .tk-hero-copy,
@@ -211,7 +274,8 @@ body.turnkey-page {
 .tk-panorama,
 .tk-handover,
 .tk-cta {
-    padding: 22px 0 34px;
+    padding: 22px 0 42px;
+    background: #fff;
 }
 
 .tk-route {
@@ -228,15 +292,15 @@ body.turnkey-page {
 .tk-story-card {
     min-height: 220px;
     padding: 24px 24px 26px;
-    border: 1px solid rgba(32, 26, 22, 0.08);
-    border-radius: 26px;
-    background: rgba(255, 252, 248, 0.48);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.72);
 }
 
 .tk-story-index {
     display: inline-flex;
     margin-bottom: 18px;
-    color: #a35a2c;
+    color: #111111;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.18em;
@@ -250,7 +314,7 @@ body.turnkey-page {
 .tk-story-card p {
     margin-top: 14px;
     max-width: 34ch;
-    color: rgba(32, 26, 22, 0.72);
+    color: rgba(17, 17, 17, 0.72);
 }
 
 .tk-route-grid,
@@ -276,7 +340,7 @@ body.turnkey-page {
 
 .tk-route-intro p {
     margin-top: 14px;
-    color: rgba(32, 26, 22, 0.74);
+    color: rgba(17, 17, 17, 0.74);
 }
 
 .tk-route-switches {
@@ -289,10 +353,10 @@ body.turnkey-page {
 .tk-route-switch {
     min-height: 44px;
     padding: 0 16px;
-    border: 1px solid rgba(32, 26, 22, 0.12);
-    border-radius: 999px;
-    background: rgba(255, 252, 248, 0.56);
-    color: rgba(32, 26, 22, 0.74);
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.72);
+    color: rgba(17, 17, 17, 0.74);
     font-weight: 700;
     cursor: pointer;
     transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, transform 220ms ease;
@@ -302,14 +366,14 @@ body.turnkey-page {
 .tk-route-switch.is-active {
     background: #201a16;
     border-color: #201a16;
-    color: #f8f2ea;
+    color: #f7f7f4;
     transform: translateY(-1px);
 }
 
 .tk-route-card {
     overflow: hidden;
-    border-radius: 30px;
-    background: rgba(255, 252, 248, 0.78);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.78);
 }
 
 .tk-route-media {
@@ -323,7 +387,7 @@ body.turnkey-page {
 .tk-route-label {
     display: inline-block;
     margin-bottom: 12px;
-    color: #a35a2c;
+    color: #111111;
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.18em;
@@ -337,7 +401,7 @@ body.turnkey-page {
 
 .tk-route-copy p {
     margin-top: 14px;
-    color: rgba(32, 26, 22, 0.74);
+    color: rgba(17, 17, 17, 0.74);
 }
 
 .tk-panorama-head {
@@ -350,8 +414,8 @@ body.turnkey-page {
     grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr);
     grid-template-rows: minmax(380px, 58vh) auto;
     overflow: hidden;
-    border-radius: 30px;
-    background: rgba(255, 252, 248, 0.78);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.78);
 }
 
 .tk-panorama-image {
@@ -363,22 +427,22 @@ body.turnkey-page {
     display: grid;
     align-content: center;
     padding: 26px 26px 18px;
-    background: rgba(255, 250, 245, 0.86);
+    background: rgba(255, 255, 255, 0.86);
 }
 
 .tk-panorama-copy p {
     margin-top: 12px;
-    color: rgba(32, 26, 22, 0.74);
+    color: rgba(17, 17, 17, 0.74);
 }
 
 .tk-panorama-nav {
     display: grid;
-    border-top: 1px solid rgba(32, 26, 22, 0.08);
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .tk-gallery-thumb {
     border: 0;
-    border-bottom: 1px solid rgba(32, 26, 22, 0.08);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
     background: transparent;
     cursor: pointer;
     transition: background-color 220ms ease, color 220ms ease;
@@ -397,7 +461,7 @@ body.turnkey-page {
     font-size: 0.88rem;
     font-weight: 700;
     line-height: 62px;
-    color: rgba(32, 26, 22, 0.76);
+    color: rgba(17, 17, 17, 0.76);
 }
 
 .tk-gallery-thumb:hover,
@@ -407,14 +471,14 @@ body.turnkey-page {
 
 .tk-gallery-thumb.is-active span,
 .tk-gallery-thumb:hover span {
-    color: #f8f2ea;
+    color: #f7f7f4;
 }
 
 .tk-handover-image,
 .tk-cta-image {
     overflow: hidden;
-    border-radius: 30px;
-    box-shadow: 0 20px 58px rgba(54, 36, 23, 0.12);
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .tk-handover-image {
@@ -434,16 +498,16 @@ body.turnkey-page {
 
 .tk-handover-copy p {
     margin-top: 14px;
-    color: rgba(32, 26, 22, 0.74);
+    color: rgba(17, 17, 17, 0.74);
 }
 
 .tk-cta-panel {
     display: grid;
     grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
     gap: 28px;
-    border-radius: 30px;
+    border-radius: 0;
     padding: 18px;
-    background: rgba(255, 252, 248, 0.78);
+    background: rgba(255, 255, 255, 0.78);
 }
 
 .tk-cta-image {
@@ -453,6 +517,19 @@ body.turnkey-page {
 .tk-cta-copy {
     padding: 10px 4px 10px 4px;
     align-self: center;
+}
+
+.turnkey-page .tk-chip,
+.turnkey-page .tk-btn,
+.turnkey-page .tk-story-card,
+.turnkey-page .tk-route-switch,
+.turnkey-page .tk-route-card,
+.turnkey-page .tk-panorama-frame,
+.turnkey-page .tk-handover-image,
+.turnkey-page .tk-cta-image,
+.turnkey-page .tk-cta-panel {
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .turnkey-page .reveal {
@@ -508,17 +585,18 @@ body.turnkey-page {
 @media (max-width: 768px) {
     .tk-shell {
         width: calc(100% - 28px);
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .tk-hero {
-        height: 100vh;
-        min-height: 100vh;
-        padding-top: 104px;
+        min-height: 0;
+        padding-top: 102px;
         padding-bottom: 16px;
     }
 
-    .tk-hero-story {
-        min-height: calc(100vh - 120px);
+    .tk-hero-visual {
+        min-height: 320px;
     }
 
     .tk-hero-copy,
@@ -546,7 +624,7 @@ body.turnkey-page {
     }
 
     .tk-panorama-frame {
-        border-radius: 26px;
+        border-radius: 0;
     }
 
     .tk-panorama-image {
