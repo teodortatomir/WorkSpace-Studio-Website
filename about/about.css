@@ -79,6 +79,8 @@ body.about-page {
     display: block;
     padding-top: 80px;
     padding-bottom: 22px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .about-hero-visual {
@@ -336,15 +338,15 @@ body.about-page {
 
 .about-story-band {
     display: grid;
-    grid-template-columns: minmax(420px, 0.8fr) minmax(760px, 1.2fr);
-    gap: 56px;
+    grid-template-columns: minmax(420px, 0.9fr) minmax(620px, 1.1fr);
+    gap: 64px;
     align-items: center;
-    padding: 12px 0 110px;
+    padding: 12px 36px 110px;
 }
 
 .about-story-visuals {
     position: relative;
-    min-height: 700px;
+    min-height: 560px;
 }
 
 .about-accent-story {
@@ -355,24 +357,9 @@ body.about-page {
     display: none;
 }
 
-.about-story-image {
-    position: absolute;
-}
-
 .about-story-image-main {
-    top: 12px;
-    right: 0;
-    width: min(100%, 700px);
-    height: 540px;
-}
-
-.about-story-image-offset {
-    left: 40px;
-    bottom: 34px;
-    width: min(48%, 380px);
-    height: 292px;
-    border: 0;
-    z-index: 2;
+    width: 100%;
+    height: 560px;
 }
 
 .about-editorial-grid {
@@ -550,7 +537,7 @@ body.about-page {
     }
 
     .about-story-visuals {
-        min-height: 620px;
+        min-height: 560px;
     }
 
     .about-capabilities-grid {
@@ -593,6 +580,7 @@ body.about-page {
     .about-hero {
         gap: 24px;
         padding: 36px 0 56px;
+        width: 100%;
     }
 
     .about-hero-gallery,
@@ -604,7 +592,7 @@ body.about-page {
 
     .about-story-band {
         gap: 24px;
-        padding-bottom: 72px;
+        padding: 0 16px 72px;
     }
 
     .about-story-visuals {
@@ -621,10 +609,6 @@ body.about-page {
         right: auto;
         top: auto;
         bottom: auto;
-    }
-
-    .about-story-image-offset {
-        border-width: 0;
     }
 
     .hero-image-large,

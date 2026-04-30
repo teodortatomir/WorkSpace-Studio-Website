@@ -1009,6 +1009,7 @@ body .navbar.main-nav.visible-nav,
 body .navbar.main-nav.hidden-nav,
 body .navbar.main-nav.scrolled,
 body .navbar.main-nav.projects-nav {
+    height: 80px !important;
     transform: translateY(0) !important;
     opacity: 1 !important;
     pointer-events: all !important;
@@ -1019,16 +1020,38 @@ body .navbar.main-nav.projects-nav {
     -webkit-backdrop-filter: blur(18px);
 }
 
+body .navbar.main-nav .nav-container {
+    max-width: 1800px !important;
+    padding: 0 0.45% !important;
+}
+
+body .navbar.main-nav .nav-center {
+    gap: 30px !important;
+}
+
+body .navbar.main-nav .nav-right {
+    gap: 1px !important;
+}
+
+body .navbar.main-nav .logo-wrapper {
+    gap: 15px !important;
+}
+
 body .navbar.main-nav .workspace-logo {
+    height: 60px !important;
+    padding-right: 0 !important;
     filter: none !important;
     mix-blend-mode: normal !important;
 }
 
 body .navbar.main-nav .miller-dealer-logo {
+    height: 28px !important;
     filter: brightness(0) !important;
 }
 
 body .navbar.main-nav .nav-logo-separator {
+    height: 22px !important;
+    margin: 0 !important;
     background: rgba(24, 22, 19, 0.15) !important;
 }
 
