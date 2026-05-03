@@ -181,7 +181,7 @@ body.design-page {
 .design-cta-frame {
     position: relative;
     border: 1px solid rgba(17, 17, 17, 0.12);
-    background: rgba(255, 255, 255, 0.34);
+    background: rgba(255, 255, 255, 0.72);
     box-shadow: none;
 }
 
@@ -228,6 +228,7 @@ body.design-page {
     width: 100%;
     height: clamp(420px, 62vh, 720px);
     margin: 0;
+    border-radius: 0;
     background: #f4f1ec;
 }
 
@@ -329,60 +330,68 @@ body.design-page {
 
 .design-system-stage {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 20px;
-    padding: 18px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
     border-radius: 0;
-    border-left: 1px solid rgba(17, 17, 17, 0.12);
-    border-right: 1px solid rgba(17, 17, 17, 0.12);
-    background: linear-gradient(90deg, rgba(17, 17, 17, 0.06) 0%, rgba(255,255,255,0.28) 26%, rgba(17, 17, 17, 0.04) 100%);
+    border: 0;
+    background: transparent;
 }
 
 .design-system-nav {
     display: grid;
-    gap: 10px;
-    padding: 12px 0 12px 0;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    padding: 0;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-bottom: 0;
+    background: #fff;
 }
 
 .design-mode {
-    min-height: 56px;
+    min-height: 58px;
     padding: 0 18px;
-    border: 1px solid rgba(17, 17, 17, 0.12);
+    border: 0;
+    border-right: 1px solid rgba(17, 17, 17, 0.08);
     border-radius: 0;
-    background: rgba(255, 255, 255, 0.4);
-    color: rgba(17, 17, 17, 0.76);
+    background: #fff;
+    color: rgba(17, 17, 17, 0.74);
     font-weight: 700;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease;
 }
 
+.design-mode:last-child {
+    border-right: 0;
+}
+
 .design-mode:hover,
 .design-mode.is-active {
-    transform: translateX(4px);
-    background: rgba(17, 17, 17, 0.12);
-    border-color: rgba(17, 17, 17, 0.24);
-    color: #222222;
+    transform: none;
+    background: #201a16;
+    border-color: #201a16;
+    color: #f7f7f4;
 }
 
 .design-system-canvas {
     position: relative;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.54fr) minmax(0, 0.46fr);
     overflow: hidden;
-    min-height: 560px;
+    min-height: 400px;
+    max-height: 440px;
     border-radius: 0;
-    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    background: rgba(255, 255, 255, 0.78);
 }
 
 .design-canvas-lines {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
+    display: none;
 }
 
 .canvas-line {
-    position: absolute;
-    background: rgba(17, 17, 17, 0.4);
-    transition: transform 320ms ease, opacity 320ms ease, inset 320ms ease;
+    display: none;
 }
 
 .canvas-line-h {
@@ -477,26 +486,32 @@ body.design-page {
 }
 
 .design-canvas-image {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: min(58%, 760px);
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
     height: 100%;
+    min-height: 400px;
+    max-height: 440px;
     border-radius: 0;
     overflow: hidden;
     clip-path: none;
 }
 
 .design-canvas-copy {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: min(44%, 560px);
-    padding: 38px 30px 34px 30px;
-    border-right: 1px solid rgba(17, 17, 17, 0.12);
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    display: grid;
+    align-content: center;
+    width: auto;
+    min-height: 100%;
+    padding: 34px 38px;
+    border-right: 1px solid rgba(17, 17, 17, 0.08);
     border-radius: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(17, 17, 17, 0.06) 100%);
-    backdrop-filter: blur(8px);
+    background: #fff;
+    backdrop-filter: none;
 }
 
 .design-canvas-label,
@@ -512,14 +527,23 @@ body.design-page {
 .design-canvas-copy h3,
 .design-team-info h3 {
     margin-top: 14px;
-    font-size: clamp(2.2rem, 4vw, 4rem);
-    line-height: 0.92;
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.75rem, 2.4vw, 2.7rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.design-canvas-copy p {
+    max-width: 560px;
+    margin: 16px 0 0;
+    font-size: 1.02rem;
 }
 
 .design-hover-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
+    gap: 24px;
     margin-top: 0;
 }
 
@@ -529,18 +553,13 @@ body.design-page {
     border-radius: 0;
     overflow: hidden;
     transition: transform 240ms ease, border-color 240ms ease, background-color 240ms ease;
-    border-right: 0;
-    border-top: 0;
-    border-bottom: 0;
-    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    background: rgba(255, 255, 255, 0.72);
 }
 
 .design-hover-card::before,
 .design-hover-card::after {
-    content: "";
-    position: absolute;
-    background: rgba(17, 17, 17, 0.52);
-    transition: transform 280ms ease;
+    display: none;
 }
 
 .design-hover-card::before {
@@ -562,9 +581,9 @@ body.design-page {
 }
 
 .design-hover-card:hover {
-    transform: none;
-    border-color: rgba(17, 17, 17, 0.24);
-    background: rgba(17, 17, 17, 0.08);
+    transform: translateY(-3px);
+    border-color: rgba(17, 17, 17, 0.16);
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .design-hover-card:hover::before {
@@ -577,8 +596,11 @@ body.design-page {
 
 .design-hover-card h3 {
     margin-top: 18px;
-    font-size: 2.1rem;
-    line-height: 0.96;
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
 }
 
 .design-team {
@@ -818,45 +840,29 @@ body.design-page {
 .design-change-panel {
     position: relative;
     display: grid;
-    grid-template-columns: 120px minmax(0, 1.05fr) minmax(320px, 0.85fr);
+    grid-template-columns: 108px minmax(0, 1.05fr) minmax(320px, 0.85fr);
     gap: 22px;
     align-items: stretch;
-    min-height: 280px;
-    padding: 24px;
-    border: 1px solid rgba(17, 17, 17, 0.12);
+    min-height: 260px;
+    padding: 22px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
     border-radius: 0;
-    background:
-        linear-gradient(135deg, rgba(17, 17, 17, 0.06) 0%, rgba(255, 255, 255, 0.58) 38%, rgba(255, 255, 255, 0.34) 100%);
+    background: rgba(255, 255, 255, 0.78);
     overflow: hidden;
     transition: transform 260ms ease, border-color 260ms ease, background-color 260ms ease;
 }
 
 .design-change-panel::before {
-    content: "";
-    position: absolute;
-    left: 24px;
-    top: 24px;
-    bottom: 24px;
-    width: 1px;
-    background: linear-gradient(180deg, rgba(17, 17, 17, 0.42), rgba(17, 17, 17, 0.08));
+    display: none;
 }
 
 .design-change-panel::after {
-    content: "";
-    position: absolute;
-    inset: auto auto 22px 22px;
-    width: 74px;
-    height: 74px;
-    border-left: 1px solid rgba(17, 17, 17, 0.12);
-    border-bottom: 1px solid rgba(17, 17, 17, 0.12);
-    border-radius: 0;
-    opacity: 0.68;
-    transition: transform 260ms ease, opacity 260ms ease;
+    display: none;
 }
 
 .design-change-panel:hover {
     transform: translateY(-3px);
-    border-color: rgba(17, 17, 17, 0.22);
+    border-color: rgba(17, 17, 17, 0.16);
 }
 
 .design-change-panel:hover::after {
@@ -865,7 +871,7 @@ body.design-page {
 }
 
 .design-change-panel:nth-child(even) {
-    grid-template-columns: 120px minmax(320px, 0.85fr) minmax(0, 1.05fr);
+    grid-template-columns: 108px minmax(320px, 0.85fr) minmax(0, 1.05fr);
 }
 
 .design-change-panel:nth-child(even) .design-change-core {
@@ -883,7 +889,7 @@ body.design-page {
     flex-direction: column;
     justify-content: space-between;
     gap: 18px;
-    padding: 8px 0 8px 18px;
+    padding: 8px 0 8px 12px;
 }
 
 .design-change-number {
@@ -910,13 +916,16 @@ body.design-page {
     display: grid;
     align-content: center;
     gap: 10px;
-    padding: 14px 8px 14px 0;
+    padding: 12px 6px 12px 0;
 }
 
 .design-change-core h3 {
     margin: 0;
-    font-size: clamp(2.3rem, 4vw, 3.9rem);
-    line-height: 0.94;
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.9rem, 3vw, 3rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
 }
 
 .design-change-core p {
@@ -1058,6 +1067,7 @@ body.design-page {
 }
 
 .design-page .design-system-stage,
+.design-page .design-hero-visual,
 .design-page .design-hover-card,
 .design-page .design-team-slider,
 .design-page .design-team-card,
@@ -1084,6 +1094,22 @@ body.design-page {
         grid-template-columns: 1fr;
     }
 
+    .design-system-nav {
+        grid-template-columns: 1fr;
+        border-bottom: 0;
+    }
+
+    .design-mode {
+        min-height: 52px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+        text-align: left;
+    }
+
+    .design-mode:last-child {
+        border-bottom: 0;
+    }
+
     .design-hero-grid {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -1104,17 +1130,21 @@ body.design-page {
 
     .design-change-panel,
     .design-change-panel:nth-child(even) {
-        grid-template-columns: 96px 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "visual"
+            "meta"
+            "core";
     }
 
     .design-change-core,
     .design-change-panel:nth-child(even) .design-change-core {
-        order: 2;
+        order: initial;
     }
 
     .design-change-visual,
     .design-change-panel:nth-child(even) .design-change-visual {
-        order: 3;
+        order: initial;
         min-height: 240px;
         height: 240px;
     }
@@ -1142,8 +1172,11 @@ body.design-page {
     }
 
     .design-canvas-image {
+        grid-column: 1;
+        grid-row: 1;
         width: 100%;
         height: 300px;
+        min-height: 300px;
         left: 0;
         right: 0;
         top: 0;
@@ -1152,11 +1185,19 @@ body.design-page {
 
     .design-canvas-copy {
         position: relative;
+        grid-column: 1;
+        grid-row: 2;
         left: auto;
         bottom: auto;
         width: auto;
-        margin: 300px 0 0;
+        min-height: 0;
+        margin: 0;
         border-radius: 0 0 18px 18px;
+    }
+
+    .design-system-canvas {
+        grid-template-columns: 1fr;
+        min-height: 0;
     }
 }
 
