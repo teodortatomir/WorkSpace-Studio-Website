@@ -12,26 +12,33 @@ const materialStage = document.querySelector(".material-stage");
 const materialStageCopy = document.querySelector(".material-stage-copy");
 
 const materialContent = {
-    durability: {
-        label: "Durability First",
-        title: "A sustainable finish is one that still looks intelligent after years of real use.",
-        text: "Instead of chasing novelty, we look for surfaces, textiles, and furniture systems that age well, can be cleaned, repaired, and reconfigured, and avoid the replacement cycle created by fragile trend-led choices.",
+    certifications: {
+        label: "Certification Support",
+        title: "We translate certification goals into practical workplace specifications.",
+        text: "From product documentation and material selection to wellbeing criteria and responsible sourcing, we help the project team make choices that support recognised sustainability frameworks without losing design clarity.",
         image: "../projects-pictures/skytower-block.jpg",
-        alt: "Durable materials in office"
+        alt: "Certification-ready workplace interior"
     },
-    circularity: {
-        label: "Circular Thinking",
-        title: "The smartest sustainable object may be the one we keep, adapt, or restore.",
-        text: "Circularity is not only about recycled content. It is also about retention, refurbishment, modular systems, and planning interiors that can evolve without becoming demolition waste every time a team changes.",
+    solutions: {
+        label: "Sustainable Solutions",
+        title: "Sustainable offices are built from solutions that last, adapt, and perform.",
+        text: "We look at furniture, finishes, lighting, acoustic products, modular systems, refurbishment options, and responsible suppliers as one connected workplace ecosystem.",
         image: "../projects-pictures/tchibo.jpg",
-        alt: "Circular reuse in workplace design"
+        alt: "Sustainable workplace solutions"
     },
-    wellbeing: {
-        label: "Human Wellbeing",
-        title: "If people do not feel good in the space, the sustainability story is incomplete.",
-        text: "Lower-impact workplaces should support daylight, healthier materials, acoustics, comfort, and movement. These are sustainability decisions because they increase long-term use, satisfaction, and workplace resilience.",
+    office: {
+        label: "Sustainability In The Office",
+        title: "The most sustainable office is one people can use well for a long time.",
+        text: "Sustainability becomes tangible through daylight, comfort, acoustic balance, shared resources, repairable products, flexible planning, and daily behaviours that reduce waste.",
         image: "../projects-pictures/naos.jpg",
-        alt: "Healthy workplace with daylight"
+        alt: "Healthy sustainable office with daylight"
+    },
+    esg: {
+        label: "ESG Strategy",
+        title: "Workplace decisions can support environmental, social, and governance priorities.",
+        text: "We connect fit-out choices with wider ESG objectives by documenting responsible procurement, wellbeing outcomes, adaptability, material choices, and long-term operational value.",
+        image: "../projects-pictures/profi.jpg",
+        alt: "Office aligned with ESG strategy"
     }
 };
 
@@ -91,7 +98,9 @@ const metricObserver = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.45 });
 
-metricValues.forEach((metric) => metricObserver.observe(metric));
+metricValues.forEach((metric) => {
+    if (metric.dataset.count) metricObserver.observe(metric);
+});
 
 function updateMaterialStage(key) {
     const data = materialContent[key];
@@ -128,7 +137,7 @@ materialFilters.forEach((button) => {
     button.addEventListener("click", () => {
         materialFilters.forEach((entry) => entry.classList.remove("is-active"));
         button.classList.add("is-active");
-        updateMaterialStage(button.dataset.material || "durability");
+        updateMaterialStage(button.dataset.material || "certifications");
     });
 });
 

@@ -8,7 +8,7 @@ const hubCards = Array.from(document.querySelectorAll('.hub-story-card'));
 const filterButtons = document.querySelectorAll('.hub-chip');
 const loadMoreButton = document.getElementById('hubLoadMore');
 const pageSize = 8;
-let activeFilter = 'all';
+let activeFilter = 'physical';
 let visibleLimit = pageSize;
 
 document.querySelectorAll('.menu-img-item').forEach(img => {
@@ -59,7 +59,7 @@ hubCards.forEach((card, index) => {
 function getMatchingCards() {
     return hubCards.filter(card => {
         const tags = card.dataset.tags || '';
-        return activeFilter === 'all' || tags.includes(activeFilter);
+        return tags.split(/\s+/).includes(activeFilter);
     });
 }
 
@@ -77,7 +77,7 @@ function renderHubCards() {
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        activeFilter = button.dataset.filter || 'all';
+        activeFilter = button.dataset.filter || 'physical';
         visibleLimit = pageSize;
 
         filterButtons.forEach(entry => entry.classList.remove('is-active'));

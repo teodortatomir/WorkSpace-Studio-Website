@@ -884,11 +884,12 @@
 
 .hub-chip-row {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: stretch;
     gap: 0;
     margin: 0 auto;
     padding: 0;
+    width: min(760px, 100%);
     border: 1px solid rgba(17, 17, 17, 0.08);
     background: #fff;
 }
@@ -1093,6 +1094,7 @@
     .hub-chip-row {
         grid-template-columns: 1fr;
         gap: 0;
+        width: 100%;
     }
 
     .hub-chip {
