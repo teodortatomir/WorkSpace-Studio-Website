@@ -1755,16 +1755,16 @@ body.home-page .why-us-feature-copy p {
     width: min(1800px, calc(100% - 96px));
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.9fr) minmax(320px, 0.9fr);
+    grid-template-columns: minmax(0, 1.45fr) minmax(360px, 1fr);
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .about-feature-media {
     position: relative;
     display: block;
-    height: var(--feature-block-height);
-    align-self: start;
+    min-height: 430px;
+    align-self: stretch;
     overflow: hidden;
     color: #fff;
     text-decoration: none;
@@ -1775,7 +1775,7 @@ body.home-page .why-us-feature-copy p {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(8, 10, 12, 0.06) 0%, rgba(8, 10, 12, 0.18) 45%, rgba(8, 10, 12, 0.78) 100%);
+    background: linear-gradient(180deg, rgba(8, 10, 12, 0.05) 0%, rgba(8, 10, 12, 0.18) 48%, rgba(8, 10, 12, 0.76) 100%);
 }
 
 .about-feature-media img {
@@ -1804,8 +1804,8 @@ body.home-page .why-us-feature-copy p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: var(--feature-block-height);
-    padding: 44px 52px;
+    min-height: 430px;
+    padding: clamp(34px, 3vw, 54px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.03);
     text-align: left;
@@ -1814,36 +1814,38 @@ body.home-page .why-us-feature-copy p {
 
 .about-feature-kicker {
     display: inline-block;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     color: var(--accent-warm);
     font-size: 0.74rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     align-self: flex-start;
 }
 
-.about-feature-copy p {
-    color: rgba(255, 255, 255, 0.88);
-    font-size: clamp(1.05rem, 1.3vw, 1.45rem);
-    font-weight: 300;
-    line-height: 1.65;
-    letter-spacing: -0.3px;
-    max-width: none;
+.about-feature-lead {
+    max-width: 760px;
     margin: 0;
+    color: rgba(23, 23, 23, 0.82);
+    font-size: clamp(1.15rem, 1.52vw, 1.8rem);
+    font-weight: 300;
+    line-height: 1.32;
+    letter-spacing: -0.5px;
 }
 
-body.home-page .about-feature-copy p,
 body.home-page .insights-feature-copy p {
     color: rgba(23, 23, 23, 0.78);
 }
 
 .about-feature-link {
-    margin-top: 28px;
+    margin-top: 34px;
     width: fit-content;
     color: rgba(255, 255, 255, 0.86);
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
     text-decoration: none;
+    text-transform: uppercase;
     transition: color 0.25s ease, opacity 0.25s ease;
 }
 
@@ -1860,6 +1862,33 @@ body.home-page .insights-feature-link {
 body.home-page .about-feature-link:hover,
 body.home-page .insights-feature-link:hover {
     color: #171717;
+}
+
+.about-feature-statements {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(24, 22, 19, 0.12);
+}
+
+.about-feature-statements span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent-warm);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+}
+
+.about-feature-statements p {
+    margin: 0;
+    color: rgba(23, 23, 23, 0.66);
+    font-size: clamp(0.88rem, 0.82vw, 1rem);
+    font-weight: 300;
+    line-height: 1.52;
 }
 
 /* ==========================================================================
@@ -2768,11 +2797,11 @@ footer {
     }
 
     .about-feature-media {
-        height: var(--feature-block-height-mobile);
+        min-height: var(--feature-block-height-mobile);
     }
 
     .about-feature-copy {
-        height: var(--feature-block-height-mobile);
+        min-height: 0;
         padding: 28px 24px;
     }
 
@@ -2780,8 +2809,21 @@ footer {
         margin-bottom: 14px;
     }
 
-    .about-feature-copy p {
+    .about-feature-lead {
+        max-width: none;
         font-size: 1.08rem;
+        line-height: 1.45;
+    }
+
+    .about-feature-statements {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+
+    .about-feature-statements p {
+        font-size: 0.95rem;
     }
 
     .insights-feature-section {
