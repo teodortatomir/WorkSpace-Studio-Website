@@ -1144,7 +1144,7 @@ body.home-page .project-slider-card {
 }
 
 .project-slider-card-logo:hover > img {
-    filter: blur(10px) brightness(0.38) !important;
+    filter: blur(10px) brightness(1.16) saturate(0.42) contrast(0.82) !important;
 }
 
 .project-slider-card.is-peek {
@@ -1187,6 +1187,10 @@ body.home-page .project-slider-card {
     background: linear-gradient(180deg, rgba(6, 8, 10, 0) 0%, rgba(6, 8, 10, 0.82) 100%);
     pointer-events: none;
     transition: opacity 0.3s ease;
+}
+
+.project-slider-card-logo:hover::after {
+    opacity: 0;
 }
 
 .project-slider-overlay h3 {
@@ -1240,7 +1244,7 @@ body.home-page .project-slider-card {
 }
 
 .project-slider-card:hover .project-slider-overlay {
-    background: linear-gradient(180deg, rgba(10, 14, 18, 0) 44%, rgba(10, 14, 18, 0.26) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.9) 100%);
 }
 
 .project-slider-card:hover .project-slider-overlay .pivot-link {
@@ -2126,6 +2130,18 @@ body.home-page .insights-feature-link:hover {
     width: min(78%, 150px);
     max-height: 48px;
     object-fit: contain;
+}
+
+.home-partner-logo-omv img {
+    width: min(96%, 190px);
+    max-height: 62px;
+    transform: scale(1.45);
+}
+
+.home-partner-logo-panasonic img {
+    width: min(92%, 180px);
+    max-height: 58px;
+    transform: scale(1.38);
 }
 
 .home-partner-logo:hover,
