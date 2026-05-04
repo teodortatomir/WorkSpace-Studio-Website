@@ -4,16 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture | Workspace Studio</title>
+    <meta name="description" content="Furniture by Workspace Studio: 100+ partner brands, MillerKnoll certified dealer in Romania, and workplace furniture for workstations, meeting rooms, cafes, connecting spaces, and office pods.">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="furniture.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="why-us-page">
-        <section class="why-us-hero">
-            <span class="category-tag">What we do</span>
-            <h1>Furniture</h1>
-            <p>Curated furniture systems and pieces selected for focus, collaboration, ergonomics, and long-term use.</p>
+<body class="furniture-page">
+    <nav class="navbar main-nav visible-nav contact-nav-theme furniture-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle menu-open" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects">
+                        <a href="../projects-scene/proiecte.html">Projects</a>
+                        <div class="menu-subnav" aria-label="Projects submenu">
+                            <span class="menu-subnav-title">Projects</span>
+                            <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                            <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                            <a href="../projects-scene/proiecte.html">General Contracting</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services">
+                        <a href="../services/index.html">What we do</a>
+                        <div class="menu-subnav" aria-label="What we do submenu">
+                            <span class="menu-subnav-title">What we do</span>
+                            <a href="design-services.html">Design &amp; Build</a>
+                            <a href="general-contracting.html">General Contracting</a>
+                            <a href="furniture.html">Furniture</a>
+                            <a href="architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                            <a href="logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                            <a href="workplace-strategy.html">Workplace Strategy</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners">
+                        <a href="../why-us/index.html">Why us</a>
+                        <div class="menu-subnav" aria-label="Why us submenu">
+                            <span class="menu-subnav-title">Why us</span>
+                            <a href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a href="../sustainability/index.html">Sustainability</a>
+                            <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                            <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights">
+                        <a href="../insights/insights.html">News &amp; Insights</a>
+                        <div class="menu-subnav" aria-label="News and Insights submenu">
+                            <span class="menu-subnav-title">News &amp; Insights</span>
+                            <a href="../insights/press-releases.html">Press Releases</a>
+                            <a href="../insights/in-the-news.html">In the News</a>
+                            <a href="../insights/insights.html">Office Insights</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="furniture-main">
+        <section class="furniture-hero">
+            <div class="furniture-hero-grid">
+                <figure class="furniture-hero-media furniture-reveal">
+                    <img src="../furniture-photos/furniture-hero.jpg" alt="Modern workplace furniture and seating">
+                </figure>
+            </div>
         </section>
+
+        <section class="furniture-intro">
+            <div class="furniture-shell">
+                <div class="furniture-hero-copy">
+                    <span class="furniture-kicker">Furniture</span>
+                    <h1>Furniture that gives every workplace a clearer way to work.</h1>
+                    <p>100+ partner brands and MillerKnoll sole certified dealer in Romania, curated into furniture solutions for focus, collaboration, hospitality, and privacy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="furniture-proof">
+            <div class="furniture-shell furniture-proof-grid">
+                <article class="furniture-proof-card furniture-reveal">
+                    <span>100+</span>
+                    <p>partner brands selected for performance, design quality, ergonomics, and durability.</p>
+                </article>
+                <article class="furniture-proof-card furniture-proof-card-dark furniture-reveal">
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll Certified Dealer">
+                    <p>MillerKnoll certified dealer and premium furniture partner in Romania.</p>
+                </article>
+                <article class="furniture-proof-card furniture-reveal">
+                    <span>One</span>
+                    <p>integrated route from specification and budgeting to delivery, installation, and final adjustment.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="furniture-types">
+            <div class="furniture-shell">
+                <div class="furniture-section-head furniture-section-head-wide furniture-reveal">
+                    <span class="furniture-kicker">Work space types</span>
+                    <h2>Every setting asks for a different kind of support.</h2>
+                    <p>We shape furniture packages around how people actually use the office, not around isolated product categories.</p>
+                </div>
+                <div class="furniture-type-grid">
+                    <article class="furniture-type-card furniture-reveal furniture-reveal-left">
+                        <img src="../furniture-photos/individual-work-station.jpg" alt="Individual ergonomic workstation">
+                        <div>
+                            <h3>Individual work station</h3>
+                            <p>Ergonomic desks, chairs, monitor support, storage, and accessories that keep focused work comfortable through the day.</p>
+                        </div>
+                    </article>
+                    <article class="furniture-type-card furniture-reveal furniture-reveal-right">
+                        <img src="../projects-pictures/skytower-block.jpg" alt="Meeting room furniture">
+                        <div>
+                            <h3>Meeting Rooms</h3>
+                            <p>Tables, seating, technology support, and finishes for rooms that need to feel composed and perform reliably.</p>
+                        </div>
+                    </article>
+                    <article class="furniture-type-card furniture-reveal furniture-reveal-left">
+                        <img src="../projects-pictures/urbanbistro-isho.jpeg" alt="Cafeteria and cafe furniture">
+                        <div>
+                            <h3>Cafeteria &amp; cafes</h3>
+                            <p>Hospitality-inspired settings that make social time, lunch, and informal work feel natural.</p>
+                        </div>
+                    </article>
+                    <article class="furniture-type-card furniture-type-connecting furniture-reveal furniture-reveal-right">
+                        <img src="../furniture-photos/connecting-spaces.jpg" alt="Connecting spaces in workplace">
+                        <div>
+                            <h3>Connecting spaces</h3>
+                            <p>Soft seating, touchdown points, and casual collaboration zones that keep movement through the office useful.</p>
+                        </div>
+                    </article>
+                    <article class="furniture-type-card furniture-type-pods furniture-reveal furniture-reveal-left">
+                        <img src="../footer/focus-zones.jpg" alt="Office pods and focus zones">
+                        <div>
+                            <h3>Office Pods</h3>
+                            <p>Quiet rooms, phone booths, and acoustic pods for calls, focus, privacy, and fast changes in team behaviour.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="furniture.js"></script>
+    <script src="../menu-state.js"></script>
 </body>
 </html>
