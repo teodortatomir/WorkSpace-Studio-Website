@@ -40,6 +40,77 @@ menuLinks.forEach(link => {
     });
 });
 
+const approachModule = document.querySelector('.about-approach-system');
+
+if (approachModule) {
+    const approachImage = approachModule.querySelector('.about-approach-image img');
+    const approachCaptionTitle = approachModule.querySelector('.about-approach-image figcaption span');
+    const approachCaptionText = approachModule.querySelector('.about-approach-image figcaption p');
+    const approachButtons = approachModule.querySelectorAll('.about-approach-principles button');
+
+    const activateApproach = button => {
+        approachButtons.forEach(item => {
+            item.classList.toggle('active', item === button);
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+        });
+
+        if (approachImage) {
+            approachImage.style.objectPosition = button.dataset.focus || '50% 50%';
+        }
+
+        if (approachCaptionTitle) {
+            approachCaptionTitle.textContent = button.textContent.replace(/\s+/g, ' ').replace(/^\d+\s*/, '').trim();
+        }
+
+        if (approachCaptionText) {
+            approachCaptionText.textContent = button.dataset.caption || '';
+        }
+    };
+
+    approachButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => activateApproach(button));
+        button.addEventListener('focus', () => activateApproach(button));
+        button.addEventListener('click', () => activateApproach(button));
+    });
+}
+
+const ecosystemModule = document.querySelector('.about-showroom-knowledge');
+
+if (ecosystemModule) {
+    const ecosystemImage = ecosystemModule.querySelector('.about-showroom-panel img');
+    const ecosystemTitle = ecosystemModule.querySelector('.about-showroom-panel-copy h3');
+    const ecosystemText = ecosystemModule.querySelector('.about-showroom-panel-copy p');
+    const ecosystemButtons = ecosystemModule.querySelectorAll('.about-certification-grid button');
+
+    const focusPoints = ['48% 50%', '58% 50%', '68% 50%', '78% 50%'];
+
+    const activateEcosystem = button => {
+        ecosystemButtons.forEach((item, index) => {
+            const isActive = item === button;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+
+            if (isActive && ecosystemImage) {
+                ecosystemImage.style.objectPosition = focusPoints[index] || '50% 50%';
+            }
+        });
+
+        if (ecosystemTitle) {
+            ecosystemTitle.textContent = button.dataset.title || '';
+        }
+
+        if (ecosystemText) {
+            ecosystemText.textContent = button.dataset.description || '';
+        }
+    };
+
+    ecosystemButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => activateEcosystem(button));
+        button.addEventListener('focus', () => activateEcosystem(button));
+        button.addEventListener('click', () => activateEcosystem(button));
+    });
+}
+
 const revealElements = document.querySelectorAll('.reveal');
 
 revealElements.forEach((element, index) => {

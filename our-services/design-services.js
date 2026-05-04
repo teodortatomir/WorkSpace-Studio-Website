@@ -18,6 +18,13 @@ const teamNext = document.getElementById("teamNext");
 const teamCaptionRole = document.getElementById("teamCaptionRole");
 const teamCaptionName = document.getElementById("teamCaptionName");
 const teamCaptionText = document.getElementById("teamCaptionText");
+const designStepButtons = document.querySelectorAll(".design-step-button");
+const designStepLabel = document.getElementById("designStepLabel");
+const designStepTitle = document.getElementById("designStepTitle");
+const designStepText = document.getElementById("designStepText");
+const scrollRevealItems = document.querySelectorAll(
+    ".design-section-head, .design-step-interactive, .design-scale-image, .design-scale-story, .design-budget-intro, .design-budget-axis span, .design-budget-focus, .design-budget-actions span"
+);
 
 const designModesContent = {
     planning: {
@@ -78,6 +85,34 @@ const teamContent = [
     }
 ];
 
+const designStepContent = {
+    brief: {
+        label: "01 / Brief",
+        title: "The project starts with the right questions.",
+        text: "We clarify business goals, workplace needs, priorities, constraints, and the criteria that will guide every design decision."
+    },
+    planning: {
+        label: "02 / Planning",
+        title: "The layout turns requirements into a working route.",
+        text: "Test-fits, zoning, adjacency, and circulation studies help the team understand how the future workplace can operate before the concept is fixed."
+    },
+    concept: {
+        label: "03 / Concept",
+        title: "The spatial language becomes visible.",
+        text: "Architecture, materials, atmosphere, furniture direction, and brand cues are shaped into one clear design intent."
+    },
+    technical: {
+        label: "04 / Technical",
+        title: "The idea is translated into buildable detail.",
+        text: "Drawings, specifications, MEP coordination, tolerances, and implementation logic protect the concept during delivery."
+    },
+    handover: {
+        label: "05 / Handover",
+        title: "The final workplace is checked as one coherent whole.",
+        text: "Site alignment, final adjustments, supplier coordination, and handover details close the gap between design intent and daily use."
+    }
+};
+
 let currentTeamSlide = 0;
 let teamAutoplay;
 
@@ -117,6 +152,12 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
+scrollRevealItems.forEach((item, index) => {
+    item.classList.add("scroll-reveal");
+    item.style.setProperty("--reveal-order", index % 6);
+    revealObserver.observe(item);
+});
+
 function setDesignMode(mode) {
     const content = designModesContent[mode];
     if (!content || !designSystemStage || !designCanvasImage || !designCanvasLabel || !designCanvasTitle || !designCanvasText) {
@@ -137,6 +178,28 @@ function setDesignMode(mode) {
 
 designModes.forEach((button) => {
     const activate = () => setDesignMode(button.dataset.mode);
+    button.addEventListener("mouseenter", activate);
+    button.addEventListener("focus", activate);
+    button.addEventListener("click", activate);
+});
+
+function setProjectStep(step) {
+    const content = designStepContent[step];
+    if (!content || !designStepLabel || !designStepTitle || !designStepText) {
+        return;
+    }
+
+    designStepButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.step === step);
+    });
+
+    designStepLabel.textContent = content.label;
+    designStepTitle.textContent = content.title;
+    designStepText.textContent = content.text;
+}
+
+designStepButtons.forEach((button) => {
+    const activate = () => setProjectStep(button.dataset.step);
     button.addEventListener("mouseenter", activate);
     button.addEventListener("focus", activate);
     button.addEventListener("click", activate);
