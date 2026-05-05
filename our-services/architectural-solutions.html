@@ -7,7 +7,7 @@
     <meta name="description" content="Architectural solutions by Workspace Studio: partitions, acoustic systems, doors, and focus layers shaped as part of the architecture, not added after it.">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="architectural-solutions.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="arch-page">
     <nav class="navbar main-nav visible-nav contact-nav-theme arch-nav" aria-label="Primary navigation">
@@ -122,71 +122,82 @@
 
     <main class="arch-main">
         <section class="arch-hero">
-            <div class="arch-shell arch-hero-layout">
-                <div class="arch-hero-copy">
-                    <span class="arch-kicker arch-kicker-dark">Architectural Solutions</span>
-                    <h1>Architectural systems that keep the workplace clear, quiet, and easy to use.</h1>
-                    <p>We integrate partitions, acoustic layers, doors, and retreat spaces so the office feels structured without becoming heavy.</p>
-                </div>
-                <figure class="arch-hero-image">
-                    <img src="arhitectural-solutions/arhitect1.jpg" alt="Architectural glass systems in workplace design">
-                </figure>
+            <figure class="arch-hero-visual reveal reveal-up">
+                <img src="arhitectural-solutions/arhitect1.jpg" alt="Architectural products and solutions for workplace interiors">
+            </figure>
+        </section>
+
+        <section class="arch-intro">
+            <div class="arch-shell arch-intro-copy">
+                <span>Expertise / Architectural products &amp; solutions</span>
+                <h1>Architectural products that make the workplace clearer, quieter, and easier to adapt.</h1>
+                <p>Flooring, partitions, office pods, acoustic products, window blinds, curtains, signage, and specialist details are selected as one architectural layer, not as separate afterthoughts.</p>
             </div>
         </section>
 
-        <section class="arch-systems">
+        <section class="arch-products" aria-label="Architectural product categories">
             <div class="arch-shell">
-                <div class="arch-section-head">
-                    <span class="arch-kicker arch-kicker-dark">What We Shape</span>
-                    <h2>Four service directions that shape a workplace more clearly.</h2>
+                <div class="arch-products-layout reveal reveal-up">
+                    <div class="arch-product-panel">
+                        <div class="arch-product-copy">
+                            <span id="archProductIndex">Flooring</span>
+                            <h2 id="archProductTitle">The floor sets the rhythm of the workplace.</h2>
+                            <p id="archProductText">We select flooring by durability, acoustic behaviour, maintenance, movement, visual zoning, and long-term replacement logic.</p>
+                        </div>
+                        <div class="arch-product-nav" role="tablist" aria-label="Architectural products">
+                            <button class="arch-product-button is-active" type="button" data-product="flooring" aria-selected="true">Flooring</button>
+                            <button class="arch-product-button" type="button" data-product="partitions" aria-selected="false">Partitions</button>
+                            <button class="arch-product-button" type="button" data-product="pods" aria-selected="false">Office Pods</button>
+                            <button class="arch-product-button" type="button" data-product="acoustic" aria-selected="false">Acoustic Products</button>
+                            <button class="arch-product-button" type="button" data-product="details" aria-selected="false">Blinds, curtains, signage &amp; other</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="arch-systems-grid">
-                    <article class="arch-system-card">
-                        <h3>Workspace Consultancy</h3>
-                        <p>We define what the workplace needs to support now and how it should evolve as the company grows.</p>
+            </div>
+        </section>
+
+        <section class="arch-logic">
+            <div class="arch-shell arch-logic-grid">
+                <div class="arch-logic-copy reveal reveal-left">
+                    <span class="arch-section-label">System Logic</span>
+                    <h2>Products are specified as part of the architecture.</h2>
+                    <p>Every layer has to work with the next one: floor finishes, glass lines, acoustic comfort, privacy, daylight control, wayfinding, and future change. The result should feel calm, precise, and easy to maintain.</p>
+                </div>
+                <div class="arch-logic-points reveal reveal-right">
+                    <article>
+                        <span>01</span>
+                        <h3>Performance</h3>
+                        <p>Durability, comfort, sound, light, maintenance, and daily use are assessed before product selection.</p>
                     </article>
-                    <article class="arch-system-card">
-                        <h3>Space Planning</h3>
-                        <p>We organize the layout so teams, circulation, and future change all work more intelligently together.</p>
+                    <article>
+                        <span>02</span>
+                        <h3>Integration</h3>
+                        <p>Products are coordinated with layout, MEP constraints, visual language, procurement, and installation.</p>
                     </article>
-                    <article class="arch-system-card">
-                        <h3>Design Services</h3>
-                        <p>We translate operational needs into a workplace that feels coherent, human, and visually resolved.</p>
-                    </article>
-                    <article class="arch-system-card">
-                        <h3>Design and Build</h3>
-                        <p>We connect concept, planning, costing, and implementation into one clearer project route.</p>
+                    <article>
+                        <span>03</span>
+                        <h3>Adaptability</h3>
+                        <p>Modular and serviceable solutions help the office evolve without unnecessary waste or disruption.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="arch-focus">
-            <div class="arch-shell arch-focus-layout">
-                <figure class="arch-focus-image">
-                    <img src="arhitectural-solutions/arhitect2.jpg" alt="Workspace Studio architectural office panorama">
-                </figure>
-                <div class="arch-focus-copy">
-                    <span class="arch-kicker arch-kicker-dark">Why It Matters</span>
-                    <h2>The goal is not more architecture. The goal is a calmer office.</h2>
-                    <p>Good systems improve privacy, movement, and concentration without asking people to think about them constantly. They make the workplace easier to understand from the first day.</p>
-                    <ul class="arch-focus-list">
-                        <li>Clearer zoning</li>
-                        <li>Better acoustic comfort</li>
-                        <li>More consistent visual quality</li>
-                    </ul>
+        <section class="arch-brands">
+            <div class="arch-shell">
+                <div class="arch-brands-head reveal reveal-up">
+                    <span class="arch-section-label">Brands</span>
+                    <h2>A curated network for architectural workplace systems.</h2>
+                    <p>We work with partner brands across flooring, partitions, pods, acoustic products, shading, curtains, signage, and specialist workplace elements, choosing solutions by fit, quality, documentation, and commercial logic.</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="arch-cta">
-            <div class="arch-shell arch-cta-panel">
-                <div class="arch-cta-copy">
-                    <span class="arch-kicker arch-kicker-dark">Next Step</span>
-                    <h2>Plan the architectural layer early, and the whole office works better.</h2>
-                    <p>If you want the space to feel coherent from the start, we can shape the right architectural system with you.</p>
+                <div class="arch-brand-grid reveal reveal-up" aria-label="Architectural products brand categories">
+                    <span>Flooring partners</span>
+                    <span>Partition systems</span>
+                    <span>Office pod manufacturers</span>
+                    <span>Acoustic specialists</span>
+                    <span>Blinds &amp; curtain suppliers</span>
+                    <span>Signage &amp; detail makers</span>
                 </div>
-                <a href="../contact/contact.html" class="arch-link">Talk to Workspace Studio</a>
             </div>
         </section>
     </main>
@@ -196,7 +207,7 @@
             <div class="site-footer-top">
                 <nav class="site-footer-nav" aria-label="Footer navigation">
                     <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
-          <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
                     <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
                     <a class="site-footer-link" href="../about/about.html">About</a>
                     <a class="site-footer-link" href="../insights/insights.html">Insights</a>
@@ -216,8 +227,7 @@
         </div>
     </footer>
 
-    <script src="architectural-solutions.js"></script>
+    <script src="architectural-solutions.js?v=2"></script>
     <script src="../menu-state.js"></script>
 </body>
 </html>
-
