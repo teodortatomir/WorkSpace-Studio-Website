@@ -1,0 +1,337 @@
+body.press-release-page {
+    background: #fff;
+    color: #171717;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+.press-main {
+    padding-top: 80px;
+    background: #fff;
+}
+
+.press-hero-media,
+.press-hero-copy,
+.press-article {
+    width: min(100% - 72px, 1180px);
+    margin: 0 auto;
+}
+
+.press-hero-media {
+    width: 100%;
+    height: clamp(420px, 58vh, 680px);
+    margin: 0;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.press-hero-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.press-hero-copy {
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+    padding: 54px 0 70px;
+    text-align: center;
+}
+
+.press-hero-copy span,
+.press-section-label {
+    color: rgba(17, 17, 17, 0.48);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.press-release-page .nav-right .press-section-label {
+    display: none;
+}
+
+.press-bottom-link {
+    position: static;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #171717;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: none;
+}
+
+.press-next-links a + a {
+    position: relative;
+    padding-left: 34px;
+}
+
+.press-next-links a + a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 18px;
+    background: rgba(17, 17, 17, 0.3);
+    transform: translateY(-50%);
+}
+
+.press-hero-copy h1 {
+    max-width: 980px;
+    margin: 0;
+    color: #171717;
+    font-size: 4.2rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.press-hero-copy p {
+    max-width: 760px;
+    margin: 0;
+    color: rgba(17, 17, 17, 0.68);
+    font-size: 1.08rem;
+    line-height: 1.72;
+}
+
+.press-article {
+    display: block;
+    max-width: 980px;
+    padding-bottom: 94px;
+}
+
+.press-sidebar {
+    display: none;
+}
+
+.press-sidebar a {
+    color: #171717;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.press-content {
+    display: grid;
+    gap: 24px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.press-content h2 {
+    margin: 38px 0 0;
+    color: #171717;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0;
+}
+
+.press-content p {
+    margin: 0;
+    color: rgba(17, 17, 17, 0.76);
+    font-size: 1.06rem;
+    line-height: 1.9;
+}
+
+.press-content blockquote {
+    margin: 18px 0;
+    padding: 28px 0 28px 34px;
+    border-left: 1px solid #171717;
+    color: #171717;
+    font-size: 1.22rem;
+    line-height: 1.72;
+}
+
+.press-contact {
+    margin-top: 24px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.press-next {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+    gap: 48px;
+    padding: 0 36px 96px;
+}
+
+.press-next-links {
+    display: flex;
+    justify-self: end;
+    justify-content: flex-end;
+    gap: 34px;
+}
+
+.press-next a {
+    color: #171717;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.press-list {
+    width: min(100% - 72px, 1500px);
+    margin: 0 auto;
+    padding: 0 0 110px;
+}
+
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(24, 22, 19, 0.18);
+    border-left: 1px solid rgba(24, 22, 19, 0.18);
+}
+
+.press-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 330px;
+    padding: 30px;
+    border-right: 1px solid rgba(24, 22, 19, 0.18);
+    border-bottom: 1px solid rgba(24, 22, 19, 0.18);
+    background: #fff;
+    color: #171717;
+    text-decoration: none;
+    transition: background 0.24s ease, color 0.24s ease;
+}
+
+.press-card:hover,
+.press-card:focus-visible {
+    background: #171717;
+    color: #fff;
+}
+
+.press-card img {
+    display: none;
+}
+
+.press-card-copy {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    min-height: 100%;
+}
+
+.press-card-copy h2 {
+    margin: 0;
+    font-size: clamp(1.28rem, 1.55vw, 1.82rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+.press-card-copy p {
+    align-self: end;
+    margin: 0;
+    color: rgba(17, 17, 17, 0.68);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.press-card-copy .press-section-label {
+    padding-top: 0;
+}
+
+.press-card:hover .press-section-label,
+.press-card:focus-visible .press-section-label,
+.press-card:hover .press-card-copy p,
+.press-card:focus-visible .press-card-copy p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 1024px) {
+    .press-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .press-card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .press-main {
+        padding-top: 78px;
+    }
+
+    .press-hero-copy,
+    .press-article,
+    .press-list {
+        width: calc(100% - 32px);
+    }
+
+    .press-next {
+        width: 100vw;
+        padding: 0 16px 72px;
+        gap: 24px;
+    }
+
+    .press-hero-media {
+        height: 320px;
+    }
+
+    .press-hero-copy {
+        padding: 38px 0 52px;
+    }
+
+    .press-hero-copy h1 {
+        font-size: 2.35rem;
+        line-height: 1.06;
+    }
+
+    .press-content h2 {
+        font-size: 1.55rem;
+    }
+
+    .press-content blockquote {
+        padding-left: 20px;
+        font-size: 1.08rem;
+    }
+
+    .press-card {
+        min-height: 0;
+        padding: 26px 0;
+        border-right: 0;
+        box-shadow: none;
+    }
+
+    .press-card:hover,
+    .press-card:focus-visible {
+        box-shadow: none;
+    }
+
+    .press-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(24, 22, 19, 0.14);
+    }
+
+    .press-card-copy {
+        gap: 18px;
+    }
+}

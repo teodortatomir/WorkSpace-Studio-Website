@@ -4,16 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workplace Strategy | Workspace Studio</title>
+    <meta name="description" content="Workplace strategy by Workspace Studio: space analysis, organisational goals, workflows, culture, operational challenges, transformation opportunities, and stakeholder alignment.">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="workplace-strategy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="why-us-page">
-        <section class="why-us-hero">
-            <span class="category-tag">What we do</span>
-            <h1>Workplace Strategy</h1>
-            <p>Evidence-led decisions about how teams focus, meet, move, and grow inside a better workplace.</p>
+<body class="strategy-page">
+    <nav class="navbar main-nav visible-nav contact-nav-theme strategy-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle menu-open" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects">
+                        <a href="../projects-scene/proiecte.html">Projects</a>
+                        <div class="menu-subnav" aria-label="Projects submenu">
+                            <span class="menu-subnav-title">Projects</span>
+                            <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                            <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                            <a href="../projects-scene/proiecte.html">General Contracting</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services">
+                        <a href="../services/index.html">What we do</a>
+                        <div class="menu-subnav" aria-label="What we do submenu">
+                            <span class="menu-subnav-title">What we do</span>
+                            <a href="../our-services/design-services.html">Design &amp; Build</a>
+                            <a href="../our-services/general-contracting.html">General Contracting</a>
+                            <a href="../our-services/furniture.html">Furniture</a>
+                            <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                            <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                            <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners">
+                        <a href="../why-us/index.html">Why us</a>
+                        <div class="menu-subnav" aria-label="Why us submenu">
+                            <span class="menu-subnav-title">Why us</span>
+                            <a href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a href="../sustainability/index.html">Sustainability</a>
+                            <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                            <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights">
+                        <a href="../insights/insights.html">News &amp; Insights</a>
+                        <div class="menu-subnav" aria-label="News and Insights submenu">
+                            <span class="menu-subnav-title">News &amp; Insights</span>
+                            <a href="../insights/press-releases.html">Press Releases</a>
+                            <a href="../insights/in-the-news.html">In the News</a>
+                            <a href="../insights/insights.html">Office Insights</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="strategy-main">
+        <section class="strategy-hero">
+            <figure class="strategy-hero-visual">
+                <img src="../projects-pictures/leading-it.jpg" alt="Workplace strategy for a bright collaborative office">
+            </figure>
+        </section>
+
+        <section class="strategy-intro">
+            <div class="strategy-shell strategy-intro-copy">
+                <span>Expertise / Workplace strategy</span>
+                <h1>Workplace strategy turns business ambition into a clear spatial brief.</h1>
+                <p>We help leadership teams understand how the organisation works today, what needs to change, and how the future workplace should support people, operations, culture, and growth.</p>
+                <p class="strategy-intro-note">Strategy connects the evidence on the table with the reality of the workplace: how people meet, focus, move, share space, and make the office useful again.</p>
+            </div>
+        </section>
+
+        <section class="strategy-scope" aria-label="Workplace strategy scope">
+            <div class="strategy-shell">
+                <div class="strategy-scope-head reveal reveal-up">
+                    <span class="strategy-section-label">Scope</span>
+                    <h2>A clear path from current reality to project direction.</h2>
+                </div>
+                <div class="strategy-scope-list reveal reveal-up">
+                    <article>
+                        <div class="strategy-scope-marker" aria-hidden="true">01</div>
+                        <div>
+                            <span>Space analysis</span>
+                            <p>We study the existing workplace, capacity, adjacencies, occupancy patterns, constraints, and how the office is actually used day to day.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="strategy-scope-marker" aria-hidden="true">02</div>
+                        <div>
+                            <span>Organisational goals, workflows and culture</span>
+                            <p>We clarify how teams work, what leadership wants to achieve, and which cultural behaviours the workplace needs to make easier.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="strategy-scope-marker" aria-hidden="true">03</div>
+                        <div>
+                            <span>Operational challenges and transformation opportunities</span>
+                            <p>We identify friction points, underused areas, future risks, and moments where a different workplace model can improve performance.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="strategy-scope-marker" aria-hidden="true">04</div>
+                        <div>
+                            <span>Project definition and stakeholder alignment</span>
+                            <p>We establish the project ambition, decision logic, priorities, and shared understanding needed before design, budget, and implementation move forward.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="strategy-method">
+            <div class="strategy-shell">
+                <div class="strategy-method-head reveal reveal-up">
+                    <span class="strategy-section-label">Method</span>
+                    <h2>From insight to a usable brief.</h2>
+                    <p>We keep the process simple: understand the organisation, read how the workplace performs, then turn the evidence into clear decisions for the next stage.</p>
+                </div>
+                <div class="strategy-method-layout">
+                    <figure class="strategy-method-image reveal reveal-left" data-scroll-image>
+                        <img src="consultancy-pictures/consultancy-2.jpg" alt="Workplace strategy discussion and planning table">
+                    </figure>
+                    <div class="strategy-method-steps reveal reveal-right" data-scroll-panel>
+                        <article data-scroll-step>
+                            <span>Understand</span>
+                            <p>Leadership interviews, stakeholder input, workplace observations, and operational context.</p>
+                        </article>
+                        <article data-scroll-step>
+                            <span>Interpret</span>
+                            <p>Space use, workflows, constraints, behaviours, pressure points, and opportunities for change.</p>
+                        </article>
+                        <article data-scroll-step>
+                            <span>Direct</span>
+                            <p>Shared priorities, decision criteria, project ambition, and the brief that guides the next stage.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="workplace-strategy.js"></script>
+    <script src="../menu-state.js"></script>
 </body>
 </html>

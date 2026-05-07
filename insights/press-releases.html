@@ -1,25 +1,239 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Press Releases | Workspace Studio</title>
+    <meta name="description" content="Workspace Studio press releases about company growth, ergonomics, human-centric design, and the office fit-out market.">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="insights.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="press-release.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="insights-page insights-subpage">
-    <main class="why-us-page">
-        <section class="why-us-hero">
-            <span class="category-tag">News &amp; Insights</span>
-            <h1>Press Releases</h1>
-            <p>Official updates, announcements, and company news from Workspace Studio.</p>
+<body class="insights-page press-release-page">
+    <nav class="navbar main-nav visible-nav contact-nav-theme">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link"><img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo"></a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects" alt="">
+                <img src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services" alt="">
+                <img src="../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners" alt="">
+                <img src="../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about" alt="">
+                <img src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights" alt="">
+                <img src="../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop" alt="">
+                <img src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact" alt="">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects"><a href="../projects-scene/proiecte.html">Projects</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services"><a href="../services/index.html">What we do</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners"><a href="../why-us/index.html">Why us</a></div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights"><a href="insights.html">News &amp; Insights</a></div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="insights-main">
+        <section class="insights-hub-hero">
+            <figure class="hub-hero-media reveal reveal-up">
+                <img src="../projects-pictures/workspace-studio.jpg" alt="Workspace Studio press releases">
+            </figure>
         </section>
-        <nav class="insights-section-tabs" aria-label="News and insights sections">
+
+        <section class="insights-page-intro">
+            <div class="hub-hero-copy reveal reveal-up">
+                <span>Press Releases</span>
+                <h1>Official Workspace Studio press releases.</h1>
+                <p>Company updates, market context, ergonomics, and human-centric workplace design announcements.</p>
+            </div>
+        </section>
+
+        <nav class="insights-section-tabs reveal reveal-up" aria-label="News and insights sections">
             <a href="press-releases.html" class="is-active">Press releases</a>
             <a href="newsroom.html">In the news</a>
             <a href="insights.html">Office insights</a>
         </nav>
+
+        <section class="press-list" aria-label="Press releases">
+            <div class="press-grid">
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-4-milioane-2017.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">May 2018</span>
+                        <h2>Workspace Studio reached EUR 4 million in revenue in 2017.</h2>
+                        <p>A 60% increase compared with 2016, followed by positive momentum in Q1 2018.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-235-milioane-primele-6-luni-2018.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">August 2018</span>
+                        <h2>Workspace Studio reached EUR 2.35 million in the first six months.</h2>
+                        <p>Ergonomics, acoustic solutions, and talent competition continue to drive office investment.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-53-milioane-2018.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">January 2018</span>
+                        <h2>Workspace Studio reached EUR 5.3 million in revenue in 2018.</h2>
+                        <p>Growth of 30%, driven by integrated projects, ergonomic furniture, and premium fit-out.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-lanseaza-cosm-herman-miller.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">April 2019</span>
+                        <h2>Workspace Studio launches Cosm, Herman Miller’s newest ergonomic chair.</h2>
+                        <p>The self-adjusting model arrives in Romania after 10 years of research.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/orientarea-catre-ergonomie-afaceri-35-milioane-2019.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">July 2019</span>
+                        <h2>Focus on ergonomics brought revenue to EUR 3.5 million.</h2>
+                        <p>The first half of 2019 brought 25% growth and more lounge-oriented projects.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/cosm-red-dot-best-of-the-best.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">August 2019</span>
+                        <h2>The Cosm chair received Red Dot Best of the Best.</h2>
+                        <p>An award recognizing innovation, ergonomics, and product design.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-107-milioane-2019.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">January 2018</span>
+                        <h2>Workspace Studio doubled its revenue in 2019.</h2>
+                        <p>Turnover reached EUR 10.7 million, compared with EUR 5.3 million in 2018.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/allspace-interiors-divizie-fitout.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">March 2020</span>
+                        <h2>Workspace Studio expands in the fit-out segment.</h2>
+                        <p>The group launches Allspace Interiors, a division focused on construction and interior works.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/recomandari-revenire-in-siguranta-la-birou.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">May 2020</span>
+                        <h2>5 recommendations for a safe return to the office.</h2>
+                        <p>Workspace Studio publishes an eBook with measures and workplace reconfiguration examples.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/extindere-portofoliu-retail-hay.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">June 2020</span>
+                        <h2>Workspace Studio expands its portfolio into retail.</h2>
+                        <p>Demand for home-office furniture grows, and the portfolio now includes over 200 HAY products.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-shop-online-ergonomie.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">October 2020</span>
+                        <h2>Workspace Studio reached EUR 6.5 million in the first nine months.</h2>
+                        <p>The company enters online retail with a shop dedicated to ergonomic products.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-9-milioane-2020.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">February 2020</span>
+                        <h2>Workspace Studio reached EUR 9 million in revenue in 2020.</h2>
+                        <p>The company invested EUR 350,000 during the pandemic to expand the showroom and launch e-retail.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-open-office-ergonomic-trends-2021.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">February 2021</span>
+                        <h2>The new open office is airier, multifunctional and more ergonomic.</h2>
+                        <p>Workspace Studio outlines trends in ergonomic office design for hybrid work.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/mihaela-petrescu-business-development-director.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">November 2021</span>
+                        <h2>Mihaela Petrescu becomes Business Development Director.</h2>
+                        <p>The fit-out budget per workstation has increased by 30% compared with pre-pandemic levels.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/grupul-workspace-studio-afaceri-10-milioane-2021.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">February 2022</span>
+                        <h2>Workspace Studio Group reached EUR 10 million in revenue in 2021.</h2>
+                        <p>Office projects became smaller in area, with fewer workstations and higher quality.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-certified-dealer-millerknoll.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">June 2022</span>
+                        <h2>Workspace Studio becomes a MillerKnoll Certified Dealer.</h2>
+                        <p>The company expands its premium design portfolio across office, residential and commercial projects.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/companii-investesc-spatii-verzi-terase-2022.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">October 2022</span>
+                        <h2>Companies invest in green spaces, terraces and generous social areas.</h2>
+                        <p>Workspace Studio reached EUR 10 million in revenue in the first nine months of the year.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-225-milioane-2022.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">February 2023</span>
+                        <h2>Workspace Studio reached EUR 22.5 million in revenue in 2022.</h2>
+                        <p>Growth was driven by premium solutions for high-quality office fit-outs.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer insights-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="insights.html">Back to Insights</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="insights.js"></script>
+    <script src="../menu-state.js"></script>
 </body>
 </html>
