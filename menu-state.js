@@ -5,11 +5,36 @@
         const items = Array.from(menu.querySelectorAll(".menu-nav-item"));
         const submenuItems = items.filter((item) => item.querySelector(".menu-subnav"));
         const panel = document.createElement("div");
+        const mobileQuery = window.matchMedia("(max-width: 768px)");
 
         panel.className = "menu-subnav-panel";
         panel.setAttribute("aria-live", "polite");
         menu.appendChild(panel);
         menu.classList.add("has-state-panel");
+
+        submenuItems.forEach((item) => {
+            const submenu = item.querySelector(".menu-subnav");
+            const label = item.querySelector(":scope > a")?.textContent?.trim() || "submenu";
+            const toggle = document.createElement("button");
+            const submenuId = `submenu-${Math.random().toString(36).slice(2, 9)}`;
+
+            submenu.id = submenu.id || submenuId;
+            toggle.className = "menu-subnav-toggle";
+            toggle.type = "button";
+            toggle.setAttribute("aria-label", `Toggle ${label} submenu`);
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-controls", submenu.id);
+
+            item.insertBefore(toggle, submenu);
+        });
+
+        const closeMobileSiblings = (activeItem) => {
+            submenuItems.forEach((item) => {
+                if (item === activeItem) return;
+                item.classList.remove("is-mobile-open");
+                item.querySelector(".menu-subnav-toggle")?.setAttribute("aria-expanded", "false");
+            });
+        };
 
         const activateItem = (item) => {
             if (!item) return;
@@ -32,15 +57,30 @@
         };
 
         menu.addEventListener("pointerover", (event) => {
+            if (mobileQuery.matches) return;
             const item = event.target.closest(".menu-nav-item");
             if (!item || !menu.contains(item)) return;
             activateItem(item);
         });
 
         menu.addEventListener("focusin", (event) => {
+            if (mobileQuery.matches) return;
             const item = event.target.closest(".menu-nav-item");
             if (!item || !menu.contains(item)) return;
             activateItem(item);
+        });
+
+        menu.addEventListener("click", (event) => {
+            const toggle = event.target.closest(".menu-subnav-toggle");
+            if (!toggle || !menu.contains(toggle)) return;
+
+            const item = toggle.closest(".menu-nav-item");
+            const willOpen = !item.classList.contains("is-mobile-open");
+            event.preventDefault();
+            event.stopPropagation();
+            closeMobileSiblings(item);
+            item.classList.toggle("is-mobile-open", willOpen);
+            toggle.setAttribute("aria-expanded", String(willOpen));
         });
 
         if (!submenuItems.some((item) => item.classList.contains("is-active"))) {

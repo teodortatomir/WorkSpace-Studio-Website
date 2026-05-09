@@ -219,6 +219,10 @@ body.press-release-page {
     transition: background 0.24s ease, color 0.24s ease;
 }
 
+.press-card[hidden] {
+    display: none !important;
+}
+
 .press-card:hover,
 .press-card:focus-visible {
     background: #171717;
@@ -261,6 +265,34 @@ body.press-release-page {
 .press-card:hover .press-card-copy p,
 .press-card:focus-visible .press-card-copy p {
     color: rgba(255, 255, 255, 0.72);
+}
+
+.press-load-more-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 42px;
+}
+
+.press-load-more {
+    min-height: 46px;
+    padding: 0 24px;
+    border: 1px solid rgba(24, 22, 19, 0.22);
+    background: transparent;
+    color: #171717;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.24s ease, color 0.24s ease, border-color 0.24s ease;
+}
+
+.press-load-more:hover,
+.press-load-more:focus-visible {
+    border-color: #171717;
+    background: #171717;
+    color: #ffffff;
 }
 
 @media (max-width: 1024px) {

@@ -1,22 +1,20 @@
 body.ergo-article-page {
-    background:
-        radial-gradient(circle at top left, rgba(216, 31, 38, 0.09), transparent 26%),
-        linear-gradient(180deg, #faf5ef 0%, #f5efe8 100%);
+    background: #ffffff;
     color: #211a17;
     overflow-x: hidden;
 }
 
 body.ergo-article-page .nav-btn {
-    background: #1f1a17;
+    background: transparent;
     border-color: #1f1a17;
-    color: #fcfaf7;
-    border-radius: 999px;
+    color: #1f1a17;
+    border-radius: 0;
 }
 
 body.ergo-article-page .nav-btn:hover {
-    background: #c5a37d;
-    border-color: #c5a37d;
-    color: #1f1a17;
+    background: #1f1a17;
+    border-color: #1f1a17;
+    color: #ffffff;
 }
 
 .article-progress {
@@ -47,10 +45,11 @@ body.ergo-article-page .nav-btn:hover {
 
 .ergo-article-hero {
     display: grid;
-    grid-template-columns: minmax(360px, 0.76fr) minmax(420px, 1.24fr);
-    gap: 26px;
-    align-items: stretch;
-    padding: 48px 0 26px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: start;
+    width: 100%;
+    padding: 0 0 72px;
 }
 
 .ergo-article-copy,
@@ -61,13 +60,16 @@ body.ergo-article-page .nav-btn:hover {
 .ergo-article-gallery figure,
 .ergo-next-card {
     border: 1px solid rgba(33, 26, 23, 0.08);
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 24px 52px rgba(42, 35, 28, 0.08);
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: none;
 }
 
 .ergo-article-copy {
-    padding: 30px;
+    order: 2;
+    width: min(1500px, calc(100% - 72px));
+    margin: 0 auto;
+    padding: 34px;
 }
 
 .ergo-article-kicker,
@@ -77,8 +79,8 @@ body.ergo-article-page .nav-btn:hover {
     display: inline-flex;
     align-items: center;
     padding: 8px 12px;
-    border-radius: 999px;
-    background: rgba(33, 26, 23, 0.06);
+    border-radius: 0;
+    background: rgba(33, 26, 23, 0.045);
     color: rgba(33, 26, 23, 0.75);
     font-size: 10px;
     font-weight: 700;
@@ -138,8 +140,12 @@ body.ergo-article-page .nav-btn:hover {
 }
 
 .ergo-article-media {
+    order: 1;
     overflow: hidden;
-    min-height: 620px;
+    width: 100%;
+    height: clamp(420px, 58vh, 680px);
+    border-left: 0;
+    border-right: 0;
 }
 
 .ergo-article-media img,
@@ -154,16 +160,18 @@ body.ergo-article-page .nav-btn:hover {
 
 .ergo-article-grid {
     display: grid;
-    grid-template-columns: minmax(250px, 0.34fr) minmax(0, 0.66fr);
-    gap: 26px;
+    grid-template-columns: 1fr;
+    gap: 24px;
     align-items: start;
-    padding-bottom: 48px;
+    width: min(1500px, calc(100% - 72px));
+    padding-bottom: 64px;
 }
 
 .ergo-article-sidebar {
-    position: sticky;
-    top: 118px;
+    position: relative;
+    top: auto;
     padding: 24px;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
     display: grid;
     gap: 20px;
 }
@@ -221,7 +229,7 @@ body.ergo-article-page .nav-btn:hover {
 }
 
 .ergo-article-section {
-    padding: 28px 28px 30px;
+    padding: 34px;
 }
 
 .ergo-article-section h2 {
@@ -248,8 +256,8 @@ body.ergo-article-page .nav-btn:hover {
 .ergo-article-note,
 .ergo-article-list-block {
     margin-top: 18px;
-    border-radius: 24px;
-    background: rgba(244, 238, 230, 0.92);
+    border-radius: 0;
+    background: #ffffff;
     border: 1px solid rgba(33, 26, 23, 0.08);
 }
 
@@ -284,7 +292,7 @@ body.ergo-article-page .nav-btn:hover {
     align-items: center;
     margin-bottom: 10px;
     padding: 7px 11px;
-    border-radius: 999px;
+    border-radius: 0;
     background: rgba(216, 31, 38, 0.1);
     color: #d81f26;
     font-size: 0.72rem;
@@ -328,8 +336,8 @@ body.ergo-article-page .nav-btn:hover {
 .ergo-inline-figure {
     overflow: hidden;
     border: 1px solid rgba(33, 26, 23, 0.08);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.94);
+    border-radius: 0;
+    background: #ffffff;
     max-width: 920px;
     margin-left: auto;
     margin-right: auto;
@@ -525,10 +533,12 @@ body[data-article="oxygen-flow"] .ergo-inline-figure img {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
+    width: min(1500px, calc(100% - 72px));
     padding-bottom: 54px;
 }
 
 .ergo-article-credits {
+    width: min(1500px, calc(100% - 72px));
     padding-bottom: 54px;
 }
 
@@ -551,9 +561,9 @@ body[data-article="oxygen-flow"] .ergo-inline-figure img {
 
 .ergo-credit-card {
     border: 1px solid rgba(33, 26, 23, 0.08);
-    border-radius: 26px;
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 24px 52px rgba(42, 35, 28, 0.08);
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: none;
     padding: 24px;
 }
 
@@ -593,6 +603,7 @@ body[data-article="oxygen-flow"] .ergo-inline-figure img {
 }
 
 .ergo-next {
+    width: min(1500px, calc(100% - 72px));
     padding-bottom: 80px;
 }
 
@@ -660,7 +671,7 @@ body[data-article="oxygen-flow"] .ergo-inline-figure img {
 
 .ergo-lightbox-image {
     max-height: 82vh;
-    border-radius: 26px;
+    border-radius: 0;
 }
 
 .ergo-lightbox-close {
@@ -670,7 +681,7 @@ body[data-article="oxygen-flow"] .ergo-inline-figure img {
     width: 42px;
     height: 42px;
     border: 0;
-    border-radius: 50%;
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.9);
     cursor: pointer;
     font-size: 1.2rem;
@@ -789,7 +800,7 @@ body[data-article="sit-stand-move-repeat"] .ergo-article-gallery figure {
     min-height: 420px;
     display: grid;
     grid-template-rows: minmax(0, 1fr) auto;
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffff;
 }
 
 body[data-article="living-well"] .ergo-article-gallery img,
@@ -859,6 +870,22 @@ body[data-article="sit-stand-move-repeat"] .ergo-article-gallery img {
     }
 
     .ergo-article-shell {
+        width: calc(100% - 28px);
+    }
+
+    .ergo-article-hero {
+        width: 100%;
+        gap: 28px;
+        padding-bottom: 48px;
+    }
+
+    .ergo-article-media {
+        height: 52vh;
+        min-height: 340px;
+    }
+
+    .ergo-article-copy,
+    .ergo-article-grid {
         width: calc(100% - 28px);
     }
 

@@ -27,6 +27,12 @@
                 <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
             </div>
             <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
                 <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -212,6 +218,44 @@
                         <p>Growth was driven by premium solutions for high-quality office fit-outs.</p>
                     </div>
                 </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-afaceri-85-milioane-primele-6-luni-2023.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">July 2023</span>
+                        <h2>Workspace Studio reached EUR 8.5 million in the first six months of the year.</h2>
+                        <p>The company focuses on sustainability, ergonomics, and human-centric design.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-extinde-showroom-design-birouri-moderne.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">October 2023</span>
+                        <h2>Workspace Studio expands its showroom to reflect modern office design trends.</h2>
+                        <p>The Sky Tower showroom reached 850 sqm after an investment of more than EUR 300,000.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/grupul-workspace-studio-afaceri-225-milioane-2023.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">February 2024</span>
+                        <h2>Integrated projects and refurbishments kept Workspace Studio Group at EUR 22.5 million in 2023.</h2>
+                        <p>Turnkey projects generated 60% of revenue, with refurbishments representing roughly one in two projects.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-2024-anul-amenajarilor-design-centrat-pe-buget.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">June 2024</span>
+                        <h2>Workspace Studio says 2024 is the year of budget-centric office design.</h2>
+                        <p>Investments in ergonomics and design increased by approximately 20%.</p>
+                    </div>
+                </a>
+                <a class="press-card reveal reveal-up" href="press/workspace-studio-27-milioane-2024.html">
+                    <div class="press-card-copy">
+                        <span class="press-section-label">2025</span>
+                        <h2>Workspace Studio reaches EUR 27 million in 2024.</h2>
+                        <p>The company fitted out and furnished more than 100,000 sqm of modern offices.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="press-load-more-wrap">
+                <button class="press-load-more" type="button" data-press-load-more>Load more</button>
             </div>
         </section>
     </main>
@@ -233,6 +277,66 @@
         </div>
     </footer>
 
+    <script>
+        (() => {
+            const releaseDates = {
+                "press/workspace-studio-27-milioane-2024.html": "2025-02-01",
+                "press/workspace-studio-2024-anul-amenajarilor-design-centrat-pe-buget.html": "2024-06-01",
+                "press/grupul-workspace-studio-afaceri-225-milioane-2023.html": "2024-02-01",
+                "press/workspace-studio-extinde-showroom-design-birouri-moderne.html": "2023-10-01",
+                "press/workspace-studio-afaceri-85-milioane-primele-6-luni-2023.html": "2023-07-01",
+                "press/workspace-studio-afaceri-225-milioane-2022.html": "2023-02-01",
+                "press/companii-investesc-spatii-verzi-terase-2022.html": "2022-10-01",
+                "press/workspace-studio-certified-dealer-millerknoll.html": "2022-06-01",
+                "press/grupul-workspace-studio-afaceri-10-milioane-2021.html": "2022-02-01",
+                "press/mihaela-petrescu-business-development-director.html": "2021-11-01",
+                "press/workspace-studio-open-office-ergonomic-trends-2021.html": "2021-02-15",
+                "press/workspace-studio-afaceri-9-milioane-2020.html": "2021-02-01",
+                "press/workspace-studio-shop-online-ergonomie.html": "2020-10-01",
+                "press/extindere-portofoliu-retail-hay.html": "2020-06-01",
+                "press/recomandari-revenire-in-siguranta-la-birou.html": "2020-05-01",
+                "press/allspace-interiors-divizie-fitout.html": "2020-03-01",
+                "press/workspace-studio-afaceri-107-milioane-2019.html": "2020-01-01",
+                "press/cosm-red-dot-best-of-the-best.html": "2019-08-01",
+                "press/orientarea-catre-ergonomie-afaceri-35-milioane-2019.html": "2019-07-01",
+                "press/workspace-studio-lanseaza-cosm-herman-miller.html": "2019-04-01",
+                "press/workspace-studio-afaceri-53-milioane-2018.html": "2019-01-01",
+                "press/workspace-studio-afaceri-235-milioane-primele-6-luni-2018.html": "2018-08-01",
+                "press/workspace-studio-afaceri-4-milioane-2017.html": "2018-05-01"
+            };
+
+            const grid = document.querySelector(".press-grid");
+            const loadMoreButton = document.querySelector("[data-press-load-more]");
+            if (!grid || !loadMoreButton) return;
+
+            const visibleStep = 9;
+            let visibleCount = visibleStep;
+            const cards = Array.from(grid.querySelectorAll(".press-card"));
+
+            cards
+                .sort((a, b) => {
+                    const dateA = releaseDates[a.getAttribute("href")] || "1900-01-01";
+                    const dateB = releaseDates[b.getAttribute("href")] || "1900-01-01";
+                    return dateB.localeCompare(dateA);
+                })
+                .forEach(card => grid.appendChild(card));
+
+            const updateVisibleCards = () => {
+                cards.forEach((card, index) => {
+                    card.hidden = index >= visibleCount;
+                });
+
+                loadMoreButton.hidden = visibleCount >= cards.length;
+            };
+
+            loadMoreButton.addEventListener("click", () => {
+                visibleCount += visibleStep;
+                updateVisibleCards();
+            });
+
+            updateVisibleCards();
+        })();
+    </script>
     <script src="insights.js"></script>
     <script src="../menu-state.js"></script>
 </body>
