@@ -1209,6 +1209,7 @@
                         let isHorizontalGesture = false;
                         let activePointerId = null;
                         let slideResetTimer = null;
+                        let mobileScrollResetTimer = null;
                         let suppressClickTimer = null;
                         let resizeFrame = null;
                         let cardStep = 0;
@@ -1223,26 +1224,74 @@
                             return firstCard.getBoundingClientRect().width + gap;
                         };
 
+                        const getMobileCardInset = () => {
+                            const firstCard = track.querySelector('.project-slider-card');
+                            if (!firstCard) return 0;
+                            return Math.max((viewport.clientWidth - firstCard.getBoundingClientRect().width) / 2, 0);
+                        };
+
                         const setupMobileProjectsSlider = () => {
                             clearSlideResetTimer();
+                            clearMobileScrollResetTimer();
                             clearSuppressClickTimer();
                             track.innerHTML = '';
-                            originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
+                            [
+                                ...originalCards.map(card => card.cloneNode(true)),
+                                ...originalCards.map(card => card.cloneNode(true)),
+                                ...originalCards.map(card => card.cloneNode(true))
+                            ].forEach(card => track.appendChild(card));
                             viewport.scrollLeft = 0;
                             track.style.transition = 'none';
                             track.style.transform = 'none';
-                            sliderIndex = 0;
+                            sliderIndex = originalCards.length;
                             cardStep = 0;
                             sliderPeek = 0;
                             isSlidingProjects = false;
                             resetPointerState();
+                            requestAnimationFrame(() => {
+                                cardStep = getProjectCardStep();
+                                viewport.scrollLeft = getMobileLoopOffset();
+                            });
+                        };
+
+                        const getMobileLoopOffset = () => (originalCards.length * getProjectCardStep()) - getMobileCardInset();
+
+                        const normalizeMobileProjectsScroll = () => {
+                            if (!isMobileSlider || originalCards.length === 0) return;
+                            const step = getProjectCardStep();
+                            if (!step) return;
+
+                            const loopWidth = originalCards.length * step;
+                            if (viewport.scrollLeft < loopWidth * 0.5) {
+                                viewport.scrollLeft += loopWidth;
+                            } else if (viewport.scrollLeft >= loopWidth * 1.5) {
+                                viewport.scrollLeft -= loopWidth;
+                            }
+                        };
+
+                        const clearMobileScrollResetTimer = () => {
+                            if (!mobileScrollResetTimer) return;
+                            window.clearTimeout(mobileScrollResetTimer);
+                            mobileScrollResetTimer = null;
+                        };
+
+                        const scheduleMobileScrollNormalize = () => {
+                            clearMobileScrollResetTimer();
+                            mobileScrollResetTimer = window.setTimeout(() => {
+                                normalizeMobileProjectsScroll();
+                                mobileScrollResetTimer = null;
+                            }, 430);
                         };
 
                         const scrollMobileProjects = (direction) => {
-                            viewport.scrollBy({
-                                left: getProjectCardStep() * direction,
+                            const step = getProjectCardStep();
+                            if (!step) return;
+                            normalizeMobileProjectsScroll();
+                            viewport.scrollTo({
+                                left: viewport.scrollLeft + (step * direction),
                                 behavior: 'smooth'
                             });
+                            scheduleMobileScrollNormalize();
                         };
 
                         const getMainVisibleCards = () => {
@@ -1499,6 +1548,11 @@
                             }
                             resetPointerState();
                         });
+
+                        viewport.addEventListener('scroll', () => {
+                            if (!isMobileSlider) return;
+                            scheduleMobileScrollNormalize();
+                        }, { passive: true });
 
                         track.addEventListener('transitionend', () => {
                             if (isMobileSlider) return;

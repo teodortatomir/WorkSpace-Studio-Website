@@ -5,7 +5,7 @@
         const items = Array.from(menu.querySelectorAll(".menu-nav-item"));
         const submenuItems = items.filter((item) => item.querySelector(".menu-subnav"));
         const panel = document.createElement("div");
-        const mobileQuery = window.matchMedia("(max-width: 768px)");
+        const mobileQuery = window.matchMedia("(max-width: 768px), (hover: none) and (pointer: coarse)");
 
         panel.className = "menu-subnav-panel";
         panel.setAttribute("aria-live", "polite");
@@ -70,17 +70,29 @@
             activateItem(item);
         });
 
-        menu.addEventListener("click", (event) => {
-            const toggle = event.target.closest(".menu-subnav-toggle");
-            if (!toggle || !menu.contains(toggle)) return;
-
-            const item = toggle.closest(".menu-nav-item");
+        const toggleMobileSubmenu = (item) => {
             const willOpen = !item.classList.contains("is-mobile-open");
-            event.preventDefault();
-            event.stopPropagation();
             closeMobileSiblings(item);
             item.classList.toggle("is-mobile-open", willOpen);
-            toggle.setAttribute("aria-expanded", String(willOpen));
+            item.querySelector(".menu-subnav-toggle")?.setAttribute("aria-expanded", String(willOpen));
+        };
+
+        menu.addEventListener("click", (event) => {
+            const toggle = event.target.closest(".menu-subnav-toggle");
+            const parentLink = event.target.closest(".menu-nav-item.has-submenu > a");
+
+            if (toggle && menu.contains(toggle)) {
+                event.preventDefault();
+                event.stopPropagation();
+                toggleMobileSubmenu(toggle.closest(".menu-nav-item"));
+                return;
+            }
+
+            if (parentLink && menu.contains(parentLink) && mobileQuery.matches) {
+                event.preventDefault();
+                event.stopPropagation();
+                toggleMobileSubmenu(parentLink.closest(".menu-nav-item"));
+            }
         });
 
         if (!submenuItems.some((item) => item.classList.contains("is-active"))) {
