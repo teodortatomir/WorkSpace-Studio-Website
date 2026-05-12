@@ -176,13 +176,13 @@
                 <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="hero-badge-item">
             </div>
         </div>
-        <div class="hero-metrics-band" id="heroMetricsBand" aria-hidden="true">
+        <div class="hero-metrics-band visible" id="heroMetricsBand" aria-hidden="false">
             <div class="hero-metric-item">
                 <strong>700+</strong>
                 <span>corporate clients</span>
             </div>
             <div class="hero-metric-item">
-                <strong>400.000 m2</strong>
+                <strong>400.000 m<sup>2</sup></strong>
                 <span>fit-out delivered</span>
             </div>
             <div class="hero-metric-item">
@@ -1099,35 +1099,39 @@
                                             time: 18.57,
                                             subtitle: "Unmatched Variety",
                                             title: "100+ Global <em>Manufacturers</em>",
-                                            desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products.",
-                                            showMetrics: true
+                                            desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products."
 
                                         },
                                         {
                                             time: 29.9,
-                                            subtitle: "Acoustic Privacy",
-                                            title: "Optimized <em>Focus Zones</em>",
-                                            desc: "Curated environments designed to eliminate distractions and enhance deep concentration."
+                                            subtitle: "Cost certainty before the first commitment",
+                                            title: "Budget <em>Centricity</em>",
+                                            desc: "We do cost-centric design or convert concepts into technically correct, cost-aligned plans before procurement begins. No surprises on site. No revisions under cost pressure. Budget discipline is built into our design process — not negotiated afterward.",
+                                            descHtml: "<span>We do cost-centric design or convert concepts into technically correct, cost-aligned plans before procurement begins.</span><span>No surprises on site. No revisions under cost pressure. Budget discipline is built into our design process — not negotiated afterward.</span>",
+                                            wideDesc: true,
+                                            descOffset: true
 
                                         },
                                         {
                                             time: 39.3,
+                                            subtitle: "Romania's Benchmark for Corporate Workplaces.",
+                                            title: "Turn key <em>Excellence</em>",
+                                            desc: "We design, manage, build, and furnish exceptional workplaces — delivering complete turn-key office solutions with uncompromising quality, precision, and accountability from concept to handover.",
+                                            descHtml: "<span>We design, manage, build, and furnish exceptional workplaces — delivering complete turn-key office solutions</span><span>with uncompromising quality, precision, and accountability from concept to handover.</span>",
+                                            wideDesc: true,
+                                            singleLineTitle: true
+                                        },
+                                        {
+                                            time: 47.2,
                                             subtitle: "MillerKnoll Certified Dealer",
                                             title: "Global <em>Innovation</em>",
                                             desc: "Bringing museum-quality designs and strategic services from the global leader in office furniture."
                                         },
                                         {
-                                            time: 47.2,
+                                            time: 56.5,
                                             subtitle: "Research-Driven Design",
                                             title: "Human-Centered <em>Solutions</em>",
                                             desc: "Every design starts with research and ends with new solutions tailored to solve real problems."
-                                        },
-                                        {
-                                            time: 56.5,
-                                            subtitle: "A Legacy of Quality",
-                                            title: "MillerKnoll <em>Partner</em>",
-                                            desc: "Certified Dealer delivering global excellence since 2008.",
-                                            showBadges: true
                                         }
                                     ];
                         let lastIndex = -1;
@@ -1142,7 +1146,15 @@
                                             const data = textMilestones[currentIndex];
                                             subtitle.innerText = data.subtitle;
                                             title.innerHTML = data.title;
-                                            desc.innerText = data.desc;
+                                            if (data.descHtml) {
+                                                desc.innerHTML = data.descHtml;
+                                            } else {
+                                                desc.innerText = data.desc;
+                                            }
+                                            container.classList.toggle('wide-desc', Boolean(data.wideDesc));
+                                            container.classList.toggle('optical-center', Boolean(data.opticalCenter));
+                                            container.classList.toggle('desc-offset', Boolean(data.descOffset));
+                                            container.classList.toggle('single-line-title', Boolean(data.singleLineTitle));
                                             if (data.showBadges) {
                                                 badgesContainer.classList.add('visible');
                                                 badgesContainer.style.display = 'flex';
@@ -1150,13 +1162,9 @@
                                                 badgesContainer.classList.remove('visible');
                                                 badgesContainer.style.display = 'none';
                                             }
-                                            if (data.showMetrics) {
-                                                heroMetricsBand?.classList.add('visible');
-                                                heroMetricsBand?.setAttribute('aria-hidden', 'false');
-                                            } else {
-                                                heroMetricsBand?.classList.remove('visible');
-                                                heroMetricsBand?.setAttribute('aria-hidden', 'true');
-                                            }
+                                            heroMetricsBand?.classList.add('visible');
+                                            heroMetricsBand?.setAttribute('aria-hidden', 'false');
+                                            heroScrollButton?.classList.remove('is-hidden');
                                             container.style.opacity = '1';
                                         }, 600);
                                     }

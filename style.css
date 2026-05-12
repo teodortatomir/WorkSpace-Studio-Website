@@ -960,6 +960,19 @@ body::-webkit-scrollbar {
     color: var(--accent-warm);
 }
 
+.hero-content-minimal.optical-center {
+    transform: translateX(2.2vw);
+}
+
+.hero-content-minimal.single-line-title {
+    width: min(1280px, 94%);
+}
+
+.hero-content-minimal.single-line-title .hero-title {
+    white-space: nowrap;
+    font-size: clamp(2.6rem, 5.4vw, 6rem);
+}
+
 .hero-desc {
     display: block;
     width: min(720px, 90%);
@@ -967,6 +980,25 @@ body::-webkit-scrollbar {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+.hero-content-minimal.wide-desc .hero-desc {
+    width: min(1120px, 92vw);
+    font-size: clamp(0.98rem, 1.18vw, 1.08rem);
+    line-height: 1.55;
+    text-align: center;
+}
+
+.hero-content-minimal.desc-offset .hero-desc {
+    transform: translateX(-4.6vw);
+}
+
+.hero-content-minimal.wide-desc .hero-desc span {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: center;
 }
 
 .hero-badges-container {
@@ -1035,6 +1067,13 @@ body::-webkit-scrollbar {
     letter-spacing: 0;
 }
 
+.hero-metric-item sup {
+    position: relative;
+    top: -0.42em;
+    font-size: 0.58em;
+    line-height: 0;
+}
+
 .hero-metric-item span {
     display: block;
     color: rgba(255, 255, 255, 0.6);
@@ -1071,6 +1110,11 @@ body::-webkit-scrollbar {
     background: rgba(17, 23, 28, 0.52);
     border-color: rgba(255, 255, 255, 0.34);
     transform: translateY(calc(-50% + 2px));
+}
+
+.hero-scroll-button.is-hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .hero-scroll-icon {
@@ -2533,7 +2577,7 @@ footer {
 
     .hero-scroll-button {
         right: 16px;
-        bottom: 24px;
+        bottom: 132px;
         top: auto;
         width: 50px;
         height: 72px;
@@ -2865,6 +2909,23 @@ footer {
 
     .hero-content-minimal {
         width: min(92%, 680px);
+    }
+
+    .hero-content-minimal.optical-center {
+        transform: none;
+    }
+
+    .hero-content-minimal.wide-desc .hero-desc {
+        transform: none;
+    }
+
+    .hero-content-minimal.single-line-title {
+        width: min(92%, 680px);
+    }
+
+    .hero-content-minimal.single-line-title .hero-title {
+        white-space: normal;
+        font-size: clamp(2.35rem, 11vw, 4rem);
     }
 
     .hero-title {
