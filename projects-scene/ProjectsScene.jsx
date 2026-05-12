@@ -250,7 +250,7 @@ function ProjectsScene() {
                                                 />
                                             ) : /uipath/i.test(p.title) ? (
                                                 <img
-                                                    src="../logos-projects/uipath-seeklogo.svg"
+                                                    src="../logos-projects/uipath-latest-logo.png"
                                                     alt="UiPath"
                                                     className="discover-logo-editorial"
                                                 />
