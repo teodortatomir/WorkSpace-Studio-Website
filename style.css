@@ -1131,10 +1131,21 @@ body::-webkit-scrollbar {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 84px 0 64px;
+    padding: 46px 0 64px;
     background: var(--section-uniform-bg);
     scroll-margin-top: 80px;
     border-top: 0;
+}
+
+.projects-trust-line {
+    width: min(820px, calc(100% - 48px));
+    margin: 0 auto 36px;
+    color: rgba(23, 23, 23, 0.62);
+    font-size: clamp(0.95rem, 1.15vw, 1.22rem);
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-align: center;
 }
 
 .services-header {
