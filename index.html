@@ -176,6 +176,28 @@
                 <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="hero-badge-item">
             </div>
         </div>
+        <div class="hero-metrics-band" id="heroMetricsBand" aria-hidden="true">
+            <div class="hero-metric-item">
+                <strong>700+</strong>
+                <span>corporate clients</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>400.000 m2</strong>
+                <span>fit-out delivered</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>3000+</strong>
+                <span>furniture projects</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>0</strong>
+                <span>HSE incidents</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>70+</strong>
+                <span>inhouse specialists</span>
+            </div>
+        </div>
         <button class="hero-scroll-button" id="heroScrollButton" type="button" aria-label="Scroll to projects">
             <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M7 10L12 15L17 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1030,6 +1052,7 @@
                             const heroSearchForm = document.getElementById('heroSearchForm');
                             const heroSearchInput = document.getElementById('heroSearchInput');
                             const heroScrollButton = document.getElementById('heroScrollButton');
+                            const heroMetricsBand = document.getElementById('heroMetricsBand');
                         const heroSection = document.getElementById('hero');
 
                         const closeHeroSearch = () => {
@@ -1076,7 +1099,8 @@
                                             time: 18.57,
                                             subtitle: "Unmatched Variety",
                                             title: "100+ Global <em>Manufacturers</em>",
-                                            desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products."
+                                            desc: "The largest variety of high-performance ergonomic solutions, flooring, and architectural products.",
+                                            showMetrics: true
 
                                         },
                                         {
@@ -1125,6 +1149,13 @@
                                             } else {
                                                 badgesContainer.classList.remove('visible');
                                                 badgesContainer.style.display = 'none';
+                                            }
+                                            if (data.showMetrics) {
+                                                heroMetricsBand?.classList.add('visible');
+                                                heroMetricsBand?.setAttribute('aria-hidden', 'false');
+                                            } else {
+                                                heroMetricsBand?.classList.remove('visible');
+                                                heroMetricsBand?.setAttribute('aria-hidden', 'true');
                                             }
                                             container.style.opacity = '1';
                                         }, 600);

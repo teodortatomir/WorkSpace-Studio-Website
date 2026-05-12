@@ -986,6 +986,65 @@ body::-webkit-scrollbar {
     filter: brightness(0) invert(1);
 }
 
+.hero-metrics-band {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 100%;
+    padding: 12px 54px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(8, 12, 15, 0.2);
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.hero-metrics-band.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-metric-item {
+    display: flex;
+    min-height: 52px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 18px;
+    text-align: center;
+}
+
+.hero-metric-item + .hero-metric-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.hero-metric-item strong {
+    display: block;
+    font-size: clamp(1rem, 1.65vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.hero-metric-item span {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.62rem;
+    font-weight: 600;
+    line-height: 1.28;
+    letter-spacing: 1.45px;
+    text-transform: uppercase;
+}
+
 .hero-scroll-button {
     position: absolute;
     right: 34px;
@@ -2500,6 +2559,41 @@ footer {
         height: 100dvh;
         min-width: 100vw;
         min-height: 100dvh;
+    }
+
+    .hero-metrics-band {
+        bottom: 0;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        padding: 10px 12px 12px;
+    }
+
+    .hero-metric-item {
+        min-height: 48px;
+        padding: 0 6px;
+        gap: 5px;
+    }
+
+    .hero-metric-item + .hero-metric-item {
+        border-left: 0;
+    }
+
+    .hero-metric-item:not(:nth-child(3n + 1)) {
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-metric-item:nth-child(n + 4) {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 8px;
+    }
+
+    .hero-metric-item strong {
+        font-size: clamp(0.92rem, 3.8vw, 1.18rem);
+    }
+
+    .hero-metric-item span {
+        font-size: 0.5rem;
+        letter-spacing: 0.85px;
     }
 
     .navbar {
