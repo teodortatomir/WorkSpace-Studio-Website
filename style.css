@@ -1375,6 +1375,11 @@ body.home-page .project-slider-card {
     transform: translateY(0) scale(1);
 }
 
+.project-slider-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
 .project-slider-card:hover {
     border-color: rgba(184, 154, 114, 0.28);
     box-shadow: 0 32px 70px rgba(0, 0, 0, 0.28);
