@@ -1,4 +1,77 @@
 (() => {
+    const loadDeferredImage = (img) => {
+        if (!img?.dataset.deferSrc) return;
+        img.src = img.dataset.deferSrc;
+        img.removeAttribute("data-defer-src");
+    };
+
+    const observeDeferredImages = (root = document) => {
+        const images = Array.from(root.querySelectorAll("img[data-defer-src]"));
+        if (!images.length) return;
+
+        const getLoadTarget = (img) => img.closest(".projects-slider")
+            || img.closest(".home-partners-section")
+            || img.closest(".services-gallery-grid")
+            || img.closest(".gallery-grid")
+            || img.closest(".bento-grid")
+            || img.closest(".services-grid")
+            || img.closest(".reveal, .reveal-on-scroll, section, article, figure")
+            || img;
+
+        const loadImagesNearViewport = () => {
+            const threshold = window.innerHeight + 240;
+            images.forEach((img) => {
+                if (!img.dataset.deferSrc) return;
+                const rect = getLoadTarget(img).getBoundingClientRect();
+                if (rect.top < threshold && rect.bottom > -240) {
+                    loadDeferredImage(img);
+                }
+            });
+        };
+
+        if (!("IntersectionObserver" in window)) {
+            images.forEach(loadDeferredImage);
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, imageObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const targets = entry.target.matches("img[data-defer-src]")
+                    ? [entry.target]
+                    : Array.from(entry.target.querySelectorAll("img[data-defer-src]"));
+                targets.forEach(loadDeferredImage);
+                imageObserver.unobserve(entry.target);
+            });
+        }, {
+            rootMargin: "160px 0px",
+            threshold: 0.01
+        });
+
+        images.forEach((img) => {
+            observer.observe(getLoadTarget(img));
+        });
+
+        loadImagesNearViewport();
+        window.addEventListener("scroll", loadImagesNearViewport, { passive: true });
+        window.addEventListener("resize", loadImagesNearViewport);
+        document.querySelectorAll(".snap-container, .gallery-snap-section").forEach((container) => {
+            container.addEventListener("scroll", loadImagesNearViewport, { passive: true });
+        });
+    };
+
+    const loadMenuImages = () => {
+        document.querySelectorAll(".menu-img-item[data-src]").forEach((img) => {
+            if (!img.src) img.src = img.dataset.src;
+        });
+    };
+
+    document.querySelectorAll("#menuOpen, .menu-toggle, #heroMenuOpen").forEach((button) => {
+        button.addEventListener("click", loadMenuImages);
+    });
+
+    observeDeferredImages();
+
     const menus = document.querySelectorAll(".menu-right-links");
 
     menus.forEach((menu) => {

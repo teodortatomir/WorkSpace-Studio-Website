@@ -377,22 +377,19 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 }
 
 .story-lens {
-    width: min(1280px, calc(100% - 128px));
+    width: min(980px, calc(100% - 128px));
     display: grid;
-    grid-template-columns: minmax(240px, 0.36fr) minmax(0, 1fr);
-    gap: clamp(48px, 7vw, 118px);
-    align-items: stretch;
+    grid-template-columns: 1fr;
+    gap: 0;
     padding-top: 96px;
-    padding-bottom: 96px;
+    padding-bottom: 56px;
     border-top: 1px solid var(--adobe-line);
     border-bottom: 0;
+    text-align: center;
 }
 
 .story-lens-nav {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    border-top: 1px solid var(--adobe-line);
-    border-bottom: 1px solid var(--adobe-line);
+    display: none;
 }
 
 .story-lens-trigger {
@@ -456,33 +453,63 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 
 .story-lens-stage {
     position: relative;
-    min-height: clamp(500px, 45vw, 640px);
-    border-top: 1px solid var(--adobe-line);
-    border-bottom: 1px solid var(--adobe-line);
+    min-height: 0;
+    border-top: 0;
+    border-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
 }
 
 .story-lens-panel {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    inset: auto;
     display: flex;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(18px);
-    pointer-events: none;
-    transition: opacity 0.42s ease, transform 0.42s ease;
+    flex-direction: column;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    padding-top: 0;
 }
 
 .story-lens-panel p {
-    max-width: 850px;
-    margin: 0;
-    color: #24211e;
-    font-size: clamp(1.02rem, 1.35vw, 1.38rem);
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: clamp(1.08rem, 1.56vw, 1.48rem);
+    line-height: 1.64;
     font-weight: 400;
-    line-height: 1.72;
+    text-align: center;
 }
 
 .story-lens .solution-copy {
     gap: 22px;
+}
+
+.story-lens-problem-panel {
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(24, 22, 20, 0.1);
+}
+
+.story-lens-problem-panel::before {
+    content: "THE PROBLEM";
+    display: block;
+    color: var(--adobe-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.story-lens-solution-panel::before {
+    content: "THE SOLUTION";
+    display: block;
+    color: var(--adobe-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
 }
 
 .story-lens[data-active="problem"] .story-lens-problem-panel,

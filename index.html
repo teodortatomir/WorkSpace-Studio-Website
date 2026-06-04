@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Studio | Demo Design Premium</title>
+    <link rel="preload" as="image" href="images/uipath-header.jpg" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
@@ -71,34 +72,24 @@
     </div>
 </nav>
 
-<div style="display: none; visibility: hidden; width: 0; height: 0; overflow: hidden;">
-    <img src="felipe-furtado-2zDXqgTzEFE-unsplash.jpg">
-    <img src="scott-graham-5fNmWej4tAA-unsplash.jpg">
-    <img src="projects-pictures/leading-game-company.jpg">
-    <img src="projects-pictures/skytower-hero.jpg">
-    <img src="rohan-makhecha-jw3GOzxiSkw-unsplash.jpg">
-    <img src="projects-pictures/coca-cola.jpg">
-    <img src="julian-hochgesang-psGV5KhidlY-unsplash.jpg">
-</div>
-
 <div class="menu-overlay" id="menuOverlay">
     <button class="menu-close" id="menuClose">&times;</button>
     
     <div class="menu-split-container">
         <div class="menu-left-images">
-            <img src="felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects">
+            <img data-src="felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
-            <img src="scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services">
+            <img data-src="scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
-            <img src="projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners">
+            <img data-src="projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
-            <img src="projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about">
+            <img data-src="projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
-            <img src="rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights">
+            <img data-src="rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
-            <img src="projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop">
+            <img data-src="projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
-            <img src="julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact">
+            <img data-src="julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="" decoding="async">
             <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
         </div>
         <div class="menu-right-content">
@@ -162,8 +153,9 @@
 
     <header class="hero" id="hero">
         <div class="hero-video-container">
-            <video id="heroVideo" autoplay muted loop playsinline class="hero-bg-video">
-                <source src="videos/video-workspace.mp4" type="video/mp4">
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/uipath-header.jpg" class="hero-bg-video">
+                <source src="videos/video-workspace-optimized.webm" type="video/webm">
+                <source src="videos/video-workspace-optimized.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay-dark"></div>
         </div>
@@ -208,7 +200,7 @@
     <section class="pivot-projects" id="projects">
         <div class="projects-equal-grid reveal">
             <article class="project-equal-card">
-                <img src="images/uipath-header.jpg" alt="UiPath">
+                <img loading="lazy" decoding="async" src="images/uipath-header.jpg" alt="UiPath" fetchpriority="high" decoding="async" sizes="(max-width: 768px) 100vw, 33vw">
                 <div class="project-equal-content">
                     <span class="project-kicker">Technology / AI</span>
                     <h3>UiPath Global Office</h3>
@@ -218,7 +210,7 @@
             </article>
 
             <article class="project-equal-card">
-                <img src="images/adobe-header.jpg" alt="Adobe">
+                <img loading="lazy" decoding="async" src="images/adobe-header.jpg" alt="Adobe" fetchpriority="high" decoding="async" sizes="(max-width: 768px) 100vw, 33vw">
                 <div class="project-equal-content">
                     <span class="project-kicker">Software / Creativity</span>
                     <h3>Adobe Headquarters</h3>
@@ -228,7 +220,7 @@
             </article>
 
             <article class="project-equal-card">
-                <img src="images/omvpetrom-header.jpg" alt="OMV Petrom">
+                <img loading="lazy" decoding="async" src="images/omvpetrom-header.jpg" alt="OMV Petrom" fetchpriority="high" decoding="async" sizes="(max-width: 768px) 100vw, 33vw">
                 <div class="project-equal-content">
                     <span class="project-kicker">Energy / Campus</span>
                     <h3>OMV Petrom City</h3>
@@ -239,7 +231,7 @@
         </div>
         
         <div class="split-row">
-            <div class="split-image"><img src="images/uipath-header.jpg" alt="UiPath"></div>
+            <div class="split-image"><img loading="lazy" decoding="async" data-defer-src="images/uipath-header.jpg" alt="UiPath" sizes="(max-width: 768px) 100vw, 50vw"></div>
             <div class="split-text">
                 <span class="category">Technology / AI</span>
                 <h2>UiPath Global Office</h2>
@@ -249,7 +241,7 @@
         </div>
 
         <div class="split-row reverse">
-            <div class="split-image"><img src="images/adobe-header.jpg" alt="Adobe"></div>
+            <div class="split-image"><img loading="lazy" decoding="async" data-defer-src="images/adobe-header.jpg" alt="Adobe" sizes="(max-width: 768px) 100vw, 50vw"></div>
             <div class="split-text">
                 <span class="category">Software / Creativity</span>
                 <h2>Adobe Headquarters</h2>
@@ -259,7 +251,7 @@
         </div>
 
         <div class="split-row">
-            <div class="split-image"><img src="images/omvpetrom-header.jpg" alt="OMV Petrom"></div>
+            <div class="split-image"><img loading="lazy" decoding="async" data-defer-src="images/omvpetrom-header.jpg" alt="OMV Petrom" sizes="(max-width: 768px) 100vw, 50vw"></div>
             <div class="split-text">
                 <span class="category">Energy / Corporate Campus</span>
                 <h2>OMV Petrom City</h2>
@@ -279,162 +271,162 @@
             <div class="projects-slider-viewport">
                 <div class="projects-slider-track" data-projects-track>
                     <article class="project-slider-card project-slider-card-logo" data-project-link="projects/UiPath/uipath.html">
-                        <img src="projects-pictures/uipath.jpg" alt="UiPath">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/uipath.jpg" alt="UiPath">
                         <div class="project-slider-overlay">
                             <h3>UiPath</h3>
-                            <img src="logos-projects/uipath-latest-logo.png" alt="UiPath" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/uipath-latest-logo.png" alt="UiPath" class="project-slider-hover-logo">
                             <a href="projects/UiPath/uipath.html" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo" data-project-link="projects/Adobe/adobe.html">
-                        <img src="projects-pictures/adobe.jpg" alt="Adobe">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/adobe.jpg" alt="Adobe">
                         <div class="project-slider-overlay">
                             <h3>Adobe</h3>
-                            <img src="logos-projects/adobe-seeklogo.png" alt="Adobe" class="project-slider-hover-logo project-slider-hover-logo-adobe">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/adobe-seeklogo.png" alt="Adobe" class="project-slider-hover-logo project-slider-hover-logo-adobe">
                             <a href="projects/Adobe/adobe.html" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/omvpetrom.jpg" alt="OMV Petrom">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/omvpetrom.jpg" alt="OMV Petrom">
                         <div class="project-slider-overlay">
                             <h3>OMV Petrom</h3>
-                            <img src="logos-projects/petrom-seeklogo.svg" alt="OMV Petrom" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/petrom-seeklogo.svg" alt="OMV Petrom" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/honeywell.jpg" alt="Honeywell">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/honeywell.jpg" alt="Honeywell">
                         <div class="project-slider-overlay">
                             <h3>Honeywell</h3>
-                            <img src="logos-projects/honeywell-seeklogo.png" alt="Honeywell" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/honeywell-seeklogo.png" alt="Honeywell" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/tchibo.jpg" alt="Tchibo">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/tchibo.jpg" alt="Tchibo">
                         <div class="project-slider-overlay">
                             <h3>Tchibo</h3>
-                            <img src="logos-projects/tchibo_logo.png" alt="Tchibo" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/tchibo_logo.png" alt="Tchibo" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/laguna.jpg" alt="Laguna Technology">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/laguna.jpg" alt="Laguna Technology">
                         <div class="project-slider-overlay">
                             <h3>Laguna Technology</h3>
-                            <img src="logos-projects/logo_laguna_technology.png" alt="Laguna Technology" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/logo_laguna_technology.png" alt="Laguna Technology" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/unilever.jpg" alt="Unilever">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/unilever.jpg" alt="Unilever">
                         <div class="project-slider-overlay">
                             <h3>Unilever</h3>
-                            <img src="logos-projects/unilever-logo.png" alt="Unilever" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/unilever-logo.png" alt="Unilever" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/coca-cola.jpg" alt="Coca Cola Romania">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/coca-cola.jpg" alt="Coca Cola Romania">
                         <div class="project-slider-overlay">
                             <h3>Coca Cola Romania</h3>
-                            <img src="logos-projects/coca-cola-seeklogo.png" alt="Coca Cola Romania" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/coca-cola-seeklogo.png" alt="Coca Cola Romania" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/skytower.jpg" alt="Skytower">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/skytower.jpg" alt="Skytower">
                         <div class="project-slider-overlay">
                             <h3>Skytower</h3>
-                            <img src="logos-projects/logo-skytower.png" alt="Skytower" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/logo-skytower.png" alt="Skytower" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/mindspaces.jpg" alt="Mindspace">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/mindspaces.jpg" alt="Mindspace">
                         <div class="project-slider-overlay">
                             <h3>Mindspace</h3>
-                            <img src="logos-projects/mindspace_logo.png" alt="Mindspace" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/mindspace_logo.png" alt="Mindspace" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/nestle.jpg" alt="Nestle Romania">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/nestle.jpg" alt="Nestle Romania">
                         <div class="project-slider-overlay">
                             <h3>Nestle Romania</h3>
-                            <img src="logos-projects/nestle-logo.png" alt="Nestle Romania" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/nestle-logo.png" alt="Nestle Romania" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/bbraun.jpg" alt="BBraun">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/bbraun.jpg" alt="BBraun">
                         <div class="project-slider-overlay">
                             <h3>BBraun</h3>
-                            <img src="logos-projects/bbraun-logo.png" alt="BBraun" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/bbraun-logo.png" alt="BBraun" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/datacore.jpg" alt="DataCore">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/datacore.jpg" alt="DataCore">
                         <div class="project-slider-overlay">
                             <h3>DataCore</h3>
-                            <img src="logos-projects/data_core_logo.png" alt="DataCore" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/data_core_logo.png" alt="DataCore" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/intero.jpg" alt="InteRo Property Development">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/intero.jpg" alt="InteRo Property Development">
                         <div class="project-slider-overlay">
                             <h3>InteRo Property Development</h3>
-                            <img src="logos-projects/intero-logo-black.png" alt="InteRo Property Development" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/intero-logo-black.png" alt="InteRo Property Development" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/legrand.jpg" alt="Legrand">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/legrand.jpg" alt="Legrand">
                         <div class="project-slider-overlay">
                             <h3>Legrand</h3>
-                            <img src="logos-projects/legrand_logo.png" alt="Legrand" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/legrand_logo.png" alt="Legrand" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/bimbo.jpg" alt="Grupo Bimbo">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/bimbo.jpg" alt="Grupo Bimbo">
                         <div class="project-slider-overlay">
                             <h3>Grupo Bimbo</h3>
-                            <img src="logos-projects/grupo_bimbo-logo.png" alt="Grupo Bimbo" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/grupo_bimbo-logo.png" alt="Grupo Bimbo" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/alfasigma.jpg" alt="Alfasigma Romania">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/alfasigma.jpg" alt="Alfasigma Romania">
                         <div class="project-slider-overlay">
                             <h3>Alfasigma Romania</h3>
-                            <img src="logos-projects/logo-alfasigma.png" alt="Alfasigma Romania" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/logo-alfasigma.png" alt="Alfasigma Romania" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/naos.jpg" alt="Naos Skin Care Romania">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/naos.jpg" alt="Naos Skin Care Romania">
                         <div class="project-slider-overlay">
                             <h3>Naos Skin Care Romania</h3>
-                            <img src="logos-projects/naos-logo.png" alt="Naos Skin Care Romania" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/naos-logo.png" alt="Naos Skin Care Romania" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/hbo.jpg" alt="HBO Romania">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/hbo.jpg" alt="HBO Romania">
                         <div class="project-slider-overlay">
                             <h3>HBO Romania</h3>
-                            <img src="logos-projects/hbo-seeklogo.png" alt="HBO Romania" class="project-slider-hover-logo">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/hbo-seeklogo.png" alt="HBO Romania" class="project-slider-hover-logo">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
                     <article class="project-slider-card project-slider-card-logo">
-                        <img src="projects-pictures/uber.jpg" alt="UBER Romania">
+                        <img loading="lazy" decoding="async" data-defer-src="projects-pictures/uber.jpg" alt="UBER Romania">
                         <div class="project-slider-overlay">
                             <h3>UBER Romania</h3>
-                            <img src="logos-projects/uber-seeklogo.svg" alt="UBER Romania" class="project-slider-hover-logo project-slider-hover-logo-uber">
+                            <img loading="lazy" decoding="async" data-defer-src="logos-projects/uber-seeklogo.svg" alt="UBER Romania" class="project-slider-hover-logo project-slider-hover-logo-uber">
                             <a href="#" class="pivot-link">View Project</a>
                         </div>
                     </article>
@@ -459,42 +451,42 @@
         </div>
         <div class="services-gallery-grid">
             <a href="our-services/design-services.html" class="service-gallery-card reveal">
-                <img src="our-services/design_and_build.jpg" alt="Design & Build">
+                <img loading="lazy" decoding="async" data-defer-src="our-services/design_and_build.jpg" alt="Design & Build">
                 <div class="service-gallery-overlay">
                     <h3>Design &amp; Build</h3>
                 </div>
             </a>
 
             <a href="our-services/general-contracting.html" class="service-gallery-card reveal">
-                <img src="our-services/turn-key-pictures/build.jpg" alt="General Contracting">
+                <img loading="lazy" decoding="async" data-defer-src="our-services/turn-key-pictures/build.jpg" alt="General Contracting">
                 <div class="service-gallery-overlay">
                     <h3>General Contracting</h3>
                 </div>
             </a>
 
             <a href="our-services/furniture.html" class="service-gallery-card reveal">
-                <img src="footer/collaborative-spaces.jpg" alt="Furniture">
+                <img loading="lazy" decoding="async" data-defer-src="footer/collaborative-spaces.jpg" alt="Furniture">
                 <div class="service-gallery-overlay">
                     <h3>Furniture</h3>
                 </div>
             </a>
 
             <a href="our-services/architectural-solutions.html" class="service-gallery-card reveal">
-                <img src="footer/sustainable-features.jpg" alt="Architectural products & solutions">
+                <img loading="lazy" decoding="async" data-defer-src="footer/sustainable-features.jpg" alt="Architectural products & solutions">
                 <div class="service-gallery-overlay">
                     <h3>Architectural products &amp; solutions</h3>
                 </div>
             </a>
 
             <a href="our-services/logistics-facilities-services.html" class="service-gallery-card reveal">
-                <img src="our-services/workspace_consultancy_cropped.jpg" alt="Logistic & facility Services">
+                <img loading="lazy" decoding="async" data-defer-src="our-services/workspace_consultancy_cropped.jpg" alt="Logistic & facility Services">
                 <div class="service-gallery-overlay">
                     <h3>Logistic &amp; facility Services</h3>
                 </div>
             </a>
 
             <a href="our-services/workplace-strategy.html" class="service-gallery-card reveal">
-                <img src="our-services/consultancy-pictures/consultancy-hero.jpg" alt="Workplace strategy">
+                <img loading="lazy" decoding="async" data-defer-src="our-services/consultancy-pictures/consultancy-hero.jpg" alt="Workplace strategy">
                 <div class="service-gallery-overlay">
                     <h3>Workplace strategy</h3>
                 </div>
@@ -510,7 +502,7 @@
                 <a href="why-us/index.html" class="why-us-feature-link">Visit Why Us</a>
             </div>
             <a href="why-us/index.html" class="why-us-feature-media reveal" aria-label="Open Why us page">
-                <img src="images/why-us-photo.jpg" alt="Modern workplace project">
+                <img loading="lazy" decoding="async" data-defer-src="images/why-us-photo.jpg" alt="Modern workplace project">
                 <span class="why-us-feature-label">Why Us</span>
             </a>
         </div>
@@ -519,7 +511,7 @@
     <section class="about-feature-section" id="about-feature">
         <div class="about-feature-shell">
             <a href="about/about.html" class="about-feature-media reveal">
-                <img src="projects-pictures/workspace-studio.jpg" alt="Workspace Studio team and studio environment">
+                <img loading="lazy" decoding="async" data-defer-src="projects-pictures/workspace-studio.jpg" alt="Workspace Studio team and studio environment">
                 <span class="about-feature-label">Who we are</span>
             </a>
 
@@ -540,7 +532,7 @@
             </div>
 
             <a href="insights/insights.html" class="insights-feature-media reveal">
-                <img src="projects-pictures/skytower-hero.jpg" alt="Workspace insights and editorial stories">
+                <img loading="lazy" decoding="async" data-defer-src="projects-pictures/skytower-hero.jpg" alt="Workspace insights and editorial stories">
                 <span class="insights-feature-label">News &amp; Insights</span>
             </a>
         </div>
@@ -565,64 +557,64 @@
 
             <div class="home-partners-grid" aria-label="Partner brand logos">
                 <a class="home-partner-logo home-partner-logo-uipath" href="projects/UiPath/uipath.html" aria-label="UiPath project page">
-                    <img src="logos-projects/uipath-latest-logo.png" alt="UiPath">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/uipath-latest-logo.png" alt="UiPath">
                 </a>
                 <a class="home-partner-logo home-partner-logo-omv" href="projects-scene/proiecte.html" aria-label="Petrom projects">
-                    <img src="logos-projects/petrom-seeklogo.svg" alt="OMV Petrom">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/petrom-seeklogo.svg" alt="OMV Petrom">
                 </a>
                 <a class="home-partner-logo home-partner-logo-uber" href="projects-scene/proiecte.html" aria-label="Uber projects">
-                    <img src="logos-projects/uber-seeklogo.svg" alt="Uber">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/uber-seeklogo.svg" alt="Uber">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Adobe projects">
-                    <img src="logos-projects/adobe-seeklogo.png" alt="Adobe">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/adobe-seeklogo.png" alt="Adobe">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="B Braun projects">
-                    <img src="logos-projects/bbraun-logo.png" alt="B Braun">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/bbraun-logo.png" alt="B Braun">
                 </a>
                 <a class="home-partner-logo home-partner-logo-cocacola" href="projects-scene/proiecte.html" aria-label="Coca-Cola projects">
-                    <img src="logos-projects/coca-cola-seeklogo.png" alt="Coca-Cola">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/coca-cola-seeklogo.png" alt="Coca-Cola">
                 </a>
                 <a class="home-partner-logo home-partner-logo-panasonic" href="projects-scene/proiecte.html" aria-label="Panasonic projects">
-                    <img src="logos-projects/panasonic-logo.jpg" alt="Panasonic">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/panasonic-logo.jpg" alt="Panasonic">
                 </a>
                 <a class="home-partner-logo home-partner-logo-unilever" href="projects-scene/proiecte.html" aria-label="Unilever projects">
-                    <img src="logos-projects/unilever-logo.png" alt="Unilever">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/unilever-logo.png" alt="Unilever">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Honeywell projects">
-                    <img src="logos-projects/honeywell-seeklogo.png" alt="Honeywell">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/honeywell-seeklogo.png" alt="Honeywell">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Nestle projects">
-                    <img src="logos-projects/nestle-logo.png" alt="Nestle">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/nestle-logo.png" alt="Nestle">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Tchibo projects">
-                    <img src="logos-projects/tchibo_logo.png" alt="Tchibo">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/tchibo_logo.png" alt="Tchibo">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Legrand projects">
-                    <img src="logos-projects/legrand_logo.png" alt="Legrand">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/legrand_logo.png" alt="Legrand">
                 </a>
                 <a class="home-partner-logo home-partner-logo-edenred" href="projects-scene/proiecte.html" aria-label="Edenred projects">
-                    <img src="logos-projects/edenred-logo.png" alt="Edenred">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/edenred-logo.png" alt="Edenred">
                 </a>
                 <a class="home-partner-logo home-partner-logo-engie" href="projects-scene/proiecte.html" aria-label="Engie projects">
-                    <img src="logos-projects/engie_romania-logo.png" alt="Engie Romania">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/engie_romania-logo.png" alt="Engie Romania">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Axway projects">
-                    <img src="logos-projects/axway-logo.jpg" alt="Axway">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/axway-logo.jpg" alt="Axway">
                 </a>
                 <a class="home-partner-logo home-partner-logo-hbo" href="projects-scene/proiecte.html" aria-label="HBO projects">
-                    <img src="logos-projects/hbo-seeklogo.png" alt="HBO">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/hbo-seeklogo.png" alt="HBO">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Evolution projects">
-                    <img src="logos-projects/evolution-logo.png" alt="Evolution">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/evolution-logo.png" alt="Evolution">
                 </a>
                 <a class="home-partner-logo home-partner-logo-konecta" href="projects-scene/proiecte.html" aria-label="Konecta projects">
-                    <img src="logos-projects/konecta-logo.jpg" alt="Konecta">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/konecta-logo.jpg" alt="Konecta">
                 </a>
                 <a class="home-partner-logo home-partner-logo-profi" href="projects-scene/proiecte.html" aria-label="Profi projects">
-                    <img src="logos-projects/profi-logo.jpg" alt="Profi">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/profi-logo.jpg" alt="Profi">
                 </a>
                 <a class="home-partner-logo" href="projects-scene/proiecte.html" aria-label="Bayer projects">
-                    <img src="logos-projects/bayer-logo.jpg" alt="Bayer">
+                    <img loading="lazy" decoding="async" data-defer-src="logos-projects/bayer-logo.jpg" alt="Bayer">
                 </a>
             </div>
         </div>
@@ -674,6 +666,45 @@
         <script src="cms/cms.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
+                    const loadDeferredImage = (img) => {
+                        if (!img?.dataset.deferSrc) return;
+                        img.src = img.dataset.deferSrc;
+                        img.removeAttribute('data-defer-src');
+                    };
+
+                    const observeDeferredImages = (root = document) => {
+                        const images = Array.from(root.querySelectorAll('img[data-defer-src]'));
+                        if (!images.length) return;
+
+                        if (!('IntersectionObserver' in window)) {
+                            images.forEach(loadDeferredImage);
+                            return;
+                        }
+
+                        const observer = new IntersectionObserver((entries, imageObserver) => {
+                            entries.forEach(entry => {
+                                if (!entry.isIntersecting) return;
+                                const targets = entry.target.matches('img[data-defer-src]')
+                                    ? [entry.target]
+                                    : Array.from(entry.target.querySelectorAll('img[data-defer-src]'));
+                                targets.forEach(loadDeferredImage);
+                                imageObserver.unobserve(entry.target);
+                            });
+                        }, {
+                            rootMargin: '80px 0px',
+                            threshold: 0.01
+                        });
+
+                        images.forEach(img => {
+                            const target = img.closest('.projects-slider')
+                                || img.closest('.home-partners-section')
+                                || img.closest('.services-gallery-grid')
+                                || img.closest('.project-slider-card, .service-gallery-card, .why-us-feature-media, .about-feature-media, .insights-feature-media, .home-partner-logo, .split-image')
+                                || img;
+                            observer.observe(target);
+                        });
+                    };
+
                     if (window.WorkspaceCMS) {
                         const customProjects = window.WorkspaceCMS.getEntriesByType('project');
                         const sliderTrack = document.querySelector('[data-projects-track]');
@@ -1022,10 +1053,10 @@
                                 card.className = 'project-slider-card project-slider-card-logo';
                                 card.setAttribute('data-project-link', project.sourceLink || `cms/entry.html?type=project&slug=${encodeURIComponent(project.slug)}`);
                                 card.innerHTML = `
-                                    <img src="${project.coverImage || 'projects-pictures/skytower-hero.jpg'}" alt="${project.title}">
+                                    <img data-defer-src="${project.coverImage || 'projects-pictures/skytower-hero.jpg'}" alt="${project.title}" loading="lazy" decoding="async">
                                     <div class="project-slider-overlay">
                                         <h3>${project.title}</h3>
-                                        <img src="${hoverLogo.src}" alt="${hoverLogo.alt}" class="project-slider-hover-logo${/adobe/i.test(project.title || '') ? ' project-slider-hover-logo-adobe' : ''}${/uber/i.test(project.title || '') ? ' project-slider-hover-logo-uber' : ''}${/tiriac\\s*collection/i.test(project.title || '') ? ' project-slider-hover-logo-tiriac' : ''}">
+                                        <img data-defer-src="${hoverLogo.src}" alt="${hoverLogo.alt}" class="project-slider-hover-logo${/adobe/i.test(project.title || '') ? ' project-slider-hover-logo-adobe' : ''}${/uber/i.test(project.title || '') ? ' project-slider-hover-logo-uber' : ''}${/tiriac\\s*collection/i.test(project.title || '') ? ' project-slider-hover-logo-tiriac' : ''}" loading="lazy" decoding="async">
                                         <a href="${project.sourceLink || `cms/entry.html?type=project&slug=${encodeURIComponent(project.slug)}`}" class="pivot-link">View Project</a>
                                     </div>
                                 `;
@@ -1033,6 +1064,8 @@
                             });
                         }
                     }
+
+                    observeDeferredImages();
 
                     const video = document.getElementById('heroVideo');
                             const container = document.getElementById('heroTextContainer');
@@ -1049,6 +1082,22 @@
                             const heroScrollButton = document.getElementById('heroScrollButton');
                             const heroMetricsBand = document.getElementById('heroMetricsBand');
                         const heroSection = document.getElementById('hero');
+
+                        const startHeroVideo = () => {
+                            if (!video) return;
+                            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                            const prefersReducedData = window.matchMedia('(prefers-reduced-data: reduce)').matches;
+                            const compactViewport = window.matchMedia('(max-width: 768px)').matches;
+                            if (prefersReducedMotion || prefersReducedData || connection?.saveData || compactViewport) {
+                                video.removeAttribute('autoplay');
+                                video.preload = 'none';
+                                return;
+                            }
+                            video.play().catch(() => {});
+                        };
+
+                        startHeroVideo();
 
                         const closeHeroSearch = () => {
                             heroSearchShell?.classList.remove('is-open');
@@ -1274,6 +1323,7 @@
                                 ...originalCards.map(card => card.cloneNode(true)),
                                 ...originalCards.map(card => card.cloneNode(true))
                             ].forEach(card => track.appendChild(card));
+                            observeDeferredImages(track);
                             viewport.scrollLeft = 0;
                             track.style.transition = 'none';
                             track.style.transform = 'none';
@@ -1654,17 +1704,23 @@
         const menuLinks = document.querySelectorAll('.menu-nav-item a');
         const allImages = document.querySelectorAll('.menu-img-item');
         const allVisuals = document.querySelectorAll('.menu-visual-item');
+        let menuImagesLoaded = false;
+
+        function loadMenuImages() {
+            if (menuImagesLoaded) return;
+            allImages.forEach(img => {
+                if (img.dataset.src && !img.src) {
+                    img.src = img.dataset.src;
+                }
+            });
+            menuImagesLoaded = true;
+        }
 
         function openMenuOverlay() {
+            loadMenuImages();
             menuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
-        // Preload trigger: Create objects for all images to force cache
-        document.querySelectorAll('.menu-img-item').forEach(img => {
-            const loader = new Image();
-            loader.src = img.src;
-        });
 
         menuOpen.addEventListener('click', openMenuOverlay);
         heroMenuOpen?.addEventListener('click', openMenuOverlay);
@@ -1696,6 +1752,6 @@
             });
         });
         </script>
-    <script src="menu-state.js"></script>
+    <script src="menu-state.js?v=20260604-perf"></script>
 </body>
 </html>
