@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Studio | Demo Design Premium</title>
-    <link rel="preload" as="image" href="images/uipath-header.jpg" fetchpriority="high">
     <link rel="preload" as="video" href="videos/video-workspace-mobile.mp4" type="video/mp4" media="(max-width: 768px)" fetchpriority="high">
     <link rel="preload" as="video" href="videos/video-workspace-optimized.mp4" type="video/mp4" media="(min-width: 769px)" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
@@ -155,7 +154,7 @@
 
     <header class="hero" id="hero">
         <div class="hero-video-container">
-            <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/uipath-header.jpg" class="hero-bg-video">
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-bg-video">
                 <source src="videos/video-workspace-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
                 <source src="videos/video-workspace-optimized.mp4" type="video/mp4" media="(min-width: 769px)">
                 <source src="videos/video-workspace-optimized.webm" type="video/webm" media="(min-width: 769px)">
@@ -1086,9 +1085,8 @@
                             const heroMetricsBand = document.getElementById('heroMetricsBand');
                         const heroSection = document.getElementById('hero');
 
-                        const releaseHeroPoster = () => {
+                        const markHeroVideoReady = () => {
                             if (!video) return;
-                            video.removeAttribute('poster');
                             video.classList.add('is-playing');
                         };
 
@@ -1103,15 +1101,15 @@
                                 return;
                             }
                             video.load();
-                            video.play().then(releaseHeroPoster).catch(() => {});
+                            video.play().then(markHeroVideoReady).catch(() => {});
                         };
 
                         ['loadedmetadata', 'loadeddata', 'canplay', 'playing'].forEach(eventName => {
-                            video?.addEventListener(eventName, releaseHeroPoster, { once: true });
+                            video?.addEventListener(eventName, markHeroVideoReady, { once: true });
                         });
                         window.setTimeout(() => {
                             if (video?.currentTime > 0 || video?.readyState >= 2) {
-                                releaseHeroPoster();
+                                markHeroVideoReady();
                             }
                         }, 700);
 
