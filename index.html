@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Studio | Demo Design Premium</title>
     <link rel="preload" as="image" href="images/uipath-header.jpg" fetchpriority="high">
+    <link rel="preload" as="video" href="videos/video-workspace-mobile.mp4" type="video/mp4" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="video" href="videos/video-workspace-optimized.mp4" type="video/mp4" media="(min-width: 769px)" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
@@ -154,8 +156,9 @@
     <header class="hero" id="hero">
         <div class="hero-video-container">
             <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/uipath-header.jpg" class="hero-bg-video">
-                <source src="videos/video-workspace-optimized.webm" type="video/webm">
-                <source src="videos/video-workspace-optimized.mp4" type="video/mp4">
+                <source src="videos/video-workspace-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                <source src="videos/video-workspace-optimized.mp4" type="video/mp4" media="(min-width: 769px)">
+                <source src="videos/video-workspace-optimized.webm" type="video/webm" media="(min-width: 769px)">
             </video>
             <div class="hero-overlay-dark"></div>
         </div>
@@ -1088,12 +1091,12 @@
                             const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
                             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                             const prefersReducedData = window.matchMedia('(prefers-reduced-data: reduce)').matches;
-                            const compactViewport = window.matchMedia('(max-width: 768px)').matches;
-                            if (prefersReducedMotion || prefersReducedData || connection?.saveData || compactViewport) {
+                            if (prefersReducedMotion || prefersReducedData || connection?.saveData) {
                                 video.removeAttribute('autoplay');
                                 video.preload = 'none';
                                 return;
                             }
+                            video.load();
                             video.play().catch(() => {});
                         };
 
