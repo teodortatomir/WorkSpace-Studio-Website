@@ -1086,6 +1086,12 @@
                             const heroMetricsBand = document.getElementById('heroMetricsBand');
                         const heroSection = document.getElementById('hero');
 
+                        const releaseHeroPoster = () => {
+                            if (!video) return;
+                            video.removeAttribute('poster');
+                            video.classList.add('is-playing');
+                        };
+
                         const startHeroVideo = () => {
                             if (!video) return;
                             const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
@@ -1097,8 +1103,17 @@
                                 return;
                             }
                             video.load();
-                            video.play().catch(() => {});
+                            video.play().then(releaseHeroPoster).catch(() => {});
                         };
+
+                        ['loadedmetadata', 'loadeddata', 'canplay', 'playing'].forEach(eventName => {
+                            video?.addEventListener(eventName, releaseHeroPoster, { once: true });
+                        });
+                        window.setTimeout(() => {
+                            if (video?.currentTime > 0 || video?.readyState >= 2) {
+                                releaseHeroPoster();
+                            }
+                        }, 700);
 
                         startHeroVideo();
 
