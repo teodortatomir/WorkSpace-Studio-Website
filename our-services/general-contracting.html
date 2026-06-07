@@ -4,16 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>General Contracting | Workspace Studio</title>
+    <meta name="description" content="General Contracting by Workspace Studio: construction works, MEP coordination, furniture supply and architectural solutions under one site team.">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-services.css">
+    <link rel="stylesheet" href="general-contracting.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="why-us-page">
-        <section class="why-us-hero">
-            <span class="category-tag">What we do</span>
-            <h1>General Contracting</h1>
-            <p>Coordination, procurement, implementation, and site delivery aligned under one clear workspace vision.</p>
+<body class="design-page gc-page">
+    <nav class="navbar main-nav visible-nav contact-nav-theme design-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img data-src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects">
+                        <a href="../projects-scene/proiecte.html">Projects</a>
+                        <div class="menu-subnav" aria-label="Projects submenu">
+                            <span class="menu-subnav-title">Projects</span>
+                            <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                            <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                            <a href="../projects-scene/proiecte.html">General Contracting</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services">
+                        <a href="../services/index.html">What we do</a>
+                        <div class="menu-subnav" aria-label="What we do submenu">
+                            <span class="menu-subnav-title">What we do</span>
+                            <a href="../our-services/design-services.html">Design &amp; Build</a>
+                            <a href="../our-services/general-contracting.html">General Contracting</a>
+                            <a href="../our-services/furniture.html">Furniture</a>
+                            <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                            <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                            <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners">
+                        <a href="../why-us/index.html">Why us</a>
+                        <div class="menu-subnav" aria-label="Why us submenu">
+                            <span class="menu-subnav-title">Why us</span>
+                            <a href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a href="../sustainability/index.html">Sustainability</a>
+                            <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                            <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights">
+                        <a href="../insights/insights.html">News &amp; Insights</a>
+                        <div class="menu-subnav" aria-label="News and Insights submenu">
+                            <span class="menu-subnav-title">News &amp; Insights</span>
+                            <a href="../insights/press-releases.html">Press Releases</a>
+                            <a href="../insights/in-the-news.html">In the News</a>
+                            <a href="../insights/insights.html">Office Insights</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="design-main db-page gc-main">
+        <section class="db-hero gc-hero">
+            <figure class="db-hero-media gc-hero-media reveal reveal-up">
+                <img loading="eager" decoding="async" src="../index-photos/general-contracting.jpg" alt="Workspace Studio General Contracting project">
+            </figure>
+        </section>
+
+        <section class="db-hero-intro gc-hero-intro">
+            <div class="db-shell db-hero-copy gc-hero-copy reveal reveal-up">
+                <span class="db-eyebrow">General Contracting</span>
+                <h1>Exceptional execution when the design is set.</h1>
+                <p class="db-hero-lead">Construction works, mechanical and electrical installations, furniture supply and architectural solutions under one site team. The same discipline we apply to our own Design &amp; Build projects.</p>
+            </div>
+        </section>
+
+        <section class="db-section gc-intro-section">
+            <div class="db-shell">
+                <div class="gc-copy-block reveal reveal-up">
+                    <p>General Contracting is Workspace Studio's execution model for office projects where the design is already set, supplied by your architect, by a landlord designer, by a global corporate design team or by Workspace Studio under a separate design contract. Our in-house site team takes over from the design handover point and delivers the build under a single contract.</p>
+                </div>
+                <figure class="gc-wide-photo reveal reveal-up">
+                    <img loading="lazy" decoding="async" src="../projects-pictures/skytower-block.jpg" alt="Workspace Studio office fit-out execution">
+                </figure>
+            </div>
+        </section>
+
+        <section class="db-section gc-scope-section">
+            <div class="db-shell">
+                <div class="db-section-heading db-centered reveal reveal-up">
+                    <span class="db-eyebrow">Scope of work</span>
+                    <h2>As an experienced general contractor, Workspace Studio oversees all interior construction elements, including:</h2>
+                </div>
+                <div class="gc-scope-list reveal reveal-up">
+                    <p>Partitions, ceilings and finishes</p>
+                    <p>Flooring and carpeting</p>
+                    <p>Mechanical, electrical and plumbing (MEP) coordination</p>
+                    <p>Health &amp; Safety management</p>
+                    <p>Continuous on-site supervision</p>
+                    <p>Quality assurance and clear reporting</p>
+                </div>
+                <p class="gc-section-note reveal reveal-up">This ensures controlled progress, predictable timelines and high-quality results.</p>
+            </div>
+        </section>
+
+        <section class="db-section gc-steps-section">
+            <div class="db-shell">
+                <div class="db-section-heading db-centered reveal reveal-up">
+                    <span class="db-eyebrow">Project Steps in General Contracting</span>
+                    <h2>How a General Contracting project moves from design handover to completion</h2>
+                </div>
+                <div class="gc-step-stack">
+                    <article class="gc-step-item reveal reveal-up">
+                        <span>1.</span>
+                        <p><strong>Design review and constructability check.</strong> We start with a working session on the design handed over by the client or external design team. Our architects and engineers review drawings for constructability, MEP coordination, technical gaps and procurement feasibility. Issues raised at this stage save weeks on site later.</p>
+                    </article>
+                    <article class="gc-step-item reveal reveal-up">
+                        <span>2.</span>
+                        <p><strong>Procurement and pre-construction.</strong> Bill of quantities issued, framework agreements activated with manufacturers and subcontractors, long-lead items ordered. Direct manufacturer relationships on furniture, flooring, partitions and acoustic products give Workspace Studio shorter lead times than typical resellers.</p>
+                    </article>
+                    <article class="gc-step-item reveal reveal-up">
+                        <span>3.</span>
+                        <p><strong>Site mobilisation.</strong> Site setup, HSE briefing, temporary works, demolition where needed. The site manager assigned at this stage stays on the project through to handover.</p>
+                    </article>
+                    <article class="gc-step-item reveal reveal-up">
+                        <span>4.</span>
+                        <p><strong>Construction and MEP execution.</strong> Partitions, ceilings, flooring, MEP integration, joinery and finishes are run by Workspace Studio's in-house trades and selected subcontractors, coordinated under one site manager, on one schedule, with daily quality control. Critical-path work stays in-house.</p>
+                    </article>
+                    <article class="gc-step-item reveal reveal-up">
+                        <span>5.</span>
+                        <p><strong>Furniture installation and commissioning.</strong> Furniture delivered just-in-time from the warehouse, installed by the same logistics team that handles Day-2 service. MEP systems commissioned, fire safety tested, snagging completed.</p>
+                    </article>
+                    <article class="gc-step-item reveal reveal-up">
+                        <span>6.</span>
+                        <p><strong>Handover and Day-2 service.</strong> Documentation pack delivered, keys handed over, warranty period activated. The same team stays on for warranty handling, reconfigurations and maintenance through Workspace Studio's Logistics &amp; Facilities Services.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="db-section gc-quality-section">
+            <div class="db-shell">
+                <div class="db-section-heading db-centered reveal reveal-up">
+                    <span class="db-eyebrow">Quality &amp; site management</span>
+                    <h2>Built like our own designs</h2>
+                    <p>Most fit-out companies execute. But Workspace Studio has experience in turn-key projects and sees the larger picture. Site teams that have spent 15+ years correcting design errors on their own projects bring a different eye to executing someone else's design.</p>
+                </div>
+                <div class="gc-quality-grid">
+                    <article class="gc-quality-item reveal reveal-up">
+                        <figure>
+                            <img loading="lazy" decoding="async" src="../projects-pictures/honeywell.jpg" alt="Workspace Studio interior fit-out quality">
+                        </figure>
+                        <p><strong>In-house trades on critical paths.</strong> Partitions, MEP integration, joinery and finishes are handled by Workspace Studio's directly employed teams. Subcontractors cover specialised scope (specialist flooring, glazing, signage) but the critical-path trades stay in-house. One chain of accountability, one quality standard.</p>
+                    </article>
+                    <article class="gc-quality-item reveal reveal-up">
+                        <figure>
+                            <img loading="lazy" decoding="async" src="../projects-pictures/metro-systems.jpg" alt="Office technical coordination and execution">
+                        </figure>
+                        <p><strong>MEP coordination as a discipline, not an afterthought.</strong> Mechanical, electrical and sanitary installations account for most of the technical risk on an office fit-out. Our engineers run MEP coordination as a dedicated workstream from pre-construction through commissioning, with daily site reviews and weekly client reporting.</p>
+                    </article>
+                    <article class="gc-quality-item reveal reveal-up">
+                        <figure>
+                            <img loading="lazy" decoding="async" src="../projects-pictures/skytower.jpg" alt="Completed office project by Workspace Studio">
+                        </figure>
+                        <p><strong>HSE record.</strong> Zero notifiable incidents across the corporate fit-out portfolio. ISO 45001 certified for occupational health and safety, alongside ISO 9001 (quality management) and ISO 14001 (environmental management).</p>
+                    </article>
+                    <article class="gc-quality-item reveal reveal-up">
+                        <figure>
+                            <img loading="lazy" decoding="async" src="../projects-pictures/technology-company.jpg" alt="Workspace Studio completed office interior">
+                        </figure>
+                        <p><strong>Quality control built into daily rhythm.</strong> Quality checks happen daily on site, not as a punch-list exercise at the end. Snagging at handover is final verification, not the first time someone looks closely.</p>
+                    </article>
+                </div>
+                <p class="gc-section-note gc-quality-note reveal reveal-up">The same procurement discipline, in-house trade coordination and quality control standards apply as in our Design &amp; Build projects. The difference is contractual scope, not execution standard.</p>
+            </div>
+        </section>
+
+        <section class="db-cta-section gc-cta-section">
+            <div class="db-shell db-cta gc-cta reveal reveal-up">
+                <span class="db-eyebrow">Ready to implement your office design?</span>
+                <h2>Get in touch to discuss solutions, budget range and timeline.</h2>
+                <a href="../contact/contact.html">Get in touch</a>
+            </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="design-services.js?v=gc-clean"></script>
+    <script src="../menu-state.js?v=20260604-perf"></script>
 </body>
 </html>
