@@ -54,3 +54,40 @@ if (revealItems.length) {
     observer.observe(item);
   });
 }
+
+const workspaceSlider = document.querySelector("[data-workspace-slider]");
+
+if (workspaceSlider) {
+  const slides = workspaceSlider.querySelectorAll("[data-workspace-slide]");
+  const previousButton = workspaceSlider.querySelector("[data-workspace-prev]");
+  const nextButton = workspaceSlider.querySelector("[data-workspace-next]");
+  const dots = workspaceSlider.querySelectorAll(".furniture-slider-dots span");
+  let activeIndex = 0;
+  let autoplayId;
+
+  const activateSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === activeIndex);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === activeIndex);
+    });
+  };
+
+  const startAutoplay = () => {
+    window.clearInterval(autoplayId);
+    autoplayId = window.setInterval(() => activateSlide(activeIndex + 1), 7000);
+  };
+
+  const goToSlide = (index) => {
+    activateSlide(index);
+    startAutoplay();
+  };
+
+  previousButton?.addEventListener("click", () => goToSlide(activeIndex - 1));
+  nextButton?.addEventListener("click", () => goToSlide(activeIndex + 1));
+  startAutoplay();
+}
