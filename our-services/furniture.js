@@ -64,6 +64,13 @@ if (workspaceSlider) {
   const dots = workspaceSlider.querySelectorAll(".furniture-slider-dots span");
   let activeIndex = 0;
   let autoplayId;
+  let resizeId;
+
+  const setSliderHeight = () => {
+    const activeSlide = slides[activeIndex];
+    if (!activeSlide) return;
+    workspaceSlider.style.setProperty("--workspace-slider-height", `${activeSlide.scrollHeight}px`);
+  };
 
   const activateSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;
@@ -75,6 +82,8 @@ if (workspaceSlider) {
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle("is-active", dotIndex === activeIndex);
     });
+
+    window.requestAnimationFrame(setSliderHeight);
   };
 
   const startAutoplay = () => {
@@ -89,5 +98,11 @@ if (workspaceSlider) {
 
   previousButton?.addEventListener("click", () => goToSlide(activeIndex - 1));
   nextButton?.addEventListener("click", () => goToSlide(activeIndex + 1));
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeId);
+    resizeId = window.setTimeout(setSliderHeight, 120);
+  });
+  window.addEventListener("load", setSliderHeight);
+  setSliderHeight();
   startAutoplay();
 }

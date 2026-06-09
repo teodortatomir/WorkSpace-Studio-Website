@@ -3,17 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logistics & Facilities Services | Workspace Studio</title>
+    <title>Logistics &amp; Facilities Services | Workspace Studio</title>
+    <meta name="description" content="Logistics & Facilities Services by Workspace Studio: in-house warehousing, just-in-time delivery, installation, Day-2 service, warranty handling and office reconfigurations.">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-services.css">
+    <link rel="stylesheet" href="logistics-facilities-services.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="why-us-page">
-        <section class="why-us-hero">
-            <span class="category-tag">What we do</span>
-            <h1>Logistics &amp; Facilities Services</h1>
-            <p>Planning, delivery, installation, and facility support for workplace projects that need reliable execution.</p>
+<body class="design-page logistics-page">
+    <nav class="navbar main-nav visible-nav contact-nav-theme design-nav logistics-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img data-src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects">
+                        <a href="../projects-scene/proiecte.html">Projects</a>
+                        <div class="menu-subnav" aria-label="Projects submenu">
+                            <span class="menu-subnav-title">Projects</span>
+                            <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                            <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                            <a href="../projects-scene/proiecte.html">General Contracting</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services">
+                        <a href="../services/index.html">What we do</a>
+                        <div class="menu-subnav" aria-label="What we do submenu">
+                            <span class="menu-subnav-title">What we do</span>
+                            <a href="design-services.html">Design &amp; Build</a>
+                            <a href="general-contracting.html">General Contracting</a>
+                            <a href="furniture.html">Furniture</a>
+                            <a href="architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                            <a href="logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                            <a href="workplace-strategy.html">Workplace Strategy</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners">
+                        <a href="../why-us/index.html">Why us</a>
+                        <div class="menu-subnav" aria-label="Why us submenu">
+                            <span class="menu-subnav-title">Why us</span>
+                            <a href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a href="../sustainability/index.html">Sustainability</a>
+                            <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                            <a href="../why-us/budget-centricity.html">Budget Centricity</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights">
+                        <a href="../insights/insights.html">News &amp; Insights</a>
+                        <div class="menu-subnav" aria-label="News and Insights submenu">
+                            <span class="menu-subnav-title">News &amp; Insights</span>
+                            <a href="../insights/press-releases.html">Press Releases</a>
+                            <a href="../insights/in-the-news.html">In the News</a>
+                            <a href="../insights/insights.html">Office Insights</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="design-main db-page logistics-main">
+        <section class="db-hero logistics-hero">
+            <figure class="db-hero-media logistics-hero-media reveal reveal-up">
+                <img loading="eager" decoding="async" src="../index-photos/logistics.jpg" alt="Workspace Studio logistics and facility services">
+            </figure>
+        </section>
+
+        <section class="db-hero-intro logistics-hero-intro">
+            <div class="db-shell db-hero-copy logistics-hero-copy reveal reveal-up">
+                <span class="db-eyebrow">Logistics &amp; Facilities Services</span>
+                <h1>24h acknowledgment. 72h guaranteed response.</h1>
+                <p class="db-hero-lead">In-house warehousing, just-in-time delivery and installation during the office project. Day-2 service after handover, run by the same trusted team.</p>
+            </div>
+        </section>
+
+        <section class="db-section logistics-intro-section">
+            <div class="db-shell">
+                <div class="logistics-copy-block reveal reveal-up">
+                    <p>Logistics &amp; Facilities Services covers two distinct phases of every office project at Workspace Studio: the build phase (warehousing, just-in-time delivery, installation) and the post-handover phase (Day-2 service, warranty handling, reconfigurations, maintenance).</p>
+                    <p>The same in-house logistics team handles both. A 6,000 m² Workspace Studio warehouse stores furniture, architectural products and site materials, with sequencing tuned to the project programme to minimise on-site storage and disruption to ongoing operations.</p>
+                    <p>After handover, the team stays on under a 24h acknowledgment / 72h guaranteed response SLA, covering everything from a single chair replacement to floor-level reconfigurations as the organisation evolves.</p>
+                </div>
+                <div class="logistics-metrics reveal reveal-up" aria-label="Logistics and facilities service highlights">
+                    <article>
+                        <span>6,000 m²</span>
+                        <p>Dedicated in-house warehouse</p>
+                    </article>
+                    <article>
+                        <span>24h</span>
+                        <p>Service request acknowledgment</p>
+                    </article>
+                    <article>
+                        <span>72h</span>
+                        <p>Guaranteed substantive response</p>
+                    </article>
+                    <article>
+                        <span>€300k+</span>
+                        <p>Invested in 2025 operational technology</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="db-section logistics-build-section">
+            <div class="db-shell">
+                <div class="db-section-heading db-centered reveal reveal-up">
+                    <span class="db-eyebrow">What happens during the build phase</span>
+                    <h2>Warehousing, delivery and installation move in the same rhythm as the project programme.</h2>
+                </div>
+                <figure class="db-band-image logistics-build-band reveal reveal-up">
+                    <img loading="lazy" decoding="async" src="../images/who-are-we-hero.jpg" alt="Workspace Studio logistics project reception">
+                </figure>
+                <div class="db-step-grid logistics-phase-grid">
+                    <article class="db-step-card logistics-phase-card reveal reveal-up">
+                        <span>01</span>
+                        <h3>In-house warehousing</h3>
+                        <p>Workspace Studio operates a 6,000 m² dedicated warehouse for office furniture, architectural products and project materials. Warehousing in-house means the project programme drives delivery sequencing, with no dependency on third-party logistics windows or storage limits on the client's site.</p>
+                    </article>
+                    <article class="db-step-card logistics-phase-card reveal reveal-up">
+                        <span>02</span>
+                        <h3>Just-in-time delivery</h3>
+                        <p>Materials and furniture arrive on site in the sequence the construction programme needs them. Workstations land after partitions and flooring are complete; meeting room furniture follows AV integration; lounge zones are sequenced for the final phase. Storage on the active fit-out site stays minimal, which reduces site clutter and shortens snagging.</p>
+                    </article>
+                    <article class="db-step-card logistics-phase-card reveal reveal-up">
+                        <span>03</span>
+                        <h3>In-house installation</h3>
+                        <p>Furniture and architectural products are installed by Workspace Studio's directly employed logistics and installation teams, the same teams responsible for Day-2 service after handover. The chain of accountability from delivery to commissioning runs through one team.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="db-section logistics-day2-section">
+            <div class="db-shell logistics-day2-panel">
+                <div class="db-section-heading db-centered logistics-panel-heading reveal reveal-up">
+                    <span class="db-eyebrow">Day-2 services</span>
+                    <h2>What happens after move-in day</h2>
+                    <p>After handover, the relationship with Workspace Studio continues under a single Day-2 service program. The same team that built the office stays accountable, with consistent response standards across all post-handover requests.</p>
+                </div>
+                <div class="logistics-service-list">
+                    <article class="reveal reveal-up">
+                        <h3>24h acknowledgment / 72h guaranteed response</h3>
+                        <p>Every service request from an existing client receives acknowledgment within 24 hours and a substantive response within 72 hours. The SLA covers everything from product warranty claims to operational reconfigurations.</p>
+                    </article>
+                    <article class="reveal reveal-up">
+                        <h3>Warranty handling</h3>
+                        <p>Manufacturer warranties on furniture and architectural products are managed directly by Workspace Studio's team, with the manufacturer relationships and certified-dealer status that allow direct resolution. Clients deal with one point of contact through the entire warranty period.</p>
+                    </article>
+                    <article class="reveal reveal-up">
+                        <h3>Reconfigurations</h3>
+                        <p>Organisations change. Teams grow, restructure, shift between hybrid arrangements, move floors. Workspace Studio handles partial reconfigurations (a new team zone, a converted meeting room, an additional 50 workstations, or a complete floor change after restructuring) using the same specifications and brands installed originally, so the office reads as one continuous design over time.</p>
+                    </article>
+                    <article class="reveal reveal-up">
+                        <h3>Maintenance and operational support</h3>
+                        <p>Furniture maintenance, partition adjustments, signage updates, replacement parts and the operational housekeeping that an active corporate office generates over time.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="db-section logistics-infrastructure-section">
+            <div class="db-shell">
+                <div class="logistics-infrastructure-grid">
+                    <figure class="logistics-infrastructure-image reveal reveal-up">
+                        <img loading="lazy" decoding="async" src="../projects-pictures/skytower.jpg" alt="Workspace Studio showroom in Sky Tower Bucharest">
+                    </figure>
+                    <article class="logistics-infrastructure-copy reveal reveal-up">
+                        <div class="db-section-heading db-centered logistics-infrastructure-heading">
+                            <span class="db-eyebrow">In-house infrastructure</span>
+                            <h2>Physical capacity, operational tooling and showroom support under one Workspace Studio system.</h2>
+                        </div>
+                        <div class="logistics-infrastructure-text">
+                            <p>Logistics capability sits on physical infrastructure that Workspace Studio operates directly. The 6,000 m² warehouse handles project materials and furniture inventory, with capacity tuned for projects from 100 m² boutique offices to 30,000 m² corporate headquarters running in parallel.</p>
+                            <p>Continuous investment in technology and process supports the operation. Over €300,000 invested in 2025 alone in tracking systems, inventory management, operational tooling and integration with the active project pipeline, with the result of shorter delivery cycles and lower friction during installation phases.</p>
+                            <p>The 850 m² Workspace Studio showroom in Sky Tower, Bucharest, expanded in 2023, supports client visits, product specification sessions, live ergonomic assessments and project-stage workshops alongside the logistics operation.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="db-cta-section logistics-cta-section">
+            <div class="db-shell db-cta logistics-cta reveal reveal-up">
+                <span class="db-eyebrow">Office logistics or Day-2 service questions?</span>
+                <h2>Get in touch to discuss your project or existing facility.</h2>
+                <a href="../contact/contact.html">Get in touch</a>
+            </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="design-services.js?v=logistics-page"></script>
+    <script src="../menu-state.js?v=20260604-perf"></script>
 </body>
 </html>

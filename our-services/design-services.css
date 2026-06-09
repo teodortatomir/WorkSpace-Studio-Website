@@ -317,6 +317,7 @@ body.design-page {
 .db-budget-section .db-section-heading {
     max-width: 1280px;
     margin-bottom: 54px;
+    scroll-margin-top: 120px;
 }
 
 .db-budget-section .db-section-heading h2 {

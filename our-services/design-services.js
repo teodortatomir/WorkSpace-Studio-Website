@@ -326,3 +326,9 @@ setDesignMode("planning");
 renderTeamDots();
 showTeamSlide(0);
 startTeamAutoplay();
+
+if (window.location.hash === "#budget-centricity") {
+    window.setTimeout(() => {
+        document.getElementById("budget-centricity")?.scrollIntoView({ block: "start" });
+    }, 500);
+}

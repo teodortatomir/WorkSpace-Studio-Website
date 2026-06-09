@@ -80,7 +80,7 @@ body.furniture-page {
 .furniture-hero-media {
     position: relative;
     width: 100%;
-    height: clamp(420px, 62vh, 720px);
+    height: clamp(360px, 54vh, 620px);
     margin: 0;
     overflow: hidden;
     background: var(--furniture-soft);
@@ -105,26 +105,27 @@ body.furniture-page {
 }
 
 .furniture-hero-intro {
-    padding: 0 0 44px;
+    padding: 0 0 34px;
     background: #fff;
 }
 
 .furniture-hero-copy {
     display: grid;
     justify-items: center;
-    gap: 16px;
+    gap: 12px;
     max-width: 1040px;
     text-align: center;
 }
 
 .furniture-hero-copy h1 {
-    max-width: 880px;
+    max-width: 980px;
     margin: 0;
     color: var(--furniture-ink);
-    font-size: clamp(1.65rem, 2.7vw, 3rem);
+    font-size: clamp(1.9rem, 3.5vw, 4rem);
     font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 1.14;
+    letter-spacing: -0.06em;
+    line-height: 0.98;
+    text-wrap: balance;
 }
 
 .furniture-hero-copy p {
@@ -134,14 +135,6 @@ body.furniture-page {
     font-size: clamp(1rem, 1.08vw, 1.16rem);
     line-height: 1.68;
     text-wrap: pretty;
-}
-
-.furniture-hero-copy .furniture-hero-lead {
-    max-width: 760px;
-    color: var(--furniture-ink);
-    font-size: clamp(1.12rem, 1.35vw, 1.38rem);
-    font-weight: 600;
-    line-height: 1.45;
 }
 
 .furniture-section {
@@ -157,6 +150,10 @@ body.furniture-page {
 .furniture-intro-section {
     padding-top: 68px;
     border-top: 1px solid rgba(24, 22, 19, 0.08);
+}
+
+.furniture-intro-section .furniture-section-heading {
+    margin-bottom: clamp(26px, 3.2vw, 44px);
 }
 
 .furniture-centered {
@@ -293,58 +290,91 @@ body.furniture-page {
 
 .furniture-partners-panel {
     display: grid;
-    grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr);
-    gap: 0;
-    align-items: stretch;
-    min-height: clamp(560px, 64vh, 760px);
-    background: #171717;
-    color: #fff;
-    box-shadow: var(--furniture-shadow);
+    justify-items: center;
+    gap: clamp(30px, 4vw, 50px);
+    max-width: 1500px;
+    color: var(--furniture-ink);
+    text-align: center;
 }
 
 .furniture-partners-image {
-    position: relative;
-    min-height: clamp(480px, 64vh, 760px);
+    width: min(1500px, calc(100vw - 96px));
     margin: 0;
     overflow: hidden;
     background: var(--furniture-soft);
 }
 
-.furniture-partners-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(23, 23, 23, 0) 58%, rgba(23, 23, 23, 0.22) 100%);
-}
-
 .furniture-partners-image img {
+    height: clamp(320px, 34vw, 520px);
     object-position: center;
 }
 
 .furniture-partners-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: clamp(38px, 5.4vw, 86px);
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+    max-width: 940px;
 }
 
 .furniture-partners-copy .furniture-section-heading {
-    margin: 0 0 clamp(26px, 3vw, 38px);
+    margin: 0;
 }
 
 .furniture-partners-copy .furniture-section-heading h2 {
-    max-width: 760px;
-    color: #fff;
-    font-size: clamp(2rem, 3.45vw, 4rem);
+    max-width: none;
+    color: var(--furniture-ink);
+    font-size: clamp(2.1rem, 3.35vw, 4rem);
+    white-space: nowrap;
 }
 
 .furniture-partners-copy .furniture-copy-stack {
-    max-width: 780px;
+    max-width: 900px;
 }
 
 .furniture-partners-copy .furniture-copy-stack p {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: clamp(0.98rem, 1.05vw, 1.14rem);
+    color: var(--furniture-muted);
+    font-size: clamp(1rem, 1.08vw, 1.16rem);
+    line-height: 1.72;
+}
+
+.furniture-partners-proof {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 58px);
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+.furniture-partners-proof article {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--furniture-line);
+}
+
+.furniture-partners-proof h3 {
+    display: grid;
+    align-items: center;
+    min-height: 2.35em;
+    max-width: 11em;
+    margin: 0;
+    color: var(--furniture-ink);
+    font-size: clamp(1.25rem, 1.55vw, 1.85rem);
+    font-weight: 650;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+    text-wrap: balance;
+}
+
+.furniture-partners-proof p {
+    max-width: 24em;
+    margin: 0;
+    color: var(--furniture-muted);
+    font-size: clamp(0.95rem, 0.98vw, 1.04rem);
+    line-height: 1.72;
+    text-wrap: pretty;
 }
 
 .furniture-workspaces-section {
@@ -380,18 +410,31 @@ body.furniture-page {
 
 .furniture-workspace-slides {
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    height: var(--workspace-slider-height, 640px);
     background: #fff;
+    transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .furniture-workspace-slide {
-    display: none;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity 0.62s cubic-bezier(0.22, 1, 0.36, 1), transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 
 .furniture-workspace-slide.is-active {
-    display: grid;
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    z-index: 2;
 }
 
 .furniture-workspace-slide figure {
@@ -406,6 +449,12 @@ body.furniture-page {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.015);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.furniture-workspace-slide.is-active img {
+    transform: scale(1);
 }
 
 .furniture-workspace-copy {
@@ -474,7 +523,7 @@ body.furniture-page {
     align-items: center;
     justify-content: center;
     gap: 18px;
-    margin-top: 22px;
+    margin-top: 10px;
 }
 
 .furniture-slider-dots {
@@ -489,7 +538,7 @@ body.furniture-page {
     height: 8px;
     border-radius: 999px;
     background: rgba(23, 23, 23, 0.28);
-    transition: background 0.25s ease, transform 0.25s ease;
+    transition: background 0.35s ease, transform 0.35s ease;
 }
 
 .furniture-slider-dots span.is-active {
@@ -498,22 +547,26 @@ body.furniture-page {
 }
 
 .furniture-cta-section {
-    padding: clamp(120px, 15vw, 210px) 0 clamp(112px, 13vw, 190px);
+    padding: 72px 0 76px;
     background: #fff;
 }
 
 .furniture-cta {
     display: grid;
     justify-items: center;
-    gap: clamp(34px, 4vw, 54px);
+    width: min(1280px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
     text-align: center;
 }
 
 .furniture-cta h2 {
-    max-width: 980px;
-    margin: 0;
+    max-width: 1120px;
+    margin: 12px auto 0;
     color: var(--furniture-ink);
-    font-size: clamp(2rem, 4vw, 4.15rem);
+    font-size: clamp(2.1rem, 3.65vw, 4.45rem);
     font-weight: 600;
     letter-spacing: -0.06em;
     line-height: 1.02;
@@ -521,40 +574,36 @@ body.furniture-page {
 }
 
 .furniture-cta a {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
     min-height: 0;
-    padding: 0 0 24px;
-    border: 0;
+    margin-top: 46px;
     color: var(--furniture-ink);
-    font-size: clamp(0.88rem, 1vw, 1.05rem);
-    font-weight: 800;
+    font-size: 0.85rem;
+    font-weight: 500;
     letter-spacing: 4px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.25s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .furniture-cta a::after {
     content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 54px;
+    width: 40px;
     height: 1px;
+    margin-top: 15px;
     background: var(--furniture-accent);
-    transform: translateX(-50%);
-    transition: width 0.25s ease;
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .furniture-cta a:hover {
-    color: rgba(23, 23, 23, 0.68);
+    opacity: 0.75;
+    transform: translateY(-2px);
 }
 
 .furniture-cta a:hover::after {
-    width: 78px;
+    width: 100px;
 }
 
 .furniture-reveal {
@@ -581,20 +630,9 @@ body.furniture-page {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .furniture-partners-panel {
+    .furniture-partners-proof {
         grid-template-columns: 1fr;
-    }
-
-    .furniture-partners-panel {
-        min-height: 0;
-    }
-
-    .furniture-partners-image {
-        min-height: 420px;
-    }
-
-    .furniture-partners-image::after {
-        background: linear-gradient(180deg, rgba(23, 23, 23, 0) 64%, rgba(23, 23, 23, 0.34) 100%);
+        max-width: 820px;
     }
 
     .furniture-workspace-slide figure {
@@ -689,15 +727,16 @@ body.furniture-page {
     }
 
     .furniture-partners-image {
-        min-height: 340px;
+        width: 100%;
     }
 
-    .furniture-partners-copy {
-        padding: 30px 22px 34px;
+    .furniture-partners-image img {
+        height: 280px;
     }
 
     .furniture-partners-copy .furniture-section-heading h2 {
         font-size: clamp(1.8rem, 8vw, 2.55rem);
+        white-space: normal;
     }
 
     .furniture-workspace-slide figure {

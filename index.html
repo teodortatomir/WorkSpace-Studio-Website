@@ -1098,17 +1098,26 @@
                             video.classList.add('is-playing');
                         };
 
-                        const startHeroVideo = () => {
-                            if (!video) return;
+                        const canPlayHeroVideo = () => {
                             const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
                             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                             const prefersReducedData = window.matchMedia('(prefers-reduced-data: reduce)').matches;
                             if (prefersReducedMotion || prefersReducedData || connection?.saveData) {
+                                return false;
+                            }
+                            return true;
+                        };
+
+                        const startHeroVideo = ({ reload = false } = {}) => {
+                            if (!video) return;
+                            if (!canPlayHeroVideo()) {
                                 video.removeAttribute('autoplay');
                                 video.preload = 'none';
                                 return;
                             }
-                            video.load();
+                            if (reload || video.readyState === 0) {
+                                video.load();
+                            }
                             video.play().then(markHeroVideoReady).catch(() => {});
                         };
 
@@ -1122,6 +1131,16 @@
                         }, 700);
 
                         startHeroVideo();
+
+                        window.addEventListener('pageshow', () => {
+                            startHeroVideo();
+                        });
+
+                        document.addEventListener('visibilitychange', () => {
+                            if (document.visibilityState === 'visible') {
+                                startHeroVideo();
+                            }
+                        });
 
                         const closeHeroSearch = () => {
                             heroSearchShell?.classList.remove('is-open');
