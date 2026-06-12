@@ -86,7 +86,7 @@
                             <a href="../partners/partners.html">Brands &amp; Partners</a>
                             <a href="../sustainability/index.html">Sustainability</a>
                             <a href="../ergonomics-specialists/index.html">Ergonomics</a>
-                            <a href="budget-centricity.html">Budget Centricity</a>
+                            <a href="../our-services/design-services.html#budget-centricity">Budget Centricity</a>
                         </div>
                     </div>
                     <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
@@ -333,6 +333,15 @@
         });
         menuLinks.forEach((link) => link.addEventListener("click", () => menuOverlay?.classList.remove("active")));
 
+        document.querySelectorAll(".why-block, .why-lifecycle-feature, .why-focus-card, .why-cta, .why-centered").forEach((block) => {
+            const revealChildren = block.querySelectorAll(":scope > .why-eyebrow, :scope > h1, :scope > h2, :scope > p, :scope > figure, :scope > .why-copy, :scope > .why-scale-header, :scope > .why-scale-body, :scope > .why-partner-header, :scope > .why-partner-grid, :scope > .why-lifecycle-copy, :scope > .why-lifecycle-image, :scope > .why-lifecycle-proof, :scope > .why-focus-copy, :scope > a");
+
+            revealChildren.forEach((child, index) => {
+                child.classList.add("why-reveal");
+                child.style.setProperty("--why-reveal-delay", `${Math.min(index, 5) * 70}ms`);
+            });
+        });
+
         const revealTargets = [".why-reveal"];
 
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -343,7 +352,9 @@
 
             revealItems.forEach((item, index) => {
                 item.classList.add("why-reveal");
-                item.style.setProperty("--why-reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+                if (!item.style.getPropertyValue("--why-reveal-delay")) {
+                    item.style.setProperty("--why-reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+                }
             });
 
             const revealObserver = new IntersectionObserver((entries) => {

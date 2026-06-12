@@ -17,7 +17,7 @@ body.furniture-page {
     overflow-x: hidden;
     background: var(--furniture-bg);
     color: var(--furniture-ink);
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
 }
 
 .furniture-page .navbar {
@@ -112,28 +112,28 @@ body.furniture-page {
 .furniture-hero-copy {
     display: grid;
     justify-items: center;
-    gap: 12px;
-    max-width: 1040px;
+    gap: 16px;
+    max-width: 980px;
     text-align: center;
 }
 
 .furniture-hero-copy h1 {
-    max-width: 980px;
+    max-width: 880px;
     margin: 0;
     color: var(--furniture-ink);
-    font-size: clamp(1.9rem, 3.5vw, 4rem);
+    font-size: clamp(1.65rem, 2.7vw, 3rem);
     font-weight: 600;
-    letter-spacing: -0.06em;
-    line-height: 0.98;
+    letter-spacing: -0.04em;
+    line-height: 1.14;
     text-wrap: balance;
 }
 
 .furniture-hero-copy p {
-    max-width: 860px;
+    max-width: 720px;
     margin: 0;
     color: var(--furniture-muted);
-    font-size: clamp(1rem, 1.08vw, 1.16rem);
-    line-height: 1.68;
+    font-size: 1rem;
+    line-height: 1.7;
     text-wrap: pretty;
 }
 
@@ -180,11 +180,11 @@ body.furniture-page {
 }
 
 .furniture-section-heading p {
-    max-width: 820px;
+    max-width: 760px;
     margin: 22px 0 0;
     color: var(--furniture-muted);
-    font-size: clamp(1rem, 1.08vw, 1.16rem);
-    line-height: 1.74;
+    font-size: 1rem;
+    line-height: 1.72;
     text-wrap: pretty;
 }
 
@@ -203,8 +203,8 @@ body.furniture-page {
 .furniture-workspace-copy p {
     margin: 0;
     color: var(--furniture-muted);
-    font-size: clamp(0.96rem, 1vw, 1.08rem);
-    line-height: 1.76;
+    font-size: clamp(0.94rem, 0.98vw, 1.04rem);
+    line-height: 1.72;
     text-wrap: pretty;
 }
 
@@ -333,7 +333,7 @@ body.furniture-page {
 
 .furniture-partners-copy .furniture-copy-stack p {
     color: var(--furniture-muted);
-    font-size: clamp(1rem, 1.08vw, 1.16rem);
+    font-size: clamp(0.94rem, 0.98vw, 1.04rem);
     line-height: 1.72;
 }
 
@@ -609,7 +609,10 @@ body.furniture-page {
 .furniture-reveal {
     opacity: 0;
     transform: translateY(34px);
-    transition: opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.72s ease var(--furniture-reveal-delay, 0ms),
+        transform 0.88s cubic-bezier(0.22, 1, 0.36, 1) var(--furniture-reveal-delay, 0ms);
+    will-change: opacity, transform;
 }
 
 .furniture-reveal-left {
@@ -623,6 +626,7 @@ body.furniture-page {
 .furniture-reveal.is-visible {
     opacity: 1;
     transform: translate(0, 0) scale(1);
+    will-change: auto;
 }
 
 @media (max-width: 1180px) {

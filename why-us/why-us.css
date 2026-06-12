@@ -608,13 +608,17 @@ body.why-us-body {
 .why-scroll-ready .why-reveal {
     opacity: 0;
     transform: translateY(34px);
-    transition: opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1) var(--why-reveal-delay, 0ms), transform 0.72s cubic-bezier(0.22, 1, 0.36, 1) var(--why-reveal-delay, 0ms);
+    transition:
+        opacity 0.72s ease var(--why-reveal-delay, 0ms),
+        transform 0.88s cubic-bezier(0.22, 1, 0.36, 1) var(--why-reveal-delay, 0ms);
+    will-change: opacity, transform;
 }
 
 .why-scroll-ready .why-reveal.is-visible,
 .why-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
 }
 
 @media (max-width: 1080px) {

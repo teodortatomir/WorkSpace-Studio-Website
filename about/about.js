@@ -111,6 +111,15 @@ if (ecosystemModule) {
     });
 }
 
+document.querySelectorAll('.about-block, .about-cta').forEach(block => {
+    const revealChildren = block.querySelectorAll(':scope > .about-eyebrow, :scope > h1, :scope > h2, :scope > .about-copy, :scope > .about-philosophy-layout, :scope > .about-approach-image, :scope > .about-principles, :scope > .about-people-grid, :scope > .about-millerknoll-badge, :scope > .about-cert-image, :scope > .about-cert-list, :scope > a');
+
+    revealChildren.forEach((child, index) => {
+        child.classList.add('reveal', 'reveal-up');
+        child.style.transitionDelay = `${Math.min(index, 5) * 0.07}s`;
+    });
+});
+
 const revealElements = document.querySelectorAll('.reveal');
 
 revealElements.forEach((element, index) => {

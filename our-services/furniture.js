@@ -35,24 +35,53 @@ if (menuOpen && menuClose && menuOverlay) {
   menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
 }
 
+document.querySelectorAll(".furniture-hero-copy, .furniture-section-heading, .furniture-copy-stack, .furniture-brand-panel, .furniture-partners-panel, .furniture-workspace-slider, .furniture-cta").forEach((block) => {
+  const revealChildren = block.querySelectorAll(":scope > .furniture-kicker, :scope > h1, :scope > h2, :scope > h3, :scope > p, :scope > figure, :scope > .furniture-copy-stack, :scope > .furniture-section-heading, :scope > .furniture-brand-grid, :scope > .furniture-partners-copy, :scope > .furniture-partners-image, :scope > .furniture-partners-proof, :scope > .furniture-workspace-slides, :scope > .furniture-slider-nav, :scope > a");
+
+  revealChildren.forEach((child, index) => {
+    child.classList.add("furniture-reveal");
+    child.style.setProperty("--furniture-reveal-delay", `${Math.min(index, 5) * 70}ms`);
+  });
+});
+
 const revealItems = document.querySelectorAll(".furniture-reveal");
 
 if (revealItems.length) {
+  const showRevealItem = (item) => {
+    item.classList.add("is-visible");
+    observer?.unobserve(item);
+  };
+
+  const revealPassedItems = () => {
+    const triggerPoint = window.innerHeight * 0.92;
+    revealItems.forEach((item) => {
+      if (item.classList.contains("is-visible")) return;
+      if (item.getBoundingClientRect().top < triggerPoint) {
+        showRevealItem(item);
+      }
+    });
+  };
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
+        showRevealItem(entry.target);
       });
     },
     { threshold: 0.12 }
   );
 
   revealItems.forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index * 45, 220)}ms`;
+    if (!item.style.getPropertyValue("--furniture-reveal-delay")) {
+      item.style.setProperty("--furniture-reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+    }
     observer.observe(item);
   });
+
+  revealPassedItems();
+  window.addEventListener("scroll", revealPassedItems, { passive: true });
+  window.addEventListener("resize", revealPassedItems);
 }
 
 const workspaceSlider = document.querySelector("[data-workspace-slider]");
