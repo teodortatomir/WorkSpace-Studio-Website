@@ -61,7 +61,7 @@ body.why-us-body {
 
 .why-hero-visual {
     width: 100%;
-    height: clamp(420px, 62vh, 720px);
+    height: clamp(380px, 54vh, 620px);
     margin: 0;
     overflow: hidden;
     background: var(--why-soft);
@@ -618,6 +618,16 @@ body.why-us-body {
 .why-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
+}
+
+.why-scroll-ready .why-hero-copy-reveal,
+.why-scroll-ready .why-hero-copy-reveal > .why-reveal,
+.why-hero-copy-reveal,
+.why-hero-copy-reveal > .why-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
     will-change: auto;
 }
 

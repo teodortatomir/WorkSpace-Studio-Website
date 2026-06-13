@@ -1,11 +1,18 @@
 body.sustainability-page {
-    background: #fff;
-    color: #171717;
+    --sustainability-ink: #171717;
+    --sustainability-muted: rgba(23, 23, 23, 0.66);
+    --sustainability-line: rgba(24, 22, 19, 0.12);
+    --sustainability-soft: #f6f3ee;
+    --sustainability-accent: #b89a72;
+    margin: 0;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: var(--sustainability-ink);
     font-family: "Manrope", sans-serif;
 }
 
 .sustainability-nav {
-    background: #fff !important;
+    background: #ffffff !important;
     border-bottom: 1px solid rgba(24, 22, 19, 0.08) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
     backdrop-filter: blur(18px);
@@ -16,7 +23,7 @@ body.sustainability-page {
 .sustainability-page .navbar.sustainability-nav.scrolled,
 .sustainability-page .contact-nav-theme.sustainability-nav.visible-nav,
 .sustainability-page .contact-nav-theme.sustainability-nav.navbar.scrolled {
-    background: #fff !important;
+    background: #ffffff !important;
 }
 
 .sustainability-page .miller-dealer-logo {
@@ -41,482 +48,259 @@ body.sustainability-page {
 }
 
 .sustainability-main {
-    padding-top: 0;
+    background: #ffffff;
+    color: var(--sustainability-ink);
 }
 
 .sustainability-shell {
-    width: 100%;
+    width: min(1680px, calc(100% - 96px));
     margin: 0 auto;
-    padding-left: 36px;
-    padding-right: 36px;
-    box-sizing: border-box;
 }
 
-.sustainability-kicker,
-.section-kicker,
-.material-stage-label {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 0;
-    background: rgba(17, 17, 17, 0.12);
-    color: #111111;
-    font-size: 10px;
+.sustainability-eyebrow {
+    display: inline-block;
+    color: var(--sustainability-accent);
+    font-size: 0.74rem;
     font-weight: 800;
-    letter-spacing: 0.18em;
+    letter-spacing: 3px;
+    line-height: 1.35;
     text-transform: uppercase;
 }
 
-.sustainability-hero,
-.sustainability-intro,
-.sustainability-metrics,
-.sustainability-story,
-.sustainability-principles,
-.sustainability-materials,
-.sustainability-gallery,
-.sustainability-roadmap,
-.sustainability-faq,
-.sustainability-cta {
-    padding: 0 0 58px;
-}
-
 .sustainability-hero {
-    position: relative;
     overflow: hidden;
     padding: 80px 0 22px;
-    background: #fff;
+    background: #ffffff;
 }
 
-.sustainability-intro {
-    background: #fff;
-    padding-bottom: 56px;
-}
-
-.sustainability-intro-copy {
-    display: grid;
-    justify-items: center;
-    gap: 16px;
-    text-align: center;
-}
-
-.sustainability-intro-copy span {
-    color: rgba(31, 26, 23, 0.5);
-    font-size: clamp(1.15rem, 1.8vw, 1.85rem);
-    font-weight: 500;
-    letter-spacing: -0.3px;
-}
-
-.sustainability-intro-copy h1 {
-    max-width: 860px;
-    margin: 0;
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(1.65rem, 2.7vw, 3rem);
-    font-weight: 600;
-    line-height: 1.14;
-    letter-spacing: -0.04em;
-}
-
-.sustainability-intro-copy p {
-    max-width: 720px;
-    margin: 0;
-    color: rgba(17, 17, 17, 0.64);
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-.story-grid,
-.roadmap-grid {
-    display: grid;
-    grid-template-columns: minmax(420px, 0.78fr) minmax(520px, 1.22fr);
-    gap: 34px;
-    align-items: center;
-}
-
-.story-copy,
-.story-visual,
-.metric-card,
-.principle-card,
-.material-stage-copy,
-.material-stage-media,
-.roadmap-step,
-.faq-item,
-.cta-panel,
-.gallery-tile {
-    border: 1px solid rgba(17, 17, 17, 0.08);
-    border-radius: 0;
-    background: rgba(255, 255, 255, 0.68);
-    box-shadow: none;
-}
-
-.story-copy,
-.roadmap-copy,
-.material-stage-copy,
-.cta-panel {
-    padding: 30px;
-}
-
-.section-head h2,
-.story-copy h2,
-.roadmap-copy h2,
-.cta-panel h2,
-.material-stage-copy h3 {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-}
-
-.sustainability-lead,
-.story-copy p,
-.roadmap-copy p,
-.cta-panel p,
-.material-stage-copy p,
-.principle-card p,
-.roadmap-step p,
-.faq-panel p,
-.metric-label {
-    color: rgba(17, 17, 17, 0.74);
-    line-height: 1.82;
-}
-
-.sustainability-lead {
-    margin-top: 18px;
-    font-size: 1.05rem;
-}
-
-.sustainability-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
-}
-
-.sustainability-btn-primary,
-.sustainability-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 52px;
-    padding: 0 20px;
-    border-radius: 0;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.3s ease;
-}
-
-.sustainability-btn-primary {
-    background: #111111;
-    color: #f7f7f4;
-}
-
-.sustainability-btn-secondary {
-    border: 1px solid rgba(17, 17, 17, 0.12);
-    color: #171717;
-}
-
-.sustainability-btn-primary:hover,
-.sustainability-btn-secondary:hover {
-    transform: translateY(-2px);
-}
-
-.sustainability-hero-visual {
+.sustainability-hero-media {
     position: relative;
-    overflow: hidden;
     width: 100%;
     height: clamp(420px, 62vh, 720px);
     margin: 0;
-    background: #f4f1ec;
+    overflow: hidden;
+    background: var(--sustainability-soft);
 }
 
-.sustainability-hero-visual img,
-.story-visual img,
-.material-stage-media img,
-.gallery-tile img {
+.sustainability-hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 10, 12, 0.02) 0%, rgba(8, 10, 12, 0.2) 100%);
+}
+
+.sustainability-hero-media img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.metrics-grid,
-.principles-grid,
-.gallery-mosaic,
-.roadmap-steps {
+.sustainability-hero-intro {
+    padding: 0 0 44px;
+    background: #ffffff;
+}
+
+.sustainability-hero-copy {
     display: grid;
-    gap: 22px;
-}
-
-.metrics-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.metric-card {
-    padding: 24px;
-    display: grid;
-    gap: 12px;
-}
-
-.metric-value {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(3rem, 6vw, 4.8rem);
-    line-height: 0.9;
-    color: #111111;
-}
-
-.metric-value:not([data-count]) {
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(1.35rem, 2vw, 2.2rem);
-    font-weight: 600;
-    line-height: 1.06;
-    letter-spacing: -0.04em;
-}
-
-.story-copy h2,
-.section-head h2,
-.roadmap-copy h2,
-.cta-panel h2 {
-    margin-top: 14px;
-    font-size: clamp(2.4rem, 5vw, 4.6rem);
-    line-height: 0.95;
-}
-
-.story-copy p + p {
-    margin-top: 14px;
-}
-
-.story-visual {
-    overflow: hidden;
-    min-height: 520px;
-}
-
-.section-head {
-    margin-bottom: 24px;
-}
-
-.principles-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.principle-card,
-.roadmap-step {
-    padding: 24px;
-}
-
-.principle-card h3,
-.roadmap-step h3,
-.faq-trigger span:first-child {
-    font-size: 1.25rem;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-}
-
-.principle-card p,
-.roadmap-step p,
-.material-stage-copy p {
-    margin-top: 12px;
-}
-
-.material-filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.material-filter {
-    min-height: 44px;
-    padding: 0 16px;
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    border-radius: 0;
-    background: rgba(255, 255, 255, 0.72);
-    color: #171717;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.material-filter.is-active {
-    background: #111111;
-    border-color: #111111;
-    color: #f7f7f4;
-}
-
-.material-stage {
-    display: grid;
-    grid-template-columns: minmax(380px, 0.82fr) minmax(520px, 1.18fr);
-    gap: 24px;
-    align-items: start;
-}
-
-.material-stage-copy h3 {
-    margin-top: 14px;
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    line-height: 0.98;
-}
-
-.material-stage-media {
-    overflow: hidden;
-    height: var(--material-stage-height, auto);
-    min-height: 0;
-}
-
-.gallery-mosaic {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.gallery-tile {
-    overflow: hidden;
-    min-height: 340px;
-}
-
-.gallery-tile figcaption {
-    padding: 15px 18px 18px;
-    color: rgba(17, 17, 17, 0.68);
-}
-
-.roadmap-grid {
-    align-items: start;
-}
-
-.roadmap-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.roadmap-step span {
-    display: inline-flex;
-    margin-bottom: 14px;
-    color: #111111;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-}
-
-.faq-list {
-    display: grid;
-    gap: 14px;
-}
-
-.faq-item {
-    overflow: hidden;
-}
-
-.faq-trigger {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-items: center;
     gap: 16px;
-    padding: 22px 24px;
-    border: 0;
-    background: transparent;
-    text-align: left;
-    cursor: pointer;
-}
-
-.faq-symbol {
-    font-size: 1.5rem;
-    line-height: 1;
-    color: #111111;
-}
-
-.faq-panel {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.35s ease;
-}
-
-.faq-panel > p {
-    overflow: hidden;
-    margin: 0;
-    padding: 0 24px 0;
-}
-
-.faq-item.is-open .faq-panel {
-    grid-template-rows: 1fr;
-}
-
-.faq-item.is-open .faq-panel > p {
-    padding-bottom: 22px;
-}
-
-.cta-panel {
+    max-width: 1040px;
     text-align: center;
 }
 
-.cta-panel .sustainability-hero-actions {
-    justify-content: center;
+.sustainability-hero-copy h1 {
+    max-width: 880px;
+    margin: 0;
+    color: var(--sustainability-ink);
+    font-size: clamp(1.65rem, 2.7vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.14;
+    text-wrap: balance;
 }
 
-.sustainability-page .story-copy,
-.sustainability-page .story-visual,
-.sustainability-page .metric-card,
-.sustainability-page .principle-card,
-.sustainability-page .material-stage-copy,
-.sustainability-page .material-stage-media,
-.sustainability-page .roadmap-step,
-.sustainability-page .faq-item,
-.sustainability-page .cta-panel,
-.sustainability-page .gallery-tile,
-.sustainability-page .sustainability-kicker,
-.sustainability-page .section-kicker,
-.sustainability-page .material-stage-label,
-.sustainability-page .material-filter,
-.sustainability-page .sustainability-btn-primary,
-.sustainability-page .sustainability-btn-secondary {
-    border-radius: 0 !important;
-    box-shadow: none !important;
+.sustainability-hero-lead {
+    max-width: 900px;
+    margin: 0;
+    color: rgba(23, 23, 23, 0.68);
+    font-size: clamp(1rem, 1.08vw, 1.16rem);
+    font-weight: 400;
+    line-height: 1.68;
+    text-wrap: pretty;
+}
+
+.sustainability-section {
+    padding: 62px 0;
+    background: #ffffff;
+}
+
+.sustainability-section + .sustainability-section {
+    padding-top: 34px;
+}
+
+.sustainability-intro-section {
+    padding-top: 72px;
+}
+
+.sustainability-centered {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    max-width: 980px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.sustainability-section-heading h2,
+.sustainability-cta h2 {
+    max-width: 820px;
+    margin: 0;
+    color: var(--sustainability-ink);
+    font-size: clamp(1.85rem, 2.45vw, 3.15rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+.sustainability-copy-stack {
+    display: grid;
+    gap: 16px;
+}
+
+.sustainability-centered-copy {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sustainability-copy-stack p {
+    margin: 0;
+    color: var(--sustainability-muted);
+    font-size: clamp(0.96rem, 1vw, 1.08rem);
+    line-height: 1.76;
+    text-wrap: pretty;
+}
+
+.sustainability-band-image {
+    width: min(1500px, calc(100% - 48px));
+    margin: clamp(34px, 4.6vw, 64px) auto clamp(44px, 5.5vw, 78px);
+    overflow: hidden;
+    background: var(--sustainability-soft);
+}
+
+.sustainability-band-image img {
+    display: block;
+    width: 100%;
+    height: clamp(360px, 48vh, 560px);
+    object-fit: cover;
+    object-position: center;
+}
+
+.sustainability-cta-section {
+    padding: 84px 0 84px;
+    background: #ffffff;
+    border-top: 1px solid rgba(24, 22, 19, 0.08);
+}
+
+.sustainability-cta {
+    display: grid;
+    justify-items: center;
+    width: min(1280px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: center;
+}
+
+.sustainability-cta h2 {
+    max-width: 880px;
+    margin: 12px auto 0;
+    font-size: clamp(1.9rem, 2.7vw, 3.2rem);
+    line-height: 1.08;
+}
+
+.sustainability-cta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 0;
+    margin-top: 46px;
+    color: var(--sustainability-ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sustainability-cta a::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    margin-top: 15px;
+    background: var(--sustainability-accent);
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.sustainability-cta a:hover {
+    opacity: 0.75;
+    transform: translateY(-2px);
+}
+
+.sustainability-cta a:hover::after {
+    width: 68px;
 }
 
 .reveal {
     opacity: 0;
-    transform: translateY(42px);
-    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.72s ease var(--sustainability-reveal-delay, 0ms),
+        transform 0.88s cubic-bezier(0.22, 1, 0.36, 1) var(--sustainability-reveal-delay, 0ms);
+    will-change: opacity, transform;
 }
 
 .reveal-left {
-    transform: translateX(-56px);
+    transform: translateY(34px);
 }
 
 .reveal-right {
-    transform: translateX(56px);
+    transform: translateY(34px);
 }
 
 .reveal-up {
-    transform: translateY(42px);
+    transform: translateY(34px);
 }
 
 .reveal.visible {
     opacity: 1;
     transform: translate(0, 0);
+    will-change: auto;
 }
 
-@media (max-width: 1180px) {
-    .story-grid,
-    .roadmap-grid,
-    .material-stage {
-        grid-template-columns: 1fr;
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
+}
 
-    .metrics-grid,
-    .principles-grid,
-    .gallery-mosaic,
-    .roadmap-steps {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .material-stage-media {
-        height: clamp(280px, 42vw, 460px);
+@media (max-width: 980px) {
+    .sustainability-shell {
+        width: min(100% - 48px, 1680px);
     }
 }
 
 @media (max-width: 768px) {
-    .sustainability-main {
-        padding-top: 0;
-    }
-
     .sustainability-shell {
-        width: calc(100% - 28px);
-        padding-left: 0;
-        padding-right: 0;
+        width: min(100% - 32px, 1680px);
     }
 
     .sustainability-hero {
@@ -524,18 +308,48 @@ body.sustainability-page {
         padding-bottom: 16px;
     }
 
-    .sustainability-hero-visual {
-        min-height: 320px;
+    .sustainability-hero-media {
+        height: clamp(320px, 58vh, 520px);
     }
 
-    .metrics-grid,
-    .principles-grid,
-    .gallery-mosaic,
-    .roadmap-steps,
-    .story-grid,
-    .roadmap-grid,
-    .material-stage {
-        grid-template-columns: 1fr;
+    .sustainability-hero-intro {
+        padding-bottom: 34px;
     }
 
+    .sustainability-section {
+        padding: 68px 0;
+    }
+
+    .sustainability-intro-section {
+        padding-top: 54px;
+    }
+
+    .sustainability-centered {
+        margin-bottom: 30px;
+    }
+
+    .sustainability-section-heading h2,
+    .sustainability-cta h2 {
+        font-size: clamp(1.85rem, 8vw, 2.45rem);
+        line-height: 1.1;
+    }
+
+    .sustainability-copy-stack p,
+    .sustainability-hero-lead {
+        font-size: 1rem;
+        line-height: 1.74;
+    }
+
+    .sustainability-band-image {
+        width: min(100% - 32px, 1500px);
+        margin: 18px auto 48px;
+    }
+
+    .sustainability-band-image img {
+        height: clamp(240px, 42vh, 360px);
+    }
+
+    .sustainability-cta {
+        width: min(100% - 32px, 1280px);
+    }
 }

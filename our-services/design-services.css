@@ -2028,36 +2028,56 @@ body.design-page {
 
 .design-page .reveal {
     opacity: 0;
-    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(34px);
+    transition:
+        opacity 0.72s ease var(--design-reveal-delay, 0ms),
+        transform 0.88s cubic-bezier(0.22, 1, 0.36, 1) var(--design-reveal-delay, 0ms);
+    will-change: opacity, transform;
 }
 
 .design-page .reveal-left {
-    transform: translateX(-54px);
+    transform: translateY(34px);
 }
 
 .design-page .reveal-right {
-    transform: translateX(54px);
+    transform: translateY(34px);
 }
 
 .design-page .reveal-up {
-    transform: translateY(42px);
+    transform: translateY(34px);
 }
 
 .design-page .reveal.visible {
     opacity: 1;
     transform: translate(0, 0);
+    will-change: auto;
 }
 
 .design-page .scroll-reveal {
     opacity: 0;
     transform: translateY(34px);
-    transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: calc(var(--reveal-order, 0) * 85ms);
+    transition:
+        opacity 0.72s ease calc(var(--reveal-order, 0) * 70ms),
+        transform 0.88s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--reveal-order, 0) * 70ms);
+    will-change: opacity, transform;
 }
 
 .design-page .scroll-reveal.visible {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .design-page .reveal,
+    .design-page .reveal-left,
+    .design-page .reveal-right,
+    .design-page .reveal-up,
+    .design-page .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .design-page .design-system-stage,

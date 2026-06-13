@@ -4,43 +4,6 @@ const menuOverlay = document.getElementById("menuOverlay");
 const menuItems = document.querySelectorAll(".menu-nav-item");
 const menuLinks = document.querySelectorAll(".menu-nav-item a");
 const allVisuals = document.querySelectorAll(".menu-visual-item");
-const revealItems = document.querySelectorAll(".reveal");
-const metricValues = document.querySelectorAll(".metric-value");
-const materialFilters = document.querySelectorAll(".material-filter");
-const faqItems = document.querySelectorAll(".faq-item");
-const materialStage = document.querySelector(".material-stage");
-const materialStageCopy = document.querySelector(".material-stage-copy");
-
-const materialContent = {
-    certifications: {
-        label: "Certification Support",
-        title: "We translate certification goals into practical workplace specifications.",
-        text: "From product documentation and material selection to wellbeing criteria and responsible sourcing, we help the project team make choices that support recognised sustainability frameworks without losing design clarity.",
-        image: "../projects-pictures/skytower-block.jpg",
-        alt: "Certification-ready workplace interior"
-    },
-    solutions: {
-        label: "Sustainable Solutions",
-        title: "Sustainable offices are built from solutions that last, adapt, and perform.",
-        text: "We look at furniture, finishes, lighting, acoustic products, modular systems, refurbishment options, and responsible suppliers as one connected workplace ecosystem.",
-        image: "../projects-pictures/tchibo.jpg",
-        alt: "Sustainable workplace solutions"
-    },
-    office: {
-        label: "Sustainability In The Office",
-        title: "The most sustainable office is one people can use well for a long time.",
-        text: "Sustainability becomes tangible through daylight, comfort, acoustic balance, shared resources, repairable products, flexible planning, and daily behaviours that reduce waste.",
-        image: "../projects-pictures/naos.jpg",
-        alt: "Healthy sustainable office with daylight"
-    },
-    esg: {
-        label: "ESG Strategy",
-        title: "Workplace decisions can support environmental, social, and governance priorities.",
-        text: "We connect fit-out choices with wider ESG objectives by documenting responsible procurement, wellbeing outcomes, adaptability, material choices, and long-term operational value.",
-        image: "../projects-pictures/profi.jpg",
-        alt: "Office aligned with ESG strategy"
-    }
-};
 
 menuOpen?.addEventListener("click", () => {
     menuOverlay?.classList.add("active");
@@ -67,6 +30,29 @@ menuLinks.forEach((link) => {
     });
 });
 
+document.querySelectorAll(".sustainability-hero-copy, .sustainability-section, .sustainability-cta").forEach((block) => {
+    const revealChildren = block.querySelectorAll(":scope > .sustainability-eyebrow, :scope > h1, :scope > h2, :scope > .sustainability-hero-lead, :scope > .sustainability-section-heading, :scope > .sustainability-copy-stack, :scope > a");
+
+    revealChildren.forEach((child, index) => {
+        child.classList.add("reveal", "reveal-up");
+        child.style.setProperty("--sustainability-reveal-delay", `${Math.min(index, 5) * 70}ms`);
+    });
+});
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealItems = document.querySelectorAll(".reveal");
+
+function revealPassedItems() {
+    revealItems.forEach((item) => {
+        if (item.classList.contains("visible")) return;
+
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.88 || rect.bottom < 0) {
+            item.classList.add("visible");
+        }
+    });
+}
+
 const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -76,79 +62,18 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
 
-revealItems.forEach((item) => revealObserver.observe(item));
+if (reducedMotion) {
+    revealItems.forEach((item) => item.classList.add("visible"));
+} else {
+    revealItems.forEach((item, index) => {
+        if (!item.style.getPropertyValue("--sustainability-reveal-delay")) {
+            item.style.setProperty("--sustainability-reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+        }
 
-const metricObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const target = Number(entry.target.dataset.count || "0");
-        let current = 0;
-        const stepTime = Math.max(18, Math.floor(1100 / Math.max(target, 1)));
-
-        const counter = setInterval(() => {
-            current += 1;
-            entry.target.textContent = String(current);
-            if (current >= target) {
-                clearInterval(counter);
-                entry.target.textContent = `${target}+`;
-            }
-        }, stepTime);
-
-        observer.unobserve(entry.target);
+        revealObserver.observe(item);
     });
-}, { threshold: 0.45 });
 
-metricValues.forEach((metric) => {
-    if (metric.dataset.count) metricObserver.observe(metric);
-});
-
-function updateMaterialStage(key) {
-    const data = materialContent[key];
-    if (!data) return;
-
-    const label = document.getElementById("materialStageLabel");
-    const title = document.getElementById("materialStageTitle");
-    const text = document.getElementById("materialStageText");
-    const image = document.getElementById("materialStageImage");
-
-    if (label) label.textContent = data.label;
-    if (title) title.textContent = data.title;
-    if (text) text.textContent = data.text;
-    if (image) {
-        image.src = data.image;
-        image.alt = data.alt;
-    }
-
-    syncMaterialStageHeight();
+    revealPassedItems();
+    window.addEventListener("scroll", revealPassedItems, { passive: true });
+    window.addEventListener("resize", revealPassedItems);
 }
-
-function syncMaterialStageHeight() {
-    if (!materialStage || !materialStageCopy || window.matchMedia("(max-width: 1180px)").matches) {
-        materialStage?.style.removeProperty("--material-stage-height");
-        return;
-    }
-
-    requestAnimationFrame(() => {
-        materialStage.style.setProperty("--material-stage-height", `${materialStageCopy.offsetHeight}px`);
-    });
-}
-
-materialFilters.forEach((button) => {
-    button.addEventListener("click", () => {
-        materialFilters.forEach((entry) => entry.classList.remove("is-active"));
-        button.classList.add("is-active");
-        updateMaterialStage(button.dataset.material || "certifications");
-    });
-});
-
-syncMaterialStageHeight();
-window.addEventListener("resize", syncMaterialStageHeight);
-window.addEventListener("load", syncMaterialStageHeight);
-document.fonts?.ready?.then(syncMaterialStageHeight);
-
-faqItems.forEach((item) => {
-    const trigger = item.querySelector(".faq-trigger");
-    trigger?.addEventListener("click", () => {
-        item.classList.toggle("is-open");
-    });
-});
