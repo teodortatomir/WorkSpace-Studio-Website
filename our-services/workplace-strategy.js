@@ -36,6 +36,19 @@ if (menuOpen && menuClose && menuOverlay) {
   menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
 }
 
+document.querySelectorAll(".strategy-text-grid, .strategy-process-list, .strategy-contract-grid").forEach((group) => {
+  group.querySelectorAll(":scope > article").forEach((item, index) => {
+    item.style.setProperty("--strategy-reveal-delay", `${Math.min(index, 5) * 70}ms`);
+  });
+});
+
+document.querySelectorAll(".strategy-section-heading, .strategy-centered, .strategy-cta").forEach((block) => {
+  block.querySelectorAll(":scope > .strategy-eyebrow, :scope > h1, :scope > h2, :scope > p, :scope > a").forEach((item, index) => {
+    item.classList.add("reveal");
+    item.style.setProperty("--strategy-reveal-delay", `${Math.min(index, 5) * 70}ms`);
+  });
+});
+
 const revealElements = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(

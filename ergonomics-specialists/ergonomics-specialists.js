@@ -7,6 +7,9 @@ const allVisuals = document.querySelectorAll('.menu-visual-item');
 const hubCards = Array.from(document.querySelectorAll('.hub-story-card'));
 const filterButtons = document.querySelectorAll('.hub-chip');
 const loadMoreButton = document.getElementById('hubLoadMore');
+const scrollRevealItems = document.querySelectorAll(
+    '.hub-intro-copy, .ergo-editorial-centered, .ergo-proof-grid article, .hub-chip-row'
+);
 const pageSize = 8;
 let activeFilter = 'physical';
 let visibleLimit = pageSize;
@@ -41,6 +44,29 @@ menuLinks.forEach(link => {
     });
 });
 
+document.querySelectorAll('.ergo-editorial-block, .ergo-domain-card').forEach(block => {
+    const revealChildren = block.querySelectorAll(':scope > h2, :scope > .ergo-editorial-copy, :scope > figure, :scope > .ergo-domain-copy, :scope > .ergo-domain-link');
+
+    if (!revealChildren.length) {
+        return;
+    }
+
+    block.classList.remove('reveal');
+    revealChildren.forEach((child, index) => {
+        child.classList.add('reveal');
+        child.style.setProperty('--design-reveal-delay', `${Math.min(index, 5) * 70}ms`);
+    });
+});
+
+document.querySelectorAll('.ergo-proof-grid article').forEach((item, index) => {
+    item.classList.add('reveal');
+    item.style.setProperty('--design-reveal-delay', `${Math.min(index, 5) * 70}ms`);
+});
+
+document.querySelectorAll('.ergo-domain-grid .ergo-domain-card').forEach((card, index) => {
+    card.style.setProperty('--design-reveal-delay', `${Math.min(index, 3) * 70}ms`);
+});
+
 const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -48,9 +74,45 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+}, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
 
-document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+scrollRevealItems.forEach((item, index) => {
+    item.classList.add('scroll-reveal');
+    item.style.setProperty('--reveal-order', index % 6);
+});
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealItems = document.querySelectorAll('.reveal');
+const allRevealItems = document.querySelectorAll('.reveal, .scroll-reveal');
+
+function revealPassedItems() {
+    allRevealItems.forEach(item => {
+        if (item.classList.contains('visible')) return;
+
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.88 || rect.bottom < 0) {
+            item.classList.add('visible');
+        }
+    });
+}
+
+if (reducedMotion) {
+    allRevealItems.forEach(item => item.classList.add('visible'));
+} else {
+    revealItems.forEach((item, index) => {
+        if (!item.style.getPropertyValue('--design-reveal-delay')) {
+            item.style.setProperty('--design-reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+        }
+
+        revealObserver.observe(item);
+    });
+
+    scrollRevealItems.forEach(item => revealObserver.observe(item));
+
+    revealPassedItems();
+    window.addEventListener('scroll', revealPassedItems, { passive: true });
+    window.addEventListener('resize', revealPassedItems);
+}
 
 hubCards.forEach((card, index) => {
     card.dataset.index = String(index);

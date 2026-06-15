@@ -1145,14 +1145,16 @@ body::-webkit-scrollbar {
 }
 
 .projects-trust-line {
-    width: min(960px, calc(100% - 48px));
-    margin: 0 auto 38px;
-    color: rgba(23, 23, 23, 0.82);
-    font-size: clamp(1.18rem, 1.55vw, 1.72rem);
-    font-weight: 700;
-    line-height: 1.32;
-    letter-spacing: 0;
+    width: min(980px, calc(100% - 48px));
+    margin: 0 auto 42px;
+    color: rgba(23, 23, 23, 0.78);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.05rem, 1.28vw, 1.34rem);
+    font-weight: 600;
+    line-height: 1.46;
+    letter-spacing: -0.01em;
     text-align: center;
+    text-wrap: balance;
 }
 
 .services-header {
