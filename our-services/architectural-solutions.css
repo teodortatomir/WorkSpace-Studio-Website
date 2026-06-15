@@ -405,3 +405,336 @@ body.arch-page {
         min-height: 92px;
     }
 }
+
+/* Editorial Architectural Products & Solutions page */
+.arch-editorial {
+    --arch-ink: #171717;
+    --arch-muted: rgba(23, 23, 23, 0.66);
+    --arch-line: rgba(24, 22, 19, 0.12);
+    --arch-soft: #f6f3ee;
+    --arch-accent: #b89a72;
+    background: #fff;
+    color: var(--arch-ink);
+    font-family: "Manrope", sans-serif;
+}
+
+.arch-editorial .arch-shell {
+    width: min(1680px, calc(100% - 96px));
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.arch-editorial .arch-hero {
+    padding: 80px 0 22px;
+    background: #fff;
+}
+
+.arch-editorial .arch-hero-visual {
+    height: clamp(420px, 62vh, 720px);
+}
+
+.arch-editorial .arch-section,
+.arch-editorial .arch-cta-section {
+    padding: 94px 0;
+    border-top: 0;
+    background: #fff;
+}
+
+.arch-editorial .arch-cta-section {
+    border-top: 1px solid rgba(24, 22, 19, 0.08);
+}
+
+.arch-editorial .arch-intro {
+    padding: 0 0 44px;
+    border-top: 0;
+}
+
+.arch-centered,
+.arch-cta {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.arch-editorial .arch-eyebrow {
+    display: inline-block;
+    color: var(--arch-accent);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.arch-editorial h1,
+.arch-editorial h2,
+.arch-editorial h3 {
+    margin: 0;
+    color: var(--arch-ink);
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    text-wrap: balance;
+}
+
+.arch-centered h1 {
+    max-width: 980px;
+    font-size: clamp(1.65rem, 2.7vw, 3rem);
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+}
+
+.arch-centered p {
+    max-width: 820px;
+    color: var(--arch-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.arch-copy-stack {
+    display: grid;
+    gap: 18px;
+}
+
+.arch-centered-copy {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.arch-editorial p,
+.arch-product-story p {
+    margin: 0;
+    color: var(--arch-muted);
+    font-size: clamp(0.94rem, 0.98vw, 1.04rem);
+    line-height: 1.72;
+    text-wrap: pretty;
+}
+
+.arch-opening-section {
+    padding-top: 72px;
+    border-top: 1px solid rgba(24, 22, 19, 0.08) !important;
+}
+
+.arch-band-image {
+    width: min(1840px, calc(100vw - 40px));
+    margin: 70px auto 0;
+    margin-left: calc(50% - min(920px, calc(50vw - 20px)));
+    overflow: hidden;
+    background: var(--arch-soft);
+}
+
+.arch-band-image img {
+    display: block;
+    width: 100%;
+    height: clamp(420px, 56vh, 680px);
+    object-fit: cover;
+}
+
+.arch-product-section {
+    padding-top: 0;
+}
+
+.arch-product-section .arch-shell {
+    display: grid;
+    gap: 0;
+}
+
+.arch-product-story {
+    display: grid;
+    justify-items: center;
+    padding: clamp(64px, 7vw, 108px) 0;
+    border-top: 0;
+}
+
+.arch-product-story:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.arch-product-story .arch-product-copy {
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    width: min(980px, 100%);
+    padding: 0;
+    text-align: center;
+}
+
+.arch-product-story h2 {
+    max-width: 880px;
+    font-size: clamp(2.2rem, 4vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+}
+
+.arch-product-story .arch-copy-stack {
+    width: min(980px, 100%);
+    margin-top: 8px;
+    text-align: center;
+}
+
+.arch-product-story p {
+    max-width: none;
+    text-align: center;
+}
+
+.arch-product-story a {
+    color: var(--arch-ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(184, 154, 114, 0.65);
+    text-underline-offset: 0.18em;
+}
+
+.arch-brand-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    margin-top: 18px;
+    padding: 0 18px;
+    border: 1px solid var(--arch-line);
+    color: rgba(23, 23, 23, 0.48);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.arch-cta-section {
+    padding: 72px 0 76px;
+}
+
+.arch-editorial .arch-cta {
+    width: min(1280px, calc(100% - 64px));
+    max-width: none;
+    padding: 0;
+}
+
+.arch-editorial .arch-cta h2 {
+    max-width: 1120px;
+    margin: 12px auto 0;
+    color: var(--arch-ink);
+    font-size: clamp(2.1rem, 3.65vw, 4.45rem);
+    font-weight: 600;
+    letter-spacing: -0.06em;
+    line-height: 1.02;
+}
+
+.arch-cta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    margin-top: 46px;
+    padding: 0;
+    color: var(--arch-ink);
+    font-family: "Manrope", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.arch-cta a::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    margin-top: 15px;
+    background: var(--arch-accent);
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.arch-cta a:hover {
+    opacity: 1;
+}
+
+.arch-cta a:hover::after {
+    width: 100px;
+}
+
+.arch-page .reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition:
+        opacity 0.72s ease var(--arch-reveal-delay, 0ms),
+        transform 0.88s cubic-bezier(0.22, 1, 0.36, 1) var(--arch-reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.arch-page .reveal-left,
+.arch-page .reveal-right,
+.arch-page .reveal-up {
+    transform: translateY(34px);
+}
+
+.arch-page .reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+    will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arch-page .reveal,
+    .arch-page .reveal-left,
+    .arch-page .reveal-right,
+    .arch-page .reveal-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .arch-editorial .arch-shell,
+    .arch-editorial .arch-cta {
+        width: min(100% - 28px, 100%);
+    }
+
+    .arch-editorial .arch-hero {
+        padding-top: 72px;
+    }
+
+    .arch-editorial .arch-hero-visual {
+        height: 50vh;
+        min-height: 340px;
+    }
+
+    .arch-editorial .arch-section,
+    .arch-editorial .arch-cta-section {
+        padding: 58px 0;
+    }
+
+    .arch-editorial .arch-intro {
+        padding-top: 0;
+        padding-bottom: 44px;
+    }
+
+    .arch-product-story {
+        padding: 58px 0;
+    }
+
+    .arch-band-image {
+        width: min(100% - 28px, 100%);
+        margin-top: 42px;
+        margin-left: auto;
+    }
+
+    .arch-band-image img {
+        height: clamp(300px, 58vh, 520px);
+    }
+
+    .arch-product-story h2,
+    .arch-editorial .arch-cta h2 {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+        letter-spacing: -0.05em;
+    }
+}
