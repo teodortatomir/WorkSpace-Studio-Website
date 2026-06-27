@@ -7,7 +7,7 @@
     <meta name="description" content="Workspace Studio projects gallery with selected workplace, hospitality, and commercial interiors.">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="proiecte.css">
-    <link rel="stylesheet" href="projects-gallery.css">
+    <link rel="stylesheet" href="projects-gallery.css?v=20260627-clean-gallery">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="projects-gallery-page">
@@ -31,17 +31,7 @@
             </div>
 
             <div class="nav-col nav-right">
-                <button class="nav-search-button" type="button" aria-label="Search">
-                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
-                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
-                    </svg>
-                </button>
-                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
+                <a class="gallery-back-link" href="../projects-scene/proiecte.html">Back to projects</a>
             </div>
         </div>
     </nav>
@@ -253,15 +243,19 @@
             loader.src = img.dataset.src || img.src;
         });
 
-        menuOpen.addEventListener('click', () => {
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+        if (menuOpen) {
+            menuOpen.addEventListener('click', () => {
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
 
-        menuClose.addEventListener('click', () => {
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        if (menuClose) {
+            menuClose.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
 
         menuItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
@@ -293,20 +287,23 @@
         let isAutoScrolling = false;
         let touchStartY = 0;
         let snapAnimationFrame = 0;
-        const snapDuration = 1350;
+        const snapDuration = 620;
 
         const projectImagePaths = splitProjects.map((section) => cssUrlToPath(section.style.getPropertyValue('--image')));
         projectImagePaths.forEach((src) => {
             const img = new Image();
             img.src = src;
+            if (img.decode) img.decode().catch(() => {});
         });
 
         function clamp(value, min, max) {
             return Math.min(Math.max(value, min), max);
         }
 
-        function easeInOut(value) {
-            return 0.5 - (Math.cos(Math.PI * value) / 2);
+        function galleryEase(value) {
+            return value < 0.72
+                ? 0.82 * Math.pow(value / 0.72, 1.85)
+                : 0.82 + (0.18 * (1 - Math.pow(1 - ((value - 0.72) / 0.28), 2.4)));
         }
 
         splitViewportLeft.innerHTML = `
@@ -353,7 +350,7 @@
 
             function step(now) {
                 const progress = clamp((now - startTime) / snapDuration, 0, 1);
-                const eased = easeInOut(progress);
+                const eased = galleryEase(progress);
 
                 setSplitProgress(fromProgress + (distance * eased));
 

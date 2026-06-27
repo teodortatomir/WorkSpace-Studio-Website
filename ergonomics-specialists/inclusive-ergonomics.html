@@ -22,13 +22,107 @@
                 </div>
             </div>
             <div class="nav-col nav-center">
-                <a href="index.html" class="brand-name-text ergonomics-txt is-active">Ergonomics</a>
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt is-active">Ergonomics</a>
                 <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
                 <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
                 <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
             </div>
+
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img data-src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
+                <img data-src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
+                <img data-src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
+                <img data-src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
+                <img data-src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
+                <img data-src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
+                <img data-src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
+            </div>
+
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects">
+                        <a href="../projects-scene/proiecte.html">Projects</a>
+                        <div class="menu-subnav" aria-label="Projects submenu">
+                            <span class="menu-subnav-title">Projects</span>
+                            <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                            <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                            <a href="../projects-scene/proiecte.html">General Contracting</a>
+                            <a href="../projects-scene/projects-gallery.html">Projects Gallery</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services">
+                        <a href="../services/index.html">What we do</a>
+                        <div class="menu-subnav" aria-label="What we do submenu">
+                            <span class="menu-subnav-title">What we do</span>
+                            <a href="../our-services/design-services.html">Design &amp; Build</a>
+                            <a href="../our-services/general-contracting.html">General Contracting</a>
+                            <a href="../our-services/furniture.html">Furniture</a>
+                            <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                            <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                            <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners">
+                        <a href="../why-us/index.html">Why us</a>
+                        <div class="menu-subnav" aria-label="Why us submenu">
+                            <span class="menu-subnav-title">Why us</span>
+                            <a href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a href="../sustainability/index.html">Sustainability</a>
+                            <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                            <a href="../our-services/design-services.html#budget-centricity">Budget Centricity</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights">
+                        <a href="../insights/insights.html">News &amp; Insights</a>
+                        <div class="menu-subnav" aria-label="News and Insights submenu">
+                            <span class="menu-subnav-title">News &amp; Insights</span>
+                            <a href="../insights/press-releases.html">Press Releases</a>
+                            <a href="../insights/in-the-news.html">In the News</a>
+                            <a href="../insights/insights.html">Office Insights</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main class="ergo-editorial-main">
         <section class="ergo-editorial-hero">
@@ -42,7 +136,6 @@
                 <span class="ergo-editorial-eyebrow">Ergonomics</span>
                 <h1>Inclusive ergonomics: design that works for everyone</h1>
                 <p>Inclusive ergonomics designs for the real range of bodies, sensory profiles, cultural expectations and life stages from the start.</p>
-                <a class="ergo-back-link" href="index.html">Back to Ergonomics</a>
             </div>
         </section>
 
@@ -53,7 +146,7 @@
                     <div class="ergo-editorial-copy">
                         <p>Standard ergonomic guidance was built around an "average" worker who does not exist. Real workforces include different bodies, different sensory profiles, different cultural expectations and different life stages. Inclusive ergonomics designs for that range from the start, so the office works for the people who actually use it.</p>
                     </div>
-                    <div class="ergo-proof-grid ergo-inclusive-grid">
+                    <div class="ergo-proof-grid ergo-inclusive-grid ergo-inclusive-lenses">
                         <article>
                             <h3>Neurodiversity.</h3>
                             <p>An estimated 15-20% of people are neurodivergent, with different needs around sensory input, focus, predictability and stimulation. Inclusive design offers a spectrum of settings, from low-stimulation quiet rooms to enclosed focus pods, so people can match the environment to how their attention works.</p>
@@ -79,15 +172,12 @@
             </div>
         </section>
 
-        <section class="ergo-editorial-cta">
-            <div class="ergo-editorial-shell ergo-editorial-centered reveal">
-                <span class="ergo-editorial-eyebrow">Planning an office with built-in ergonomics?</span>
-                <h2>Let's discuss your office project.</h2>
-                <a href="../contact/contact.html">Get in touch</a>
-            </div>
-        </section>
+        <div class="ergo-detail-return reveal">
+            <a class="ergo-back-link ergo-back-link-final" href="index.html">Back to Ergonomics</a>
+        </div>
     </main>
 
     <script src="ergonomics-specialists.js?v=detail-pages-20260616"></script>
+    <script src="../menu-state.js?v=20260604-perf"></script>
 </body>
 </html>
