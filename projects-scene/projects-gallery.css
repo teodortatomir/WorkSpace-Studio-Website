@@ -1,0 +1,254 @@
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+.projects-gallery-page::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-gallery-page {
+    margin: 0;
+    background: #050505;
+    color: #fff;
+    overflow: hidden;
+}
+
+.projects-gallery-page .navbar.main-nav {
+    transform: translateY(0);
+    opacity: 1 !important;
+    pointer-events: all;
+    background: rgba(252, 250, 247, 0.96) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.projects-gallery-page .navbar.main-nav.visible-nav,
+.projects-gallery-page .navbar.main-nav.scrolled {
+    background: rgba(252, 250, 247, 0.96) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.projects-gallery-page .navbar.main-nav .workspace-logo {
+    filter: none !important;
+    mix-blend-mode: multiply;
+}
+
+.projects-gallery-page .navbar.main-nav .miller-dealer-logo {
+    filter: brightness(0) !important;
+}
+
+.projects-gallery-page .navbar.main-nav .nav-logo-separator {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.projects-gallery-page .navbar.main-nav .nav-search-button {
+    color: #1f1a17 !important;
+    opacity: 1 !important;
+}
+
+.projects-gallery-page .navbar.main-nav .nav-search-icon {
+    stroke: currentColor !important;
+}
+
+.projects-gallery-page .hamburger-line {
+    background: #1f1a17 !important;
+}
+
+.gallery-split-scroll {
+    position: relative;
+    min-height: 100vh;
+    background: #050505;
+}
+
+.split-project {
+    position: relative;
+    height: 100vh;
+    background: #050505;
+}
+
+.split-project > .split-stage {
+    display: none;
+}
+
+.split-viewport {
+    --split-progress: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #050505;
+    isolation: isolate;
+}
+
+.split-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    will-change: transform;
+}
+
+.split-panel {
+    z-index: 2;
+    width: 50.08%;
+    overflow: hidden;
+}
+
+.split-panel-left {
+    left: 0;
+}
+
+.split-panel-right {
+    right: 0;
+}
+
+.split-track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 200vh;
+    will-change: transform;
+}
+
+.split-track-left {
+    transform: translate3d(0, calc((var(--split-progress) - 1) * 100vh), 0);
+}
+
+.split-track-right {
+    transform: translate3d(0, calc(var(--split-progress) * -100vh), 0);
+}
+
+.split-frame {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.split-panel img {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.82) saturate(0.96);
+    pointer-events: none;
+    user-select: none;
+}
+
+.split-panel-left img {
+    left: 0;
+}
+
+.split-panel-right img {
+    right: 0;
+}
+
+.split-viewport::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.34)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.28));
+    pointer-events: none;
+}
+
+.scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(26px, 5vh, 54px);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #bea791;
+    background: rgba(252, 250, 247, 0.13);
+    border: 1px solid rgba(190, 167, 145, 0.55);
+    border-radius: 999px;
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.28),
+        0 0 0 0 rgba(190, 167, 145, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateX(-50%);
+    animation: scrollCueFloat 1.7s cubic-bezier(0.45, 0, 0.18, 1) infinite;
+    pointer-events: none;
+}
+
+.scroll-cue svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.scroll-cue path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes scrollCueFloat {
+    0% {
+        transform: translate(-50%, -8px) scale(0.96);
+        opacity: 0.72;
+        box-shadow:
+            0 14px 30px rgba(0, 0, 0, 0.24),
+            0 0 0 0 rgba(190, 167, 145, 0.22);
+    }
+
+    50% {
+        transform: translate(-50%, 9px) scale(1);
+        opacity: 1;
+        box-shadow:
+            0 18px 38px rgba(0, 0, 0, 0.32),
+            0 0 0 10px rgba(190, 167, 145, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -8px) scale(0.96);
+        opacity: 0.72;
+        box-shadow:
+            0 14px 30px rgba(0, 0, 0, 0.24),
+            0 0 0 0 rgba(190, 167, 145, 0.22);
+    }
+}
+
+@media (max-width: 900px) {
+    .split-project {
+        height: 100vh;
+    }
+
+    .projects-gallery-page .navbar.main-nav .nav-container {
+        padding: 0 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .split-project {
+        height: 100vh;
+    }
+
+    .split-panel-left,
+    .split-panel-right,
+    .split-track,
+    .scroll-cue {
+        transform: none !important;
+        animation: none !important;
+    }
+}

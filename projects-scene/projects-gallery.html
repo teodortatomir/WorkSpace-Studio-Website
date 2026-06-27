@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Gallery | Workspace Studio</title>
+    <meta name="description" content="Workspace Studio projects gallery with selected workplace, hospitality, and commercial interiors.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="proiecte.css">
+    <link rel="stylesheet" href="projects-gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="projects-gallery-page">
+    <nav class="navbar main-nav visible-nav contact-nav-theme projects-nav">
+        <div class="nav-container">
+            <div class="nav-col nav-left">
+                <div class="logo-wrapper">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                    </a>
+                    <div class="nav-logo-separator"></div>
+                    <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+                </div>
+            </div>
+
+            <div class="nav-col nav-center">
+                <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+                <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+                <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+                <a href="../our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            </div>
+
+            <div class="nav-col nav-right">
+                <button class="nav-search-button" type="button" aria-label="Search">
+                    <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                        <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuOpen" type="button" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+        <div class="menu-split-container">
+            <div class="menu-left-images">
+                <img data-src="../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='../index.html'">
+                <img data-src="../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="" decoding="async">
+                <img src="../logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='../index.html'">
+            </div>
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                <nav class="menu-right-links" aria-label="Main menu">
+                    <div class="menu-nav-item has-submenu" data-target="img-projects">
+                        <a href="../projects-scene/proiecte.html">Projects</a>
+                        <div class="menu-subnav" aria-label="Projects submenu">
+                            <span class="menu-subnav-title">Projects</span>
+                            <a href="../projects-scene/proiecte.html">Furniture Projects</a>
+                            <a href="../projects-scene/proiecte.html">Turn Key Projects</a>
+                            <a href="../projects-scene/proiecte.html">General Contracting</a>
+                            <a href="../projects-scene/projects-gallery.html">Projects Gallery</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-services">
+                        <a href="../services/index.html">What we do</a>
+                        <div class="menu-subnav" aria-label="What we do submenu">
+                            <span class="menu-subnav-title">What we do</span>
+                            <a href="../our-services/design-services.html">Design &amp; Build</a>
+                            <a href="../our-services/general-contracting.html">General Contracting</a>
+                            <a href="../our-services/furniture.html">Furniture</a>
+                            <a href="../our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                            <a href="../our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                            <a href="../our-services/workplace-strategy.html">Workplace Strategy</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item has-submenu" data-target="img-partners">
+                        <a href="../why-us/index.html">Why us</a>
+                        <div class="menu-subnav" aria-label="Why us submenu">
+                            <span class="menu-subnav-title">Why us</span>
+                            <a href="../partners/partners.html">Brands &amp; Partners</a>
+                            <a href="../sustainability/index.html">Sustainability</a>
+                            <a href="../ergonomics-specialists/index.html">Ergonomics</a>
+                            <a href="../our-services/design-services.html#budget-centricity">Budget Centricity</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-about"><a href="../about/about.html">Who we are</a></div>
+                    <div class="menu-nav-item has-submenu" data-target="img-insights">
+                        <a href="../insights/insights.html">News &amp; Insights</a>
+                        <div class="menu-subnav" aria-label="News and Insights submenu">
+                            <span class="menu-subnav-title">News &amp; Insights</span>
+                            <a href="../insights/press-releases.html">Press Releases</a>
+                            <a href="../insights/in-the-news.html">In the News</a>
+                            <a href="../insights/insights.html">Office Insights</a>
+                        </div>
+                    </div>
+                    <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Shop</a></div>
+                    <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="../contact/contact.html">Contact</a></div>
+                </nav>
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="gallery-split-scroll" aria-label="Projects Gallery">
+        <div class="split-viewport" aria-hidden="true">
+            <div class="split-panel split-panel-left"></div>
+            <div class="split-panel split-panel-right"></div>
+            <div class="scroll-cue" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </div>
+        </div>
+        <section class="split-project" style="--image: url('../projects-pictures/uipath.jpg'); --next-image: url('../projects-pictures/adobe.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h1 class="split-title">UiPath</h1>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/adobe.jpg'); --next-image: url('../projects-pictures/omvpetrom.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Adobe</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/omvpetrom.jpg'); --next-image: url('../projects-pictures/tiriac-collection.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">OMV Petrom</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/tiriac-collection.jpg'); --next-image: url('../projects-pictures/honeywell.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Tiriac Collection</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/honeywell.jpg'); --next-image: url('../projects-pictures/skytower.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Honeywell</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/skytower.jpg'); --next-image: url('../projects-pictures/impact-hub-bucuresti.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Skytower</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/impact-hub-bucuresti.jpg'); --next-image: url('../projects-pictures/coca-cola.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Impact Hub Bucuresti</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/coca-cola.jpg'); --next-image: url('../projects-pictures/urbanbistro-isho.jpeg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Coca-Cola</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/urbanbistro-isho.jpeg'); --next-image: url('../projects-pictures/leading-game-company.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Urban Bistro ISHO</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/leading-game-company.jpg'); --next-image: url('../projects-pictures/loreal-romania.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Leading Gaming Company</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/loreal-romania.jpg'); --next-image: url('../projects-pictures/konecta.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">L'Oreal Romania</h2>
+            </div>
+        </section>
+        <section class="split-project" style="--image: url('../projects-pictures/konecta.jpg'); --next-image: url('../projects-pictures/workspace-studio.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Konecta</h2>
+            </div>
+        </section>
+        <section class="split-project split-project-final" style="--image: url('../projects-pictures/workspace-studio.jpg'); --next-image: url('../projects-pictures/uipath.jpg');">
+            <div class="split-stage">
+                <div class="split-next" aria-hidden="true"></div>
+                <div class="split-panel split-panel-left" aria-hidden="true"></div>
+                <div class="split-panel split-panel-right" aria-hidden="true"></div>
+                <h2 class="split-title">Workspace Studio</h2>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuItems = document.querySelectorAll('.menu-nav-item');
+        const menuLinks = document.querySelectorAll('.menu-nav-item a');
+        const allVisuals = document.querySelectorAll('.menu-visual-item');
+
+        document.querySelectorAll('.menu-img-item').forEach(img => {
+            const loader = new Image();
+            loader.src = img.dataset.src || img.src;
+        });
+
+        menuOpen.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const targetId = item.getAttribute('data-target');
+                allVisuals.forEach(visual => visual.classList.remove('active'));
+                document.querySelectorAll(`[data-visual-target="${targetId}"]`).forEach(visual => visual.classList.add('active'));
+            });
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        const splitProjects = Array.from(document.querySelectorAll('.split-project'));
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function cssUrlToPath(value) {
+            return value.trim().replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+        }
+
+        const splitViewport = document.querySelector('.split-viewport');
+        const splitViewportLeft = splitViewport.querySelector('.split-panel-left');
+        const splitViewportRight = splitViewport.querySelector('.split-panel-right');
+        let activeSplitIndex = -1;
+        let activeSnapIndex = 0;
+        let isAutoScrolling = false;
+        let touchStartY = 0;
+        let snapAnimationFrame = 0;
+        const snapDuration = 1350;
+
+        const projectImagePaths = splitProjects.map((section) => cssUrlToPath(section.style.getPropertyValue('--image')));
+        projectImagePaths.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function clamp(value, min, max) {
+            return Math.min(Math.max(value, min), max);
+        }
+
+        function easeInOut(value) {
+            return 0.5 - (Math.cos(Math.PI * value) / 2);
+        }
+
+        splitViewportLeft.innerHTML = `
+            <div class="split-track split-track-left">
+                <div class="split-frame"><img data-split-img="left-next" alt="" loading="eager" decoding="async"></div>
+                <div class="split-frame"><img data-split-img="left-current" alt="" loading="eager" decoding="async"></div>
+            </div>
+        `;
+        splitViewportRight.innerHTML = `
+            <div class="split-track split-track-right">
+                <div class="split-frame"><img data-split-img="right-current" alt="" loading="eager" decoding="async"></div>
+                <div class="split-frame"><img data-split-img="right-next" alt="" loading="eager" decoding="async"></div>
+            </div>
+        `;
+
+        const splitImages = {
+            leftNext: splitViewport.querySelector('[data-split-img="left-next"]'),
+            leftCurrent: splitViewport.querySelector('[data-split-img="left-current"]'),
+            rightCurrent: splitViewport.querySelector('[data-split-img="right-current"]'),
+            rightNext: splitViewport.querySelector('[data-split-img="right-next"]')
+        };
+
+        function setImageSource(img, src) {
+            if (img.getAttribute('src') === src) return;
+            img.src = src;
+        }
+
+        function setSplitProgress(progress) {
+            splitViewport.style.setProperty('--split-progress', progress.toFixed(4));
+        }
+
+        function animateSplitProgress(fromProgress, toProgress, finalIndex) {
+            window.cancelAnimationFrame(snapAnimationFrame);
+
+            if (reduceMotion) {
+                setSplitProgress(toProgress);
+                activeSnapIndex = finalIndex;
+                isAutoScrolling = false;
+                return;
+            }
+
+            const startTime = performance.now();
+            const distance = toProgress - fromProgress;
+
+            function step(now) {
+                const progress = clamp((now - startTime) / snapDuration, 0, 1);
+                const eased = easeInOut(progress);
+
+                setSplitProgress(fromProgress + (distance * eased));
+
+                if (progress < 1) {
+                    snapAnimationFrame = window.requestAnimationFrame(step);
+                    return;
+                }
+
+                setSplitProgress(toProgress);
+                activeSnapIndex = finalIndex;
+                isAutoScrolling = false;
+            }
+
+            snapAnimationFrame = window.requestAnimationFrame(step);
+        }
+
+        function setSplitViewport(index) {
+            if (index === activeSplitIndex) return;
+
+            const section = splitProjects[index];
+            const nextSection = splitProjects[index + 1] || section;
+            const imagePath = cssUrlToPath(section.style.getPropertyValue('--image'));
+            const nextImagePath = cssUrlToPath(nextSection.style.getPropertyValue('--image'));
+
+            setImageSource(splitImages.leftNext, nextImagePath);
+            setImageSource(splitImages.leftCurrent, imagePath);
+            setImageSource(splitImages.rightCurrent, imagePath);
+            setImageSource(splitImages.rightNext, nextImagePath);
+            activeSplitIndex = index;
+        }
+
+        function snapToProject(targetIndex) {
+            const maxIndex = splitProjects.length - 1;
+            const nextIndex = clamp(targetIndex, 0, maxIndex);
+
+            if (nextIndex === activeSnapIndex || isAutoScrolling) return;
+
+            const baseIndex = activeSnapIndex;
+            const transitionIndex = Math.min(baseIndex, nextIndex);
+            const startProgress = nextIndex > baseIndex ? 0 : 1;
+            const endProgress = nextIndex > baseIndex ? 1 : 0;
+
+            setSplitViewport(transitionIndex);
+            setSplitProgress(startProgress);
+            isAutoScrolling = true;
+            animateSplitProgress(startProgress, endProgress, nextIndex);
+        }
+
+        function requestSnap(direction) {
+            if (!direction || isAutoScrolling) return;
+            snapToProject(activeSnapIndex + direction);
+        }
+
+        window.addEventListener('wheel', (event) => {
+            if (menuOverlay.classList.contains('active')) return;
+            if (Math.abs(event.deltaY) < 4) return;
+            event.preventDefault();
+            requestSnap(event.deltaY > 0 ? 1 : -1);
+        }, { passive: false });
+
+        window.addEventListener('touchstart', (event) => {
+            touchStartY = event.touches[0]?.clientY || 0;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (event) => {
+            if (menuOverlay.classList.contains('active')) return;
+            const currentY = event.touches[0]?.clientY || touchStartY;
+            const delta = touchStartY - currentY;
+            if (Math.abs(delta) < 22) return;
+            event.preventDefault();
+            requestSnap(delta > 0 ? 1 : -1);
+            touchStartY = currentY;
+        }, { passive: false });
+
+        window.addEventListener('keydown', (event) => {
+            if (menuOverlay.classList.contains('active')) return;
+            const nextKeys = ['ArrowDown', 'PageDown', 'Space'];
+            const prevKeys = ['ArrowUp', 'PageUp'];
+
+            if (nextKeys.includes(event.code)) {
+                event.preventDefault();
+                requestSnap(1);
+            }
+
+            if (prevKeys.includes(event.code)) {
+                event.preventDefault();
+                requestSnap(-1);
+            }
+        });
+
+        setSplitViewport(0);
+        setSplitProgress(0);
+        window.addEventListener('resize', () => {
+            setSplitViewport(activeSnapIndex);
+            setSplitProgress(0);
+        });
+    </script>
+    <script src="../menu-state.js?v=20260604-perf"></script>
+</body>
+</html>
