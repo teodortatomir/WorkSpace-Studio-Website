@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Workspace Studio</title>
+    <meta name="description" content="Contact Workspace Studio for workplace design, furniture, turn-key fit-out and showroom visits in Bucharest.">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="contact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="contact-page">
 
     <nav class="navbar main-nav visible-nav contact-nav-theme">
     <div class="nav-container">
@@ -125,12 +126,23 @@
     </div>
 
     <main class="contact-scene">
-        <div class="contact-grid">
-            <section class="contact-form-container">
+        <section class="contact-hero">
+            <figure class="contact-hero-visual">
+                <img loading="eager" decoding="async" src="../index-photos/UDR_4589.jpg" alt="Workspace Studio showroom lounge in Bucharest">
+            </figure>
+            <div class="contact-hero-copy">
+                <span class="contact-eyebrow">Contact</span>
+                <h1>Start a conversation about your next workspace.</h1>
+                <p>Tell us what you are planning and our team will guide you toward the right mix of design, furniture, ergonomics and delivery services.</p>
+            </div>
+        </section>
+
+        <div class="contact-layout">
+            <section class="contact-form-container" aria-labelledby="contact-form-title">
                 <header class="contact-header">
-                    <span class="category-tag">Let's Connect</span>
-                    <h1 class="contact-title">Start your <em>workspace</em> transition</h1>
-                    <p class="contact-subtitle">Whether you're looking for a workplace audit or a full turn-key solution, our specialists are ready to assist.</p>
+                    <span class="contact-eyebrow">Project request</span>
+                    <h2 id="contact-form-title">How can we help?</h2>
+                    <p>Share a few details and we will get back to you with the right next step.</p>
                 </header>
 
                 <form class="workspace-form" id="contactForm" action="https://formspree.io/f/mwvrnypv" method="POST" novalidate>
@@ -139,16 +151,16 @@
                     <div class="input-row">
                         <div class="input-group">
                             <label>Name</label>
-                            <input type="text" name="name" placeholder="John Doe" required>
+                            <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
                         </div>
                         <div class="input-group">
                             <label>Company</label>
-                            <input type="text" name="company" placeholder="Your Company" required>
+                            <input type="text" name="company" placeholder="Company name" autocomplete="organization" required>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>Email Address</label>
-                        <input type="email" name="email" placeholder="email@company.com" required>
+                        <input type="email" name="email" placeholder="email@company.com" autocomplete="email" required>
                     </div>
                     <div class="input-group service-selection-group">
                         <label>Services Needed</label>
@@ -185,32 +197,44 @@
                     </button>
                 </form>
             </section>
-
-            <aside class="contact-info-container">
-                <div class="info-block">
-                    <span class="info-label">Visit our Showroom</span>
-                    <h3>Sky Tower Bucharest</h3>
-                    <p>Calea Floreasca 246C, Floor 18<br>Bucharest, Romania</p>
-                </div>
-
-                <div class="info-block">
-                    <span class="info-label">Talk to us</span>
-                    <p>office@workspaces.ro<br>Phone: +40-31-4371252 | Fax: +40-31-4371253</p>
-                </div>
-
-                <div class="map-wrapper">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.464670255551!2d26.103923476652684!3d44.46452290025983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f7d6396f4991%3A0x6338421448834925!2sSky%20Tower!5e0!3m2!1sro!2sro!4v1710500000000!5m2!1sro!2sro" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; filter: grayscale(1) invert(0.92) contrast(1.2) brightness(0.9);" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </aside>
         </div>
+
+        <section class="contact-map-section" aria-label="Workspace Studio location">
+            <div class="map-wrapper">
+                <iframe
+                    title="Workspace Studio showroom location in Sky Tower Bucharest"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.464670255551!2d26.103923476652684!3d44.46452290025983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f7d6396f4991%3A0x6338421448834925!2sSky%20Tower!5e0!3m2!1sro!2sro!4v1710500000000!5m2!1sro!2sro"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <aside class="contact-info-container" aria-label="Showroom and contact information">
+            <div class="info-block">
+                <span class="info-label">Visit our showroom</span>
+                <h3>Sky Tower Bucharest</h3>
+                <p>Calea Floreasca 246C, Floor 18<br>Bucharest, Romania</p>
+            </div>
+
+            <div class="info-block">
+                <span class="info-label">Talk to us</span>
+                <p><a href="mailto:office@workspaces.ro">office@workspaces.ro</a><br><a href="tel:+40314371252">+40 31 437 1252</a></p>
+            </div>
+
+            <div class="info-block">
+                <span class="info-label">Follow</span>
+                <div class="contact-socials">
+                    <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </aside>
     </main>
 
     <footer class="site-footer contact-footer">
@@ -376,6 +400,4 @@
     <script src="../menu-state.js?v=20260604-perf"></script>
 </body>
 </html>
-
-
 
