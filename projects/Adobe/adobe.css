@@ -4,6 +4,7 @@
     --adobe-line: rgba(24, 22, 20, 0.12);
     --adobe-paper: #f7f4ef;
     --adobe-accent: #262321;
+    --adobe-gold: #b89a72;
     --adobe-soft-accent: #77716b;
 }
 
@@ -115,7 +116,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     z-index: 1;
     width: min(980px, calc(100% - 96px));
     margin: 0 auto;
-    padding: 76px 0 0;
+    padding: 44px 0 0;
     color: #111;
     text-align: center;
     text-shadow: none;
@@ -134,7 +135,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .adobe-kicker,
 .section-label {
     display: block;
-    color: var(--adobe-accent);
+    color: var(--adobe-gold);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.8px;
@@ -324,7 +325,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-switch .section-label {
     position: sticky;
     top: 112px;
-    color: var(--adobe-ink);
+    color: var(--adobe-gold);
     padding-top: 7px;
 }
 
@@ -493,7 +494,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-lens-problem-panel::before {
     content: "THE PROBLEM";
     display: block;
-    color: var(--adobe-accent);
+    color: var(--adobe-gold);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.8px;
@@ -504,7 +505,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-lens-solution-panel::before {
     content: "THE SOLUTION";
     display: block;
-    color: var(--adobe-accent);
+    color: var(--adobe-gold);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.8px;
@@ -716,7 +717,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .btn-line {
     width: 42px;
     height: 1px;
-    background: var(--adobe-accent);
+    background: var(--adobe-gold);
     transition: width 0.35s ease;
 }
 
@@ -884,7 +885,7 @@ body.adobe-lightbox-open {
     }
 
     .adobe-hero-content {
-        padding: 56px 0 0;
+        padding: 36px 0 0;
     }
 
     .adobe-hero h1 {
@@ -981,7 +982,7 @@ body.adobe-lightbox-open {
     }
 
     .story-lens-panel::before {
-        color: var(--adobe-ink);
+        color: var(--adobe-gold);
         font-size: 11px;
         font-weight: 800;
         letter-spacing: 2.8px;
