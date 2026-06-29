@@ -187,7 +187,7 @@ function ProjectsScene() {
                     transition={{ duration: 0.8 }}
                     className="projects-hero-visual"
                 >
-                    <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio project portfolio" />
+                    <img src="../index-photos/team.jpg" alt="Workspace Studio workplace project with collaborative office zones" />
                 </motion.figure>
             </section>
 
@@ -198,7 +198,7 @@ function ProjectsScene() {
                     transition={{ duration: 0.8, delay: 0.08 }}
                     className="projects-intro-copy"
                 >
-                    <span>Workspace Studio / Projects</span>
+                    <span>Projects</span>
                     <h1>Modern workspaces shaped with clarity, precision, and presence.</h1>
                     <p>Explore commercial interiors, headquarters, hospitality spaces, and workplace environments delivered across different industries.</p>
                 </motion.div>
@@ -692,38 +692,18 @@ function ProjectsScene() {
                 </div>
             </section>
 
-            {/* ACUM ADAUGATA: CONTACT SECTION */}
-            <section className="contact-section-editorial">
-                <div className="contact-grid">
-                    <div className="contact-image-side">
-                        <div className="contact-image-wrapper">
-                            <img src="../projects-pictures/Horatiu-Didea.jpg" alt="Contact Us" className="contact-img" />
-                        </div>
-                    </div>
-                    <div className="contact-form-side">
-                        <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-                            <span className="contact-label">Get in touch</span>
-                            <h2 className="contact-title">It all starts with <br /><span className="font-serif italic text-[#3c4a57]">"hello".</span></h2>
-                            <p className="contact-desc">Fill out the form below and one of our specialists will be in touch shortly to discuss your workspace needs.</p>
-                            
-                            <form className="minimal-form">
-                                <div className="form-group">
-                                    <input type="text" placeholder="Full Name" required />
-                                </div>
-                                <div className="form-group">
-                                    <input type="email" placeholder="Business Email" required />
-                                </div>
-                                <div className="form-group">
-                                    <textarea placeholder="Tell us about your project" rows="4"></textarea>
-                                </div>
-                                <button type="submit" className="form-submit-btn">
-                                    Send Message
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </button>
-                            </form>
-                        </motion.div>
-                    </div>
-                </div>
+            <section className="projects-cta-section">
+                <motion.div
+                    className="projects-cta"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <span>Have a workplace project in mind?</span>
+                    <h2>it all starts with a "hello".</h2>
+                    <a href="../contact/contact.html">Get in touch</a>
+                </motion.div>
             </section>
 
             

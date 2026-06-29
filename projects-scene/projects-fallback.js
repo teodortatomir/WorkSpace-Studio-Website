@@ -44,12 +44,12 @@
             <div class="page-wrapper bg-white projects-fallback-page">
                 <section class="hero-abstract">
                     <figure class="projects-hero-visual">
-                        <img src="../projects-pictures/skytower-hero.jpg" alt="Workspace Studio project portfolio">
+                        <img src="../projects-pictures/uipath.jpg" alt="Workspace Studio workplace project with collaborative office zones">
                     </figure>
                 </section>
                 <section class="projects-intro">
                     <div class="projects-intro-copy">
-                        <span>Workspace Studio / Projects</span>
+                        <span>Projects</span>
                         <h1>Modern workspaces shaped with clarity, precision, and presence.</h1>
                         <p>Explore commercial interiors, headquarters, hospitality spaces, and workplace environments delivered across different industries.</p>
                     </div>
@@ -78,6 +78,13 @@
                             <span class="testimonial-brand">Workspace Studio</span>
                             <p class="testimonial-quote">Projects delivered with attention to design, execution, schedule, and the way each workplace supports the people inside it.</p>
                         </div>
+                    </div>
+                </section>
+                <section class="projects-cta-section">
+                    <div class="projects-cta">
+                        <span>Have a workplace project in mind?</span>
+                        <h2>it all starts with a "hello".</h2>
+                        <a href="../contact/contact.html">Get in touch</a>
                     </div>
                 </section>
                 <footer class="site-footer main-footer">
