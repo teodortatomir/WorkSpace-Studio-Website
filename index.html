@@ -673,8 +673,6 @@
             </div>
         </footer>
 
-
-        <script src="cms/cms.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                     const isMobileImageViewport = () => window.matchMedia('(max-width: 768px)').matches;
@@ -730,6 +728,7 @@
                         });
                     };
 
+                    /*
                     if (window.WorkspaceCMS) {
                         const customProjects = window.WorkspaceCMS.getEntriesByType('project');
                         const sliderTrack = document.querySelector('[data-projects-track]');
@@ -1089,6 +1088,7 @@
                             });
                         }
                     }
+                    */
 
                     observeDeferredImages();
                     window.__workspaceDeferredImagesHandled = true;
@@ -1451,15 +1451,19 @@
 
                         const loadMobileProjectImagesNearViewport = () => {
                             if (!isMobileSlider) return;
-                            const viewportRect = viewport.getBoundingClientRect();
-                            const horizontalMargin = Math.max(viewport.clientWidth * 0.85, 260);
-                            track.querySelectorAll('.project-slider-card').forEach(card => {
-                                const cardRect = card.getBoundingClientRect();
-                                const isNearViewport = cardRect.right >= viewportRect.left - horizontalMargin
-                                    && cardRect.left <= viewportRect.right + horizontalMargin;
-                                if (!isNearViewport) return;
-                                card.querySelectorAll('img[data-defer-src]').forEach(loadDeferredImage);
-                            });
+                            const cards = track.children;
+                            const step = cardStep || getProjectCardStep();
+                            if (!cards.length || !step) return;
+
+                            const firstVisibleIndex = Math.max(Math.floor(viewport.scrollLeft / step) - 2, 0);
+                            const lastVisibleIndex = Math.min(
+                                Math.ceil((viewport.scrollLeft + viewport.clientWidth) / step) + 3,
+                                cards.length - 1
+                            );
+
+                            for (let index = firstVisibleIndex; index <= lastVisibleIndex; index += 1) {
+                                cards[index]?.querySelectorAll('img[data-defer-src]').forEach(loadDeferredImage);
+                            }
                         };
 
                         const scheduleMobileProjectImageLoad = () => {
