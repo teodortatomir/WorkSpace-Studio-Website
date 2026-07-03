@@ -1462,6 +1462,10 @@ body.home-page .projects-slider-arrow:hover {
     box-shadow: 0 30px 60px rgba(42, 35, 28, 0.13);
 }
 
+.project-equal-card picture {
+    display: block;
+}
+
 .project-equal-card img {
     width: 100%;
     height: 300px;

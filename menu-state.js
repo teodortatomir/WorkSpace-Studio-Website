@@ -1,7 +1,16 @@
 (() => {
+    const isMobileImageViewport = () => window.matchMedia("(max-width: 768px)").matches;
+
+    const getResponsiveImageSrc = (img, fallbackSrc) => {
+        if (isMobileImageViewport() && img?.dataset.mobileSrc) {
+            return img.dataset.mobileSrc;
+        }
+        return fallbackSrc;
+    };
+
     const loadDeferredImage = (img) => {
         if (!img?.dataset.deferSrc) return;
-        img.src = img.dataset.deferSrc;
+        img.src = getResponsiveImageSrc(img, img.dataset.deferSrc);
         img.removeAttribute("data-defer-src");
     };
 
