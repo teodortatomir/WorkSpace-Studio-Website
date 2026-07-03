@@ -701,7 +701,7 @@ function ProjectsScene() {
                     viewport={{ once: true }}
                 >
                     <span>Have a workplace project in mind?</span>
-                    <h2>it all starts with a "hello".</h2>
+                    <h2>It all starts with a "hello".</h2>
                     <a href="../contact/contact.html">Get in touch</a>
                 </motion.div>
             </section>
