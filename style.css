@@ -1462,10 +1462,6 @@ body.home-page .projects-slider-arrow:hover {
     box-shadow: 0 30px 60px rgba(42, 35, 28, 0.13);
 }
 
-.project-equal-card picture {
-    display: block;
-}
-
 .project-equal-card img {
     width: 100%;
     height: 300px;
@@ -2638,6 +2634,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+    html,
+    body {
+        scroll-behavior: auto;
+    }
+
     .reveal,
     .split-row,
     .nt-card,
@@ -2668,6 +2669,11 @@ footer {
         -webkit-backdrop-filter: none !important;
     }
 
+    .hero-bg-video {
+        transform: none !important;
+        will-change: auto !important;
+    }
+
     .project-slider-card,
     .service-gallery-card,
     .why-us-feature-media,
@@ -2680,18 +2686,6 @@ footer {
     .home-shop-copy {
         box-shadow: none !important;
         transition: none !important;
-    }
-
-    .pivot-projects,
-    .ntgrate-services,
-    .why-us-section,
-    .about-feature-section,
-    .insights-feature-section,
-    .home-shop-section,
-    .home-partners-section,
-    .mission-minimal {
-        content-visibility: auto;
-        contain-intrinsic-size: 700px;
     }
 
     .project-slider-card > img,

@@ -207,10 +207,7 @@
     <section class="pivot-projects" id="projects">
         <div class="projects-equal-grid reveal">
             <article class="project-equal-card">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="mobile-images/images/uipath-header.jpg">
-                    <img loading="lazy" decoding="async" src="images/uipath-header.jpg" alt="UiPath" sizes="(max-width: 768px) 100vw, 33vw">
-                </picture>
+                <img loading="lazy" decoding="async" data-defer-src="images/uipath-header.jpg" data-mobile-src="mobile-images/images/uipath-header.jpg" alt="UiPath" sizes="(max-width: 768px) 100vw, 33vw">
                 <div class="project-equal-content">
                     <span class="project-kicker">Technology / AI</span>
                     <h3>UiPath Global Office</h3>
@@ -220,10 +217,7 @@
             </article>
 
             <article class="project-equal-card">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="mobile-images/images/adobe-header.jpg">
-                    <img loading="lazy" decoding="async" src="images/adobe-header.jpg" alt="Adobe" sizes="(max-width: 768px) 100vw, 33vw">
-                </picture>
+                <img loading="lazy" decoding="async" data-defer-src="images/adobe-header.jpg" data-mobile-src="mobile-images/images/adobe-header.jpg" alt="Adobe" sizes="(max-width: 768px) 100vw, 33vw">
                 <div class="project-equal-content">
                     <span class="project-kicker">Software / Creativity</span>
                     <h3>Adobe Headquarters</h3>
@@ -233,10 +227,7 @@
             </article>
 
             <article class="project-equal-card">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="mobile-images/images/omvpetrom-header.jpg">
-                    <img loading="lazy" decoding="async" src="images/omvpetrom-header.jpg" alt="OMV Petrom" sizes="(max-width: 768px) 100vw, 33vw">
-                </picture>
+                <img loading="lazy" decoding="async" data-defer-src="images/omvpetrom-header.jpg" data-mobile-src="mobile-images/images/omvpetrom-header.jpg" alt="OMV Petrom" sizes="(max-width: 768px) 100vw, 33vw">
                 <div class="project-equal-content">
                     <span class="project-kicker">Energy / Campus</span>
                     <h3>OMV Petrom City</h3>
@@ -725,7 +716,12 @@
                         });
 
                         images.forEach(img => {
-                            const target = img.closest('.projects-slider')
+                            if (isMobileImageViewport() && img.closest('.project-slider-card, .projects-equal-grid, .split-row')) {
+                                return;
+                            }
+                            const target = isMobileImageViewport() && img.closest('.project-slider-card')
+                                ? img.closest('.project-slider-card')
+                                : img.closest('.projects-slider')
                                 || img.closest('.home-partners-section')
                                 || img.closest('.services-gallery-grid')
                                 || img.closest('.project-slider-card, .service-gallery-card, .why-us-feature-media, .about-feature-media, .insights-feature-media, .home-shop-media, .home-partner-logo, .split-image')
@@ -1095,6 +1091,7 @@
                     }
 
                     observeDeferredImages();
+                    window.__workspaceDeferredImagesHandled = true;
 
                     const video = document.getElementById('heroVideo');
                             const container = document.getElementById('heroTextContainer');
@@ -1150,11 +1147,12 @@
                         }, 700);
 
                         const mobileHeroMedia = window.matchMedia('(max-width: 768px)');
+                        const isMobileExperience = () => mobileHeroMedia.matches;
                         let heroIsInView = true;
 
                         const syncHeroVideoVisibility = () => {
                             if (!video) return;
-                            if (!mobileHeroMedia.matches) {
+                            if (!isMobileExperience()) {
                                 startHeroVideo();
                                 return;
                             }
@@ -1169,10 +1167,10 @@
 
                         if ('IntersectionObserver' in window && heroSection) {
                             const heroVideoObserver = new IntersectionObserver((entries) => {
-                                heroIsInView = entries.some(entry => entry.isIntersecting);
+                                heroIsInView = entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.45);
                                 syncHeroVideoVisibility();
                             }, {
-                                threshold: 0.08
+                                threshold: [0, 0.2, 0.45, 0.7]
                             });
                             heroVideoObserver.observe(heroSection);
                         }
@@ -1302,7 +1300,7 @@
 
                         let lastIndex = 0;
                         renderHeroMilestone(textMilestones[0]);
-                            if (video) {
+                            if (video && !isMobileExperience()) {
                                 video.addEventListener('timeupdate', () => {
                                     const currentTime = video.currentTime;
                                     const currentIndex = textMilestones.reduce((acc, milestone, idx) => (currentTime >= milestone.time ? idx : acc), 0);
@@ -1404,6 +1402,7 @@
                         let activePointerId = null;
                         let slideResetTimer = null;
                         let mobileScrollResetTimer = null;
+                        let mobileImageLoadFrame = null;
                         let suppressClickTimer = null;
                         let resizeFrame = null;
                         let cardStep = 0;
@@ -1446,6 +1445,28 @@
                             requestAnimationFrame(() => {
                                 cardStep = getProjectCardStep();
                                 viewport.scrollLeft = getMobileLoopOffset();
+                                loadMobileProjectImagesNearViewport();
+                            });
+                        };
+
+                        const loadMobileProjectImagesNearViewport = () => {
+                            if (!isMobileSlider) return;
+                            const viewportRect = viewport.getBoundingClientRect();
+                            const horizontalMargin = Math.max(viewport.clientWidth * 0.85, 260);
+                            track.querySelectorAll('.project-slider-card').forEach(card => {
+                                const cardRect = card.getBoundingClientRect();
+                                const isNearViewport = cardRect.right >= viewportRect.left - horizontalMargin
+                                    && cardRect.left <= viewportRect.right + horizontalMargin;
+                                if (!isNearViewport) return;
+                                card.querySelectorAll('img[data-defer-src]').forEach(loadDeferredImage);
+                            });
+                        };
+
+                        const scheduleMobileProjectImageLoad = () => {
+                            if (!isMobileSlider || mobileImageLoadFrame) return;
+                            mobileImageLoadFrame = window.requestAnimationFrame(() => {
+                                mobileImageLoadFrame = null;
+                                loadMobileProjectImagesNearViewport();
                             });
                         };
 
@@ -1462,6 +1483,7 @@
                             } else if (viewport.scrollLeft >= loopWidth * 1.5) {
                                 viewport.scrollLeft -= loopWidth;
                             }
+                            scheduleMobileProjectImageLoad();
                         };
 
                         const clearMobileScrollResetTimer = () => {
@@ -1475,7 +1497,7 @@
                             mobileScrollResetTimer = window.setTimeout(() => {
                                 normalizeMobileProjectsScroll();
                                 mobileScrollResetTimer = null;
-                            }, 430);
+                            }, 260);
                         };
 
                         const scrollMobileProjects = (direction) => {
@@ -1487,6 +1509,7 @@
                                 behavior: 'smooth'
                             });
                             scheduleMobileScrollNormalize();
+                            scheduleMobileProjectImageLoad();
                         };
 
                         const getMainVisibleCards = () => {
@@ -1747,6 +1770,7 @@
                         viewport.addEventListener('scroll', () => {
                             if (!isMobileSlider) return;
                             scheduleMobileScrollNormalize();
+                            scheduleMobileProjectImageLoad();
                         }, { passive: true });
 
                         track.addEventListener('transitionend', () => {

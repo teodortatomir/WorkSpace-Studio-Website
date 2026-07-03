@@ -18,7 +18,9 @@
         const images = Array.from(root.querySelectorAll("img[data-defer-src]"));
         if (!images.length) return;
 
-        const getLoadTarget = (img) => img.closest(".projects-slider")
+        const getLoadTarget = (img) => isMobileImageViewport() && img.closest(".project-slider-card")
+            ? img.closest(".project-slider-card")
+            : img.closest(".projects-slider")
             || img.closest(".home-partners-section")
             || img.closest(".services-gallery-grid")
             || img.closest(".gallery-grid")
@@ -58,6 +60,9 @@
         });
 
         images.forEach((img) => {
+            if (isMobileImageViewport() && img.closest(".project-slider-card, .projects-equal-grid, .split-row")) {
+                return;
+            }
             observer.observe(getLoadTarget(img));
         });
 
@@ -87,7 +92,9 @@
         button.addEventListener("click", loadMenuImages);
     });
 
-    observeDeferredImages();
+    if (!window.__workspaceDeferredImagesHandled && !document.body.classList.contains("home-page")) {
+        observeDeferredImages();
+    }
 
     const menus = document.querySelectorAll(".menu-right-links");
 
