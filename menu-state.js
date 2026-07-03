@@ -61,11 +61,19 @@
             observer.observe(getLoadTarget(img));
         });
 
+        let imageViewportFrame = null;
+        const scheduleImagesNearViewportCheck = () => {
+            if (imageViewportFrame) return;
+            imageViewportFrame = window.requestAnimationFrame(() => {
+                imageViewportFrame = null;
+                loadImagesNearViewport();
+            });
+        };
+
         loadImagesNearViewport();
-        window.addEventListener("scroll", loadImagesNearViewport, { passive: true });
-        window.addEventListener("resize", loadImagesNearViewport);
+        window.addEventListener("resize", scheduleImagesNearViewportCheck);
         document.querySelectorAll(".snap-container, .gallery-snap-section").forEach((container) => {
-            container.addEventListener("scroll", loadImagesNearViewport, { passive: true });
+            container.addEventListener("scroll", scheduleImagesNearViewportCheck, { passive: true });
         });
     };
 

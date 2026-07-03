@@ -1149,15 +1149,43 @@
                             }
                         }, 700);
 
+                        const mobileHeroMedia = window.matchMedia('(max-width: 768px)');
+                        let heroIsInView = true;
+
+                        const syncHeroVideoVisibility = () => {
+                            if (!video) return;
+                            if (!mobileHeroMedia.matches) {
+                                startHeroVideo();
+                                return;
+                            }
+                            if (document.visibilityState !== 'visible' || !heroIsInView) {
+                                video.pause();
+                                return;
+                            }
+                            startHeroVideo();
+                        };
+
                         startHeroVideo();
 
+                        if ('IntersectionObserver' in window && heroSection) {
+                            const heroVideoObserver = new IntersectionObserver((entries) => {
+                                heroIsInView = entries.some(entry => entry.isIntersecting);
+                                syncHeroVideoVisibility();
+                            }, {
+                                threshold: 0.08
+                            });
+                            heroVideoObserver.observe(heroSection);
+                        }
+
                         window.addEventListener('pageshow', () => {
-                            startHeroVideo();
+                            syncHeroVideoVisibility();
                         });
 
                         document.addEventListener('visibilitychange', () => {
                             if (document.visibilityState === 'visible') {
-                                startHeroVideo();
+                                syncHeroVideoVisibility();
+                            } else {
+                                video?.pause();
                             }
                         });
 
@@ -1291,7 +1319,15 @@
                             }
 
                             // 2. NAVBAR SCROLL LOGIC
-                            window.addEventListener('scroll', syncNavStates);
+                            let navScrollFrame = null;
+                            const scheduleNavStateSync = () => {
+                                if (navScrollFrame) return;
+                                navScrollFrame = window.requestAnimationFrame(() => {
+                                    navScrollFrame = null;
+                                    syncNavStates();
+                                });
+                            };
+                            window.addEventListener('scroll', scheduleNavStateSync, { passive: true });
                             syncNavStates();
 
                             heroSearchToggle?.addEventListener('click', () => {
@@ -1762,12 +1798,17 @@
 
                     window.__workspaceHomeSnapV2 = false;
 
-                            const revealObserver = new IntersectionObserver((entries) => {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                                });
-                            }, { threshold: 0.15 });
-                            document.querySelectorAll('.reveal, .split-row, .nt-card').forEach(el => revealObserver.observe(el));
+                            const revealElements = document.querySelectorAll('.reveal, .split-row, .nt-card');
+                            if (window.matchMedia('(max-width: 768px)').matches) {
+                                revealElements.forEach(el => el.classList.add('visible'));
+                            } else {
+                                const revealObserver = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) entry.target.classList.add('visible');
+                                    });
+                                }, { threshold: 0.15 });
+                                revealElements.forEach(el => revealObserver.observe(el));
+                            }
                         });
 
                         // --- LOGICA MENIU OVERLAY (STRICT PERFORMANCE) ---

@@ -2638,6 +2638,85 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .reveal,
+    .split-row,
+    .nt-card,
+    .service-gallery-card.reveal,
+    .about-feature-media.reveal,
+    .why-us-feature-media.reveal,
+    .insights-feature-media.reveal,
+    .home-shop-media.reveal,
+    .about-feature-copy.reveal,
+    .why-us-feature-copy.reveal,
+    .insights-feature-copy.reveal,
+    .home-shop-copy.reveal,
+    .contact-cta.reveal,
+    .services-header.reveal,
+    .view-all-container.reveal,
+    .projects-slider.reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+
+    .hero-navbar-inner,
+    .navbar,
+    .contact-nav-theme.navbar.scrolled,
+    .hero-scroll-button {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .project-slider-card,
+    .service-gallery-card,
+    .why-us-feature-media,
+    .about-feature-media,
+    .insights-feature-media,
+    .home-shop-media,
+    .why-us-feature-copy,
+    .about-feature-copy,
+    .insights-feature-copy,
+    .home-shop-copy {
+        box-shadow: none !important;
+        transition: none !important;
+    }
+
+    .pivot-projects,
+    .ntgrate-services,
+    .why-us-section,
+    .about-feature-section,
+    .insights-feature-section,
+    .home-shop-section,
+    .home-partners-section,
+    .mission-minimal {
+        content-visibility: auto;
+        contain-intrinsic-size: 700px;
+    }
+
+    .project-slider-card > img,
+    .service-gallery-card img,
+    .why-us-feature-media img,
+    .about-feature-media img,
+    .insights-feature-media img,
+    .home-shop-media img,
+    .split-image img {
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+
+    .service-gallery-card:hover,
+    .why-us-feature-media:hover img,
+    .about-feature-media:hover img,
+    .insights-feature-media:hover img,
+    .home-shop-media:hover img,
+    .split-row:hover .split-image {
+        transform: none !important;
+        filter: none !important;
+        box-shadow: none !important;
+    }
+
     .home-partners-section {
         padding: 48px 0 58px;
     }
