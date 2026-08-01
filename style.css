@@ -2382,7 +2382,7 @@ body.home-page .insights-feature-link:hover {
 .home-partner-logo-omv {
     --client-logo-width: min(96%, 190px);
     --client-logo-height: 58px;
-    --client-logo-scale: 1.58;
+    --client-logo-scale: 1.78;
 }
 
 .home-partner-logo-uber {
@@ -2398,7 +2398,7 @@ body.home-page .insights-feature-link:hover {
 .home-partner-logo-panasonic {
     --client-logo-width: min(92%, 180px);
     --client-logo-height: 58px;
-    --client-logo-scale: 1.5;
+    --client-logo-scale: 1.68;
 }
 
 .home-partner-logo-unilever {
