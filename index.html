@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Studio | Demo Design Premium</title>
-    <link rel="preload" as="video" href="videos/video_montat_final_fara_sunet.mp4" type="video/mp4" fetchpriority="high">
+    <link rel="preload" as="video" href="videos/WS 1080 x 1920 px.mp4" type="video/mp4" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="video" href="videos/WS 720 x 1280 px.mp4" type="video/mp4" media="(max-width: 768px)" fetchpriority="high">
     <link rel="stylesheet" href="style.css?v=hero-sequential-transition-20260722">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
@@ -53,7 +54,7 @@
             <a href="ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
             <a href="our-services/design-services.html" class="brand-name-text design-txt">Design</a>
             <a href="sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
-            <a href="our-services/turn-key.html" class="brand-name-text turnkey-txt">Turn Key</a>
+            <a href="our-services/design-services.html#turn-key" class="brand-name-text turnkey-txt">Turn Key</a>
         </div>
 
         <div class="nav-col nav-right">
@@ -129,7 +130,7 @@
                         </div>
                         <div class="menu-nav-item" data-target="img-about"><a href="about/about.html">Who we are</a></div>
                         <div class="menu-nav-item has-submenu" data-target="img-insights">
-                            <a href="insights/insights.html">News &amp; Insights</a>
+                            <a href="insights/newsroom.html">News &amp; Insights</a>
                             <div class="menu-subnav" aria-label="News and Insights submenu">
                                 <span class="menu-subnav-title">News &amp; Insights</span>
                                 <a href="insights/press-releases.html">Press Releases</a>
@@ -155,7 +156,8 @@
     <header class="hero" id="hero">
         <div class="hero-video-container">
             <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-bg-video">
-                <source src="videos/video_montat_final_fara_sunet.mp4" type="video/mp4">
+                <source src="videos/WS 720 x 1280 px.mp4" type="video/mp4" media="(max-width: 768px)">
+                <source src="videos/WS 1080 x 1920 px.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay-dark"></div>
         </div>
@@ -532,10 +534,10 @@
             <div class="insights-feature-copy reveal">
                 <span class="insights-feature-kicker">News &amp; Insights</span>
                 <p>Recent press releases, office market news and workplace strategy insights from daily practice and global studies, read through a Romanian lens. Explore coverage and interviews in Forbes, Business Magazin, Ziarul Financiar, Profit.ro, wall-street.ro and other business media.</p>
-                <a href="insights/insights.html" class="insights-feature-link">Visit News &amp; Insights</a>
+                <a href="insights/newsroom.html" class="insights-feature-link">Visit News &amp; Insights</a>
             </div>
 
-            <a href="insights/insights.html" class="insights-feature-media reveal">
+            <a href="insights/newsroom.html" class="insights-feature-media reveal">
                 <img loading="lazy" decoding="async" data-defer-src="index-photos/news-and-insights.jpg" data-mobile-src="mobile-images/index-photos/news-and-insights.jpg" alt="Workspace insights and editorial stories">
                 <span class="insights-feature-label">News &amp; Insights</span>
             </a>
@@ -653,7 +655,7 @@
                     <a class="site-footer-link" href="services/index.html">Services</a>
                         <a class="site-footer-link" href="partners/partners.html">Brands &amp; Partners</a>
                         <a class="site-footer-link" href="about/about.html">About</a>
-                        <a class="site-footer-link" href="insights/insights.html">Insights</a>
+                        <a class="site-footer-link" href="insights/newsroom.html">Insights</a>
                         <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Online Shop</a>
                         <a class="site-footer-link" href="contact/contact.html">Contact / Start a Project</a>
                     </nav>
@@ -1210,16 +1212,19 @@
                         };
 
                         // 1. TEXT MILESTONES (Sincronizare cu momentele din video)
+                        const heroTextCueTimes = isMobileExperience()
+                            ? [0, 16.25, 34.833333, 50.541667, 69.375]
+                            : [0, 16.28, 34.8, 50.52, 69.36];
                         const textMilestones = [
                             {
-                                time: 0,
+                                time: heroTextCueTimes[0],
                                 subtitle: "Fully integrated Design&Build provider.",
                                 title: "One Partner. One Process. <em>One Team.</em>",
                                 desc: "Workspace Studio brings workplace strategy, design, fit-out, furniture and logistics together in one coordinated process. One schedule, one budget and one accountable team holding quality across every phase of the project.",
                                 wideDesc: true
                             },
                             {
-                                time: 16.02,
+                                time: heroTextCueTimes[1],
                                 subtitle: "Senior Leadership, Start to Finish",
                                 title: "The People You Meet Are the People Who <em>Build It</em>",
                                 desc: "Continuity isn't a promise we make — it's how we staff every project. Decisions stay aligned because the same senior team carries them from proposal to completion.",
@@ -1227,14 +1232,14 @@
                                 titleStyle: "long"
                             },
                             {
-                                time: 36.98,
+                                time: heroTextCueTimes[2],
                                 subtitle: "Cost certainty before the first commitment.",
                                 title: "Budget <em>Centricity</em>",
                                 desc: "We translate concepts into technically correct, cost-aligned plans before procurement begins. No surprises on site. No revisions under cost pressure. Budget discipline shapes our design process from day one.",
                                 wideDesc: true
                             },
                             {
-                                time: 52.94,
+                                time: heroTextCueTimes[3],
                                 subtitle: "Sole MillerKnoll Certified Dealer in Romania.",
                                 title: "500+ premium brands, <em>sourced directly</em>",
                                 desc: "Direct supply from the world's major workplace brands. Controlled pricing and original product warranty, with faster lead times to Romania.",
@@ -1242,7 +1247,7 @@
                                 titleStyle: "compact"
                             },
                             {
-                                time: 70.02,
+                                time: heroTextCueTimes[4],
                                 subtitle: "Premium quality with a lower carbon footprint",
                                 title: "Less Waste. <em>More Value.</em>",
                                 desc: "Designed well, built to last. We specify durable, repairable and adaptable products, backed by warranties of up to 12 years and aligned with C2C® principles. All our manufacturers are ISO, FSC® or EcoVadis certified. From recycled materials to modular furniture, every choice is made to reduce waste and support long-term performance.",
@@ -1372,7 +1377,7 @@
                                     { match: ['project', 'projects', 'portfolio', 'work'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
                                     { match: ['service', 'services', 'expertise'], action: () => { window.location.href = 'services/index.html'; } },
                                     { match: ['about', 'studio'], action: () => { window.location.href = 'about/about.html'; } },
-                                    { match: ['insight', 'insights', 'articles', 'news'], action: () => { window.location.href = 'insights/insights.html'; } },
+                                    { match: ['insight', 'insights', 'articles', 'news'], action: () => { window.location.href = 'insights/newsroom.html'; } },
                                     { match: ['partner', 'partners', 'brands'], action: () => { window.location.href = 'partners/partners.html'; } },
                                     { match: ['contact', 'brief'], action: () => { window.location.href = 'contact/contact.html'; } },
                                     { match: ['shop'], action: () => { window.location.href = 'https://shop.workspaces.ro/en/catalog'; } }

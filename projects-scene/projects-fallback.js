@@ -95,7 +95,7 @@
                                 <a class="site-footer-link" href="../index.html#services">Services</a>
                                 <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
                                 <a class="site-footer-link" href="../about/about.html">About</a>
-                                <a class="site-footer-link" href="../insights/insights.html">Insights</a>
+                                <a class="site-footer-link" href="../insights/newsroom.html">Insights</a>
                                 <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
                                 <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
                             </nav>

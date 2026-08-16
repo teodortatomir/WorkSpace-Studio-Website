@@ -356,6 +356,18 @@ renderTeamDots();
 showTeamSlide(0);
 startTeamAutoplay();
 
+const syncPrimaryServiceHighlight = () => {
+    const designLink = document.querySelector(".design-nav .design-txt");
+    const turnKeyLink = document.querySelector(".design-nav .turnkey-txt");
+    const enteredViaTurnKey = window.location.hash === "#turn-key";
+
+    designLink?.classList.toggle("is-active", !enteredViaTurnKey);
+    turnKeyLink?.classList.toggle("is-active", enteredViaTurnKey);
+};
+
+syncPrimaryServiceHighlight();
+window.addEventListener("hashchange", syncPrimaryServiceHighlight);
+
 if (window.location.hash === "#budget-centricity") {
     window.setTimeout(() => {
         document.getElementById("budget-centricity")?.scrollIntoView({ block: "start" });
