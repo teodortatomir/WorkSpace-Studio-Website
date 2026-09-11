@@ -738,3 +738,68 @@ body.arch-page {
         letter-spacing: -0.05em;
     }
 }
+
+.arch-flooring-brands {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    column-gap: 64px;
+    margin-top: 36px;
+}
+.arch-product-story a.arch-flooring-brand {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    align-items: center;
+    gap: 28px;
+    min-width: 0;
+    padding: 32px 0;
+    border: 0;
+    border-bottom: 1px solid #e9e7e3;
+    background: transparent;
+    text-align: left;
+    text-decoration: none;
+    font-weight: 400;
+}
+.arch-flooring-brand .arch-flooring-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+}
+.arch-flooring-logo img {
+    display: block;
+    width: 100%;
+    height: 48px;
+    object-fit: contain;
+}
+.arch-flooring-logo img[src$="lano.jpg"] { width: 108px; max-width: 100%; }
+.arch-flooring-logo img[src$="gerflor.svg"] { width: 128px; max-width: 100%; }
+.arch-flooring-logo img[src$="2tec2.svg"] { width: 120px; max-width: 100%; }
+.arch-flooring-logo img[src="../logos/mohawk-logo.png"] { filter: brightness(0); }
+.arch-flooring-brand .arch-flooring-details { display: grid; gap: 8px; min-width: 0; }
+.arch-flooring-brand .arch-flooring-name,
+.arch-flooring-brand .arch-flooring-products,
+.arch-flooring-brand .arch-flooring-exclusive {
+    font-size: 0.875rem;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1.7;
+}
+.arch-flooring-brand .arch-flooring-name { color: var(--arch-ink); font-weight: 600; }
+.arch-flooring-brand .arch-flooring-products { color: var(--arch-muted); text-wrap: pretty; }
+.arch-flooring-brand .arch-flooring-exclusive { display: block; margin-top: 8px; color: #94764f; }
+.arch-flooring-brand:hover .arch-flooring-name { text-decoration: underline; text-decoration-color: #b89a72; text-underline-offset: 6px; }
+.arch-flooring-brand:focus-visible { outline: 2px solid #b89a72; outline-offset: 6px; }
+@media (max-width: 980px) {
+    .arch-flooring-brands { column-gap: 32px; }
+    .arch-product-story a.arch-flooring-brand { grid-template-columns: 120px minmax(0, 1fr); gap: 20px; }
+}
+@media (max-width: 700px) {
+    .arch-flooring-brands { grid-template-columns: 1fr; margin-top: 20px; }
+    .arch-product-story a.arch-flooring-brand { grid-template-columns: 130px minmax(0, 1fr); padding: 28px 0; gap: 24px; }
+}
+@media (max-width: 360px) {
+    .arch-product-story a.arch-flooring-brand { grid-template-columns: 100px minmax(0, 1fr); gap: 18px; }
+}
