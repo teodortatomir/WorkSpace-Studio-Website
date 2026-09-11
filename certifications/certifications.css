@@ -1,0 +1,17 @@
+.certifications-intro { padding: 160px 0 64px; }
+.certifications-grid { max-width: 1160px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px 64px; padding-bottom: 96px; }
+.certification-item { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
+.certification-item .sustainability-eyebrow { font-size: 0.875rem; letter-spacing: 2px; }
+.certification-item h2 { margin: 14px 0 30px; font-size: clamp(1.85rem, 2.45vw, 2.5rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1.15; }
+.certification-preview { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 996 / 1400; background: #f6f3ee; overflow: hidden; }
+.certification-preview img { display: block; width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease; }
+.certification-preview:hover img { opacity: 0.85; }
+.certification-medal { aspect-ratio: 1; background: #fff; }
+.certification-medal img { height: auto; }
+.certification-caption { margin: 20px 0 0; color: var(--sustainability-muted); font-size: 1rem; }
+.certification-link { display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; padding: 12px 0; border-bottom: 1px solid var(--sustainability-accent); color: var(--sustainability-ink); text-decoration: none; font-size: 0.875rem; letter-spacing: 2px; text-transform: uppercase; }
+.certification-link span { color: var(--sustainability-muted); font-size: 0.75rem; letter-spacing: 1px; }
+.certification-link:hover { color: #80633e; }
+.certification-item a:focus-visible { outline: 2px solid #80633e; outline-offset: 6px; }
+@media (max-width: 768px) { .certifications-intro { padding: 140px 0 48px; } .certifications-grid { grid-template-columns: 1fr; max-width: 520px; gap: 56px; padding-bottom: 64px; } }
+@media (prefers-reduced-motion: reduce) { .certification-preview img { transition: none; } }

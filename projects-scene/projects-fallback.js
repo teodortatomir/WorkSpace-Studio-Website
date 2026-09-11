@@ -91,6 +91,7 @@
                     <div class="site-footer-inner">
                         <div class="site-footer-top">
                             <nav class="site-footer-nav" aria-label="Footer navigation">
+                                <a class="site-footer-link" href="../certifications/index.html">Certifications</a>
                                 <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
                                 <a class="site-footer-link" href="../index.html#services">Services</a>
                                 <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>

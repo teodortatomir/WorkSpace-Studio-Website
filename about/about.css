@@ -2132,3 +2132,33 @@ body.about-page {
     width: 100px;
     transform: translateX(-50%);
 }
+.about-cert-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 32px auto 0;
+    padding: 8px 0;
+    color: var(--about-ink);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.about-cert-link::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    margin-top: 15px;
+    background: var(--about-accent);
+    transition: width 0.3s ease;
+}
+
+.about-cert-link:hover::after { width: 100px; }
+.about-cert-link:focus-visible { outline: 2px solid var(--about-accent); outline-offset: 6px; }
+@media (prefers-reduced-motion: reduce) {
+    .about-cert-link::after { transition: none; }
+}
