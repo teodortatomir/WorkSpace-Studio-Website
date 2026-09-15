@@ -125,6 +125,7 @@ body.partners-page {
 }
 
 .partners-hero .hero-title {
+    width: 100%;
     max-width: 1060px;
     margin: 0 auto;
     color: var(--partners-ink);
@@ -132,6 +133,9 @@ body.partners-page {
     font-weight: 600;
     line-height: 1.02;
     letter-spacing: -0.06em;
+    text-align: center;
+    text-wrap: balance;
+    white-space: normal;
 }
 
 .partners-hero .hero-title em,
