@@ -297,6 +297,60 @@ body.partners-page {
     margin: 0 auto;
 }
 
+.brand-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.brand-filter {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid var(--partners-line);
+    border-radius: 0;
+    background: #fff;
+    color: var(--partners-ink);
+    font: inherit;
+    font-size: 0.86rem;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.brand-filter:hover {
+    border-color: var(--partners-gold);
+}
+
+.brand-filter[aria-pressed="true"] {
+    background: var(--partners-ink);
+    border-color: var(--partners-ink);
+    color: #fff;
+}
+
+.brand-filter:focus-visible {
+    outline: 2px solid var(--partners-gold);
+    outline-offset: 3px;
+}
+
+.brand-category-description {
+    max-width: 720px;
+    margin: 22px auto 0;
+    color: var(--partners-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.brands-count {
+    margin: 24px 0;
+    color: var(--partners-muted);
+    font-size: 0.86rem;
+}
+
+.brand-chip[hidden] {
+    display: none;
+}
+
 .brand-chip {
     display: inline-flex;
     align-items: center;
@@ -325,6 +379,11 @@ body.partners-page {
 
 .brand-chip:last-child::after {
     content: none;
+}
+
+.brand-chip:focus-visible {
+    outline: 2px solid var(--partners-gold);
+    outline-offset: 4px;
 }
 
 .brand-chip:hover {

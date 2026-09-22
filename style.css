@@ -2477,6 +2477,14 @@ body.home-page .insights-feature-link:hover {
     letter-spacing: -0.6px;
 }
 
+.mission-description {
+    max-width: 800px;
+    margin: 24px auto 0;
+    color: rgba(23, 23, 23, 0.62);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.7;
+}
+
 .dark-accent {
     color: var(--accent-warm);
     font-family: "Times New Roman", serif;

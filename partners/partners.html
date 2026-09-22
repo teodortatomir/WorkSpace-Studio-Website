@@ -180,7 +180,7 @@
                     <div class="brands-panel-top">
                         <div>
                             <span class="category-tag">Full Portfolio</span>
-                            <h2 class="brands-title">Browse the wider brand ecosystem</h2>
+                            <h2 class="brands-title">The wider ecosystem</h2>
                         </div>
                         <label class="brand-search-wrap" for="brandSearch">
                             <span class="search-label">Search brands</span>
@@ -188,25 +188,97 @@
                         </label>
                     </div>
 
+                    <div class="brand-filters" role="group" aria-label="Filter brands by category">
+                        <button type="button" class="brand-filter" data-category="all" aria-pressed="true" aria-controls="brandGrid">All</button>
+                        <button type="button" class="brand-filter" data-category="furniture" aria-pressed="false" aria-controls="brandGrid">Furniture</button>
+                        <button type="button" class="brand-filter" data-category="acoustics" aria-pressed="false" aria-controls="brandGrid">Acoustics</button>
+                        <button type="button" class="brand-filter" data-category="architectural-products" aria-pressed="false" aria-controls="brandGrid">Architectural Products</button>
+                        <button type="button" class="brand-filter" data-category="flooring-surfaces" aria-pressed="false" aria-controls="brandGrid">Flooring &amp; Surfaces</button>
+                        <button type="button" class="brand-filter" data-category="lighting" aria-pressed="false" aria-controls="brandGrid">Lighting</button>
+                        <button type="button" class="brand-filter" data-category="accessories-technology" aria-pressed="false" aria-controls="brandGrid">Accessories &amp; Technology</button>
+                        <button type="button" class="brand-filter" data-category="outdoor" aria-pressed="false" aria-controls="brandGrid">Outdoor</button>
+                    </div>
+                    <p class="brand-category-description" id="brandCategoryDescription" aria-live="polite" aria-atomic="true" hidden></p>
+                    <p class="brands-count" id="brandsCount" role="status" aria-live="polite" aria-atomic="true"></p>
+
                     <div class="brands-chip-grid" id="brandGrid">
-                        <a href="#" class="brand-chip" data-name="Abstracta">Abstracta</a>
-                        <a href="#" class="brand-chip" data-name="Andreu World">Andreu World</a>
-                        <a href="#" class="brand-chip" data-name="Arper">Arper</a>
-                        <a href="#" class="brand-chip" data-name="Bene">Bene</a>
-                        <a href="#" class="brand-chip" data-name="BuzziSpace">BuzziSpace</a>
-                        <a href="#" class="brand-chip" data-name="Cappellini">Cappellini</a>
-                        <a href="#" class="brand-chip" data-name="Impact Acoustic">Impact Acoustic</a>
-                        <a href="#" class="brand-chip" data-name="Kartell">Kartell</a>
-                        <a href="#" class="brand-chip" data-name="Maars Living Walls">Maars Living Walls</a>
-                        <a href="#" class="brand-chip" data-name="Mohawk">Mohawk</a>
-                        <a href="#" class="brand-chip" data-name="Muuto">Muuto</a>
-                        <a href="#" class="brand-chip" data-name="NaughtOne">NaughtOne</a>
-                        <a href="#" class="brand-chip" data-name="Orangebox">Orangebox</a>
-                        <a href="#" class="brand-chip" data-name="Vitra">Vitra</a>
-                        <a href="#" class="brand-chip" data-name="Zoco Home">Zoco Home</a>
+                        <a class="brand-chip" data-name="Herman Miller" data-categories="furniture lighting accessories-technology outdoor" href="https://www.hermanmiller.com/" target="_blank" rel="noopener noreferrer" aria-label="Herman Miller — official website (opens in a new tab)">Herman Miller</a>
+                        <a class="brand-chip" data-name="KNOLL" data-categories="furniture lighting accessories-technology outdoor" href="https://www.knoll.com/" target="_blank" rel="noopener noreferrer" aria-label="KNOLL — official website (opens in a new tab)">KNOLL</a>
+                        <a class="brand-chip" data-name="FRAMERY" data-categories="acoustics" href="https://framery.com/en-us/" target="_blank" rel="noopener noreferrer" aria-label="FRAMERY — official website (opens in a new tab)">FRAMERY</a>
+                        <a class="brand-chip" data-name="HAY" data-categories="furniture flooring-surfaces lighting accessories-technology outdoor" href="https://www.hay.com/" target="_blank" rel="noopener noreferrer" aria-label="HAY — official website (opens in a new tab)">HAY</a>
+                        <a class="brand-chip" data-name="KNOLL Studio" data-categories="furniture outdoor" href="https://www.knoll.com/" target="_blank" rel="noopener noreferrer" aria-label="KNOLL Studio — official website (opens in a new tab)">KNOLL Studio</a>
+                        <a class="brand-chip" data-name="MUUTO" data-categories="furniture flooring-surfaces lighting accessories-technology outdoor" href="https://www.muuto.com/" target="_blank" rel="noopener noreferrer" aria-label="MUUTO — official website (opens in a new tab)">MUUTO</a>
+                        <a class="brand-chip" data-name="NAUGHTONE" data-categories="furniture acoustics" href="https://www.naughtone.com/" target="_blank" rel="noopener noreferrer" aria-label="NAUGHTONE — official website (opens in a new tab)">NAUGHTONE</a>
+                        <a class="brand-chip" data-name="BEJOT" data-categories="furniture acoustics" href="https://www.bejot.eu/" target="_blank" rel="noopener noreferrer" aria-label="BEJOT — official website (opens in a new tab)">BEJOT</a>
+                        <a class="brand-chip" data-name="WUTEH" data-categories="furniture accessories-technology" href="https://wuteh.com.pl/" target="_blank" rel="noopener noreferrer" aria-label="WUTEH — official website (opens in a new tab)">WUTEH</a>
+                        <a class="brand-chip" data-name="IMPACT ACOUSTIC" data-categories="acoustics architectural-products flooring-surfaces lighting" href="https://impactacoustic.com/" target="_blank" rel="noopener noreferrer" aria-label="IMPACT ACOUSTIC — official website (opens in a new tab)">IMPACT ACOUSTIC</a>
+                        <a class="brand-chip" data-name="CBS" data-categories="accessories-technology" href="https://www.colebrookbossonsaunders.com/" target="_blank" rel="noopener noreferrer" aria-label="CBS — official website (opens in a new tab)">CBS</a>
+                        <a class="brand-chip" data-name="Omnicharge" data-categories="accessories-technology" href="https://www.omnicharge.co/" target="_blank" rel="noopener noreferrer" aria-label="Omnicharge — official website (opens in a new tab)">Omnicharge</a>
+                        <a class="brand-chip" data-name="SILEN" data-categories="acoustics" href="https://silen.com/en" target="_blank" rel="noopener noreferrer" aria-label="SILEN — official website (opens in a new tab)">SILEN</a>
+                        <a class="brand-chip" data-name="TAPIBEL" data-categories="flooring-surfaces" href="https://www.tapibel.be/" target="_blank" rel="noopener noreferrer" aria-label="TAPIBEL — official website (opens in a new tab)">TAPIBEL</a>
+                        <a class="brand-chip" data-name="AECTUAL" data-categories="furniture architectural-products flooring-surfaces accessories-technology" href="https://www.aectual.com/" target="_blank" rel="noopener noreferrer" aria-label="AECTUAL — official website (opens in a new tab)">AECTUAL</a>
+                        <a class="brand-chip" data-name="ARCADE DOORS" data-categories="architectural-products" href="https://arcade-trading.ro/" target="_blank" rel="noopener noreferrer" aria-label="ARCADE DOORS — official website (opens in a new tab)">ARCADE DOORS</a>
+                        <a class="brand-chip" data-name="artemide" data-categories="acoustics lighting outdoor" href="https://www.artemide.com/en/home" target="_blank" rel="noopener noreferrer" aria-label="artemide — official website (opens in a new tab)">artemide</a>
+                        <a class="brand-chip" data-name="Balma" data-categories="furniture acoustics" href="https://balma.pl/en/" target="_blank" rel="noopener noreferrer" aria-label="Balma — official website (opens in a new tab)">Balma</a>
+                        <a class="brand-chip" data-name="BAUX" data-categories="acoustics architectural-products flooring-surfaces" href="https://www.baux.com/" target="_blank" rel="noopener noreferrer" aria-label="BAUX — official website (opens in a new tab)">BAUX</a>
+                        <a class="brand-chip" data-name="BINBIN" data-categories="accessories-technology" href="https://binbingroup.com/" target="_blank" rel="noopener noreferrer" aria-label="BINBIN — official website (opens in a new tab)">BINBIN</a>
+                        <a class="brand-chip" data-name="BINSIGNIA" data-categories="accessories-technology" href="https://www.binsignia.com/" target="_blank" rel="noopener noreferrer" aria-label="BINSIGNIA — official website (opens in a new tab)">BINSIGNIA</a>
+                        <a class="brand-chip" data-name="BUZZI" data-categories="furniture acoustics lighting" href="https://www.buzzi.space/" target="_blank" rel="noopener noreferrer" aria-label="BUZZI — official website (opens in a new tab)">BUZZI</a>
+                        <a class="brand-chip" data-name="CAIMI" data-categories="furniture acoustics architectural-products lighting accessories-technology" href="https://www.caimi.com/" target="_blank" rel="noopener noreferrer" aria-label="CAIMI — official website (opens in a new tab)">CAIMI</a>
+                        <a class="brand-chip" data-name="DIEFFEBI" data-categories="furniture" href="https://www.dieffebi.com/en" target="_blank" rel="noopener noreferrer" aria-label="DIEFFEBI — official website (opens in a new tab)">DIEFFEBI</a>
+                        <a class="brand-chip" data-name="ET_AL" data-categories="furniture outdoor" href="https://www.et-al.it/en" target="_blank" rel="noopener noreferrer" aria-label="ET_AL — official website (opens in a new tab)">ET_AL</a>
+                        <a class="brand-chip" data-name="Euro3plast / PlusT Collection / Khilia" data-categories="furniture lighting accessories-technology outdoor" href="https://www.euro3plast.com/gb/" target="_blank" rel="noopener noreferrer" aria-label="Euro3plast / PlusT Collection / Khilia — official website (opens in a new tab)">Euro3plast / PlusT Collection / Khilia</a>
+                        <a class="brand-chip" data-name="GOTESSONS" data-categories="furniture acoustics lighting accessories-technology" href="https://gotessons.com/eu/" target="_blank" rel="noopener noreferrer" aria-label="GOTESSONS — official website (opens in a new tab)">GOTESSONS</a>
+                        <a class="brand-chip" data-name="I4MARIANI" data-categories="furniture" href="https://www.i4mariani.com/" target="_blank" rel="noopener noreferrer" aria-label="I4MARIANI — official website (opens in a new tab)">I4MARIANI</a>
+                        <a class="brand-chip" data-name="KARTELL" data-categories="furniture lighting accessories-technology outdoor" href="https://www.kartell.com/" target="_blank" rel="noopener noreferrer" aria-label="KARTELL — official website (opens in a new tab)">KARTELL</a>
+                        <a class="brand-chip" data-name="Linea Fabbrica - Nahu" data-categories="furniture" href="https://nahu.it/" target="_blank" rel="noopener noreferrer" aria-label="Linea Fabbrica - Nahu — official website (opens in a new tab)">Linea Fabbrica - Nahu</a>
+                        <a class="brand-chip" data-name="MARO" data-categories="furniture acoustics" href="https://maro.eu/en" target="_blank" rel="noopener noreferrer" aria-label="MARO — official website (opens in a new tab)">MARO</a>
+                        <a class="brand-chip" data-name="MONTEFORTE" data-categories="furniture outdoor" href="https://www.monteforte.design/en/" target="_blank" rel="noopener noreferrer" aria-label="MONTEFORTE — official website (opens in a new tab)">MONTEFORTE</a>
+                        <a class="brand-chip" data-name="NANI MARQUINA" data-categories="flooring-surfaces accessories-technology outdoor" href="https://nanimarquina.com/" target="_blank" rel="noopener noreferrer" aria-label="NANI MARQUINA — official website (opens in a new tab)">NANI MARQUINA</a>
+                        <a class="brand-chip" data-name="PAGED" data-categories="furniture" href="https://pagedmeble.pl/" target="_blank" rel="noopener noreferrer" aria-label="PAGED — official website (opens in a new tab)">PAGED</a>
+                        <a class="brand-chip" data-name="PEDRALI" data-categories="furniture lighting accessories-technology outdoor" href="https://www.pedrali.com/" target="_blank" rel="noopener noreferrer" aria-label="PEDRALI — official website (opens in a new tab)">PEDRALI</a>
+                        <a class="brand-chip" data-name="PROSTORIA" data-categories="furniture outdoor" href="https://www.prostoria.eu/" target="_blank" rel="noopener noreferrer" aria-label="PROSTORIA — official website (opens in a new tab)">PROSTORIA</a>
+                        <a class="brand-chip" data-name="RENZ" data-categories="furniture" href="https://www.renz.de/" target="_blank" rel="noopener noreferrer" aria-label="RENZ — official website (opens in a new tab)">RENZ</a>
+                        <a class="brand-chip" data-name="VONDOM" data-categories="furniture flooring-surfaces lighting accessories-technology outdoor" href="https://www.vondom.com/" target="_blank" rel="noopener noreferrer" aria-label="VONDOM — official website (opens in a new tab)">VONDOM</a>
+                        <a class="brand-chip" data-name="WITZ" data-categories="furniture" href="https://witz.ro/" target="_blank" rel="noopener noreferrer" aria-label="WITZ — official website (opens in a new tab)">WITZ</a>
+                        <a class="brand-chip" data-name="Andreu World" data-categories="furniture outdoor" href="https://andreuworld.com/" target="_blank" rel="noopener noreferrer" aria-label="Andreu World — official website (opens in a new tab)">Andreu World</a>
+                        <a class="brand-chip" data-name="ANTARES" data-categories="furniture" href="https://www.antares.cz/" target="_blank" rel="noopener noreferrer" aria-label="ANTARES — official website (opens in a new tab)">ANTARES</a>
+                        <a class="brand-chip" data-name="ARPER" data-categories="furniture acoustics outdoor" href="https://www.arper.com/en_GB/" target="_blank" rel="noopener noreferrer" aria-label="ARPER — official website (opens in a new tab)">ARPER</a>
+                        <a class="brand-chip" data-name="ARTECO" data-categories="furniture" href="https://www.artecogroup.com/en/" target="_blank" rel="noopener noreferrer" aria-label="ARTECO — official website (opens in a new tab)">ARTECO</a>
+                        <a class="brand-chip" data-name="BILLIANI" data-categories="furniture" href="https://www.billiani.it/" target="_blank" rel="noopener noreferrer" aria-label="BILLIANI — official website (opens in a new tab)">BILLIANI</a>
+                        <a class="brand-chip" data-name="BOLN" data-categories="furniture outdoor" href="https://boln.eu/" target="_blank" rel="noopener noreferrer" aria-label="BOLN — official website (opens in a new tab)">BOLN</a>
+                        <a class="brand-chip" data-name="BOSSE" data-categories="furniture acoustics architectural-products" href="https://www.bosse.de/" target="_blank" rel="noopener noreferrer" aria-label="BOSSE — official website (opens in a new tab)">BOSSE</a>
+                        <a class="brand-chip" data-name="BRALCO" data-categories="furniture acoustics accessories-technology" href="https://www.bralco.it/" target="_blank" rel="noopener noreferrer" aria-label="BRALCO — official website (opens in a new tab)">BRALCO</a>
+                        <a class="brand-chip" data-name="CHAMELEON" data-categories="acoustics architectural-products accessories-technology" href="https://chameleonwriting.com/en/" target="_blank" rel="noopener noreferrer" aria-label="CHAMELEON — official website (opens in a new tab)">CHAMELEON</a>
+                        <a class="brand-chip" data-name="CHAT BOARD" data-categories="acoustics accessories-technology" href="https://chat-board.dk/" target="_blank" rel="noopener noreferrer" aria-label="CHAT BOARD — official website (opens in a new tab)">CHAT BOARD</a>
+                        <a class="brand-chip" data-name="CONNECTION UK ( FLOKK )" data-categories="furniture acoustics architectural-products accessories-technology" href="https://connection.uk.com/" target="_blank" rel="noopener noreferrer" aria-label="CONNECTION UK ( FLOKK ) — official website (opens in a new tab)">CONNECTION UK ( FLOKK )</a>
+                        <a class="brand-chip" data-name="DVO" data-categories="furniture acoustics architectural-products" href="https://dvo.it/" target="_blank" rel="noopener noreferrer" aria-label="DVO — official website (opens in a new tab)">DVO</a>
+                        <a class="brand-chip" data-name="Extremis" data-categories="furniture accessories-technology outdoor" href="https://www.extremis.com/en" target="_blank" rel="noopener noreferrer" aria-label="Extremis — official website (opens in a new tab)">Extremis</a>
+                        <a class="brand-chip" data-name="FREZZA" data-categories="furniture acoustics architectural-products" href="https://www.frezza.com/" target="_blank" rel="noopener noreferrer" aria-label="FREZZA — official website (opens in a new tab)">FREZZA</a>
+                        <a class="brand-chip" data-name="HOWE" data-categories="furniture accessories-technology" href="https://www.howe.com/" target="_blank" rel="noopener noreferrer" aria-label="HOWE — official website (opens in a new tab)">HOWE</a>
+                        <a class="brand-chip" data-name="IVM" data-categories="furniture acoustics architectural-products" href="https://www.ivmoffice.com/" target="_blank" rel="noopener noreferrer" aria-label="IVM — official website (opens in a new tab)">IVM</a>
+                        <a class="brand-chip" data-name="JOHANSON DESIGN" data-categories="furniture acoustics lighting" href="https://johansondesign.com/" target="_blank" rel="noopener noreferrer" aria-label="JOHANSON DESIGN — official website (opens in a new tab)">JOHANSON DESIGN</a>
+                        <a class="brand-chip" data-name="LAPALMA" data-categories="furniture acoustics architectural-products" href="https://www.lapalma.it/" target="_blank" rel="noopener noreferrer" aria-label="LAPALMA — official website (opens in a new tab)">LAPALMA</a>
+                        <a class="brand-chip" data-name="LD Seating" data-categories="furniture" href="https://ldseating.com/en" target="_blank" rel="noopener noreferrer" aria-label="LD Seating — official website (opens in a new tab)">LD Seating</a>
+                        <a class="brand-chip" data-name="LINTEX" data-categories="acoustics accessories-technology" href="https://www.lintex.com/" target="_blank" rel="noopener noreferrer" aria-label="LINTEX — official website (opens in a new tab)">LINTEX</a>
+                        <a class="brand-chip" data-name="Londonart" data-categories="architectural-products flooring-surfaces" href="https://www.londonart.it/" target="_blank" rel="noopener noreferrer" aria-label="Londonart — official website (opens in a new tab)">Londonart</a>
+                        <a class="brand-chip" data-name="MANADE" data-categories="acoustics lighting accessories-technology" href="https://manade.com/en/homepage-en/" target="_blank" rel="noopener noreferrer" aria-label="MANADE — official website (opens in a new tab)">MANADE</a>
+                        <a class="brand-chip" data-name="MARA" data-categories="furniture outdoor" href="https://marasrl.it/" target="_blank" rel="noopener noreferrer" aria-label="MARA — official website (opens in a new tab)">MARA</a>
+                        <a class="brand-chip" data-name="MDD seating &amp; reception" data-categories="furniture acoustics" href="https://mdd.eu/en/" target="_blank" rel="noopener noreferrer" aria-label="MDD seating &amp; reception — official website (opens in a new tab)">MDD seating &amp; reception</a>
+                        <a class="brand-chip" data-name="MDD storage &amp; desking" data-categories="furniture acoustics" href="https://mdd.eu/en/" target="_blank" rel="noopener noreferrer" aria-label="MDD storage &amp; desking — official website (opens in a new tab)">MDD storage &amp; desking</a>
+                        <a class="brand-chip" data-name="MINIFORMS" data-categories="furniture lighting" href="https://www.miniforms.com/" target="_blank" rel="noopener noreferrer" aria-label="MINIFORMS — official website (opens in a new tab)">MINIFORMS</a>
+                        <a class="brand-chip" data-name="NOTI" data-categories="furniture acoustics outdoor" href="https://www.noti.pl/en" target="_blank" rel="noopener noreferrer" aria-label="NOTI — official website (opens in a new tab)">NOTI</a>
+                        <a class="brand-chip" data-name="PROFIM ( Flokk )" data-categories="furniture" href="https://www.profim.eu/" target="_blank" rel="noopener noreferrer" aria-label="PROFIM ( Flokk ) — official website (opens in a new tab)">PROFIM ( Flokk )</a>
+                        <a class="brand-chip" data-name="QUINTI" data-categories="furniture acoustics" href="https://quinti.com/" target="_blank" rel="noopener noreferrer" aria-label="QUINTI — official website (opens in a new tab)">QUINTI</a>
+                        <a class="brand-chip" data-name="REXSITT" data-categories="furniture" href="https://www.rexsitt.com/" target="_blank" rel="noopener noreferrer" aria-label="REXSITT — official website (opens in a new tab)">REXSITT</a>
+                        <a class="brand-chip" data-name="RUGVISTA" data-categories="flooring-surfaces outdoor" href="https://www.rugvista.com/" target="_blank" rel="noopener noreferrer" aria-label="RUGVISTA — official website (opens in a new tab)">RUGVISTA</a>
+                        <a class="brand-chip" data-name="SCAB DESIGN" data-categories="furniture outdoor" href="https://www.s-cab.it/" target="_blank" rel="noopener noreferrer" aria-label="SCAB DESIGN — official website (opens in a new tab)">SCAB DESIGN</a>
+                        <a class="brand-chip" data-name="SOFTHOUSE" data-categories="furniture" href="https://softhousedesign.it/en/shop-3/" target="_blank" rel="noopener noreferrer" aria-label="SOFTHOUSE — official website (opens in a new tab)">SOFTHOUSE</a>
+                        <a class="brand-chip" data-name="SOFTLINE" data-categories="furniture" href="https://softlinefurniture.com/en/" target="_blank" rel="noopener noreferrer" aria-label="SOFTLINE — official website (opens in a new tab)">SOFTLINE</a>
+                        <a class="brand-chip" data-name="TRUE Design" data-categories="furniture acoustics architectural-products outdoor" href="https://www.truedesign.it/en/" target="_blank" rel="noopener noreferrer" aria-label="TRUE Design — official website (opens in a new tab)">TRUE Design</a>
                     </div>
 
-                    <p class="brands-empty" id="brandsEmpty" hidden>No brands match your search.</p>
+                    <p class="brands-empty" id="brandsEmpty" hidden>No brands match your search and category. Try another category or clear your search.</p>
                 </div>
             </div>
         </section>
@@ -294,6 +366,19 @@
         const brandSearch = document.getElementById('brandSearch');
         const brandItems = Array.from(document.querySelectorAll('.brand-chip'));
         const brandsEmpty = document.getElementById('brandsEmpty');
+        const brandFilters = Array.from(document.querySelectorAll('.brand-filter'));
+        const brandsCount = document.getElementById('brandsCount');
+        const brandCategoryDescription = document.getElementById('brandCategoryDescription');
+        const categoryDescriptions = {
+            furniture: 'Chairs, tables, desks, sofas and storage.',
+            acoustics: 'Acoustic panels, booths, dividers and other products specifically designed for acoustics.',
+            'architectural-products': 'Walls, doors, ceilings and architectural systems.',
+            'flooring-surfaces': 'Carpeting, rugs, flooring, wallpaper and surface finishes.',
+            lighting: 'Own-brand lighting collections.',
+            'accessories-technology': 'Accessories, monitor arms, power supply, cable management, signage and recycling solutions.',
+            outdoor: 'Dedicated outdoor collections.'
+        };
+        let activeCategory = 'all';
 
         function filterBrands() {
             const query = brandSearch.value.trim().toLowerCase();
@@ -301,13 +386,28 @@
 
             brandItems.forEach(item => {
                 const name = (item.dataset.name || item.textContent || '').toLowerCase();
-                const matches = query === '' || name.includes(query);
-                item.style.display = matches ? 'inline-flex' : 'none';
+                const categories = item.dataset.categories.split(' ');
+                const matches = name.includes(query) &&
+                    (activeCategory === 'all' || categories.includes(activeCategory));
+                item.hidden = !matches;
                 if (matches) visibleCount += 1;
             });
 
             brandsEmpty.hidden = visibleCount !== 0;
+            brandCategoryDescription.textContent = categoryDescriptions[activeCategory] || '';
+            brandCategoryDescription.hidden = activeCategory === 'all';
+            brandsCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'brand' : 'brands'}`;
         }
+
+        brandFilters.forEach(button => {
+            button.addEventListener('click', () => {
+                activeCategory = button.dataset.category;
+                brandFilters.forEach(filter => {
+                    filter.setAttribute('aria-pressed', String(filter === button));
+                });
+                filterBrands();
+            });
+        });
 
         brandSearch.addEventListener('input', filterBrands);
         brandSearch.addEventListener('search', filterBrands);
