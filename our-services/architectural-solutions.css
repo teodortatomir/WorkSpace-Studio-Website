@@ -739,6 +739,42 @@ body.arch-page {
     }
 }
 
+.arch-product-story.arch-partitions-story {
+    padding-bottom: 24px;
+}
+
+.arch-partitions-story + .arch-product-story {
+    padding-top: 40px;
+}
+
+.arch-flooring-brands.arch-single-brand {
+    grid-template-columns: minmax(0, 460px);
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.arch-product-story .arch-single-brand a.arch-flooring-brand {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.arch-single-brand .arch-flooring-brand .arch-flooring-logo {
+    width: 180px;
+    height: 32px;
+}
+
+.arch-single-brand .arch-flooring-logo img {
+    height: 32px;
+}
+
+.arch-single-brand .arch-flooring-brand .arch-flooring-details {
+    justify-items: center;
+    text-align: center;
+}
+
 .arch-flooring-brands {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -776,7 +812,10 @@ body.arch-page {
 .arch-flooring-logo img[src$="lano.jpg"] { width: 108px; max-width: 100%; }
 .arch-flooring-logo img[src$="gerflor.svg"] { width: 128px; max-width: 100%; }
 .arch-flooring-logo img[src$="2tec2.svg"] { width: 120px; max-width: 100%; }
-.arch-flooring-logo img[src="../logos/mohawk-logo.png"] { filter: brightness(0); }
+.arch-flooring-logo img[src="../logos/mohawk-logo.png"],
+.arch-flooring-logo img[src="../logos/maarslivingwalls-logo.png"] { filter: brightness(0); }
+.arch-window-brands .arch-flooring-logo img { filter: brightness(0); }
+.arch-window-brands .arch-flooring-logo img:not([src$="kobe.svg"]) { height: 70px; }
 .arch-flooring-brand .arch-flooring-details { display: grid; gap: 8px; min-width: 0; }
 .arch-flooring-brand .arch-flooring-name,
 .arch-flooring-brand .arch-flooring-products,
