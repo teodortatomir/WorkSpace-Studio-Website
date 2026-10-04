@@ -621,16 +621,6 @@ body.why-us-body {
     will-change: auto;
 }
 
-.why-scroll-ready .why-hero-copy-reveal,
-.why-scroll-ready .why-hero-copy-reveal > .why-reveal,
-.why-hero-copy-reveal,
-.why-hero-copy-reveal > .why-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    will-change: auto;
-}
-
 @media (max-width: 1080px) {
     .why-proof-row,
     .why-stakeholder-grid {
