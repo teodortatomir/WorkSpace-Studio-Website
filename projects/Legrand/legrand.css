@@ -1,26 +1,26 @@
 :root {
-    --adobe-ink: #181614;
-    --adobe-muted: #6f6a64;
-    --adobe-line: rgba(24, 22, 20, 0.12);
-    --adobe-paper: #f7f4ef;
-    --adobe-accent: #262321;
-    --adobe-gold: #b89a72;
-    --adobe-soft-accent: #77716b;
+    --legrand-ink: #181614;
+    --legrand-muted: #6f6a64;
+    --legrand-line: rgba(24, 22, 20, 0.12);
+    --legrand-paper: #f7f4ef;
+    --legrand-accent: #262321;
+    --legrand-gold: #b89a72;
+    --legrand-soft-accent: #77716b;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body.adobe-project-page {
+body.legrand-project-page {
     margin: 0;
     background: #fff;
-    color: var(--adobe-ink);
+    color: var(--legrand-ink);
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
 }
 
-body .navbar.main-nav.adobe-nav {
+body .navbar.main-nav.legrand-nav {
     height: 80px !important;
     transform: translateY(0) !important;
     opacity: 1 !important;
@@ -32,50 +32,50 @@ body .navbar.main-nav.adobe-nav {
     -webkit-backdrop-filter: blur(18px);
 }
 
-body .navbar.main-nav.adobe-nav .nav-container {
+body .navbar.main-nav.legrand-nav .nav-container {
     max-width: 1800px !important;
     padding: 0 0.45% !important;
 }
 
-body .navbar.main-nav.adobe-nav .nav-center {
+body .navbar.main-nav.legrand-nav .nav-center {
     gap: 30px !important;
 }
 
-body .navbar.main-nav.adobe-nav .nav-right {
+body .navbar.main-nav.legrand-nav .nav-right {
     gap: 1px !important;
 }
 
-body .navbar.main-nav.adobe-nav .logo-wrapper {
+body .navbar.main-nav.legrand-nav .logo-wrapper {
     gap: 15px !important;
 }
 
-body .navbar.main-nav.adobe-nav .workspace-logo {
+body .navbar.main-nav.legrand-nav .workspace-logo {
     height: 60px !important;
     padding-right: 0 !important;
     filter: none !important;
     mix-blend-mode: normal !important;
 }
 
-body .navbar.main-nav.adobe-nav .miller-dealer-logo {
+body .navbar.main-nav.legrand-nav .miller-dealer-logo {
     height: 28px !important;
     filter: brightness(0) !important;
 }
 
-body .navbar.main-nav.adobe-nav .nav-logo-separator {
+body .navbar.main-nav.legrand-nav .nav-logo-separator {
     height: 22px !important;
     margin: 0 !important;
     background: rgba(24, 22, 19, 0.15) !important;
 }
 
-body .navbar.main-nav.adobe-nav .nav-search-button {
+body .navbar.main-nav.legrand-nav .nav-search-button {
     color: #1f1a17 !important;
 }
 
-body .navbar.main-nav.adobe-nav .hamburger-line {
+body .navbar.main-nav.legrand-nav .hamburger-line {
     background: #1f1a17 !important;
 }
 
-body .navbar.main-nav.adobe-nav .brand-name-text {
+body .navbar.main-nav.legrand-nav .brand-name-text {
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
@@ -84,12 +84,12 @@ body .navbar.main-nav.adobe-nav .brand-name-text {
     text-decoration: none;
 }
 
-body .navbar.main-nav.adobe-nav .ergonomics-txt { color: #a4363f !important; }
-body .navbar.main-nav.adobe-nav .design-txt { color: #6a437f !important; }
-body .navbar.main-nav.adobe-nav .sustainability-txt { color: #4f7a60 !important; }
-body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
+body .navbar.main-nav.legrand-nav .ergonomics-txt { color: #a4363f !important; }
+body .navbar.main-nav.legrand-nav .design-txt { color: #6a437f !important; }
+body .navbar.main-nav.legrand-nav .sustainability-txt { color: #4f7a60 !important; }
+body .navbar.main-nav.legrand-nav .turnkey-txt { color: #3f5f59 !important; }
 
-.adobe-hero {
+.legrand-hero {
     position: relative;
     min-height: 100vh;
     display: block;
@@ -98,7 +98,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     padding-bottom: 48px;
 }
 
-.adobe-hero img {
+.legrand-hero img {
     display: block;
     position: relative;
     width: 100%;
@@ -107,11 +107,11 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     object-fit: cover;
 }
 
-.adobe-hero-shade {
+.legrand-hero-shade {
     display: none;
 }
 
-.adobe-hero-content {
+.legrand-hero-content {
     position: relative;
     z-index: 1;
     width: min(980px, calc(100% - 96px));
@@ -122,20 +122,20 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     text-shadow: none;
 }
 
-.adobe-hero h1 {
+.legrand-hero h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.adobe-hero h1 span {
+.legrand-hero h1 span {
     display: block;
 }
 
-.adobe-kicker,
+.legrand-kicker,
 .section-label {
     display: block;
-    color: var(--adobe-gold);
+    color: var(--legrand-gold);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.8px;
@@ -143,12 +143,12 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     text-transform: uppercase;
 }
 
-.adobe-hero h1 {
+.legrand-hero h1 {
     width: min(760px, 100%);
     margin: 14px auto 0;
     font-size: clamp(1.55rem, 2.45vw, 2.85rem);
     font-weight: 500;
-    color: var(--adobe-ink);
+    color: var(--legrand-ink);
     letter-spacing: 0;
     line-height: 1.12;
 }
@@ -159,7 +159,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     padding: 110px 0;
 }
 
-.adobe-scope {
+.legrand-scope {
     display: grid;
     grid-template-columns: 1fr;
     gap: 38px;
@@ -170,7 +170,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     border-bottom: 0;
 }
 
-.adobe-scope .section-label {
+.legrand-scope .section-label {
     text-align: center;
 }
 
@@ -197,7 +197,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     width: 100%;
     height: 1px;
     margin-bottom: 24px;
-    background: var(--adobe-line);
+    background: var(--legrand-line);
     transition: background-color 0.35s ease, transform 0.35s ease;
     transform-origin: left;
 }
@@ -207,7 +207,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 }
 
 .scope-item:hover::before {
-    background: var(--adobe-ink);
+    background: var(--legrand-ink);
     transform: scaleX(0.92);
 }
 
@@ -227,7 +227,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .scope-item span {
     display: block;
     margin-bottom: 18px;
-    color: var(--adobe-muted);
+    color: var(--legrand-muted);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 2.4px;
@@ -237,7 +237,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .scope-item p {
     max-width: 240px;
     margin: 0;
-    color: var(--adobe-ink);
+    color: var(--legrand-ink);
     font-size: clamp(0.84rem, 0.78vw, 0.94rem);
     font-weight: 450;
     line-height: 1.52;
@@ -250,13 +250,13 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     line-height: 1.52;
 }
 
-.adobe-feature-image {
+.legrand-feature-image {
     width: min(1500px, calc(100% - 48px));
     margin: 0 auto;
     padding: 44px 0 0;
 }
 
-.adobe-feature-image img,
+.legrand-feature-image img,
 .image-pair img,
 .gallery-item img {
     display: block;
@@ -265,7 +265,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     object-fit: cover;
 }
 
-.adobe-feature-image img {
+.legrand-feature-image img {
     height: clamp(420px, 72vh, 820px);
 }
 
@@ -281,8 +281,8 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     gap: 0;
     padding-top: 0;
     padding-bottom: 0;
-    border-top: 1px solid var(--adobe-line);
-    border-bottom: 1px solid var(--adobe-line);
+    border-top: 1px solid var(--legrand-line);
+    border-bottom: 1px solid var(--legrand-line);
 }
 
 .case-section {
@@ -300,7 +300,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     gap: clamp(52px, 7vw, 104px);
     padding: clamp(48px, 5.4vw, 78px) 0;
     border-right: 0;
-    border-bottom: 1px solid var(--adobe-line);
+    border-bottom: 1px solid var(--legrand-line);
     outline: 0;
     overflow: visible;
     cursor: default;
@@ -325,7 +325,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-switch .section-label {
     position: sticky;
     top: 112px;
-    color: var(--adobe-gold);
+    color: var(--legrand-gold);
     padding-top: 7px;
 }
 
@@ -335,14 +335,14 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     width: 42px;
     height: 1px;
     margin-top: 22px;
-    background: var(--adobe-line);
+    background: var(--legrand-line);
     transition: width 0.4s ease, background-color 0.4s ease;
 }
 
 .story-switch .case-section:hover .section-label::after,
 .story-switch .case-section:focus-visible .section-label::after {
     width: 96px;
-    background: var(--adobe-ink);
+    background: var(--legrand-ink);
 }
 
 .case-section p {
@@ -384,7 +384,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     gap: 0;
     padding-top: 96px;
     padding-bottom: 56px;
-    border-top: 1px solid var(--adobe-line);
+    border-top: 1px solid var(--legrand-line);
     border-bottom: 0;
     text-align: center;
 }
@@ -401,7 +401,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     min-height: 180px;
     padding: 0;
     border: 0;
-    border-bottom: 1px solid var(--adobe-line);
+    border-bottom: 1px solid var(--legrand-line);
     background: transparent;
     color: rgba(24, 22, 20, 0.42);
     cursor: pointer;
@@ -439,7 +439,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-lens-trigger:focus-visible,
 .story-lens[data-active="problem"] .story-lens-problem-trigger,
 .story-lens[data-active="solution"] .story-lens-solution-trigger {
-    color: var(--adobe-ink);
+    color: var(--legrand-ink);
     padding-left: 18px;
     outline: 0;
 }
@@ -494,7 +494,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-lens-problem-panel::before {
     content: "THE PROBLEM";
     display: block;
-    color: var(--adobe-gold);
+    color: var(--legrand-gold);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.8px;
@@ -505,7 +505,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .story-lens-solution-panel::before {
     content: "THE SOLUTION";
     display: block;
-    color: var(--adobe-gold);
+    color: var(--legrand-gold);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.8px;
@@ -649,7 +649,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     margin-bottom: 70px;
 }
 
-.adobe-gallery {
+.legrand-gallery {
     padding: 24px 24px 88px;
 }
 
@@ -707,7 +707,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 
 .btn-text {
     margin-bottom: 15px;
-    color: var(--adobe-ink);
+    color: var(--legrand-ink);
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 4px;
@@ -717,7 +717,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
 .btn-line {
     width: 42px;
     height: 1px;
-    background: var(--adobe-gold);
+    background: var(--legrand-gold);
     transition: width 0.35s ease;
 }
 
@@ -730,7 +730,7 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     width: 104px;
 }
 
-.adobe-lightbox {
+.legrand-lightbox {
     position: fixed;
     inset: 0;
     z-index: 5000;
@@ -744,12 +744,12 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     transition: opacity 0.28s ease;
 }
 
-.adobe-lightbox.active {
+.legrand-lightbox.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-.adobe-lightbox img {
+.legrand-lightbox img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -780,12 +780,12 @@ body .navbar.main-nav.adobe-nav .turnkey-txt { color: #3f5f59 !important; }
     transform: translateY(0);
 }
 
-body.adobe-lightbox-open {
+body.legrand-lightbox-open {
     overflow: hidden;
 }
 
 @media (max-width: 1100px) {
-    .adobe-scope,
+    .legrand-scope,
     .case-section,
     .outcome-section {
         grid-template-columns: 1fr;
@@ -818,7 +818,7 @@ body.adobe-lightbox-open {
         grid-template-columns: 1fr;
         min-height: auto;
         border-right: 0;
-        border-bottom: 1px solid var(--adobe-line);
+        border-bottom: 1px solid var(--legrand-line);
     }
 
     .story-switch .section-label {
@@ -845,7 +845,7 @@ body.adobe-lightbox-open {
         min-height: 86px;
         justify-content: center;
         border-bottom: 0;
-        border-right: 1px solid var(--adobe-line);
+        border-right: 1px solid var(--legrand-line);
         text-align: center;
     }
 
@@ -870,30 +870,30 @@ body.adobe-lightbox-open {
 }
 
 @media (max-width: 768px) {
-    body .navbar.main-nav.adobe-nav .nav-center {
+    body .navbar.main-nav.legrand-nav .nav-center {
         display: none;
     }
 
-    .adobe-hero {
+    .legrand-hero {
         min-height: 100vh;
         padding-bottom: 64px;
     }
 
-    .adobe-hero-content,
+    .legrand-hero-content,
     .section-pad {
         width: min(100% - 32px, 1260px);
     }
 
-    .adobe-hero-content {
+    .legrand-hero-content {
         padding: 36px 0 0;
     }
 
-    .adobe-hero h1 {
+    .legrand-hero h1 {
         font-size: clamp(1.55rem, 8vw, 2.65rem);
         line-height: 1.08;
     }
 
-    .adobe-hero img {
+    .legrand-hero img {
         height: calc(100vh - 270px);
         min-height: 460px;
     }
@@ -902,7 +902,7 @@ body.adobe-lightbox-open {
         padding: 72px 0;
     }
 
-    .adobe-scope {
+    .legrand-scope {
         border-bottom: 0;
     }
 
@@ -916,12 +916,12 @@ body.adobe-lightbox-open {
         padding: 22px 0 22px 36px;
     }
 
-    .adobe-feature-image,
+    .legrand-feature-image,
     .image-pair {
         width: calc(100% - 32px);
     }
 
-    .adobe-feature-image img,
+    .legrand-feature-image img,
     .image-pair img,
     .image-pair img:nth-child(2) {
         height: auto;
@@ -982,7 +982,7 @@ body.adobe-lightbox-open {
     }
 
     .story-lens-panel::before {
-        color: var(--adobe-gold);
+        color: var(--legrand-gold);
         font-size: 11px;
         font-weight: 800;
         letter-spacing: 2.8px;
@@ -1011,7 +1011,7 @@ body.adobe-lightbox-open {
         width: calc(100% - 32px);
     }
 
-    .adobe-gallery {
+    .legrand-gallery {
         padding: 16px 16px 72px;
     }
 
@@ -1029,7 +1029,7 @@ body.adobe-lightbox-open {
         aspect-ratio: 4 / 3;
     }
 
-    .adobe-lightbox {
+    .legrand-lightbox {
         padding: 52px 16px;
     }
 }
@@ -1069,4 +1069,20 @@ body.adobe-lightbox-open {
     .lightbox-arrow { width: 40px; height: 52px; }
     .lightbox-prev { left: 6px; }
     .lightbox-next { right: 6px; }
+}
+
+/* Match the editorial rhythm to the longer Legrand case study. */
+.legrand-scope .scope-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 36px; }
+.legrand-scope .scope-item { grid-column: span 2; min-height: 0; }
+.legrand-scope .scope-delivered,
+.legrand-scope .scope-wide { grid-column: span 3; }
+.legrand-scope .scope-item p { max-width: 460px; font-weight: 400; }
+.legrand-scope .scope-item:nth-child(2) p { line-height: 1.8; }
+.outcome-section li { font-weight: 400; }
+.outcome-section .outcome-detail { grid-column: 1 / -1; max-width: 860px; width: 100%; margin: 0 auto; box-sizing: border-box; padding: 32px 0 16px; }
+.outcome-detail strong { display: inline-block; margin-bottom: 16px; color: var(--legrand-gold); font-size: 11px; letter-spacing: 2.8px; text-transform: uppercase; }
+@media (max-width: 768px) {
+    .legrand-scope .scope-grid { grid-template-columns: 1fr; gap: 24px; }
+    .legrand-scope .scope-item { grid-column: 1; padding: 0 0 16px; }
+    .outcome-section li { padding-left: 0; padding-right: 0; }
 }

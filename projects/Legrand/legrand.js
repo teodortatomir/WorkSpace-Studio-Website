@@ -44,7 +44,7 @@ menuLinks.forEach((link) => {
     link.addEventListener("click", closeMenuOverlay);
 });
 
-const lightbox = document.getElementById("adobeLightbox");
+const lightbox = document.getElementById("legrandLightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 
@@ -64,7 +64,7 @@ galleryButtons.forEach((button, index) => {
         showImage(index);
         lightbox.classList.add("active");
         lightbox.setAttribute("aria-hidden", "false");
-        document.body.classList.add("adobe-lightbox-open");
+        document.body.classList.add("legrand-lightbox-open");
         lightboxClose.focus();
     });
 });
@@ -74,7 +74,7 @@ function closeLightbox() {
     lightbox.classList.remove("active");
     lightbox.setAttribute("aria-hidden", "true");
     lightboxImage.src = "";
-    document.body.classList.remove("adobe-lightbox-open");
+    document.body.classList.remove("legrand-lightbox-open");
     lightboxOpener?.focus({ preventScroll: true });
 }
 document.addEventListener("keydown", (event) => {

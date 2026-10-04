@@ -9,7 +9,7 @@ const projectsData = [
     { id: 5, title: "BBraun", cat: "Innovation Center", type: "Tech", img: "../projects-pictures/bbraun.jpg", link: "#" },
     { id: 6, title: "DataCore", cat: "Tech Hub", type: "Tech", img: "../projects-pictures/datacore.jpg", link: "#" },
     { id: 7, title: "InteRo Property Development", cat: "High-End Office", type: "Corporate", img: "../projects-pictures/intero.jpg", link: "#" },
-    { id: 8, title: "Legrand", cat: "Electrical Solutions HQ", type: "Tech", img: "../projects-pictures/legrand.jpg", link: "#" },
+    { id: 8, title: "Legrand", cat: "Electrical Solutions HQ", type: "Tech", img: "../projects-pictures/legrand.jpg", link: "../projects/Legrand/legrand.html" },
     { id: 9, title: "Loreal Academy", cat: "Professional Training", type: "Beauty", img: "../projects-pictures/loreal.jpg", link: "#" },
     { id: 10, title: "Honeywell", cat: "Research & Ops", type: "Tech", img: "../projects-pictures/honeywell.jpg", link: "#" },
     { id: 11, title: "Urban Bistro, ISHO", cat: "Social Space", type: "Exclusive", img: "../projects-pictures/urbanbistro-isho.jpeg", link: "#" },
