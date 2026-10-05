@@ -189,7 +189,7 @@
     window.WorkspaceProjectsFallback = function () {
         if (root.children.length) return;
 
-        fetch("ProjectsScene.jsx")
+        fetch("ProjectsScene.jsx?v=20261005-tech-project", { cache: "no-cache" })
             .then((response) => {
                 if (!response.ok) throw new Error(`Projects scene could not be loaded: ${response.status}`);
                 return response.text();
