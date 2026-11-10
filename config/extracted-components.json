@@ -1,0 +1,147 @@
+[
+  {
+    "component": "components/navigation/menu-editorial.html",
+    "uses": 22,
+    "example": "insights/articles/wassily-chair.html"
+  },
+  {
+    "component": "components/navigation/menu-project.html",
+    "uses": 16,
+    "example": "projects/Signivis/signivis.html"
+  },
+  {
+    "component": "components/navigation/menu-ergonomics.html",
+    "uses": 3,
+    "example": "ergonomics-specialists/inclusive-ergonomics.html"
+  },
+  {
+    "component": "components/navigation/menu-newsroom.html",
+    "uses": 2,
+    "example": "insights/newsroom.html"
+  },
+  {
+    "component": "components/footer/site-footer.html",
+    "uses": 23,
+    "example": "ergonomics-specialists/index.html"
+  },
+  {
+    "component": "components/footer/press-back-link.html",
+    "uses": 20,
+    "example": "insights/press/workspace-studio-27-milioane-2024.html"
+  },
+  {
+    "component": "components/footer/project-gallery-footer.html",
+    "uses": 14,
+    "example": "projects/Signivis/signivis.html"
+  },
+  {
+    "component": "components/footer/insights-article-footer.html",
+    "uses": 11,
+    "example": "insights/articles/wassily-chair.html"
+  },
+  {
+    "component": "components/footer/press-footer-with-navigation.html",
+    "uses": 3,
+    "example": "insights/press/workspace-studio-afaceri-4-milioane-2017.html"
+  },
+  {
+    "component": "components/navigation/header-press.html",
+    "uses": 20,
+    "example": "insights/press/workspace-studio-27-milioane-2024.html"
+  },
+  {
+    "component": "components/navigation/header-ergonomics-article.html",
+    "uses": 17,
+    "example": "ergonomics-specialists/articles/all-together-now.html"
+  },
+  {
+    "component": "components/navigation/header-insights-article.html",
+    "uses": 11,
+    "example": "insights/articles/wassily-chair.html"
+  },
+  {
+    "component": "components/navigation/header-standard.html",
+    "uses": 3,
+    "example": "ergonomics-specialists/index.html"
+  },
+  {
+    "component": "components/navigation/header-press-with-menu.html",
+    "uses": 3,
+    "example": "insights/press/workspace-studio-afaceri-4-milioane-2017.html"
+  },
+  {
+    "component": "layouts/ergonomics-article.html",
+    "uses": 17,
+    "example": "ergonomics-specialists/articles/kinematics-of-sitting.html"
+  },
+  {
+    "component": "layouts/insights-article.html",
+    "uses": 11,
+    "example": "insights/articles/wassily-chair.html"
+  },
+  {
+    "component": "layouts/press-release.html",
+    "uses": 20,
+    "example": "insights/press/workspace-studio-27-milioane-2024.html"
+  },
+  {
+    "component": "layouts/press-release-with-menu.html",
+    "uses": 3,
+    "example": "insights/press/workspace-studio-afaceri-4-milioane-2017.html"
+  },
+  {
+    "component": "shared/scripts/projects/case-study.js",
+    "uses": 14,
+    "example": "projects/Signivis/signivis.js"
+  },
+  {
+    "component": "shared/styles/projects/jgv-family.css",
+    "uses": 5,
+    "example": "projects/JGV/jgv.css"
+  },
+  {
+    "component": "shared/styles/projects/diversinst-family.css",
+    "uses": 3,
+    "example": "projects/Diversinst/diversinst.css"
+  },
+  {
+    "component": "shared/styles/projects/signivis-family.css",
+    "uses": 2,
+    "example": "projects/Signivis/signivis.css"
+  },
+  {
+    "component": "components/navigation/header-project.html",
+    "uses": 14,
+    "example": "projects/Adobe/adobe.html"
+  },
+  {
+    "component": "shared/scripts/navigation/eager-overlay.js",
+    "uses": 3,
+    "example": "about/about.html"
+  },
+  {
+    "component": "shared/scripts/navigation/service-overlay.js",
+    "uses": 4,
+    "example": "our-services/architectural-solutions.html"
+  },
+  {
+    "component": "components/navigation/menu-media-01.html",
+    "uses": 24,
+    "example": "projects/Signivis/signivis.html"
+  },
+  {
+    "component": "components/navigation/menu-media-02.html",
+    "uses": 7,
+    "example": "insights/insights.html"
+  },
+  {
+    "component": "components/navigation/menu-media-03.html",
+    "uses": 2,
+    "example": "insights/newsroom.html"
+  },
+  {
+    "component": "components/navigation/menu-media-04.html",
+    "uses": 2,
+    "example": "contact/contact.html"
+  }
+]

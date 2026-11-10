@@ -1,0 +1,7 @@
+# Keep build output reproducible across checkouts on macOS, Linux and Windows.
+src/** text eol=lf
+public/** -text
+
+# Preserve the two legacy data files' mixed line endings; parity checks include bytes.
+src/content/entries/ergonomics-specialists/article-data.js -text
+src/content/entries/ergonomics-specialists/article-data-extended-a.js -text

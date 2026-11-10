@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Workspace Studio</title>
+    <meta name="description" content="Contact Workspace Studio for workplace design, furniture, turn-key fit-out and showroom visits in Bucharest.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page">
+
+    <nav class="navbar main-nav visible-nav contact-nav-theme">
+    <div class="nav-container">
+        <div class="nav-col nav-left">
+            <div class="logo-wrapper">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                </a>
+                <div class="nav-logo-separator"></div>
+                <img src="../logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+            </div>
+        </div>
+
+        <div class="nav-col nav-center">
+            <a href="../ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+            <a href="../our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+            <a href="../sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+            <a href="../our-services/design-services.html#turn-key" class="brand-name-text turnkey-txt">Turn Key</a>
+        </div>
+
+        <div class="nav-col nav-right">
+            <button class="nav-search-button" type="button" aria-label="Search">
+                <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
+            <button class="menu-toggle" id="menuOpen">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+    </nav>
+<div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose">&times;</button>
+        
+        <div class="menu-split-container">
+            <!--@include {"file":"components/navigation/menu-media-04.html","values":{"root":"../"}} -->
+            <div class="menu-right-content">
+                <span class="menu-label-top">Menu</span>
+                    <!--@include {"file":"components/navigation/menu-editorial.html","values":{"root":"../"}} -->
+
+                <div class="menu-footer">
+                    <div class="menu-socials">
+                        <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
+                        <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="contact-scene">
+        <section class="contact-hero">
+            <figure class="contact-hero-visual">
+                <img loading="eager" decoding="async" src="../index-photos/UDR_4589.jpg" alt="Workspace Studio showroom lounge in Bucharest">
+            </figure>
+            <div class="contact-hero-copy">
+                <span class="contact-eyebrow">Contact</span>
+                <h1>Start a conversation about your next workspace.</h1>
+                <p>Tell us what you are planning and our team will guide you toward the right mix of design, furniture, ergonomics and delivery services.</p>
+            </div>
+        </section>
+
+        <div class="contact-layout">
+            <section class="contact-form-container" aria-labelledby="contact-form-title">
+                <header class="contact-header">
+                    <span class="contact-eyebrow">Project request</span>
+                    <h2 id="contact-form-title">How can we help?</h2>
+                    <p>Share a few details and we will get back to you with the right next step.</p>
+                </header>
+
+                <form class="workspace-form" id="contactForm" action="https://formspree.io/f/mwvrnypv" method="POST" novalidate>
+                    <div id="formStatus" class="form-status"></div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Company</label>
+                            <input type="text" name="company" placeholder="Company name" autocomplete="organization" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="email@company.com" autocomplete="email" required>
+                    </div>
+                    <div class="input-group service-selection-group">
+                        <label>Services Needed</label>
+                        <div class="service-options" role="group" aria-label="Select one or more services">
+                            <label class="service-option">
+                                <input type="checkbox" name="services[]" value="Furniture">
+                                <span>Furniture</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services[]" value="Design and Build">
+                                <span>Design and Build</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services[]" value="Architectural Solutions">
+                                <span>Architectural Solutions</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services[]" value="Consultancy">
+                                <span>Consultancy</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services[]" value="Ergonomics">
+                                <span>Ergonomics</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" placeholder="Tell us about your objectives..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span>Send Message</span>
+                        <div class="btn-line"></div>
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <section class="contact-map-section" aria-label="Workspace Studio location">
+            <div class="map-wrapper">
+                <iframe
+                    title="Workspace Studio showroom location in Sky Tower Bucharest"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.8139868375456!2d26.102544415524722!3d44.47798547910158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2027a086e350f%3A0x9c4681e4126cc83a!2sSKY%20Tower!5e0!3m2!1sen!2sro!4v1592566669293!5m2!1sen!2sro"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <aside class="contact-info-container" aria-label="Showroom and contact information">
+            <div class="info-block">
+                <span class="info-label">Visit our showroom</span>
+                <h3>Sky Tower Bucharest</h3>
+                <p>Calea Floreasca 246C, Floor 18<br>Bucharest, Romania</p>
+                <p>Monday–Friday: 10:00–18:00<br>Saturday–Sunday: Closed</p>
+            </div>
+
+            <div class="info-block">
+                <span class="info-label">Talk to us</span>
+                <p><a href="mailto:office@workspaces.ro">office@workspaces.ro</a><br><a href="tel:+40314371252">+40 31 437 1252</a></p>
+            </div>
+
+            <div class="info-block">
+                <span class="info-label">Follow</span>
+                <div class="contact-socials">
+                    <a href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer contact-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="../certifications/index.html">Certifications</a>
+                    <a class="site-footer-link" href="../projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="../services/index.html">Services</a>
+                    <a class="site-footer-link" href="../partners/partners.html">Brands &amp; Partners</a>
+                    <a class="site-footer-link" href="../about/about.html">About</a>
+                    <a class="site-footer-link" href="../insights/newsroom.html">Insights</a>
+                    <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Shop</a>
+                    <a class="site-footer-link" href="../contact/contact.html">Contact / Start a Project</a>
+                </nav>
+                <a class="site-footer-link site-footer-action" href="../index.html">Back to Home</a>
+            </div>
+            <div class="site-footer-bottom">
+                <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                <div class="site-footer-socials">
+                    <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script><!--@include {"file":"features/contact/runtime.js"} --></script>
+    <script src="../menu-state.js?v=20260604-perf"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../insights.css">
+    <link rel="stylesheet" href="../article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="insights-page insight-article-page" data-article="{{slug}}">
+    <!--@include {"file":"components/navigation/header-insights-article.html","values":{"root":"../../"}} -->
+<div class="menu-overlay" id="menuOverlay"><button class="menu-close" id="menuClose">&times;</button><div class="menu-split-container"><div class="menu-left-images"><img data-src="../../felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item active" id="img-projects" alt="" decoding="async"><img data-src="../../scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item" id="img-services" alt="" decoding="async"><img data-src="../../projects-pictures/leading-game-company.jpg" class="menu-img-item" id="img-partners" alt="" decoding="async"><img data-src="../../projects-pictures/skytower-hero.jpg" class="menu-img-item" id="img-about" alt="" decoding="async"><img data-src="../../rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item" id="img-insights" alt="" decoding="async"><img data-src="../../projects-pictures/coca-cola.jpg" class="menu-img-item" id="img-shop" alt="" decoding="async"><img data-src="../../julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item" id="img-contact" alt="" decoding="async"></div><div class="menu-right-content"><span class="menu-label-top">Menu</span>
+                    <!--@include {"file":"components/navigation/menu-editorial.html","values":{"root":"../../"}} --></div></div></div>
+    <main class="article-main" id="articleRoot"></main>
+<!--@include {"file":"components/footer/insights-article-footer.html","values":{"root":"../../"}} -->
+    <script src="../article-data.js"></script>
+    <script src="../article.js"></script>
+    <script src="../../menu-state.js?v=20260604-perf"></script>
+</body>
+</html>

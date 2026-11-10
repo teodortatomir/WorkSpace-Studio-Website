@@ -1,0 +1,10 @@
+{
+  "output": "dist",
+  "public": "public",
+  "sources": [
+    { "directory": "src/pages", "extensions": [".html"] },
+    { "directory": "src/styles", "extensions": [".css"] },
+    { "directory": "src/scripts", "extensions": [".js", ".jsx"] },
+    { "directory": "src/content/entries", "extensions": [".js"] }
+  ]
+}

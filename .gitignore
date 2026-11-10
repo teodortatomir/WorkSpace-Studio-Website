@@ -1,2 +1,12 @@
 /videos/2026.05.06 Workspace Zacke Draft Video update2.mp4
 /2026.05.06 Workspace Zacke - fara numerotari.mp4
+
+# Generated output and local development files
+/dist/
+/node_modules/
+.DS_Store
+/artifacts/
+/.cache/
+/.dist-build-*/
+/public/videos/2026.05.06 Workspace Zacke Draft Video update2.mp4
+/public/2026.05.06 Workspace Zacke - fara numerotari.mp4

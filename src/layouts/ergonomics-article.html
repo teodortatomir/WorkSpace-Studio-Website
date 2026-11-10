@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="ergo-article-page" data-article="{{slug}}">
+    <div class="article-progress"><div class="article-progress-bar" id="articleProgressBar"></div></div>
+    <!--@include {"file":"components/navigation/header-ergonomics-article.html","values":{"root":"../../"}} -->
+    <main class="ergo-article-main" id="articleRoot"></main>
+    <div class="ergo-lightbox" id="ergoLightbox"><div class="ergo-lightbox-inner"><button class="ergo-lightbox-close" id="ergoLightboxClose" type="button">&times;</button><img class="ergo-lightbox-image" id="ergoLightboxImage" alt=""></div></div>
+    <script src="../article-data.js"></script>{{scriptSeparator}}<script src="../article-data-extended-a.js"></script>{{scriptSeparator}}<script src="../article-data-extended-b.js"></script>{{scriptSeparator}}<script src="../article-data-extended-c.js"></script>{{scriptSeparator}}<script src="../article.js"></script>
+</body>
+</html>

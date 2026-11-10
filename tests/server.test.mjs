@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { createStaticServer, listen } from '../scripts/lib/server.mjs';
+
+test('preview preserves nested URL/query behavior, MIME types, HEAD and video byte ranges', async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'workspace-server-test-'));
+  await writeFile(path.join(root, 'index.html'), '<h1>Original</h1>');
+  await writeFile(path.join(root, 'video.mp4'), '0123456789');
+  await writeFile(path.join(root, 'ProjectsScene.jsx'), 'const projectsData = [];');
+  const server = createStaticServer(root);
+  const url = await listen(server, 0);
+  t.after(async () => { server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); await rm(root, { recursive: true, force: true }); });
+  assert.equal(await (await fetch(url + '/?v=unchanged')).text(), '<h1>Original</h1>');
+  const head = await fetch(url + '/index.html', { method: 'HEAD' });
+  assert.equal(head.headers.get('content-type'), 'text/html; charset=utf-8');
+  assert.equal(await head.text(), '');
+  assert.equal(await (await fetch(url + '/ProjectsScene.jsx?v=original')).text(), 'const projectsData = [];');
+  const range = await fetch(url + '/video.mp4', { headers: { Range: 'bytes=2-5' } });
+  assert.equal(range.status, 206);
+  assert.equal(range.headers.get('content-range'), 'bytes 2-5/10');
+  assert.equal(await range.text(), '2345');
+  const suffix = await fetch(url + '/video.mp4', { headers: { Range: 'bytes=-3' } });
+  assert.equal(await suffix.text(), '789');
+  assert.equal((await fetch(url + '/video.mp4', { headers: { Range: 'bytes=100-200' } })).status, 416);
+  assert.equal((await fetch(url + '/missing.html')).status, 404);
+  assert.equal((await fetch(url + '/index.html', { method: 'POST' })).status, 405);
+});

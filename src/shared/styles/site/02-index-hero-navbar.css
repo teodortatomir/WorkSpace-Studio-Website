@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Index: Hero Navbar
+   ========================================================================== */
+
+.hero-navbar {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    z-index: 2100;
+    width: min(560px, calc(100% - 32px));
+    transform: translateX(-50%);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.hero-navbar.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -10px);
+}
+
+.hero-navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 58px;
+    padding: 0 14px 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(18, 17, 16, 0.22);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.hero-logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.hero-logo-mark {
+    display: block;
+    width: auto;
+    height: 28px;
+    filter: none;
+}
+
+.hero-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-search-shell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 42px;
+    overflow: hidden;
+    transition: min-width 0.3s ease;
+}
+
+.hero-search-shell.is-open {
+    min-width: 220px;
+}
+
+.hero-search-form {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.2s ease;
+}
+
+.hero-search-shell.is-open .hero-search-form {
+    width: 162px;
+    opacity: 1;
+}
+
+.hero-search-input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 0.82rem;
+    outline: none;
+}
+
+.hero-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.hero-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hero-icon-button:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+}
+
+.hero-icon {
+    width: 19px;
+    height: 19px;
+    stroke: currentColor;
+}
+
+.hero-menu-button {
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-menu-line {
+    width: 20px;
+    height: 1.5px;
+    border-radius: 999px;
+    background: currentColor;
+}

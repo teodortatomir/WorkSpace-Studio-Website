@@ -1,0 +1,1 @@
+window.location.replace("design-services.html#turn-key");

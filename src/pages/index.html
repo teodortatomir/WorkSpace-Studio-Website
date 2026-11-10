@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Studio | Demo Design Premium</title>
+    <link rel="preload" as="video" href="videos/WS 1080 x 1920 px.mp4" type="video/mp4" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="video" href="videos/WS 720 x 1280 px.mp4" type="video/mp4" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="stylesheet" href="style.css?v=hero-sequential-transition-20260722">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <nav class="hero-navbar" id="heroNav" aria-label="Hero navigation">
+        <div class="hero-navbar-inner">
+            <a href="index.html" class="hero-logo-link" aria-label="Workspace Studio home">
+                <img src="logos/WorkspaceW.svg" alt="Workspace Studio W" class="hero-logo-mark">
+            </a>
+
+            <div class="hero-nav-actions">
+                <div class="hero-search-shell" id="heroSearchShell">
+                    <button class="hero-icon-button" id="heroSearchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="heroSearchForm">
+                        <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
+                            <path d="M20 20L16.65 16.65" stroke-width="1.8" stroke-linecap="round"></path>
+                        </svg>
+                    </button>
+                    <form class="hero-search-form" id="heroSearchForm" role="search">
+                        <input type="search" id="heroSearchInput" class="hero-search-input" placeholder="Search pages" aria-label="Search pages">
+                    </form>
+                </div>
+
+                <button class="hero-icon-button hero-menu-button" id="heroMenuOpen" type="button" aria-label="Open menu">
+                    <span class="hero-menu-line"></span>
+                    <span class="hero-menu-line"></span>
+                    <span class="hero-menu-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar main-nav home-main-nav hidden-nav">
+    <div class="nav-container">
+        <div class="nav-col nav-left">
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo-link">
+                    <img src="logos/workspace-logo-darktext.svg" alt="Workspace Studio" class="workspace-logo">
+                </a>
+                <div class="nav-logo-separator"></div>
+                <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="miller-dealer-logo">
+            </div>
+        </div>
+
+        <div class="nav-col nav-center">
+            <a href="ergonomics-specialists/index.html" class="brand-name-text ergonomics-txt">Ergonomics</a>
+            <a href="our-services/design-services.html" class="brand-name-text design-txt">Design</a>
+            <a href="sustainability/index.html" class="brand-name-text sustainability-txt">Sustainability</a>
+            <a href="our-services/design-services.html#turn-key" class="brand-name-text turnkey-txt">Turn Key</a>
+        </div>
+
+        <div class="nav-col nav-right">
+            <button class="nav-search-button" type="button" aria-label="Search">
+                <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                    <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
+            <button class="menu-toggle" id="menuOpen">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose">&times;</button>
+    
+    <div class="menu-split-container">
+        <div class="menu-left-images">
+            <img data-src="felipe-furtado-2zDXqgTzEFE-unsplash.jpg" class="menu-img-item menu-visual-item active" id="img-projects" data-visual-target="img-projects" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item active" data-visual-target="img-projects" alt="" onclick="window.location.href='/index.html'">
+            <img data-src="scott-graham-5fNmWej4tAA-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-services" data-visual-target="img-services" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-services" alt="" onclick="window.location.href='/index.html'">
+            <img data-src="projects-pictures/leading-game-company.jpg" class="menu-img-item menu-visual-item" id="img-partners" data-visual-target="img-partners" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-partners" alt="" onclick="window.location.href='/index.html'">
+            <img data-src="projects-pictures/skytower-hero.jpg" class="menu-img-item menu-visual-item" id="img-about" data-visual-target="img-about" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-about" alt="" onclick="window.location.href='/index.html'">
+            <img data-src="rohan-makhecha-jw3GOzxiSkw-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-insights" data-visual-target="img-insights" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-insights" alt="" onclick="window.location.href='/index.html'">
+            <img data-src="projects-pictures/coca-cola.jpg" class="menu-img-item menu-visual-item" id="img-shop" data-visual-target="img-shop" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-logo-dark menu-visual-item" data-visual-target="img-shop" alt="" onclick="window.location.href='/index.html'">
+            <img data-src="julian-hochgesang-psGV5KhidlY-unsplash.jpg" class="menu-img-item menu-visual-item" id="img-contact" data-visual-target="img-contact" alt="" decoding="async">
+            <img src="logos/WorkspaceW.svg" class="menu-logo-item menu-visual-item" data-visual-target="img-contact" alt="" onclick="window.location.href='/index.html'">
+        </div>
+        <div class="menu-right-content">
+            <span class="menu-label-top">Menu</span>
+                    <nav class="menu-right-links" aria-label="Main menu">
+                        <div class="menu-nav-item has-submenu" data-target="img-projects">
+                            <a href="projects-scene/proiecte.html">Projects</a>
+                            <div class="menu-subnav" aria-label="Projects submenu">
+                                <span class="menu-subnav-title">Projects</span>
+                                <a href="projects-scene/proiecte.html">Projects Gallery</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-services">
+                            <a href="services/index.html">What we do</a>
+                            <div class="menu-subnav" aria-label="What we do submenu">
+                                <span class="menu-subnav-title">What we do</span>
+                                <a href="our-services/design-services.html">Design &amp; Build</a>
+                                <a href="our-services/general-contracting.html">General Contracting</a>
+                                <a href="our-services/furniture.html">Furniture</a>
+                                <a href="our-services/architectural-solutions.html">Architecture Solutions &amp; Products</a>
+                                <a href="our-services/logistics-facilities-services.html">Logistics &amp; Facilities Services</a>
+                                <a href="our-services/workplace-strategy.html">Workplace Strategy</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item has-submenu" data-target="img-partners">
+                            <a href="why-us/index.html">Why us</a>
+                            <div class="menu-subnav" aria-label="Why us submenu">
+                                <span class="menu-subnav-title">Why us</span>
+                                <a href="partners/partners.html">Brands &amp; Partners</a>
+                                <a href="sustainability/index.html">Sustainability</a>
+                                <a href="ergonomics-specialists/index.html">Ergonomics</a>
+                                <a href="our-services/design-services.html#budget-centricity">Budget Centricity</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="about/about.html">Who we are</a></div>
+                        <div class="menu-nav-item" data-target="img-about"><a href="certifications/index.html">Certifications</a></div>
+                        <div class="menu-nav-item has-submenu" data-target="img-insights">
+                            <a href="insights/newsroom.html">News &amp; Insights</a>
+                            <div class="menu-subnav" aria-label="News and Insights submenu">
+                                <span class="menu-subnav-title">News &amp; Insights</span>
+                                <a href="insights/press-releases.html">Press Releases</a>
+                                <a href="insights/in-the-news.html">In the News</a>
+                                <a href="insights/insights.html">Office Insights</a>
+                            </div>
+                        </div>
+                        <div class="menu-nav-item" data-target="img-shop"><a href="https://shop.workspaces.ro/en/catalog">Online Shop</a></div>
+                        <div class="menu-nav-item highlight-item" data-target="img-contact"><a href="contact/contact.html">Contact</a></div>
+                    </nav>
+
+            <div class="menu-footer">
+                <div class="menu-socials">
+                    <a href="https://www.instagram.com/workspace__studio/" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank">Facebook</a>
+                    <a href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <header class="hero" id="hero">
+        <div class="hero-video-container">
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-bg-video">
+                <source src="videos/WS 720 x 1280 px.mp4" type="video/mp4" media="(max-width: 768px)">
+                <source src="videos/WS 1080 x 1920 px.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay-dark"></div>
+        </div>
+        <div class="hero-content-minimal" id="heroTextContainer">
+            <span class="hero-subtitle" id="dynamicSubtitle"></span>
+            <h1 class="hero-title" id="dynamicTitle"></h1>
+            <p class="hero-desc" id="dynamicDesc"></p>
+            
+            <div id="heroBadges" class="hero-badges-container">
+                <img src="logos/millerknol-certified-dealer-logo.svg" alt="MillerKnoll" class="hero-badge-item">
+            </div>
+        </div>
+        <div class="hero-metrics-band visible" id="heroMetricsBand" aria-hidden="false">
+            <div class="hero-metric-item">
+                <strong>700+</strong>
+                <span>corporate clients</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>400.000 m<sup>2</sup></strong>
+                <span>fit-out delivered</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>3000+</strong>
+                <span>furniture projects</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>0</strong>
+                <span>HSE incidents</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>70+</strong>
+                <span>inhouse specialists</span>
+            </div>
+            <div class="hero-metric-item">
+                <strong>500+</strong>
+                <span>direct suppliers</span>
+            </div>
+        </div>
+        <button class="hero-scroll-button" id="heroScrollButton" type="button" aria-label="Scroll to projects">
+            <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 10L12 15L17 10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!--@include {"file":"features/home/sections/projects.html"} -->
+
+    <!--@include {"file":"features/home/sections/services.html"} -->
+
+    <!--@include {"file":"features/home/sections/why-us.html"} -->
+
+    <!--@include {"file":"features/home/sections/about-feature.html"} -->
+
+    <!--@include {"file":"features/home/sections/insights-feature.html"} -->
+
+    <!--@include {"file":"features/home/sections/home-shop.html"} -->
+
+    <!--@include {"file":"features/home/sections/home-partners.html"} -->
+
+    <!--@include {"file":"features/home/sections/contact-cta.html"} -->
+
+        <footer class="site-footer">
+            <div class="site-footer-inner">
+                <div class="site-footer-top">
+                    <nav class="site-footer-nav" aria-label="Footer navigation">
+                    <a class="site-footer-link" href="certifications/index.html">Certifications</a>
+                        <a class="site-footer-link" href="projects-scene/proiecte.html">Projects</a>
+                    <a class="site-footer-link" href="services/index.html">Services</a>
+                        <a class="site-footer-link" href="partners/partners.html">Brands &amp; Partners</a>
+                        <a class="site-footer-link" href="about/about.html">About</a>
+                        <a class="site-footer-link" href="insights/newsroom.html">Insights</a>
+                        <a class="site-footer-link" href="https://shop.workspaces.ro/en/catalog" target="_blank" rel="noopener noreferrer">Online Shop</a>
+                        <a class="site-footer-link" href="contact/contact.html">Contact / Start a Project</a>
+                    </nav>
+                    <a class="site-footer-link site-footer-action" href="#hero">Back to Top</a>
+                </div>
+                <div class="site-footer-bottom">
+                    <p class="site-footer-copy">&copy; 2026 Workspace Studio. All rights reserved.</p>
+                    <div class="site-footer-socials">
+                        <a class="site-footer-link" href="https://www.instagram.com/workspace__studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a class="site-footer-link" href="https://www.facebook.com/WorkspaceStudio.ro/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a class="site-footer-link" href="https://www.linkedin.com/company/workspace-studio/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script><!--@include {"file":"features/home/runtime.js"} --></script>
+    <script src="menu-state.js?v=20260604-perf"></script>
+</body>
+</html>
