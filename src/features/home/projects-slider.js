@@ -136,8 +136,7 @@
 
                         const getMainVisibleCards = () => {
                             if (window.innerWidth <= 768) return 1;
-                            if (window.innerWidth <= 1024) return 2;
-                            return 3;
+                            return 2;
                         };
 
                         const clearSlideResetTimer = () => {
@@ -180,8 +179,8 @@
                             if (!firstCard) return false;
 
                             const gap = parseFloat(getComputedStyle(track).gap) || 0;
-                            const cardWidth = firstCard.getBoundingClientRect().width;
-                            sliderPeek = parseFloat(getComputedStyle(projectsSlider).getPropertyValue('--projects-peek')) || 0;
+                            const cardWidth = parseFloat(getComputedStyle(firstCard).width);
+                            sliderPeek = (viewport.clientWidth - (cardWidth * getMainVisibleCards()) - (gap * (getMainVisibleCards() - 1))) / 2;
                             cardStep = cardWidth + gap;
                             return cardStep > 0;
                         };

@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"thoughtworks-romania"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--thoughtworks-romania-line);
+    color: var(--thoughtworks-romania-muted);
+}
+
+/* This case study has two scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .thoughtworks-romania-scope .scope-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.thoughtworks-romania-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.thoughtworks-romania-gallery .gallery-item.full { grid-column: 1 / -1; }

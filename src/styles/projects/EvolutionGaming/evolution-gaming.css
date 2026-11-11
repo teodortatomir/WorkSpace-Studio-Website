@@ -1,1 +1,4 @@
 <!--@include {"file":"shared/styles/projects/diversinst-family.css","values":{"project":"evolution-gaming"}} -->
+@media (min-width: 901px) {
+    .evolution-gaming-scope .scope-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

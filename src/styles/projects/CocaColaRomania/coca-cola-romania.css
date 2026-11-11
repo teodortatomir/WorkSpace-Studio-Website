@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"coca-cola-romania"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--coca-cola-romania-line);
+    color: var(--coca-cola-romania-muted);
+}
+
+/* This case study has one scope fact rather than the reference's five. */
+@media (min-width: 901px) {
+    .coca-cola-romania-scope .scope-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.coca-cola-romania-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.coca-cola-romania-gallery .gallery-item.full { grid-column: 1 / -1; }

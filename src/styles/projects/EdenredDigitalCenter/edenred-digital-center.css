@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"edenred-digital-center"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--edenred-digital-center-line);
+    color: var(--edenred-digital-center-muted);
+}
+
+/* This case study has three scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .edenred-digital-center-scope .scope-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.edenred-digital-center-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.edenred-digital-center-gallery .gallery-item.full { grid-column: 1 / -1; }

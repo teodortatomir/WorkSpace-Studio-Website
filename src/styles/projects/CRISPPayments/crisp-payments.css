@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"crisp-payments"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--crisp-payments-line);
+    color: var(--crisp-payments-muted);
+}
+
+/* This case study has 1 scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .crisp-payments-scope .scope-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.crisp-payments-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.crisp-payments-gallery .gallery-item.full { grid-column: 1 / -1; }

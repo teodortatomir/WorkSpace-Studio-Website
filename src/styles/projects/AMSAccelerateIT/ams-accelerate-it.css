@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"ams-accelerate-it"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--ams-accelerate-it-line);
+    color: var(--ams-accelerate-it-muted);
+}
+
+/* This case study has four scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .ams-accelerate-it-scope .scope-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.ams-accelerate-it-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.ams-accelerate-it-gallery .gallery-item.full { grid-column: 1 / -1; }

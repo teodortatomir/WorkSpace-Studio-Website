@@ -3,7 +3,9 @@ import path from 'node:path';
 import { listFiles, projectRoot } from './lib/build.mjs';
 import { adaptHomepageLinks } from './lib/pages.mjs';
 
-const output = path.join(projectRoot, 'dist');
+const directory = process.argv[2] || 'dist';
+if (!['dist', '.pages-build'].includes(directory)) throw new Error('Unsupported publication directory');
+const output = path.join(projectRoot, directory);
 let count = 0;
 for (const file of await listFiles(output)) {
   if (path.extname(file) !== '.html') continue;

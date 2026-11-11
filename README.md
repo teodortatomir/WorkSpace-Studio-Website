@@ -1,7 +1,8 @@
 # Workspace Studio Website
 
 Site static cu pagini HTML, stiluri CSS, JavaScript și componente compuse la build.
-Necesită Node.js 22 sau mai nou. Nu sunt necesare pachete npm externe.
+Necesită Node.js 22 sau mai nou. Rulează `npm ci` după clonare pentru a instala
+dependențele de build, inclusiv Sharp pentru optimizarea fotografiilor.
 
 ## Pornire locală
 
@@ -45,9 +46,23 @@ Preview-ul este disponibil la **http://127.0.0.1:4173**.
 ## GitHub Pages
 
 Workflow-ul `.github/workflows/pages.yml` rulează testele, construiește site-ul și
-publică directorul `dist/` la push pe `main`. Pull request-urile sunt doar testate
+publică directorul `.pages-build/` la push pe `main`. Pull request-urile sunt doar testate
 și compilate.
 
+Build-ul pentru publicare se poate verifica și local:
+
+```sh
+npm run build:pages
+```
+
+Acesta reconstruiește `dist/` și creează separat `.pages-build/` pentru publicare,
+cu fotografiile JPEG limitate la 1440 px pe latura lungă, la o calitate de 72.
+Linkurile sunt adaptate pentru GitHub Pages. Serverul local continuă să folosească `dist/`.
+Numele fișierelor rămân aceleași, iar originalele din `public/` nu sunt modificate.
+Un fișier optimizat este folosit numai dacă este mai mic decât originalul.
+Publicarea se oprește dacă site-ul depășește 950 MB, pentru a rămâne sub limita
+GitHub Pages de 1 GB. `npm run build` rămâne build-ul local fără recomprimare.
+
 În setările repository-ului, selectează **Settings → Pages → Build and deployment
-→ Source → GitHub Actions**. Directorul `dist/` este generat de workflow și nu
+→ Source → GitHub Actions**. Directoarele `dist/` și `.pages-build/` sunt generate de workflow și nu
 se adaugă manual în Git.

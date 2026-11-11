@@ -3,10 +3,16 @@
 
 # Generated output and local development files
 /dist/
+/.pages-build/
+/dist [0-9]*/
 /node_modules/
 .DS_Store
 /artifacts/
 /.cache/
+*.log
+.env
+.env.*
+!.env.example
 /.dist-build-*/
 /public/videos/2026.05.06 Workspace Zacke Draft Video update2.mp4
 /public/2026.05.06 Workspace Zacke - fara numerotari.mp4

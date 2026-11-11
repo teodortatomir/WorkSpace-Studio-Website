@@ -23,7 +23,6 @@
 
     .projects-slider {
         --projects-main-visible: 2;
-        --projects-peek: 60px;
         --projects-gap: 8px;
     }
 
@@ -548,7 +547,6 @@
 
     .projects-slider {
         --projects-main-visible: 1;
-        --projects-peek: 0px;
         --projects-gap: 14px;
         width: 100%;
         margin-left: auto;

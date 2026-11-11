@@ -9,10 +9,6 @@
                             const badgesContainer = document.getElementById('heroBadges');
                             const nav = document.querySelector('.navbar');
                             const heroNav = document.getElementById('heroNav');
-                            const heroSearchShell = document.getElementById('heroSearchShell');
-                            const heroSearchToggle = document.getElementById('heroSearchToggle');
-                            const heroSearchForm = document.getElementById('heroSearchForm');
-                            const heroSearchInput = document.getElementById('heroSearchInput');
                             const heroScrollButton = document.getElementById('heroScrollButton');
                             const heroMetricsBand = document.getElementById('heroMetricsBand');
                         const heroSection = document.getElementById('hero');
@@ -95,24 +91,11 @@
                             }
                         });
 
-                        const closeHeroSearch = () => {
-                            heroSearchShell?.classList.remove('is-open');
-                            heroSearchToggle?.setAttribute('aria-expanded', 'false');
-                            if (heroSearchInput) heroSearchInput.value = '';
-                        };
-
-                        const openHeroSearch = () => {
-                            heroSearchShell?.classList.add('is-open');
-                            heroSearchToggle?.setAttribute('aria-expanded', 'true');
-                            window.setTimeout(() => heroSearchInput?.focus(), 120);
-                        };
-
                         const syncNavStates = () => {
                             if (window.scrollY >= 100) {
                                 nav.classList.remove('hidden-nav');
                                 nav.classList.add('visible-nav');
                                 heroNav?.classList.add('is-hidden');
-                                closeHeroSearch();
                             } else {
                                 nav.classList.remove('visible-nav');
                                 nav.classList.add('hidden-nav');
@@ -264,44 +247,6 @@
                             };
                             window.addEventListener('scroll', scheduleNavStateSync, { passive: true });
                             syncNavStates();
-
-                            heroSearchToggle?.addEventListener('click', () => {
-                                if (heroSearchShell?.classList.contains('is-open')) {
-                                    closeHeroSearch();
-                                } else {
-                                    openHeroSearch();
-                                }
-                            });
-
-                            heroSearchForm?.addEventListener('submit', (event) => {
-                                event.preventDefault();
-                                const query = (heroSearchInput?.value || '').trim().toLowerCase();
-
-                                if (!query) {
-                                    closeHeroSearch();
-                                    return;
-                                }
-
-                                const searchRoutes = [
-                                    { match: ['project', 'projects', 'portfolio', 'work'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
-                                    { match: ['service', 'services', 'expertise'], action: () => { window.location.href = 'services/index.html'; } },
-                                    { match: ['about', 'studio'], action: () => { window.location.href = 'about/about.html'; } },
-                                    { match: ['insight', 'insights', 'articles', 'news'], action: () => { window.location.href = 'insights/newsroom.html'; } },
-                                    { match: ['partner', 'partners', 'brands'], action: () => { window.location.href = 'partners/partners.html'; } },
-                                    { match: ['contact', 'brief'], action: () => { window.location.href = 'contact/contact.html'; } },
-                                    { match: ['shop'], action: () => { window.location.href = 'https://shop.workspaces.ro/en/catalog'; } }
-                                ];
-
-                                const target = searchRoutes.find(route => route.match.some(keyword => query.includes(keyword)));
-                                (target?.action || searchRoutes[0].action)();
-                                closeHeroSearch();
-                            });
-
-                            document.addEventListener('keydown', (event) => {
-                                if (event.key === 'Escape') {
-                                    closeHeroSearch();
-                                }
-                            });
 
                             heroScrollButton?.addEventListener('click', () => {
                                 const projectsTop = document.getElementById('projects')?.offsetTop ?? 0;

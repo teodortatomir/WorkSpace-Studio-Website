@@ -23,18 +23,17 @@ jobs:
         with:
           node-version: 24
           package-manager-cache: false
-      # This project uses only Node's built-in modules; npm install is unnecessary.
+      - name: Install build dependencies
+        run: npm ci
       - name: Test build tooling
         run: npm test
       - name: Build static website
-        run: npm run build
-      - name: Adapt homepage links for GitHub Pages
-        run: npm run prepare:pages
+        run: npm run build:pages
       - name: Upload website
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: .pages-build
 
   deploy:
     if: github.event_name != 'pull_request'

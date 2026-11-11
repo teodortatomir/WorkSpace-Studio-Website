@@ -1,0 +1,20 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"honeywell"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--honeywell-line);
+    color: var(--honeywell-muted);
+}
+
+/* This case study has three scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .honeywell-scope .scope-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.honeywell-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}

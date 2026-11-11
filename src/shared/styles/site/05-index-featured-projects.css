@@ -78,8 +78,7 @@ body.home-page .ntgrate-services .services-header h2 {
 
 .projects-slider {
     --projects-gap: 10px;
-    --projects-main-visible: 3;
-    --projects-peek: 120px;
+    --projects-main-visible: 2;
     position: relative;
     display: flex;
     align-items: center;
@@ -106,7 +105,8 @@ body.home-page .ntgrate-services .services-header h2 {
 
 .project-slider-card {
     position: relative;
-    flex: 0 0 calc((100% - (var(--projects-peek) * 2) - (var(--projects-gap) * (var(--projects-main-visible) - 1))) / var(--projects-main-visible));
+    /* Two full cards plus two half cards, separated by three gaps. */
+    flex: 0 0 calc((100% - (var(--projects-gap) * (var(--projects-main-visible) + 1))) / (var(--projects-main-visible) + 1));
     min-height: min(76vh, 760px);
     overflow: hidden;
     background: #0d1217;

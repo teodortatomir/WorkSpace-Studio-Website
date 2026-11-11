@@ -595,7 +595,8 @@ body.furniture-page {
     text-wrap: balance;
 }
 
-.furniture-cta a {
+.furniture-cta a,
+.furniture-brands-link {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -610,7 +611,8 @@ body.furniture-page {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.furniture-cta a::after {
+.furniture-cta a::after,
+.furniture-brands-link::after {
     content: "";
     width: 40px;
     height: 1px;
@@ -619,12 +621,14 @@ body.furniture-page {
     transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.furniture-cta a:hover {
+.furniture-cta a:hover,
+.furniture-brands-link:hover {
     opacity: 0.75;
     transform: translateY(-2px);
 }
 
-.furniture-cta a:hover::after {
+.furniture-cta a:hover::after,
+.furniture-brands-link:hover::after {
     width: 100px;
 }
 

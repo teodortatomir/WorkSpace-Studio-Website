@@ -18,15 +18,12 @@
 
             <div class="hero-nav-actions">
                 <div class="hero-search-shell" id="heroSearchShell">
-                    <button class="hero-icon-button" id="heroSearchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="heroSearchForm">
+                    <button class="hero-icon-button" id="heroSearchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="homeSearchPanel" aria-haspopup="dialog">
                         <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
                             <path d="M20 20L16.65 16.65" stroke-width="1.8" stroke-linecap="round"></path>
                         </svg>
                     </button>
-                    <form class="hero-search-form" id="heroSearchForm" role="search">
-                        <input type="search" id="heroSearchInput" class="hero-search-input" placeholder="Search pages" aria-label="Search pages">
-                    </form>
                 </div>
 
                 <button class="hero-icon-button hero-menu-button" id="heroMenuOpen" type="button" aria-label="Open menu">
@@ -58,7 +55,7 @@
         </div>
 
         <div class="nav-col nav-right">
-            <button class="nav-search-button" type="button" aria-label="Search">
+            <button class="nav-search-button" type="button" aria-label="Search" aria-haspopup="dialog" aria-controls="homeSearchPanel" aria-expanded="false">
                 <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
                     <path d="M20 20L16.65 16.65" stroke-width="2" stroke-linecap="round"></path>
@@ -72,6 +69,10 @@
         </div>
     </div>
 </nav>
+
+<dialog class="home-search-panel" id="homeSearchPanel" aria-label="Search">
+    <button class="home-search-close" type="button" aria-label="Close search" autofocus>&times;</button>
+</dialog>
 
 <div class="menu-overlay" id="menuOverlay">
     <button class="menu-close" id="menuClose">&times;</button>

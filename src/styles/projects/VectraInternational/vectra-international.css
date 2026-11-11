@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"vectra-international"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--vectra-international-line);
+    color: var(--vectra-international-muted);
+}
+
+/* This case study has four scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .vectra-international-scope .scope-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.vectra-international-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.vectra-international-gallery .gallery-item.full { grid-column: 1 / -1; }

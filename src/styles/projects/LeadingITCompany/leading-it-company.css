@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"leading-it-company"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--leading-it-company-line);
+    color: var(--leading-it-company-muted);
+}
+
+/* This case study has two scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .leading-it-company-scope .scope-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.leading-it-company-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.leading-it-company-gallery .gallery-item.full { grid-column: 1 / -1; }

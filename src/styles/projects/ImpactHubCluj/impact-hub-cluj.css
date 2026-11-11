@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"impact-hub-cluj"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--impact-hub-cluj-line);
+    color: var(--impact-hub-cluj-muted);
+}
+
+/* This case study has 2 scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .impact-hub-cluj-scope .scope-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.impact-hub-cluj-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.impact-hub-cluj-gallery .gallery-item.full { grid-column: 1 / -1; }

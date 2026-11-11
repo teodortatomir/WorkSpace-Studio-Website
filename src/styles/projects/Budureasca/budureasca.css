@@ -1,0 +1,22 @@
+<!--@include {"file":"shared/styles/projects/jgv-family.css","values":{"project":"budureasca"}} -->
+
+/* Explicit placeholders for case-study copy awaiting editorial content. */
+.project-todo {
+    padding: 24px;
+    border: 1px dashed var(--budureasca-line);
+    color: var(--budureasca-muted);
+}
+
+/* This case study has 2 scope facts rather than the reference's five. */
+@media (min-width: 901px) {
+    .budureasca-scope .scope-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Backfill gaps created by portrait and wide photographs. */
+.budureasca-gallery .gallery-grid {
+    grid-auto-flow: dense;
+}
+
+.budureasca-gallery .gallery-item.full { grid-column: 1 / -1; }

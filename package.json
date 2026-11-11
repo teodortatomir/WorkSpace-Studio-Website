@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs",
     "prepare:pages": "node scripts/prepare-pages.mjs",
+    "optimize:pages": "node scripts/optimize-pages-images.mjs",
+    "build:pages": "npm run build && npm run optimize:pages && node scripts/prepare-pages.mjs .pages-build",
     "test": "node --test tests/*.test.mjs",
     "verify:parity": "node scripts/verify-parity.mjs",
     "verify:browser": "node scripts/compare-browser.mjs",
     "check": "npm test && npm run build && npm run verify:parity"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }

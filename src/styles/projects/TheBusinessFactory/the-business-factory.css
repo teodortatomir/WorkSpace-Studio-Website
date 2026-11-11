@@ -1119,3 +1119,7 @@ body.the-business-factory-lightbox-open {
         max-width: 100%;
     }
 }
+
+@media (min-width: 901px) {
+    .the-business-factory-scope .scope-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
